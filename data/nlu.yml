@@ -4,85 +4,126 @@ nlu:
 - intent: greet
   examples: |
     - hey
-    - hello
-    - hi
-    - hello there
-    - good morning
-    - good evening
-    - moin
-    - hey there
-    - let's go
-    - hey dude
-    - goodmorning
-    - goodevening
-    - good afternoon
+    - ciao
+    - ue
+    - buon giorno
+    - buona sera
+    - buon pomeriggio
+    - buongiorno
+    - buonasera
+    - salve
+    - uelà
+    - buona notte
+    - buonanotte
+    - salute
 
 - intent: goodbye
   examples: |
-    - good afternoon
-    - cu
-    - good by
-    - cee you later
-    - good night
-    - bye
-    - goodbye
-    - have a nice day
-    - see you around
-    - bye bye
-    - see you later
+    - arrivederci
+    - addio
+    - ci sentiamo
+    - a risentirci
+    - ci vediamo
+    - buona giornata
+    - ci sentiamo in giro
+    - ci vediamo in giro
 
 - intent: affirm
   examples: |
-    - yes
-    - y
-    - indeed
-    - of course
-    - that sounds good
-    - correct
+    - si
+    - s
+    - ok
+    - certo
+    - va bene
+    - corretto
+    - certamente
+    - va benissimo
+    - sicuro
 
 - intent: deny
   examples: |
     - no
     - n
-    - never
-    - I don't think so
-    - don't like that
-    - no way
-    - not really
+    - mai
+    - incorretto
+    - non va bene
+    - non penso
+    - non credo
+    - non proprio
 
-- intent: mood_great
+- intent: inform
   examples: |
-    - perfect
-    - great
-    - amazing
-    - feeling like a king
-    - wonderful
-    - I am feeling very good
-    - I am great
-    - I am amazing
-    - I am going to save the world
-    - super stoked
-    - extremely good
-    - so so perfect
-    - so good
-    - so perfect
+    - [Cognitive Robotics](tag)
+    - [Robotica Cognitiva](tag)
+    - [Antenne](tag)
+    - [Analisi 1](tag)
+    - [Fisica 1](tag)
+    - [Fondamenti di programmazione](tag)
+    - [Pere](tag)
+    - [Mele](tag)
+    - [Pizza](tag)
+    - [Banana](tag)
+    - [Latte](tag)
+    - [6 Uova](tag)
+    - [200kg di farina](tag)
+    - [100gr di prosciutto](tag)
+    - [Artificial Vision](tag_new)
+    - [Visione Artificiale](tag_new)
+    - [Basi di dati](tag_new)
+    - [Database](tag_new)
+    - [Geometria](tag_new)
+    - [Reti logiche](tag_new)
+    - [Elettrotecnica](tag_new)
+    - [Machine Learning](tag_new)
+    - [Intelligenza Artificiale](tag_new)
+    - [2kg di Broccoli](tag_new)
+    - [Cornetto](tag_new)
+    - [500gr di zucchero](tag_new)
+    - [Melone](tag_new)
+    - [20/11/1969](date)
+    - [12-10-1999](date)
+    - [30-06-65](date)
+    - [15/03/87](date)
+    - [12-3-29](date)
+    - [6-1-99](date)
+    - [7/8/99](date)
+    - [13-8-2004](date)
+    - [4/8/2003](date)
+    - [4.8.2003](date)
+    - [20.11.1969](date)
+    - [04:25](time)
+    - [7:30](time)
+    - [7:7](time)
+    - [23:59](time)
+    - [20:7](time)
+    - [Spesa](categories)
+    - [Esami](categories)
+    - [Esami primo anno](categories)
+    - [Esami secondo anno](categories)
+    - [10 minuti prima](alert)
+    - [1 ora](alert)
+    - [2 ore](alert)
+    - [2 ore prima](alert)
+    - [5 secondi prima](alert)
+    - [10 secondi](alert)
 
-- intent: mood_unhappy
+- intent: insert
   examples: |
-    - my day was horrible
-    - I am sad
-    - I don't feel very well
-    - I am disappointed
-    - super sad
-    - I'm so sad
-    - sad
-    - very sad
-    - unhappy
-    - not good
-    - not very good
-    - extremly sad
-    - so saad
-    - so sad
+    - vorrei inserire l'attività [Cognitive Robotics](tag)
+    - inserisci l'attività [Cognitive Robotics](tag)
+    - aggiungi l'attività [Cognitive Robotics](tag)
+    - inserisci l'attività con titolo [Cognitive Robotics](tag)
+    - aggiungi l'attività con titolo [Cognitive Robotics](tag)
+    - 
+    - aggiungi [Cognitive Robotics](tag) in [Esami](categories) 
+    - aggiungi [Cognitive Robotics](tag) nella categoria [Esami](categories) 
+
+- intent: remove
+  examples: |
+
+- intent: view
+  examples: |
+
 
 - intent: bot_challenge
   examples: |

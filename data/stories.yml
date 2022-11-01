@@ -15,3 +15,28 @@ stories:
   - action: task_form
   - action: utter_op_affirm
   - action: action_reset
+  #add action custom for insert
+
+- story: story_remove_yes
+  steps:
+  - intent: remove
+  - action: task_form
+  - action: utter_op_request
+  - intent: affirm
+  - action: utter_op_affirm
+  - action: action_reset
+  #add action custom for remove
+
+- story: story_remove_no
+  steps:
+  - intent: remove
+  - action: task_form
+  - action: utter_op_request
+  - intent: deny
+  - action: utter_op_deny
+  - action: action_reset
+
+- story: story_view
+  steps:
+  - intent: view
+  #add action custom for view list

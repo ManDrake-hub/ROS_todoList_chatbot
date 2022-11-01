@@ -32,6 +32,7 @@ actions:
   - utter_ask_category
   - utter_ask_alert
   - utter_iamabot
+  - action_reset
 
 slots:
   tag:

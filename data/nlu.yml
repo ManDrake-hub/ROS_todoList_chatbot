@@ -114,10 +114,15 @@ nlu:
     - aggiungi l'attività [Cognitive Robotics](tag)
     - inserisci l'attività con titolo [Cognitive Robotics](tag)
     - aggiungi l'attività con titolo [Cognitive Robotics](tag)
-    - 
-    - aggiungi [Cognitive Robotics](tag) in [Esami](categories) 
+    - inserisci l'attività [Cognitive Robotics](tag) in [Esami](categories)
+    - aggiungi l' attività [Cognitive Robotics](tag) in [Esami](categories) 
     - aggiungi [Cognitive Robotics](tag) nella categoria [Esami](categories) 
-
+    - aggiungi [Cognitive Robotics](tag) in [Esami](categories) 
+    - in [Esami](categories) aggiungi [Cognitive Robotics](tag)
+    - a [Esami](categories) aggiungi [Cognitive Robotics](tag)
+    - nella categoria [Esami](categories) aggiungi l'attività [Cognitive Robotics](tag)
+    - nella categoria [Esami](categories) inserisci l'attività con titolo [Cognitive Robotics](tag)
+    - 
 - intent: remove
   examples: |
 
@@ -127,7 +132,7 @@ nlu:
 
 - intent: bot_challenge
   examples: |
-    - are you a bot?
-    - are you a human?
-    - am I talking to a bot?
-    - am I talking to a human?
+    - Sei un bot?
+    - Sei un umano?
+    - Sto parlando con un bot?
+    - Sto parlando con un umano?

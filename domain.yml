@@ -16,7 +16,7 @@ entities:
   - tag_new
   - date
   - time
-  - categories
+  - category
   - alert
 
 actions: 
@@ -29,9 +29,45 @@ actions:
   - utter_ask_tag_new
   - utter_ask_date
   - utter_ask_time
-  - utter_ask_categories
+  - utter_ask_category
   - utter_ask_alert
-  - utter_bot_challenge
+  - utter_iamabot
+
+slots:
+  tag:
+    type: text
+    influence_conversation: false
+  category:
+    type: text
+    influence_conversation: false
+  tag_new:
+    type: text
+    influence_conversation: false
+  date:
+    type: text
+    influence_conversation: false
+  time:
+    type: text
+    influence_conversation: false
+  alert:
+    type: text
+    influence_conversation: false
+
+forms:
+  task_form:
+    required_slots:
+      tag:
+        - type: from_entity
+          entity: tag
+      category:
+        - type: from_entity
+          entity: category
+      date:
+        - type: from_entity
+          entity: date
+      time:
+        - type: from_entity
+          entity: time
 
 responses:
   utter_greet:
@@ -67,9 +103,9 @@ responses:
   - text: "Inserisci la categoria in cui vuoi inserire il task"
    
   utter_ask_alert:
-  -text: "Quanto tempo prima vuoi ricevere un avviso?"
+  - text: "Quanto tempo prima vuoi ricevere un avviso?"
 
-  utter_bot_challenge:
+  utter_iamabot:
   - text: "Io sono un bot, realizzato con Rasa per la gestione di una ToDoList."
 
 session_config:

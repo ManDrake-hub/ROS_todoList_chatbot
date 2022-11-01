@@ -87,12 +87,12 @@ responses:
   - text: "Ok. Operazione annullata"
 
   utter_ask_tag:
-  - text: "Inserisci il titolo del task"
-  - text: "Qual è il titolo del task?"
+  - text: "Inserisci il titolo dell' attività"
+  - text: "Qual è il titolo dell' attività?"
 
   utter_ask_tag_new:
-  - text: "Inserisci il nuovo titolo del task"
-  - text: "Qual è il nuovo titolo del task?"
+  - text: "Inserisci il nuovo titolo dell' attività"
+  - text: "Qual è il nuovo titolo dell' attività?"
 
   utter_ask_date:
   - text: "Inserisci la data di scadenza"
@@ -101,7 +101,7 @@ responses:
   - text: "Inserisci il tempo limite"
 
   utter_ask_category:
-  - text: "Inserisci la categoria in cui vuoi inserire il task"
+  - text: "Inserisci la categoria in cui vuoi inserire l'attività"
    
   utter_ask_alert:
   - text: "Quanto tempo prima vuoi ricevere un avviso?"

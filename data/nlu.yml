@@ -96,16 +96,18 @@ nlu:
     - [7:7](time)
     - [23:59](time)
     - [20:7](time)
-    - [Spesa](categories)
-    - [Esami](categories)
-    - [Esami primo anno](categories)
-    - [Esami secondo anno](categories)
+    - [Spesa](category)
+    - [Esami](category)
+    - [Esami primo anno](category)
+    - [Esami secondo anno](category)
     - [10 minuti prima](alert)
     - [1 ora](alert)
     - [2 ore](alert)
     - [2 ore prima](alert)
     - [5 secondi prima](alert)
     - [10 secondi](alert)
+    - [1 giorno prima](alert)
+    - [2 settimane prima](alert)
 
 - intent: insert
   examples: |
@@ -114,18 +116,29 @@ nlu:
     - aggiungi l'attività [Cognitive Robotics](tag)
     - inserisci l'attività con titolo [Cognitive Robotics](tag)
     - aggiungi l'attività con titolo [Cognitive Robotics](tag)
-    - inserisci l'attività [Cognitive Robotics](tag) in [Esami](categories)
-    - aggiungi l' attività [Cognitive Robotics](tag) in [Esami](categories) 
-    - aggiungi [Cognitive Robotics](tag) nella categoria [Esami](categories) 
-    - aggiungi [Cognitive Robotics](tag) in [Esami](categories) 
-    - in [Esami](categories) aggiungi [Cognitive Robotics](tag)
-    - a [Esami](categories) aggiungi [Cognitive Robotics](tag)
-    - nella categoria [Esami](categories) aggiungi l'attività [Cognitive Robotics](tag)
-    - nella categoria [Esami](categories) inserisci l'attività con titolo [Cognitive Robotics](tag)
-    - 
+    - inserisci l'attività [Cognitive Robotics](tag) in [Esami](category)
+    - aggiungi l' attività [Cognitive Robotics](tag) in [Esami](category) 
+    - aggiungi [Cognitive Robotics](tag) nella categoria [Esami](category) 
+    - aggiungi [Cognitive Robotics](tag) in [Esami](category) 
+    - in [Esami](category) aggiungi [Cognitive Robotics](tag)
+    - a [Esami](category) aggiungi [Cognitive Robotics](tag)
+    - nella categoria [Esami](category) aggiungi l'attività [Cognitive Robotics](tag)
+    - nella categoria [Esami](category) inserisci l'attività con titolo [Cognitive Robotics](tag)
+    - inserisci l'attività [Cognitive Robotics](tag) in [Esami](category) 
+    - inserisci l'attività [Cognitive Robotics](tag) in [Esami](category) fino a [20/11/1969](date)[7:30](time)
+    - inserisci l'attività [Cognitive Robotics](tag) in [Esami](category) fino a [7:30](time)[20/11/1969](date)
+    - inserisci l'attività [Cognitive Robotics](tag) in [Esami](category) con scadenza [7:30](time)[20/11/1969](date)
+    - inserisci l'attività [Cognitive Robotics](tag) in [Esami](category) con scadenza [20/11/1969](date)[7:30](time)
+    - inserisci l'attività [Cognitive Robotics](tag) in [Esami](category) il [20/11/1969](date) alle [7:30](time)
+    - inserisci l'attività [Cognitive Robotics](tag) in [Esami](category) il [20/11/1969](date)
+    - inserisci l'attività [Cognitive Robotics](tag) in [Esami](category) alle [7:30](time)
+    - inserisci un avviso [2 ore prima](alert)
+    - avvisami [2 ore prima](alert) per l'attività [Cognitive Robotics](tag) in [Esami](category) 
+    - inserisci un avviso [2 ore prima](alert) per l'attività [Cognitive Robotics](tag) in [Esami](category) 
+
 - intent: remove
   examples: |
-
+    - 
 - intent: view
   examples: |
 

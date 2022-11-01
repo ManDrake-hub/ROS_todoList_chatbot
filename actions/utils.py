@@ -41,5 +41,6 @@ class CollectingDispatcherFake:
     def __init__(self) -> None:
         pass
 
-    def utter_message(self, text=""):
+    @staticmethod
+    def utter_message(text=""):
         print("Dispatched: ", text)

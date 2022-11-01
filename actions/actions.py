@@ -1,8 +1,8 @@
 from typing import Any, Text, Dict, List
-from unicodedata import category
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from ToDo import ToDo
+from ActionsException import ExceptionRasa
 from utils import get_category, get_deadline, get_info, get_tag, sequence_to_str, get_tag_new, get_alert, get_category_new
 
 import datetime
@@ -20,11 +20,14 @@ class ActionAddTask(ActionWrapper):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         tag, category, deadline = get_info(tracker)
-        if not ActionWrapper.todo.add_task(category= category, tag=tag , deadline=deadline):
-            dispatcher.utter_message(text=f"Task \"{tag}\" già esistente, nessuna modifica è stata effettuata")
+
+        try:        
+            ActionWrapper.todo.add_task(category, tag, deadline)
+        except ExceptionRasa as e:
+            dispatcher.utter_message(text=str(e))
             return []
 
-        dispatcher.utter_message(text=f"Aggiunto \"{tag}\" con \"{sequence_to_str(category)}\" come categoria e \"{deadline}\" come scadenza")
+        dispatcher.utter_message(text=f"Aggiunto \"{tag}\" con \"{category}\" come categoria e \"{deadline}\" come scadenza")
         return []
 
 class ActionRemoveTask(ActionWrapper):
@@ -38,9 +41,12 @@ class ActionRemoveTask(ActionWrapper):
 
         tag = get_tag(tracker)
         category = get_category(tracker)
-        if not ActionWrapper.todo.remove_task(category = category,tag=tag):
-            dispatcher.utter_message(text=f"Nella categoria \"{category}\" il task \"{tag}\" non esistente, nessuna modifica è stata effettuata")
-            return[]
+
+        try:
+            ActionWrapper.todo.remove_task(category = category,tag=tag)
+        except ExceptionRasa as e:
+            dispatcher.utter_message(text=str(e))
+            return []
 
         dispatcher.utter_message(text=f"Task \"{tag}\" rimosso")
         return []
@@ -55,11 +61,13 @@ class ActionRemoveCategory(ActionWrapper):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         category = get_category(tracker)
-        
-        if not ActionWrapper.todo.remove_category(category = category):
-            dispatcher.utter_message(text=f"Categoria \"{category}\" non esistente, nessuna modifica è stata effettuata")
-            return[]
-        
+
+        try:
+            ActionWrapper.todo.remove_category(category)
+        except ExceptionRasa as e:
+            dispatcher.utter_message(text=str(e))
+            return []
+
         dispatcher.utter_message(text=f"Categoria \"{category}\" rimossa")
         return []
 
@@ -75,10 +83,10 @@ class ActionReadTask(ActionWrapper):
         tag = get_tag(tracker)
         category = get_category(tracker)
 
-        val = ActionWrapper.todo.get_task(category = category, tag = tag)
-
-        if val is None:
-            dispatcher.utter_message(text=f"Task \"{tag}\" non trovato")
+        try:
+            val = ActionWrapper.todo.get_task(category, tag)
+        except ExceptionRasa as e:
+            dispatcher.utter_message(text=str(e))
             return []
 
         dispatcher.utter_message(text=f"Il task \"{tag}\" ha \"{category}\" come categoria e \"{val.deadline}\" come scadenza")
@@ -93,16 +101,17 @@ class ActionReadTasks(ActionWrapper):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        categories = ActionWrapper.todo.get_tasks()
+        try:
+            categories = ActionWrapper.todo.get_tasks()
+        except ExceptionRasa as e:
+            dispatcher.utter_message(text=str(e))
+            return []
 
-        if categories is None or not categories:
-            dispatcher.utter_message(text=f"Non ci sono task in alcuna categoria")
-        else:
-            for category in categories:
-                message = f"For the category \"{category}\" you have the following tasks:"
-                for tag in category:
-                    message += f"\n - {tag}"
-                dispatcher.utter_message(text=(message+"\n"))  
+        for category in categories:
+            message = f"For the category \"{category}\" you have the following tasks:"
+            for tag in category:
+                message += f"\n - {tag}"
+            dispatcher.utter_message(text=(message+"\n"))
         return[]
 
 class ActionReadCategories(ActionWrapper):
@@ -114,9 +123,10 @@ class ActionReadCategories(ActionWrapper):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        categories = ActionWrapper.todo.get_categories()
-        if not categories:
-            dispatcher.utter_message(text=f"Nessuna categoria disponibile")
+        try:
+            categories = ActionWrapper.todo.get_categories()
+        except ExceptionRasa as e:
+            dispatcher.utter_message(text=str(e))
             return []
         
         message = f"Sono presenti le seguenti categorie:"
@@ -137,14 +147,10 @@ class ActionReadCategory(ActionWrapper):
 
         category = get_category(tracker)
 
-        tags = ActionWrapper.todo.get_tasks_of_category(category)
-
-        if tags is None:
-            dispatcher.utter_message(text=f"Categoria non esistente")
-            return []
-
-        if not tags:
-            dispatcher.utter_message(text=f"Nessun task in questa categoria")
+        try:
+            tags = ActionWrapper.todo.get_tasks_of_category(category)
+        except ExceptionRasa as e:
+            dispatcher.utter_message(text=str(e))
             return []
         
         message = f"La categoria ha i seguenti task associati:"
@@ -167,10 +173,13 @@ class ActionModifyTaskName(ActionWrapper):
         tag_new = get_tag_new(tracker)
         category = get_category(tracker)
 
-        if ActionWrapper.todo.modify_task(category, tag, tag_new):
-            dispatcher.utter_message(text=f"Il task \"{tag}\" è stato rinominato come: \"{tag_new}\"")
-        else:
-            dispatcher.utter_message(text=f"Nessun task da rinominare")
+        try: 
+            ActionWrapper.todo.modify_task(category, tag, tag_new)
+        except ExceptionRasa as e:
+            dispatcher.utter_message(text=str(e))
+            return []
+
+        dispatcher.utter_message(text=f"Il task \"{tag}\" è stato rinominato come: \"{tag_new}\"")
         return []
 
 class ActionModifyCategory(ActionWrapper):
@@ -186,10 +195,13 @@ class ActionModifyCategory(ActionWrapper):
         category = get_category(tracker)
         category_new = get_category_new(tracker)
 
-        if ActionWrapper.todo.move_task(category, tag, category_new):
-            dispatcher.utter_message(text=f"Nessuna task \"{tag}\" in elenco")
-        else:
-            dispatcher.utter_message(text=f"Categoria del task \"{tag}\" cambiata in \"{category_new}\"")
+        try: 
+            ActionWrapper.todo.move_task(category, tag, category_new)
+        except ExceptionRasa as e:
+            dispatcher.utter_message(text=str(e))
+            return []
+
+        dispatcher.utter_message(text=f"Categoria del task \"{tag}\" cambiata in \"{category_new}\"")
         return []
 
 class ActionModifyDeadline(ActionWrapper):
@@ -205,13 +217,18 @@ class ActionModifyDeadline(ActionWrapper):
         category = get_category(tracker)
         deadline_new = get_deadline(tracker)
 
-        if ActionWrapper.todo.modify_task(category, tag, deadline_new=deadline_new):
-            dispatcher.utter_message(text=f"Nessuna task \"{tag}\" in elenco")
-        else:
-            dispatcher.utter_message(text=f"Deadline del task \"{tag}\" cambiata in \"{deadline_new}\"")
+        try: 
+            ActionWrapper.todo.modify_task(category, tag, deadline_new=deadline_new)
+        except ExceptionRasa as e:
+            dispatcher.utter_message(text=str(e))
+            return []
+
+        dispatcher.utter_message(text=f"Deadline del task \"{tag}\" cambiata in \"{deadline_new}\"")
         return []
 
 # TO-DO specify the type of vars cause this function not works
+# Replace the ActionWrapper calls to merge that with the changes
+# done to the class
 class ActionAddAlert(ActionWrapper):
     """Add an alert to a task and notify it to the user"""
     def name(self) -> Text:
@@ -223,6 +240,7 @@ class ActionAddAlert(ActionWrapper):
 
         tag = get_tag(tracker)
         delta = get_alert(tracker)
+
         if not tag in ActionWrapper.todo:
             dispatcher.utter_message(text=f"Task \"{tag}\" non in elenco")
             return []

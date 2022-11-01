@@ -11,23 +11,6 @@ rules:
   - intent: goodbye
   - action: utter_goodbye
 
-- rule: Activate form
-  steps:
-  - intent: insert
-  - action: task_form
-  - active_loop: task_form
-
-- rule: Submit form
-  condition:
-  - active_loop: task_form
-  steps:
-  - action: task_form
-  - active_loop: null
-  - slot_was_set:
-    - requested_slot: null
-  - action: utter_op_affirm
-  - action: action_reset
-
 - rule: Say 'I am a bot' anytime the user challenges
   steps:
   - intent: bot_challenge

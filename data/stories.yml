@@ -9,3 +9,9 @@ stories:
   - intent: goodbye
   - action: utter_goodbye
 
+- story: story_insert
+  steps:
+  - intent: insert
+  - action: task_form
+  - action: utter_op_affirm
+  - action: action_reset

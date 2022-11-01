@@ -7,8 +7,11 @@ def get_tag(tracker: Tracker) -> Any:
 def get_tag_new(tracker: Tracker) -> Any:
     return tracker.get_slot("tag_new")
 
-def get_categories(tracker: Tracker) -> Any:
+def get_category(tracker: Tracker) -> Any:
     return tracker.get_slot("category")
+
+def get_category_new(tracker: Tracker) -> Any:
+    return tracker.get_slot("category_new")
 
 def get_deadline(tracker: Tracker) -> Any:
     date = tracker.get_slot("date")
@@ -22,7 +25,7 @@ def get_alert(tracker: Tracker) -> Any:
     return tracker.get_slot("alert")
 
 def get_info(tracker: Tracker) -> Tuple[Any, Any, Any]:
-    return get_tag(tracker), get_categories(tracker), get_deadline(tracker)
+    return get_tag(tracker), get_category(tracker), get_deadline(tracker)
 
 def sequence_to_str(seq: Sequence) -> str:
     return ", ".join(seq)

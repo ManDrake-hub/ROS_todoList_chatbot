@@ -26,6 +26,7 @@ rules:
   - slot_was_set:
     - requested_slot: null
   - action: utter_op_affirm
+  - action: action_reset
 
 - rule: Say 'I am a bot' anytime the user challenges
   steps:

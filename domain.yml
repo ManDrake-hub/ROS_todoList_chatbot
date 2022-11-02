@@ -5,29 +5,109 @@ intents:
   - goodbye
   - affirm
   - deny
-  - mood_great
-  - mood_unhappy
+  - inform
+  - insert
+  - remove
+  - view
   - bot_challenge
+
+entities:
+  - tag
+  - tag_new
+  - date
+  - time
+  - category
+  - alert
+
+actions: 
+  - utter_greet
+  - utter_goodbye
+  - utter_op_request 
+  - utter_op_affirm
+  - utter_op_deny
+  - utter_ask_tag
+  - utter_ask_tag_new
+  - utter_ask_date
+  - utter_ask_time
+  - utter_ask_category
+  - utter_ask_alert
+  - utter_iamabot
+  - action_reset
+
+slots:
+  tag:
+    type: text
+    influence_conversation: false
+  category:
+    type: text
+    influence_conversation: false
+  tag_new:
+    type: text
+    influence_conversation: false
+  date:
+    type: text
+    influence_conversation: false
+  time:
+    type: text
+    influence_conversation: false
+  alert:
+    type: text
+    influence_conversation: false
+
+forms:
+  task_form:
+    required_slots:
+      tag:
+        - type: from_entity
+          entity: tag
+      category:
+        - type: from_entity
+          entity: category
+      date:
+        - type: from_entity
+          entity: date
+      time:
+        - type: from_entity
+          entity: time
 
 responses:
   utter_greet:
-  - text: "Hey! How are you?"
-
-  utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
-
-  utter_did_that_help:
-  - text: "Did that help you?"
-
-  utter_happy:
-  - text: "Great, carry on!"
+  - text: "Hey!"
 
   utter_goodbye:
-  - text: "Bye"
+  - text: "Ciao"
+
+  utter_op_request:
+  - text: "Confermi l'operazione?"
+
+  utter_op_affirm:
+  - text: "Ok. Operazione effettuata"
+
+  utter_op_deny: 
+  - text: "Ok. Operazione annullata"
+
+  utter_ask_tag:
+  - text: "Inserisci il titolo dell' attività"
+  - text: "Qual è il titolo dell' attività?"
+
+  utter_ask_tag_new:
+  - text: "Inserisci il nuovo titolo dell' attività"
+  - text: "Qual è il nuovo titolo dell' attività?"
+
+  utter_ask_date:
+  - text: "Inserisci la data di scadenza"
+
+  utter_ask_time: 
+  - text: "Inserisci il tempo limite"
+
+  utter_ask_category:
+  - text: "Inserisci la categoria in cui vuoi inserire l'attività"
+   
+  utter_ask_alert:
+  - text: "Quanto tempo prima vuoi ricevere un avviso?"
 
   utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
+  - text: "Io sono un bot, realizzato con Rasa per la gestione di una ToDoList."
 
 session_config:
   session_expiration_time: 60

@@ -1,6 +1,7 @@
 from typing import Any, Text, Dict, List
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
+from rasa_sdk.events import AllSlotsReset
 from ToDo import ToDo
 from ActionsException import ExceptionRasa
 from utils import get_category, get_deadline, get_info, get_tag, sequence_to_str, get_tag_new, get_alert, get_category_new
@@ -9,6 +10,16 @@ import datetime
 
 class ActionWrapper(Action):
     todo = ToDo.load()
+
+class ActionReset(Action):
+    def name(self) -> Text:
+        return "action_reset"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        return [AllSlotsReset()]
 
 class ActionAddTask(ActionWrapper):
     """Add a task to the todo-list and shows the task's informations to the user """

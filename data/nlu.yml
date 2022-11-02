@@ -138,10 +138,10 @@ nlu:
 
 - intent: remove
   examples: |
-    - 
+    - rimuovi l'attività [Cognitive Robotics](tag) in [Esami](category) 
 - intent: view
   examples: |
-
+    - visualizza l'attività [Cognitive Robotics](tag) in [Esami](category) 
 
 - intent: bot_challenge
   examples: |

@@ -1,8 +1,8 @@
 from __future__ import annotations
 import pickle
 from typing import Dict, List
-from Task import Task
-from ActionsException import ExceptionMissingCategory, ExceptionMissingTask, ExceptionNoCategories, ExceptionNoTasks, ExceptionTaskExists
+from actions.Task import Task
+from actions.ActionsException import ExceptionMissingCategory, ExceptionMissingTask, ExceptionNoCategories, ExceptionNoTasks, ExceptionTaskExists
 
 
 class CustomUnpickler(pickle.Unpickler):

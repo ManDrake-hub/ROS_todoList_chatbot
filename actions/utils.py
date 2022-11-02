@@ -1,7 +1,9 @@
 from typing import Any, Sequence, Tuple, Dict, List, Any
 from rasa_sdk import Tracker
-from Task import Task
-from ToDo import ToDo
+from actions.Task import Task
+from actions.ToDo import ToDo
+import datetime
+
 
 def get_tag(tracker: Tracker) -> Any:
     return tracker.get_slot("tag")
@@ -66,3 +68,29 @@ def check_equals(real: ToDo, expected: Dict[str, List[Task]]):
             if not any([check_equals_task(real_task, expected_task) for expected_task in expected[k]]):
                 return False
     return True
+
+"""
+Esempi:
+
+- [20/11/1969](date)
+- [12-10-1999](date)
+- [30-06-65](date)
+- [15/03/87](date)
+- [12-3-29](date)
+- [6-1-99](date)
+- [7/8/99](date)
+- [13-8-2004](date)
+- [4/8/2003](date)
+- [4.8.2003](date)
+- [20.11.1969](date)
+- [04:25](time)
+- [7:30](time)
+- [7:7](time)
+- [23:59](time)
+- [20:7](time)
+"""
+
+def split_on_()
+
+def convert_date(date: str) -> datetime.date:
+    datetime.date()

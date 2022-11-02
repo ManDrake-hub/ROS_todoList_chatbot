@@ -2,14 +2,18 @@ from typing import Any, Text, Dict, List
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.events import AllSlotsReset
-from ToDo import ToDo
-from ActionsException import ExceptionRasa
-from utils import get_category, get_deadline, get_info, get_tag, sequence_to_str, get_tag_new, get_alert, get_category_new
+from actions.ToDo import ToDo
+from actions.ActionsException import ExceptionRasa
+from actions.utils import get_category, get_deadline, get_info, get_tag, sequence_to_str, get_tag_new, get_alert, get_category_new
+from actions.Task import Task
 
 import datetime
 
 class ActionWrapper(Action):
     todo = ToDo.load()
+
+    def name(self) -> Text:
+        return "None"
 
 class ActionReset(Action):
     def name(self) -> Text:
@@ -250,12 +254,16 @@ class ActionAddAlert(ActionWrapper):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         tag = get_tag(tracker)
+        category = get_category(tracker)
         delta = get_alert(tracker)
 
-        if not tag in ActionWrapper.todo:
-            dispatcher.utter_message(text=f"Task \"{tag}\" non in elenco")
+        try:
+            ActionWrapper.todo.modify_task(category, tag, alarm_new=delta)
+        except ExceptionRasa as e:
+            dispatcher.utter_message(text=str(e))
             return []
 
-        ActionWrapper.todo[tag]["alert"].append(datetime.timedelta(delta.to_datetime()).replace(microsecond=0))
-        dispatcher.utter_message(text=f"Il task \"{tag}\" sarà notificato {datetime.timedelta(delta.to_datetime()).replace(microsecond=0)} prima della sua deadline")
+        # ActionWrapper.todo[tag]["alert"].append(datetime.timedelta(delta.to_datetime()).replace(microsecond=0))
+        # dispatcher.utter_message(text=f"Il task \"{tag}\" sarà notificato {datetime.timedelta(delta.to_datetime()).replace(microsecond=0)} prima della sua deadline")
+        dispatcher.utter_message(text=f"Il task \"{tag}\" sarà notificato {delta} prima della sua deadline")
         return []

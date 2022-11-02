@@ -33,6 +33,9 @@ actions:
   - utter_ask_alert
   - utter_iamabot
   - action_reset
+  - action_add_task
+  - action_remove_task
+  - action_read_task
 
 slots:
   tag:
@@ -69,10 +72,22 @@ forms:
       time:
         - type: from_entity
           entity: time
+  id_task_form:
+      required_slots:
+        tag:
+        - type: from_entity
+          entity: tag
+        category:
+        - type: from_entity
+          entity: category
+
 
 responses:
   utter_greet:
   - text: "Hey!"
+  - text: "Ciaooo come va?"
+  - text: "Salve"
+  - text: ""
 
   utter_goodbye:
   - text: "Ciao"
@@ -101,7 +116,7 @@ responses:
   - text: "Inserisci il tempo limite"
 
   utter_ask_category:
-  - text: "Inserisci la categoria in cui vuoi inserire l'attività"
+  - text: "Inserisci la categoria dell'attività"
    
   utter_ask_alert:
   - text: "Quanto tempo prima vuoi ricevere un avviso?"

@@ -1,8 +1,8 @@
 from typing import Dict, List, Any
-from actions import ActionWrapper, ActionAddTask, ActionRemoveTask, ActionMoveTask
-from Task import Task
-from utils import check_equals, print_todo, print_todo_dict
-from ToDo import ToDo
+from actions.actions import ActionWrapper, ActionAddTask, ActionRemoveTask, ActionMoveTask
+from actions.Task import Task
+from actions.utils import check_equals, print_todo, print_todo_dict
+from actions.ToDo import ToDo
 
 class CollectingDispatcherFake:
     debug = True

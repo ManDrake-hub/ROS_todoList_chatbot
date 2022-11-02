@@ -1,0 +1,8 @@
+class Task:
+    def __init__(self, tag, deadline, alarm=None) -> None:
+        self.tag = tag
+        self.deadline = deadline
+        self.alarm = alarm
+
+    def __str__(self) -> str:
+        return f"Task with tag: '{self.tag}', deadline: '{self.deadline}', alarm: '{self.alarm}'"

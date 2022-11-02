@@ -96,3 +96,15 @@ stories:
   - action: alert_form
   - action: action_modify_alert
   - action: action_reset
+
+- story: story_create_user
+  steps:
+  - intent: insert
+  - action: action_create_user
+  - action: action_reset
+
+- story: story_remove_user
+  steps:
+  - intent: remove
+  - action: action_remove_user
+  - action: action_reset

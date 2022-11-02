@@ -9,6 +9,8 @@ intents:
   - insert
   - remove
   - view
+  - modify
+  - identification
   - bot_challenge
 
 entities:
@@ -17,7 +19,9 @@ entities:
   - date
   - time
   - category
+  - category_new
   - alert
+  - user
 
 actions: 
   - utter_greet
@@ -35,13 +39,20 @@ actions:
   - action_reset
   - action_add_task
   - action_remove_task
+  - action_remove_category
   - action_read_task
+  - action_read_tasks
+  - action_read_categories
+  - action_read_category
+  - action_modify_task_name
+  - action_move_task
+  - action_modify_deadline
+  - action_add_alert
+  - action_remove_alert
+  - action_modify_alert
 
 slots:
   tag:
-    type: text
-    influence_conversation: false
-  category:
     type: text
     influence_conversation: false
   tag_new:
@@ -53,7 +64,16 @@ slots:
   time:
     type: text
     influence_conversation: false
+  category:
+    type: text
+    influence_conversation: false
+  category_new:
+    type: text
+    influence_conversation: false
   alert:
+    type: text
+    influence_conversation: false
+  user:
     type: text
     influence_conversation: false
 
@@ -73,56 +93,128 @@ forms:
         - type: from_entity
           entity: time
   id_task_form:
-      required_slots:
-        tag:
+    required_slots:
+      tag:
         - type: from_entity
           entity: tag
-        category:
+      category:
         - type: from_entity
           entity: category
-
+  list_task_form:
+    required_slots:
+      category:
+        - type: from_entity
+          entity: category
+  
+  modify_tag_form:
+    required_slots:
+      tag:
+        - type: from_entity
+          entity: tag
+      category:
+        - type: from_entity
+          entity: category
+      tag_new:
+        - type: from_entity
+          entity: tag_new
+  modify_category_form:
+    required_slots:
+      tag:
+        - type: from_entity
+          entity: tag
+      category:
+        - type: from_entity
+          entity: category
+      category_new:
+        - type: from_entity
+          entity: category_new
+  alert_form:
+    required_slots:
+      tag:
+        - type: from_entity
+          entity: tag
+      category:
+        - type: from_entity
+          entity: category
+      alert:
+        - type: from_entity
+          entity: alert
 
 responses:
   utter_greet:
   - text: "Hey!"
-  - text: "Ciaooo come va?"
+  - text: "Ciaooo"
   - text: "Salve"
-  - text: ""
+  - text: "Hey, come posso esserti di aiuto?"
+  - text: "Ciao, posso aiutarti in qualche modo?"
+  - text: "Ciao, cosa posso fare per te?"
 
   utter_goodbye:
   - text: "Ciao"
+  - text: "Ci sentiamo ciaoo"
+  - text: "A presto"
+  - text: "A risentirci"
+  - text: "Arrivederci"
+  - text: "È stato un piacere aiutarti"
 
   utter_op_request:
   - text: "Confermi l'operazione?"
+  - text: "Sicuro di voler effettuare questa operazione?"
+  - text: "Sei sicuro dell'operazione?"
+  - text: "Verrà effettuata l'operazione, confermi?"
 
   utter_op_affirm:
   - text: "Ok. Operazione effettuata"
+  - text: "Operazione eseguita con successo"
+  - text: "Operazione effettuata con successo"
+  - text: "Operazione eseguita"
+  - text: "Operazione confermata"
 
   utter_op_deny: 
   - text: "Ok. Operazione annullata"
+  - text: "Operazione annullata"
+  - text: "Operazione negata"
+  - text: "Operazione non effettuata"
 
   utter_ask_tag:
   - text: "Inserisci il titolo dell' attività"
   - text: "Qual è il titolo dell' attività?"
+  - text: "Titolo dell'attività?"
+  - text: "Mi dici il titolo dell'attività?"
+  - text: "Puoi dirmi il titolo?"
 
   utter_ask_tag_new:
   - text: "Inserisci il nuovo titolo dell' attività"
   - text: "Qual è il nuovo titolo dell' attività?"
+  - text: "Nuovo titolo dell'attività?"
+  - text: "Mi dici il nuovo titolo dell'attività?"
+  - text: "Puoi dirmi il nuovo titolo?"
 
   utter_ask_date:
   - text: "Inserisci la data di scadenza"
+  - text: "Qual è la data di scadenza?"
+  - text: "Data di scadenza?"
+  - text: "Data di terminazione?"
 
   utter_ask_time: 
   - text: "Inserisci il tempo limite"
+  - text: "Qual è il tempo limite?"
+  - text: "Tempo limite?"
 
   utter_ask_category:
   - text: "Inserisci la categoria dell'attività"
-   
+  - text: "Qual è la categoria?"
+  - text: "Categoria?"
+
   utter_ask_alert:
   - text: "Quanto tempo prima vuoi ricevere un avviso?"
+  - text: "Quanto prima ti devo inviare l'avviso?"
+  - text: "L'avviso quanto prima lo devo inviare?"
 
   utter_iamabot:
   - text: "Io sono un bot, realizzato con Rasa per la gestione di una ToDoList."
+  - text: "Sono un bot, realizzato da un team di sviluppatori con Rasa"
+  - text: "Stai parlando con un bot, che si occupa di gestire una ToDoList"
 
 session_config:
   session_expiration_time: 60

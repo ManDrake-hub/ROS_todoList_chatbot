@@ -82,11 +82,8 @@ nlu:
     - [Melone](tag_new)
     - [20/11/1969](date)
     - [12-10-1999](date)
-    - [30-06-65](date)
-    - [15/03/87](date)
-    - [12-3-29](date)
-    - [6-1-99](date)
-    - [7/8/99](date)
+    - [30-06-1965](date)
+    - [15/03/1987](date)
     - [13-8-2004](date)
     - [4/8/2003](date)
     - [4.8.2003](date)
@@ -138,13 +135,60 @@ nlu:
 
 - intent: remove
   examples: |
-    - rimuovi l'attività [Cognitive Robotics](tag) in [Esami](category) 
+    - rimuovi l'attività [Cognitive Robotics](tag) in [Esami](category)
+    - vorrei cancellare l'attività [Cognitive Robotics](tag)
+    - voglio rimuovere l'attività [Cognitive Robotics](tag) in [Esami](category)
+    - Posso cancellare l'attività [Cognitive Robotics](tag)?
+    - mi piacerebbe rimuovere l'attività [Cognitive Robotics](tag) in [Esami](category)
+    - È possibile rimuovere l'attività [Cognitive Robotics](tag)?
+    - Posso togliere l'attività [Cognitive Robotics](tag) in [Esami](category)?
+    - Sarebbe possibile cancellare l'attività [Cognitive Robotics](tag?
+    - Cancella l'attivita [Cognitive Robotics] in [Esami](category)
+    - Elimina l'attività [Cognitive Robotics](tag)
+    - Togli l'attività [Cognitive Robotics](tag) in [Esami](category)
+    - rimuovi l'attività [Pizza](tag) in [Spesa](category)
+    - vorrei cancellare l'attività [Pomodori](tag)
+    - voglio rimuovere l'attività [Pizza](tag) in [Spesa](category)
+    - Posso cancellare l'attività [Pomodori](tag)?
+    - Cancella l'attivita [Latte] in [Spesa](category)
+    - Elimina l'attività [Antenne](tag)
+    - Togli l'attività [Antenne](tag) in [Esami](category)
+
+
 - intent: view
   examples: |
-    - visualizza l'attività [Cognitive Robotics](tag) in [Esami](category) 
+    - visualizza l'attività [Cognitive Robotics](tag) in [Esami](category)
+    - voglio vedere l'attività [Cognitive Robotics](tag) in [Esami](category)
+    - posso vedere le attività in [Esami](category)?
+    - fammi vedere l'attività [Cognitive Robotics](tag)?
+    - mi fai vedere l'attività [Cognitive Robotics](tag)?
+    - voglio visualizzare l'attività [Cognitive Robotics](tag)
+    - mi piacerebbe vedere le attività
+    - vorrei visualizzare un attività
+    - mostrami l'attività [Cognitive Robotics](tag)
+    - mostrami l'attività [Cognitive Robotics](tag) in [Esami](category)
+    - visualizza l'attività [Antenne](tag) in [Esami](category)
+    - voglio vedere l'attività [Antenne](tag) in [Esami](category)
+    - fammi vedere l'attività [Antenne](tag)?
+    - mi fai vedere l'attività [Antenne](tag)?
+    - voglio visualizzare l'attività [Antenne](tag)
+    - voglio visualizzare l'attivitò [Antenne](tag) in [Esami](category)
+    - mostrami l'attività [Antenne](tag)
+    - mostrami l'attività [Antenne](tag) in [Esami](category)
+    - visualizza l'attività [pomodori](tag) in [Spesa](category)
+    - voglio vedere l'attività [pizza](tag) in [Spesa](category)
+    - fammi vedere l'attività [pomodori](tag)?
+    - mi fai vedere l'attività [pizza](tag)?
+
+- intent: modify
+  examples: |
+
+- intent: identification
+  examples: |
 
 - intent: bot_challenge
   examples: |
+    - Chi sei?
     - Sei un bot?
     - Sei un umano?
     - Sto parlando con un bot?

@@ -15,3 +15,28 @@ rules:
   steps:
   - intent: bot_challenge
   - action: utter_iamabot
+
+#- rule: Show task and relative information
+#  steps:
+#  - intent: view
+#  - action: id_task_form
+#  - action: action_read_task
+#  - action: action_reset
+
+- rule: View the activities and categories
+  steps:
+  - intent: view
+  - action: action_read_tasks
+
+# - rule: View the categories
+#   steps:
+#   - intent: view
+#   - action: action_read_categories
+# 
+# - rule: View the activities in a category
+#   steps:
+#   - intent: view
+#   - action: list_task_form
+#   - action: action_read_category
+#   - action: action_reset
+

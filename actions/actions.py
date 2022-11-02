@@ -104,7 +104,7 @@ class ActionReadTask(ActionWrapper):
             dispatcher.utter_message(text=str(e))
             return []
 
-        dispatcher.utter_message(text=f"Il task \"{tag}\" ha \"{category}\" come categoria e \"{val.deadline}\" come scadenza")
+        dispatcher.utter_message(text=f"Il task \"{tag}\" ha \"{category}\" come categoria e \"{val.deadline}\" come scadenza{'' if val.alarm is not None else ' e {val.alarm} come allarme'}")
         return []
 
 class ActionReadTasks(ActionWrapper):
@@ -266,4 +266,47 @@ class ActionAddAlert(ActionWrapper):
         # ActionWrapper.todo[tag]["alert"].append(datetime.timedelta(delta.to_datetime()).replace(microsecond=0))
         # dispatcher.utter_message(text=f"Il task \"{tag}\" sarà notificato {datetime.timedelta(delta.to_datetime()).replace(microsecond=0)} prima della sua deadline")
         dispatcher.utter_message(text=f"Il task \"{tag}\" sarà notificato {delta} prima della sua deadline")
+        return []
+
+class ActionRemoveAlert(ActionWrapper):
+    """Add an alert to a task and notify it to the user"""
+    def name(self) -> Text:
+        return "action_remove_alert"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        tag = get_tag(tracker)
+        category = get_category(tracker)
+
+        try:
+            ActionWrapper.todo.modify_task(category, tag, alarm_new=None)
+        except ExceptionRasa as e:
+            dispatcher.utter_message(text=str(e))
+            return []
+
+        dispatcher.utter_message(text=f"Il task \"{tag}\" non verrà più notificato")
+        return []
+
+class ActionModifyAlert(ActionWrapper):
+    """Add an alert to a task and notify it to the user"""
+    def name(self) -> Text:
+        return "action_modify_alert"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        tag = get_tag(tracker)
+        category = get_category(tracker)
+        delta = get_alert(tracker)
+
+        try:
+            ActionWrapper.todo.modify_task(category, tag, alarm_new=None)
+        except ExceptionRasa as e:
+            dispatcher.utter_message(text=str(e))
+            return []
+
+        dispatcher.utter_message(text=f"Il task \"{tag}\" sarà ora notificato {delta} prima della sua deadline")
         return []

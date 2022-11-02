@@ -17,7 +17,7 @@ stories:
   - action: action_add_task
   - action: action_reset
 
-- story: story_remove_yes
+- story: story_remove_task_yes
   steps:
   - intent: remove
   - action: id_task_form
@@ -27,7 +27,7 @@ stories:
   - action: action_remove_task
   - action: action_reset
 
-- story: story_remove_no
+- story: story_remove_task_no
   steps:
   - intent: remove
   - action: id_task_form
@@ -36,9 +36,63 @@ stories:
   - action: utter_op_deny
   - action: action_reset
 
-- story: story_view
+- story: story_remove_category_yes
   steps:
-  - intent: view
+  - intent: remove
+  - action: list_task_form
+  - action: utter_op_request
+  - intent: affirm
+  - action: utter_op_affirm
+  - action: action_remove_category
+  - action: action_reset
+
+- story: story_remove_category_no
+  steps:
+  - intent: remove
+  - action: list_task_form
+  - action: utter_op_request
+  - intent: deny
+  - action: utter_op_deny
+  - action: action_reset
+
+- story: story_modify_tag
+  steps:
+  - intent: modify
+  - action: modify_tag_form
+  - action: action_modify_task_name
+  - action: action_reset
+
+- story: story_change_task_category
+  steps:
+  - intent: modify
+  - action: modify_category_form
+  - action: action_move_task
+  - action: action_reset
+
+- story: story_modify_deadline
+  steps:
+  - intent: modify
+  - action: task_form
+  - action: action_modify_deadline
+  - action: action_reset
+
+- story: story_alert
+  steps:
+  - intent: modify
+  - action: alert_form
+  - action: action_add_alert
+  - action: action_reset
+
+- story: story_remove_alert
+  steps:
+  - intent: remove
   - action: id_task_form
-  - action: action_read_task
+  - action: action_remove_alert
+  - action: action_reset
+
+- story: story_modify_alert
+  steps:
+  - intent: remove
+  - action: alert_form
+  - action: action_modify_alert
   - action: action_reset

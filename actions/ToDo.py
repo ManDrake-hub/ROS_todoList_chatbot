@@ -14,6 +14,7 @@ class CustomUnpickler(pickle.Unpickler):
 
 
 class ToDo:
+    latest_path = ""
     ##########################################################################
     # Init                                                                   #
     ##########################################################################
@@ -29,6 +30,7 @@ class ToDo:
 
     @staticmethod
     def load(store_path="./todo.pickle") -> ToDo:
+        ToDo.latest_path = store_path
         return CustomUnpickler(open(store_path, "rb")).load()
 
     ##########################################################################

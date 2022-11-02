@@ -1,5 +1,5 @@
 from typing import Dict, List, Any
-from actions.actions import ActionWrapper, ActionAddTask, ActionRemoveTask, ActionMoveTask
+from actions.actions import ActionWrapper, ActionAddTask, ActionRemoveTask, ActionMoveTask, ActionCreateUser, ActionSetUser, ActionRemoveUser
 from actions.Task import Task
 from actions.utils import check_equals, print_todo, print_todo_dict
 from actions.ToDo import ToDo
@@ -53,3 +53,8 @@ if __name__ == "__main__":
     # Test add
     test_action(ActionAddTask, {"category": "a", "tag": "add", "date": "10/10/2020", "time": "10:10:10"}, {"a": [Task("add", "10/10/2020 10:10:10"), ]}, clear=True)
     test_action(ActionAddTask, {"category": "a", "tag": "add", "date": "10/10/2020", "time": "10:10:10"}, {"a": [Task("add", "10/10/2020 10:10:10"), ]}, clear=False)
+
+    ##########################################################################
+    test_action(ActionCreateUser, {"user": "giggi"}, {}, clear=True)
+    test_action(ActionSetUser, {"user": "giggi"}, {}, clear=False)
+    test_action(ActionRemoveUser, {"user": "giggi"}, {}, clear=False)

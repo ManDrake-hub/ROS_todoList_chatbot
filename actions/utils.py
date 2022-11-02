@@ -3,7 +3,7 @@ from rasa_sdk import Tracker
 from actions.Task import Task
 from actions.ToDo import ToDo
 import datetime
-from actions.ActionsException import ExceptionTimeFormatInvalid
+from actions.ActionsException import ExceptionTimeFormatInvalid, ExceptionNoCategories
 
 
 def get_user(tracker: Tracker) -> Any:
@@ -60,6 +60,13 @@ def check_equals_task(real_task: Task, expected_task: Task):
     return real_task.tag == expected_task.tag and real_task.deadline == expected_task.deadline and real_task.alarm == expected_task.alarm
 
 def check_equals(real: ToDo, expected: Dict[str, List[Task]]):
+    try:
+        if len(real.get_categories()) == 0 and len(expected.keys()) == 0:
+            return True
+    except ExceptionNoCategories:
+        if len(expected.keys()) == 0:
+            return True
+
     for k in real.get_categories():
         if k not in expected.keys():
             return False

@@ -1,3 +1,4 @@
+import os
 from typing import Any, Text, Dict, List
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
@@ -6,9 +7,6 @@ from actions.ToDo import ToDo
 from actions.ActionsException import ExceptionRasa
 from actions.utils import get_category, get_deadline, get_info, get_tag, sequence_to_str, get_tag_new, get_alert, get_category_new, get_user
 from actions.Task import Task
-
-import datetime
-import os
 
 class ActionWrapper(Action):
     todo = ToDo.load()
@@ -62,6 +60,29 @@ class ActionSetUser(Action):
 
         ActionWrapper.todo = ToDo.load(user_path)
         dispatcher.utter_message(text=f"Caricata la todo-list di {user}")
+        return []
+
+class ActionRemoveUser(Action):
+    def name(self) -> Text:
+        return "action_set_user"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        user = get_user(tracker)
+
+        user_path = f"./todo_{user}.pickle"
+        if not os.path.exists(user_path):
+            dispatcher.utter_message(text=f"Todo-list di {user} non esistente")
+            return []
+
+        if ActionWrapper.todo.latest_path == user_path:
+            ActionWrapper.todo = ToDo.load(user_path)
+            dispatcher.utter_message(text=f"Caricata la todo-list di default")
+
+        os.remove(user_path)
+        dispatcher.utter_message(text=f"Cancellata la todo-list di {user}")
         return []
 
 class ActionAddTask(ActionWrapper):

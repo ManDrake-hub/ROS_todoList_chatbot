@@ -9,7 +9,8 @@ stories:
   - intent: goodbye
   - action: utter_goodbye
 
-- story: story_insert
+#Insert
+- story: story_insert_task
   steps:
   - intent: insert
   - action: task_form
@@ -17,6 +18,14 @@ stories:
   - action: action_add_task
   - action: action_reset
 
+- story: story_create_user
+  steps:
+  - intent: insert
+  - action: user_form
+  - action: action_create_user
+  - action: action_reset
+
+#Remove
 - story: story_remove_task_yes
   steps:
   - intent: remove
@@ -55,6 +64,27 @@ stories:
   - action: utter_op_deny
   - action: action_reset
 
+- story: story_remove_alert
+  steps:
+  - intent: remove
+  - action: id_task_form
+  - action: action_remove_alert
+  - action: action_reset
+
+- story: story_modify_alert
+  steps:
+  - intent: remove
+  - action: alert_form
+  - action: action_modify_alert
+  - action: action_reset
+
+- story: story_remove_user
+  steps:
+  - intent: remove
+  - action: action_remove_user
+  - action: action_reset
+
+#Modify
 - story: story_modify_tag
   steps:
   - intent: modify
@@ -81,30 +111,4 @@ stories:
   - intent: modify
   - action: alert_form
   - action: action_add_alert
-  - action: action_reset
-
-- story: story_remove_alert
-  steps:
-  - intent: remove
-  - action: id_task_form
-  - action: action_remove_alert
-  - action: action_reset
-
-- story: story_modify_alert
-  steps:
-  - intent: remove
-  - action: alert_form
-  - action: action_modify_alert
-  - action: action_reset
-
-- story: story_create_user
-  steps:
-  - intent: insert
-  - action: action_create_user
-  - action: action_reset
-
-- story: story_remove_user
-  steps:
-  - intent: remove
-  - action: action_remove_user
   - action: action_reset

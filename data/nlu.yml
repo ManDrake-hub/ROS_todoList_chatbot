@@ -105,6 +105,13 @@ nlu:
     - [10 secondi](alert)
     - [1 giorno prima](alert)
     - [2 settimane prima](alert)
+    - [Antonio](user)
+    - [Giovanni](user)
+    - [Geraldino](user)
+    - [Luigi](user)
+    - [Marco](user)
+    - [Dario](user)
+    - [Angela](user)
 
 - intent: insert
   examples: |
@@ -133,7 +140,15 @@ nlu:
     - avvisami [2 ore prima](alert) per l'attività [Cognitive Robotics](tag) in [Esami](category) 
     - inserisci un avviso [2 ore prima](alert) per l'attività [Cognitive Robotics](tag) in [Esami](category) 
     - inserisci l'utente [Antonio](user)
-    
+    - inserisci l'utente [Francesca](user)
+    - inserisci l'utente [Giovanni](user)
+    - inserisci l'utente [Geraldino](user)
+    - inserisci l'utente [Luigi](user)
+    - inserisci l'utente [Marco](user)
+    - inserisci l'utente [Dario](user)
+    - inserisci l'utente [Angela](user)
+
+
 - intent: remove
   examples: |
     - rimuovi l'attività [Cognitive Robotics](tag) in [Esami](category)
@@ -187,6 +202,14 @@ nlu:
 
 - intent: identification
   examples: |
+    - io sono [Antonio](user)
+    - io sono [Antonio](user)
+    - io sono [Giovanni](user)
+    - io sono [Geraldino](user)
+    - io sono [Luigi](user)
+    - io sono [Marco](user)
+    - io sono [Dario](user)
+    - io sono [Angela](user)
 
 - intent: bot_challenge
   examples: |

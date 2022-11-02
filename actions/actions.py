@@ -32,7 +32,7 @@ class ActionAddTask(ActionWrapper):
 
         tag, category, deadline = get_info(tracker)
 
-        try:        
+        try:
             ActionWrapper.todo.add_task(category, tag, deadline)
         except ExceptionRasa as e:
             dispatcher.utter_message(text=str(e))

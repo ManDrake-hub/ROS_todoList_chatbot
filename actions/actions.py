@@ -23,7 +23,7 @@ class ActionReset(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         return [AllSlotsReset()]
-        
+
 class ActionCreateUser(Action):
     def name(self) -> Text:
         return "action_create_user"
@@ -34,12 +34,11 @@ class ActionCreateUser(Action):
 
         user = get_user(tracker)
 
-        user_path = f"./todo_{user}.pickle"
-        if os.path.exists(user_path):
+        if ToDo.is_user_available(user):
             dispatcher.utter_message(text=f"Todo-list di {user} già esistente")
             return []
 
-        ToDo()._store(user_path)
+        ToDo.create_user(user)
         dispatcher.utter_message(text=f"Creata una todo-list per {user}")
         return []
 
@@ -53,12 +52,11 @@ class ActionSetUser(Action):
 
         user = get_user(tracker)
 
-        user_path = f"./todo_{user}.pickle"
-        if not os.path.exists(user_path):
+        if not ToDo.is_user_available(user):
             dispatcher.utter_message(text=f"Todo-list di {user} non esistente")
             return []
 
-        ActionWrapper.todo = ToDo.load(user_path)
+        ActionWrapper.todo = ToDo.load(user)
         dispatcher.utter_message(text=f"Caricata la todo-list di {user}")
         return []
 
@@ -70,11 +68,7 @@ class ActionGetUser(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        if ActionWrapper.todo.latest_path == "./todo.pickle":
-            user = "default"
-        else:
-            user = ActionWrapper.todo.latest_path.split("/")[-1].split(".")[0].split("_")[-1]
-        dispatcher.utter_message(text=f"Caricata la todo-list di {user}")
+        dispatcher.utter_message(text=f"L'utente attuale è {ToDo.get_loaded_user()}")
         return []
 
 class ActionRemoveUser(Action):
@@ -117,7 +111,7 @@ class ActionAddTask(ActionWrapper):
             dispatcher.utter_message(text=str(e))
             return []
 
-        dispatcher.utter_message(text=f"Aggiunto \"{tag}\" con \"{category}\" come categoria e \"{deadline}\" come scadenza")
+        dispatcher.utter_message(text=f"Aggiunto \"{tag}\" con \"{category}\" come categoria e \"{str(deadline)}\" come scadenza")
         return []
 
 class ActionRemoveTask(ActionWrapper):
@@ -179,7 +173,7 @@ class ActionReadTask(ActionWrapper):
             dispatcher.utter_message(text=str(e))
             return []
 
-        dispatcher.utter_message(text=f"Il task \"{tag}\" ha \"{category}\" come categoria e \"{val.deadline}\" come scadenza{'' if val.alarm is not None else ' e {val.alarm} come allarme'}")
+        dispatcher.utter_message(text=f"Il task \"{tag}\" ha \"{category}\" come categoria e \"{str(val.deadline)}\" come scadenza{'' if val.alarm is not None else ' e {val.alarm} come allarme'}")
         return []
 
 class ActionReadTasks(ActionWrapper):
@@ -313,7 +307,7 @@ class ActionModifyDeadline(ActionWrapper):
             dispatcher.utter_message(text=str(e))
             return []
 
-        dispatcher.utter_message(text=f"Deadline del task \"{tag}\" cambiata in \"{deadline_new}\"")
+        dispatcher.utter_message(text=f"Deadline del task \"{tag}\" cambiata in \"{str(deadline_new)}\"")
         return []
 
 # TO-DO specify the type of vars cause this function not works
@@ -340,7 +334,7 @@ class ActionAddAlert(ActionWrapper):
 
         # ActionWrapper.todo[tag]["alert"].append(datetime.timedelta(delta.to_datetime()).replace(microsecond=0))
         # dispatcher.utter_message(text=f"Il task \"{tag}\" sarà notificato {datetime.timedelta(delta.to_datetime()).replace(microsecond=0)} prima della sua deadline")
-        dispatcher.utter_message(text=f"Il task \"{tag}\" sarà notificato {delta} prima della sua deadline")
+        dispatcher.utter_message(text=f"Il task \"{tag}\" sarà notificato {str(delta)} prima della sua deadline")
         return []
 
 class ActionRemoveAlert(ActionWrapper):
@@ -383,5 +377,5 @@ class ActionModifyAlert(ActionWrapper):
             dispatcher.utter_message(text=str(e))
             return []
 
-        dispatcher.utter_message(text=f"Il task \"{tag}\" sarà ora notificato {delta} prima della sua deadline")
+        dispatcher.utter_message(text=f"Il task \"{tag}\" sarà ora notificato {str(delta)} prima della sua deadline")
         return []

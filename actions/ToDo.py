@@ -3,6 +3,7 @@ import pickle
 from typing import Dict, List
 from actions.Task import Task
 from actions.ActionsException import ExceptionMissingCategory, ExceptionMissingTask, ExceptionNoCategories, ExceptionNoTasks, ExceptionTaskExists
+import os
 
 
 class CustomUnpickler(pickle.Unpickler):
@@ -14,7 +15,7 @@ class CustomUnpickler(pickle.Unpickler):
 
 
 class ToDo:
-    latest_path = ""
+    loaded_user = ""
     ##########################################################################
     # Init                                                                   #
     ##########################################################################
@@ -24,14 +25,28 @@ class ToDo:
     ##########################################################################
     # Store and load                                                         #
     ##########################################################################
-    def _store(self, store_path="./todo.pickle"):
-        with open(store_path, "wb") as out:
+    def _store(self, user: str="default"):
+        with open(f"./todo_{user}.pickle", "wb") as out:
             pickle.dump(self, out)
 
     @staticmethod
-    def load(store_path="./todo.pickle") -> ToDo:
-        ToDo.latest_path = store_path
-        return CustomUnpickler(open(store_path, "rb")).load()
+    def create_user(user: str) -> None:
+        ToDo()._store(user)
+
+    @staticmethod
+    def load(user: str="default") -> ToDo:
+        todo = CustomUnpickler(open(f"./todo_{user}.pickle", "rb")).load()
+        ToDo.loaded_user = user
+        return todo
+
+    @staticmethod
+    def get_loaded_user() -> str:
+        return ToDo.loaded_user
+
+    @staticmethod
+    def is_user_available(user: str) -> bool:
+        user_path = f"./todo_{user}.pickle"
+        return os.path.exists(user_path)
 
     ##########################################################################
     # Checks                                                                 #
@@ -128,7 +143,3 @@ class ToDo:
     ##########################################################################
     def clear_all(self) -> None:
         self._todo: Dict[str, List[Task]] = {}
-
-if __name__ == "__main__":
-    # Run this file if you want to store a blank ToDo list
-    ToDo()._store()

@@ -4,6 +4,7 @@ from actions.Task import Task
 from actions.ToDo import ToDo
 import datetime
 from actions.ActionsException import ExceptionTimeFormatInvalid, ExceptionNoCategories
+from dateutil.parser import parse
 
 
 def get_user(tracker: Tracker) -> Any:
@@ -81,7 +82,7 @@ def check_equals(real: ToDo, expected: Dict[str, List[Task]]):
     return True
 
 """
-Esempi:
+Casi testati in cui funziona:
 
 - [20/11/1969](date)
 - [12-10-1999](date)
@@ -100,25 +101,5 @@ Esempi:
 - [23:59](time)
 - [20:7](time)
 """
-
-def split_on_delimiter(text: str, delimiters: Sequence[str]) -> Sequence[str]:
-    for d in delimiters:
-        if d in text:
-            return text.split(d)
-    raise ExceptionTimeFormatInvalid()
-
-def convert_date(date: str) -> datetime.date:
-    try:
-        year, month, day = split_on_delimiter(date, ("/", "-", ".", ":"))
-        return datetime.date(year=int(year), month=int(month), day=int(day))
-    except Exception as e:
-        raise ExceptionTimeFormatInvalid()
-
-def convert_time(time: str) -> datetime.time:
-    try:
-        hour, min = split_on_delimiter(time, ("/", "-", ".", ":"))
-        if not min:
-            min = 0
-        return datetime.time(hour=int(hour), minute=int(min))
-    except Exception as e:
-        raise ExceptionTimeFormatInvalid()
+def conver_deadline_to_datetime(deadline: str) -> datetime.datetime:
+    return parse(deadline)

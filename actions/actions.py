@@ -64,7 +64,7 @@ class ActionSetUser(Action):
 
 class ActionRemoveUser(Action):
     def name(self) -> Text:
-        return "action_set_user"
+        return "action_remove_user"
 
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,

@@ -132,7 +132,8 @@ nlu:
     - inserisci un avviso [2 ore prima](alert)
     - avvisami [2 ore prima](alert) per l'attività [Cognitive Robotics](tag) in [Esami](category) 
     - inserisci un avviso [2 ore prima](alert) per l'attività [Cognitive Robotics](tag) in [Esami](category) 
-
+    - inserisci l'utente [Antonio](user)
+    
 - intent: remove
   examples: |
     - rimuovi l'attività [Cognitive Robotics](tag) in [Esami](category)
@@ -153,6 +154,7 @@ nlu:
     - Cancella l'attivita [Latte] in [Spesa](category)
     - Elimina l'attività [Antenne](tag)
     - Togli l'attività [Antenne](tag) in [Esami](category)
+    - Rimuovi l'utente [Antonio](user)
 
 
 - intent: view

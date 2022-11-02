@@ -50,6 +50,9 @@ actions:
   - action_add_alert
   - action_remove_alert
   - action_modify_alert
+  - action_create_user
+  - action_set_user
+  - action_remove_user
 
 slots:
   tag:

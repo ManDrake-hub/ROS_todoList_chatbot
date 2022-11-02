@@ -41,10 +41,8 @@ rules:
 #   - action: action_reset
 
 - rule: Set the user
-  condition:
-  - slot_was_set:
-    - user: true
   steps:
   - intent: identification
+  - action: user_form
   - action: action_set_user
   - action: action_reset

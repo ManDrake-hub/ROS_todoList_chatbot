@@ -142,11 +142,16 @@ forms:
       alert:
         - type: from_entity
           entity: alert
+  user_form:
+    required_slots:
+      user:
+        - type: from_entity
+          entity: user
 
 responses:
   utter_greet:
   - text: "Hey!"
-  - text: "Ciaooo"
+  - text: "Ciao"
   - text: "Salve"
   - text: "Hey, come posso esserti di aiuto?"
   - text: "Ciao, posso aiutarti in qualche modo?"
@@ -154,7 +159,7 @@ responses:
 
   utter_goodbye:
   - text: "Ciao"
-  - text: "Ci sentiamo ciaoo"
+  - text: "Ci sentiamo ciao"
   - text: "A presto"
   - text: "A risentirci"
   - text: "Arrivederci"
@@ -213,6 +218,9 @@ responses:
   - text: "Quanto tempo prima vuoi ricevere un avviso?"
   - text: "Quanto prima ti devo inviare l'avviso?"
   - text: "L'avviso quanto prima lo devo inviare?"
+
+  utter_ask_user:
+  - text: "Inserisci il tuo nome utente"
 
   utter_iamabot:
   - text: "Io sono un bot, realizzato con Rasa per la gestione di una ToDoList."

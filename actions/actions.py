@@ -20,7 +20,7 @@ class ActionReset(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         return [AllSlotsReset()]
-
+        
 class ActionAddTask(ActionWrapper):
     """Add a task to the todo-list and shows the task's informations to the user """
     def name(self) -> Text:

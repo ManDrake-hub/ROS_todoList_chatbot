@@ -54,7 +54,7 @@ class ActionRemoveTask(ActionWrapper):
 class ActionRemoveCategory(ActionWrapper):
     """Remove a task from the todo-list and notify that to the user"""
     def name(self) -> Text:
-        return "action_remove_task"
+        return "action_remove_category"
 
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
@@ -117,7 +117,7 @@ class ActionReadTasks(ActionWrapper):
 class ActionReadCategories(ActionWrapper):
     """If there are some tasks in the todo-list, display list of categories to the user"""
     def name(self) -> Text:
-        return "action_read_tasks"
+        return "action_read_categories"
 
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
@@ -182,10 +182,10 @@ class ActionModifyTaskName(ActionWrapper):
         dispatcher.utter_message(text=f"Il task \"{tag}\" è stato rinominato come: \"{tag_new}\"")
         return []
 
-class ActionModifyCategory(ActionWrapper):
+class ActionMoveTask(ActionWrapper):
     """Modify the category of a task"""
     def name(self) -> Text:
-        return "action_modify_categories"
+        return "action_move_task"
 
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,

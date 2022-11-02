@@ -1,5 +1,7 @@
-from typing import Any, Sequence, Tuple
+from typing import Any, Sequence, Tuple, Dict, List, Any
 from rasa_sdk import Tracker
+from Task import Task
+from ToDo import ToDo
 
 def get_tag(tracker: Tracker) -> Any:
     return tracker.get_slot("tag")
@@ -30,17 +32,37 @@ def get_info(tracker: Tracker) -> Tuple[Any, Any, Any]:
 def sequence_to_str(seq: Sequence) -> str:
     return ", ".join(seq)
 
-class TrackerFake:
-    def __init__(self) -> None:
-        self.slots = {}
+def print_todo(todo: ToDo):
+    print("These are the categories: ", list(todo.get_categories()))
 
-    def get_slot(self, slot):
-        return self.slots[slot]
+    for k in todo.get_categories():
+        print("This are the tasks for: ")
+        print(f"    Category: {k}")
+        for t in todo.get_tasks_of_category(k):
+            print(f"         - {str(t)}")
 
-class CollectingDispatcherFake:
-    def __init__(self) -> None:
-        pass
+def print_todo_dict(todo: Dict):
+    print("These are the categories: ", list(todo.keys()))
 
-    @staticmethod
-    def utter_message(text=""):
-        print("Dispatched: ", text)
+    for k in todo.keys():
+        print("This are the tasks for: ")
+        print(f"    Category: {k}")
+        for t in todo[k]:
+            print(f"         - {str(t)}")
+
+def check_equals_task(real_task: Task, expected_task: Task):
+    return real_task.tag == expected_task.tag and real_task.deadline == expected_task.deadline and real_task.alarm == expected_task.alarm
+
+def check_equals(real: ToDo, expected: Dict[str, List[Task]]):
+    for k in real.get_categories():
+        if k not in expected.keys():
+            return False
+    for k in expected.keys():
+        if k not in real.get_categories():
+            return False
+
+    for k in real.get_categories():
+        for real_task in real.get_tasks_of_category(k):
+            if not any([check_equals_task(real_task, expected_task) for expected_task in expected[k]]):
+                return False
+    return True

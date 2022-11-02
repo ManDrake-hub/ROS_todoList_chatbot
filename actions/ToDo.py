@@ -4,13 +4,19 @@ from typing import Dict, List
 from Task import Task
 from ActionsException import ExceptionMissingCategory, ExceptionMissingTask, ExceptionNoCategories, ExceptionNoTasks, ExceptionTaskExists
 
+
 class CustomUnpickler(pickle.Unpickler):
+    """Custom unpickler is used to automatically fix the pathing of the default pickle class"""
     def find_class(self, module, name):
         if name == 'ToDo':
             return ToDo
         return super().find_class(module, name)
 
+
 class ToDo:
+    ##########################################################################
+    # Init                                                                   #
+    ##########################################################################
     def __init__(self) -> None:
         self._todo: Dict[str, List[Task]] = {}
 
@@ -115,6 +121,12 @@ class ToDo:
         self._check_category(category)
         self._todo.pop(category)
 
+    ##########################################################################
+    # Utils                                                                  #
+    ##########################################################################
+    def clear_all(self) -> None:
+        self._todo: Dict[str, List[Task]] = {}
 
 if __name__ == "__main__":
+    # Run this file if you want to store a blank ToDo list
     ToDo()._store()

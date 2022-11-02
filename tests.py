@@ -1,5 +1,5 @@
 from typing import Dict, List, Any
-from actions.actions import ActionWrapper, ActionAddTask, ActionRemoveTask, ActionMoveTask, ActionCreateUser, ActionSetUser, ActionRemoveUser
+from actions.actions import ActionWrapper, ActionAddTask, ActionRemoveTask, ActionMoveTask, ActionCreateUser, ActionSetUser, ActionRemoveUser, ActionGetUser
 from actions.Task import Task
 from actions.utils import check_equals, print_todo, print_todo_dict
 from actions.ToDo import ToDo
@@ -57,4 +57,5 @@ if __name__ == "__main__":
     ##########################################################################
     test_action(ActionCreateUser, {"user": "giggi"}, {}, clear=True)
     test_action(ActionSetUser, {"user": "giggi"}, {}, clear=False)
-    test_action(ActionRemoveUser, {"user": "giggi"}, {}, clear=False)
+    # test_action(ActionRemoveUser, {"user": "giggi"}, {}, clear=False)
+    test_action(ActionGetUser, {}, {}, clear=False)

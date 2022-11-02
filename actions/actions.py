@@ -62,6 +62,21 @@ class ActionSetUser(Action):
         dispatcher.utter_message(text=f"Caricata la todo-list di {user}")
         return []
 
+class ActionGetUser(Action):
+    def name(self) -> Text:
+        return "action_get_user"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        if ActionWrapper.todo.latest_path == "./todo.pickle":
+            user = "default"
+        else:
+            user = ActionWrapper.todo.latest_path.split("/")[-1].split(".")[0].split("_")[-1]
+        dispatcher.utter_message(text=f"Caricata la todo-list di {user}")
+        return []
+
 class ActionRemoveUser(Action):
     def name(self) -> Text:
         return "action_remove_user"
@@ -78,7 +93,7 @@ class ActionRemoveUser(Action):
             return []
 
         if ActionWrapper.todo.latest_path == user_path:
-            ActionWrapper.todo = ToDo.load(user_path)
+            ActionWrapper.todo = ToDo.load()
             dispatcher.utter_message(text=f"Caricata la todo-list di default")
 
         os.remove(user_path)

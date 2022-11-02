@@ -4,10 +4,11 @@ from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.events import AllSlotsReset
 from actions.ToDo import ToDo
 from actions.ActionsException import ExceptionRasa
-from actions.utils import get_category, get_deadline, get_info, get_tag, sequence_to_str, get_tag_new, get_alert, get_category_new
+from actions.utils import get_category, get_deadline, get_info, get_tag, sequence_to_str, get_tag_new, get_alert, get_category_new, get_user
 from actions.Task import Task
 
 import datetime
+import os
 
 class ActionWrapper(Action):
     todo = ToDo.load()
@@ -25,6 +26,44 @@ class ActionReset(Action):
 
         return [AllSlotsReset()]
         
+class ActionCreateUser(Action):
+    def name(self) -> Text:
+        return "action_create_user"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        user = get_user(tracker)
+
+        user_path = f"./todo_{user}.pickle"
+        if os.path.exists(user_path):
+            dispatcher.utter_message(text=f"Todo-list di {user} già esistente")
+            return []
+
+        ToDo()._store(user_path)
+        dispatcher.utter_message(text=f"Creata una todo-list per {user}")
+        return []
+
+class ActionSetUser(Action):
+    def name(self) -> Text:
+        return "action_set_user"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        user = get_user(tracker)
+
+        user_path = f"./todo_{user}.pickle"
+        if not os.path.exists(user_path):
+            dispatcher.utter_message(text=f"Todo-list di {user} non esistente")
+            return []
+
+        ActionWrapper.todo = ToDo.load(user_path)
+        dispatcher.utter_message(text=f"Caricata la todo-list di {user}")
+        return []
+
 class ActionAddTask(ActionWrapper):
     """Add a task to the todo-list and shows the task's informations to the user """
     def name(self) -> Text:

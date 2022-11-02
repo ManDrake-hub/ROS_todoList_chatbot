@@ -6,6 +6,9 @@ import datetime
 from actions.ActionsException import ExceptionTimeFormatInvalid
 
 
+def get_user(tracker: Tracker) -> Any:
+    return tracker.get_slot("user")
+
 def get_tag(tracker: Tracker) -> Any:
     return tracker.get_slot("tag")
 

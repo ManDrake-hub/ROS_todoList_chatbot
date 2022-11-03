@@ -108,6 +108,7 @@ nlu:
     - [Marco](user)
     - [Dario](user)
     - [Angela](user)
+    - [Chiara](user_new)
 
 #Insert
 - intent: insert_task
@@ -370,6 +371,10 @@ nlu:
     - voglio cambiare la scadenza e la categoria di [Cognitive Robotics](tag) con [21/07/2021](date) e [Università](category)
     - vorrei cambiare la scadenza di [Tennis] con [25/09/2015](date)
     - voglio cambiare la scadenza e la categoria di [Tennis](tag) con [11/12/2018](date) e [Sport](category)
+
+- intent: modify_user
+  examples: |
+    - vorrei modificare l'utente [Antonio](user) con l'utente [Chiara](user_new)
 
 - intent: identification
   examples: |

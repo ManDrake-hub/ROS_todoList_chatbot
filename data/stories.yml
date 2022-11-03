@@ -14,11 +14,11 @@ stories:
   - intent: remove_task
   - action: id_task_form
   - action: utter_op_request
-  - checkpoint: request_task
+  - checkpoint: request_rem_task
  
 - story: remove_task_yes
   steps:
-  - checkpoint: request_task
+  - checkpoint: request_rem_task
   - intent: affirm
   - action: utter_op_affirm
   - action: action_remove_task
@@ -29,11 +29,11 @@ stories:
   - intent: remove_alert
   - action: id_task_form
   - action: utter_op_request
-  - checkpoint: request_alert
+  - checkpoint: request_rem_alert
  
 - story: remove_alert_yes
   steps:
-  - checkpoint: request_alert
+  - checkpoint: request_rem_alert
   - intent: affirm
   - action: utter_op_affirm
   - action: action_remove_alert
@@ -44,11 +44,11 @@ stories:
   - intent: remove_category
   - action: list_task_form
   - action: utter_op_request
-  - checkpoint: request_category
+  - checkpoint: request_rem_category
 
 - story: remove_category_yes
   steps:
-  - checkpoint: request_category
+  - checkpoint: request_rem_category
   - intent: affirm
   - action: utter_op_affirm
   - action: action_remove_category
@@ -59,11 +59,11 @@ stories:
   - intent: remove_user
   - action: user_form
   - action: utter_op_request
-  - checkpoint: request_user
+  - checkpoint: request_rem_user
 
 - story: remove_user_yes
   steps:
-  - checkpoint: request_user
+  - checkpoint: request_rem_user
   - intent: affirm
   - action: utter_op_affirm
   - action: action_remove_user
@@ -71,32 +71,59 @@ stories:
 
 - story: remove_no
   steps:
-  - checkpoint: request_task
-  - checkpoint: request_alert
-  - checkpoint: request_category
-  - checkpoint: request_user
+  - checkpoint: request_rem_task
+  - checkpoint: request_rem_alert
+  - checkpoint: request_rem_category
+  - checkpoint: request_rem_user
   - intent: deny
   - action: utter_op_deny
   - action: action_reset
 
 #Modify
-- story: modify_task_category
+- story: modify_task
   steps:
   - intent: modify_task_category
-  
+  - action: id_task_form
+  - action: modify_tag_form
+  - action: action_modify_task_name
+  - action: utter_op_modify_category_request
+  - checkpoint: request_mod_category
+
+- story: modify_task_category
+  steps:
+  - checkpoint: request_mod_category
+  - intent: affirm
+  - action: modify_category_form
+  - action: utter_op_affirm
+  - action: action_move_task
+  - action: action_reset
+
+- story: modify_task_only
+  steps:
+  - checkpoint: request_mod_category
+  - intent: deny
+  - action: utter_op_deny
+  - action: action_reset
+
+- story: modify_alert
+  steps:
+  - intent: modify_alert
+  - action: id_task_form
   - action: alert_form
   - action: action_modify_alert
   - action: action_reset
 
-- rule: modify_alert
+- story: modify_deadline
   steps:
-  - intent: remove
-  - action: action_remove_user
+  - intent: modify_deadline
+  - action: id_task_form
+  - action: action_modify_deadline
   - action: action_reset
 
-- rule: modify_deadline
+- story: modify_user
   steps:
-  - intent: modify
-  - action: modify_category_form
-  - action: action_move_task
+  - intent: modify_user
+  - action: user_form
+  - action: modify_user_form
+  - action: action_rename_user
   - action: action_reset

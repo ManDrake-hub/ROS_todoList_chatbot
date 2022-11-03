@@ -29,6 +29,7 @@ entities:
 - tag_new
 - time
 - user
+- user_new
 slots:
   tag:
     type: text
@@ -54,6 +55,57 @@ slots:
   user:
     type: text
     influence_conversation: false
+  user_new:
+    type: text
+    influence_conversation: false
+forms:
+  id_task_form:
+    required_slots:
+      tag:
+      - type: from_entity
+        entity: tag
+      category:
+      - type: from_entity
+        entity: category
+  deadline_form:
+    required_slots:
+      date:
+      - type: from_entity
+        entity: date
+      time:
+      - type: from_entity
+        entity: time
+  alert_form:
+    required_slots:
+      alert:
+      - type: from_entity
+        entity: alert
+  user_form:
+    required_slots:
+      user:
+      - type: from_entity
+        entity: user
+  modify_user_form:
+    required_slots:
+      user_new:
+      - type: from_entity
+        entity: user_new  
+  modify_tag_form:
+    required_slots:
+      tag_new:
+      - type: from_entity
+        entity: tag_new
+  list_task_form:
+    required_slots:
+      category:
+      - type: from_entity
+        entity: category
+  modify_category_form:
+    required_slots:
+      category_new:
+      - type: from_entity
+        entity: category_new
+
 responses:
   utter_greet:
   - text: Hey!
@@ -80,6 +132,8 @@ responses:
   - text: Operazione effettuata con successo
   - text: Operazione eseguita
   - text: Operazione confermata
+  utter_op_modify_category_request:
+  - text: Vuoi modificare la categoria?
   utter_op_deny:
   - text: Ok. Operazione annullata
   - text: Operazione annullata
@@ -135,6 +189,11 @@ actions:
 - action_remove_category
 - action_remove_task
 - action_remove_user
+- action_rename_user
+- action_modify_alert
+- action_modify_task_name
+- action_modify_deadline
+- action_move_task
 - action_reset
 - utter_ask_alert
 - utter_ask_category
@@ -148,45 +207,6 @@ actions:
 - utter_op_affirm
 - utter_op_deny
 - utter_op_request
-forms:
-  deadline_form:
-    required_slots:
-      date:
-      - type: from_entity
-        entity: date
-      time:
-      - type: from_entity
-        entity: time
-  id_task_form:
-    required_slots:
-      tag:
-      - type: from_entity
-        entity: tag
-      category:
-      - type: from_entity
-        entity: category
-  list_task_form:
-    required_slots:
-      category:
-      - type: from_entity
-        entity: category
-  modify_tag_form:
-    required_slots:
-      tag_new:
-      - type: from_entity
-        entity: tag_new
-  modify_category_form:
-    required_slots:
-      category_new:
-      - type: from_entity
-        entity: category_new
-  alert_form:
-    required_slots:
-      alert:
-      - type: from_entity
-        entity: alert
-  user_form:
-    required_slots:
-      user:
-      - type: from_entity
-        entity: user
+- utter_op_modify_category_request
+
+

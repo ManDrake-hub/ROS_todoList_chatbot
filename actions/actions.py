@@ -24,6 +24,17 @@ class ActionReset(Action):
 
         return [AllSlotsReset()]
 
+class ActionSave(Action):
+    def name(self) -> Text:
+        return "action_save"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        ActionWrapper.todo.store(ActionWrapper.todo.get_loaded_user())
+        return []
+
 class ActionCreateUser(Action):
     def name(self) -> Text:
         return "action_create_user"
@@ -79,7 +90,7 @@ class ActionRenameUser(Action):
             dispatcher.utter_message(text=f"Todo-list di {user_new} già esistente")
             return []
 
-        ActionWrapper.todo._store(user_new)
+        ActionWrapper.todo.store(user_new)
         ActionWrapper.todo.remove_user(user)
         ActionWrapper.todo = ToDo.load(user_new)
         dispatcher.utter_message(text=f"Modificata e caricata la todo-list di {user_new}")

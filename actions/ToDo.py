@@ -25,13 +25,13 @@ class ToDo:
     ##########################################################################
     # Store and load                                                         #
     ##########################################################################
-    def _store(self, user: str="default"):
+    def store(self, user: str="default"):
         with open(f"./todo_{user}.pickle", "wb") as out:
             pickle.dump(self, out)
 
     @staticmethod
     def create_user(user: str) -> None:
-        ToDo()._store(user)
+        ToDo().store(user)
 
     @staticmethod
     def load(user: str="default") -> ToDo:

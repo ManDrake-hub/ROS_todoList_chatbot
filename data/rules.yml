@@ -16,33 +16,40 @@ rules:
   - intent: bot_challenge
   - action: utter_iamabot
 
-#- rule: Show task and relative information
-#  steps:
-#  - intent: view
-#  - action: id_task_form
-#  - action: action_read_task
-#  - action: action_reset
-
-- rule: View the activities and categories
+- rule: Set user
   steps:
-  - intent: view
-  - action: action_read_tasks
-
-# - rule: View the categories
-#   steps:
-#   - intent: view
-#   - action: action_read_categories
-# 
-# - rule: View the activities in a category
-#   steps:
-#   - intent: view
-#   - action: list_task_form
-#   - action: action_read_category
-#   - action: action_reset
-
-- rule: Set the user
-  steps:
-  - intent: identification
+  - intent: identificaion
   - action: user_form
   - action: action_set_user
   - action: action_reset
+
+#Insert
+- rule: Insert task
+  steps:
+  - intent: insert_task
+  - action: id_task_form
+  - action: deadline_form
+  - action: action_add_task
+  - action: action_reset
+
+- rule: Create user
+  steps:
+  - intent: insert_user
+  - action: user_form
+  - action: action_create_user
+  - action: action_reset
+
+- rule: Insert alert
+  steps:
+  - intent: insert_alert
+  - action: id_task_form
+  - action: alert_form
+  - action: action_add_alert
+  - action: action_reset
+
+#View
+- rule: View tasks and category
+  steps:
+    - intent: view
+    - action: action_read_tasks
+    - action: action_read_categories

@@ -1,59 +1,34 @@
-version: "2.0"
-
+version: '2.0'
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
 intents:
-  - greet
-  - goodbye
-  - affirm
-  - deny
-  - inform
-  - insert
-  - remove
-  - view
-  - modify
-  - identification
-  - bot_challenge
-
+- remove_user
+- affirm
+- greet
+- goodbye
+- deny
+- inform
+- insert_alert
+- insert_user
+- insert_task
+- remove_task
+- remove_alert
+- view
+- modify_task_category
+- modify_alert
+- modify_deadline
+- identification
+- bot_challenge
 entities:
-  - tag
-  - tag_new
-  - date
-  - time
-  - category
-  - category_new
-  - alert
-  - user
-
-actions: 
-  - utter_greet
-  - utter_goodbye
-  - utter_op_request 
-  - utter_op_affirm
-  - utter_op_deny
-  - utter_ask_tag
-  - utter_ask_tag_new
-  - utter_ask_date
-  - utter_ask_time
-  - utter_ask_category
-  - utter_ask_alert
-  - utter_iamabot
-  - action_reset
-  - action_add_task
-  - action_remove_task
-  - action_remove_category
-  - action_read_task
-  - action_read_tasks
-  - action_read_categories
-  - action_read_category
-  - action_modify_task_name
-  - action_move_task
-  - action_modify_deadline
-  - action_add_alert
-  - action_remove_alert
-  - action_modify_alert
-  - action_create_user
-  - action_set_user
-  - action_remove_user
-
+- alert
+- category
+- category_new
+- date
+- tag
+- tag_new
+- time
+- user
 slots:
   tag:
     type: text
@@ -79,154 +54,139 @@ slots:
   user:
     type: text
     influence_conversation: false
-
+responses:
+  utter_greet:
+  - text: Hey!
+  - text: Ciao
+  - text: Salve
+  - text: Hey, come posso esserti di aiuto?
+  - text: Ciao, posso aiutarti in qualche modo?
+  - text: Ciao, cosa posso fare per te?
+  utter_goodbye:
+  - text: Ciao
+  - text: Ci sentiamo ciao
+  - text: A presto
+  - text: A risentirci
+  - text: Arrivederci
+  - text: È stato un piacere aiutarti
+  utter_op_request:
+  - text: Confermi l'operazione?
+  - text: Sicuro di voler effettuare questa operazione?
+  - text: Sei sicuro dell'operazione?
+  - text: Verrà effettuata l'operazione, confermi?
+  utter_op_affirm:
+  - text: Ok. Operazione effettuata
+  - text: Operazione eseguita con successo
+  - text: Operazione effettuata con successo
+  - text: Operazione eseguita
+  - text: Operazione confermata
+  utter_op_deny:
+  - text: Ok. Operazione annullata
+  - text: Operazione annullata
+  - text: Operazione negata
+  - text: Operazione non effettuata
+  utter_ask_tag:
+  - text: Inserisci il titolo dell' attività
+  - text: Qual è il titolo dell' attività?
+  - text: Titolo dell'attività?
+  - text: Mi dici il titolo dell'attività?
+  - text: Puoi dirmi il titolo?
+  utter_ask_tag_new:
+  - text: Inserisci il nuovo titolo dell' attività
+  - text: Qual è il nuovo titolo dell' attività?
+  - text: Nuovo titolo dell'attività?
+  - text: Mi dici il nuovo titolo dell'attività?
+  - text: Puoi dirmi il nuovo titolo?
+  utter_ask_date:
+  - text: Inserisci la data di scadenza
+  - text: Qual è la data di scadenza?
+  - text: Data di scadenza?
+  - text: Data di terminazione?
+  utter_ask_time:
+  - text: Inserisci il tempo limite
+  - text: Qual è il tempo limite?
+  - text: Tempo limite?
+  utter_ask_category:
+  - text: Inserisci la categoria dell'attività
+  - text: Qual è la categoria?
+  - text: Categoria?
+  utter_ask_category_new:
+  - text: Inserisci la nuova categoria dell'attività
+  - text: Qual è la nuova categoria?
+  - text: Nuova categoria?
+  utter_ask_alert:
+  - text: Quanto tempo prima vuoi ricevere un avviso?
+  - text: Quanto prima ti devo inviare l'avviso?
+  - text: L'avviso quanto prima lo devo inviare?
+  utter_ask_user:
+  - text: Inserisci il nome utente
+  utter_iamabot:
+  - text: Io sono un bot, realizzato con Rasa per la gestione di una ToDoList.
+  - text: Sono un bot, realizzato da un team di sviluppatori con Rasa
+  - text: Stai parlando con un bot, che si occupa di gestire una ToDoList
+actions:
+- action_set_user
+- action_add_alert
+- action_add_task
+- action_create_user
+- action_read_categories
+- action_read_tasks
+- action_remove_alert
+- action_remove_category
+- action_remove_task
+- action_remove_user
+- action_reset
+- utter_ask_alert
+- utter_ask_category
+- utter_ask_date
+- utter_ask_tag
+- utter_ask_tag_new
+- utter_ask_time
+- utter_goodbye
+- utter_greet
+- utter_iamabot
+- utter_op_affirm
+- utter_op_deny
+- utter_op_request
 forms:
-  task_form:
+  deadline_form:
     required_slots:
-      tag:
-        - type: from_entity
-          entity: tag
-      category:
-        - type: from_entity
-          entity: category
       date:
-        - type: from_entity
-          entity: date
+      - type: from_entity
+        entity: date
       time:
-        - type: from_entity
-          entity: time
+      - type: from_entity
+        entity: time
   id_task_form:
     required_slots:
       tag:
-        - type: from_entity
-          entity: tag
+      - type: from_entity
+        entity: tag
       category:
-        - type: from_entity
-          entity: category
+      - type: from_entity
+        entity: category
   list_task_form:
     required_slots:
       category:
-        - type: from_entity
-          entity: category
-  
+      - type: from_entity
+        entity: category
   modify_tag_form:
     required_slots:
-      tag:
-        - type: from_entity
-          entity: tag
-      category:
-        - type: from_entity
-          entity: category
       tag_new:
-        - type: from_entity
-          entity: tag_new
+      - type: from_entity
+        entity: tag_new
   modify_category_form:
     required_slots:
-      tag:
-        - type: from_entity
-          entity: tag
-      category:
-        - type: from_entity
-          entity: category
       category_new:
-        - type: from_entity
-          entity: category_new
+      - type: from_entity
+        entity: category_new
   alert_form:
     required_slots:
-      tag:
-        - type: from_entity
-          entity: tag
-      category:
-        - type: from_entity
-          entity: category
       alert:
-        - type: from_entity
-          entity: alert
+      - type: from_entity
+        entity: alert
   user_form:
     required_slots:
       user:
-        - type: from_entity
-          entity: user
-
-responses:
-  utter_greet:
-  - text: "Hey!"
-  - text: "Ciao"
-  - text: "Salve"
-  - text: "Hey, come posso esserti di aiuto?"
-  - text: "Ciao, posso aiutarti in qualche modo?"
-  - text: "Ciao, cosa posso fare per te?"
-
-  utter_goodbye:
-  - text: "Ciao"
-  - text: "Ci sentiamo ciao"
-  - text: "A presto"
-  - text: "A risentirci"
-  - text: "Arrivederci"
-  - text: "È stato un piacere aiutarti"
-
-  utter_op_request:
-  - text: "Confermi l'operazione?"
-  - text: "Sicuro di voler effettuare questa operazione?"
-  - text: "Sei sicuro dell'operazione?"
-  - text: "Verrà effettuata l'operazione, confermi?"
-
-  utter_op_affirm:
-  - text: "Ok. Operazione effettuata"
-  - text: "Operazione eseguita con successo"
-  - text: "Operazione effettuata con successo"
-  - text: "Operazione eseguita"
-  - text: "Operazione confermata"
-
-  utter_op_deny: 
-  - text: "Ok. Operazione annullata"
-  - text: "Operazione annullata"
-  - text: "Operazione negata"
-  - text: "Operazione non effettuata"
-
-  utter_ask_tag:
-  - text: "Inserisci il titolo dell' attività"
-  - text: "Qual è il titolo dell' attività?"
-  - text: "Titolo dell'attività?"
-  - text: "Mi dici il titolo dell'attività?"
-  - text: "Puoi dirmi il titolo?"
-
-  utter_ask_tag_new:
-  - text: "Inserisci il nuovo titolo dell' attività"
-  - text: "Qual è il nuovo titolo dell' attività?"
-  - text: "Nuovo titolo dell'attività?"
-  - text: "Mi dici il nuovo titolo dell'attività?"
-  - text: "Puoi dirmi il nuovo titolo?"
-
-  utter_ask_date:
-  - text: "Inserisci la data di scadenza"
-  - text: "Qual è la data di scadenza?"
-  - text: "Data di scadenza?"
-  - text: "Data di terminazione?"
-
-  utter_ask_time: 
-  - text: "Inserisci il tempo limite"
-  - text: "Qual è il tempo limite?"
-  - text: "Tempo limite?"
-
-  utter_ask_category:
-  - text: "Inserisci la categoria dell'attività"
-  - text: "Qual è la categoria?"
-  - text: "Categoria?"
-
-  utter_ask_alert:
-  - text: "Quanto tempo prima vuoi ricevere un avviso?"
-  - text: "Quanto prima ti devo inviare l'avviso?"
-  - text: "L'avviso quanto prima lo devo inviare?"
-
-  utter_ask_user:
-  - text: "Inserisci il tuo nome utente"
-
-  utter_iamabot:
-  - text: "Io sono un bot, realizzato con Rasa per la gestione di una ToDoList."
-  - text: "Sono un bot, realizzato da un team di sviluppatori con Rasa"
-  - text: "Stai parlando con un bot, che si occupa di gestire una ToDoList"
-
-session_config:
-  session_expiration_time: 60
-  carry_over_slots_to_new_session: true
+      - type: from_entity
+        entity: user

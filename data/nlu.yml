@@ -1,5 +1,4 @@
 version: "2.0"
-
 nlu:
 - intent: greet
   examples: |
@@ -17,7 +16,6 @@ nlu:
     - buonanotte
     - salute
     - heylà
-
 - intent: goodbye
   examples: |
     - arrivederci
@@ -28,7 +26,6 @@ nlu:
     - buona giornata
     - ci sentiamo in giro
     - ci vediamo in giro
-
 - intent: affirm
   examples: |
     - si
@@ -40,7 +37,6 @@ nlu:
     - certamente
     - va benissimo
     - sicuro
-
 - intent: deny
   examples: |
     - no
@@ -51,7 +47,6 @@ nlu:
     - non penso
     - non credo
     - non proprio
-
 - intent: inform
   examples: |
     - [Cognitive Robotics](tag)
@@ -114,7 +109,8 @@ nlu:
     - [Dario](user)
     - [Angela](user)
 
-- intent: insert
+#Insert
+- intent: insert_task
   examples: |
     - vorrei inserire l'attività [Cognitive Robotics](tag)
     - inserisci l'attività [Cognitive Robotics](tag)
@@ -123,14 +119,13 @@ nlu:
     - aggiungi l'attività con titolo [Cognitive Robotics](tag)
     - vorrei inserire l'attività [Cognitive Robotics](tag) in [Esami](category)
     - inserisci l'attività [Cognitive Robotics](tag) in [Esami](category)
-    - aggiungi l' attività [Cognitive Robotics](tag) in [Esami](category) 
-    - aggiungi [Cognitive Robotics](tag) nella categoria [Esami](category) 
-    - aggiungi [Cognitive Robotics](tag) in [Esami](category) 
+    - aggiungi l' attività [Cognitive Robotics](tag) in [Esami](category)
+    - aggiungi [Cognitive Robotics](tag) nella categoria [Esami](category)
+    - aggiungi [Cognitive Robotics](tag) in [Esami](category)
     - in [Esami](category) aggiungi [Cognitive Robotics](tag)
     - a [Esami](category) aggiungi [Cognitive Robotics](tag)
     - nella categoria [Esami](category) aggiungi l'attività [Cognitive Robotics](tag)
     - nella categoria [Esami](category) inserisci l'attività con titolo [Cognitive Robotics](tag)
-    - inserisci l'attività [Cognitive Robotics](tag) in [Esami](category) 
     - inserisci l'attività [Cognitive Robotics](tag) in [Esami](category) fino a [20/11/1969](date)[7:30](time)
     - inserisci l'attività [Cognitive Robotics](tag) in [Esami](category) fino a [7:30](time)[20/11/1969](date)
     - inserisci l'attività [Cognitive Robotics](tag) in [Esami](category) con scadenza [7:30](time)[20/11/1969](date)
@@ -138,9 +133,60 @@ nlu:
     - inserisci l'attività [Cognitive Robotics](tag) in [Esami](category) il [20/11/1969](date) alle [7:30](time)
     - inserisci l'attività [Cognitive Robotics](tag) in [Esami](category) il [20/11/1969](date)
     - inserisci l'attività [Cognitive Robotics](tag) in [Esami](category) alle [7:30](time)
+    - vorrei inserire l'attività [Tennis](tag)
+    - inserisci l'attività [Tennis](tag)
+    - aggiungi l'attività [Tennis](tag)
+    - inserisci l'attività con titolo [Tennis](tag)
+    - aggiungi l'attività con titolo [Tennis](tag)
+    - vorrei inserire l'attività [Tennis](tag) in [Sport](category)
+    - inserisci l'attività [Tennis](tag) in [Sport](category)
+    - aggiungi l' attività [Tennis](tag) in [Sport](category)
+    - aggiungi [Tennis](tag) nella categoria [Sport](category)
+    - aggiungi [Tennis](tag) in [Sport](category)
+    - in [Sport](category) aggiungi [Tennis](tag)
+    - a [Sport](category) aggiungi [Tennis](tag)
+    - nella categoria [Sport](category) aggiungi l'attività [Tennis](tag)
+    - nella categoria [Sport](category) inserisci l'attività con titolo [Tennis](tag)
+    - inserisci l'attività [Tennis](tag) in [Sport](category) fino a [20/11/1969](date)[7:30](time)
+    - inserisci l'attività [Tennis](tag) in [Sport](category) fino a [18:30](time)[20/11/2022](date)
+    - inserisci l'attività [Tennis](tag) in [Sport](category) con scadenza [19:30](time)[25/11/2021](date)
+    - inserisci l'attività [Tennis](tag) in [Sport](category) con scadenza [10/12/2003](date)[17:30](time)
+    - inserisci l'attività [Tennis](tag) in [Sport](category) il [29/04/2005](date) alle [12:10](time)
+    - inserisci l'attività [Tennis](tag) in [Sport](category) il [21/01/2009](date)
+    - inserisci l'attività [Tennis](tag) in [Sport](category) alle [10:45](time)
+    - vorrei inserire l'attività [Studio](tag)
+    - inserisci l'attività [Studio](tag)
+    - aggiungi l'attività [Studio](tag)
+    - inserisci l'attività con titolo [Studio](tag)
+    - aggiungi l'attività con titolo [Studio](tag)
+    - vorrei inserire l'attività [Studio](tag) in [Università](category)
+    - inserisci l'attività [Studio](tag) in [Università](category)
+    - aggiungi l' attività [Studio](tag) in [Università](category)
+    - aggiungi [Studio](tag) nella categoria [Università](category)
+    - aggiungi [Studio](tag) in [Università](category)
+    - in [Università](category) aggiungi [Studio](tag)
+    - a [Università](category) aggiungi [Studio](tag)
+    - nella categoria [Università](category) aggiungi l'attività [Studio](tag)
+    - nella categoria [Università](category) inserisci l'attività con titolo [Studio](tag)
+    - inserisci l'attività [Studio](tag) in [Università](category) fino a [11/08/2015](date)[11:15](time)
+    - inserisci l'attività [Studio](tag) in [Università](category) fino a [13:40](time)[05/07/2019](date)
+    - inserisci l'attività [Studio](tag) in [Università](category) con scadenza [14:20](time)[14/05/2020](date)
+    - inserisci l'attività [Studio](tag) in [Università](category) con scadenza [15/10/2007](date)[23:50](time)
+    - inserisci l'attività [Studio](tag) in [Università](category) il [18/03/2000](date) alle [16:19](time)
+    - inserisci l'attività [Studio](tag) in [Università](category) il [06/09/2008](date)
+    - inserisci l'attività [Studio](tag) in [Università](category) alle [22:35](time)
+- intent: insert_alert
+  examples: |
     - inserisci un avviso [2 ore prima](alert)
-    - avvisami [2 ore prima](alert) per l'attività [Cognitive Robotics](tag) in [Esami](category) 
-    - inserisci un avviso [2 ore prima](alert) per l'attività [Cognitive Robotics](tag) in [Esami](category) 
+    - avvisami [2 ore prima](alert) per l'attività [Cognitive Robotics](tag) in [Esami](category)
+    - inserisci un avviso [2 ore prima](alert) per l'attività [Cognitive Robotics](tag) in [Esami](category)
+    - avvisami [2 ore prima](alert) per l'attività [Tennis](tag) in [Sport](category)
+    - inserisci un avviso [1 ora prima](alert) per l'attività [Tennis](tag) in [Sport](category)
+    - inserisci un avviso [10 minuti prima](alert)
+    - avvisami [40 minuti prima](alert) per l'attività [Tennis](tag) in [Sport](category)
+    - inserisci un avviso [1 giorno prima](alert) per l'attività [Tennis](tag) in [Sport](category)
+- intent: insert_user
+  examples: |
     - inserisci l'utente [Antonio](user)
     - inserisci l'utente [Francesca](user)
     - inserisci l'utente [Giovanni](user)
@@ -158,58 +204,8 @@ nlu:
     - aggiungi l'utente [Dario](user)
     - aggiungi l'utente [Angela](user)
 
-    - vorrei inserire l'attività [Tennis](tag)
-    - inserisci l'attività [Tennis](tag)
-    - aggiungi l'attività [Tennis](tag)
-    - inserisci l'attività con titolo [Tennis](tag)
-    - aggiungi l'attività con titolo [Tennis](tag)
-    - vorrei inserire l'attività [Tennis](tag) in [Sport](category)
-    - inserisci l'attività [Tennis](tag) in [Sport](category)
-    - aggiungi l' attività [Tennis](tag) in [Sport](category) 
-    - aggiungi [Tennis](tag) nella categoria [Sport](category) 
-    - aggiungi [Tennis](tag) in [Sport](category) 
-    - in [Sport](category) aggiungi [Tennis](tag)
-    - a [Sport](category) aggiungi [Tennis](tag)
-    - nella categoria [Sport](category) aggiungi l'attività [Tennis](tag)
-    - nella categoria [Sport](category) inserisci l'attività con titolo [Tennis](tag)
-    - inserisci l'attività [Tennis](tag) in [Sport](category) fino a [20/11/1969](date)[7:30](time)
-    - inserisci l'attività [Tennis](tag) in [Sport](category) fino a [18:30](time)[20/11/2022](date)
-    - inserisci l'attività [Tennis](tag) in [Sport](category) con scadenza [19:30](time)[25/11/2021](date)
-    - inserisci l'attività [Tennis](tag) in [Sport](category) con scadenza [10/12/2003](date)[17:30](time)
-    - inserisci l'attività [Tennis](tag) in [Sport](category) il [29/04/2005](date) alle [12:10](time)
-    - inserisci l'attività [Tennis](tag) in [Sport](category) il [21/01/2009](date)
-    - inserisci l'attività [Tennis](tag) in [Sport](category) alle [10:45](time)
-    - inserisci un avviso [2 ore prima](alert)
-    - avvisami [2 ore prima](alert) per l'attività [Tennis](tag) in [Sport](category) 
-    - inserisci un avviso [1 ora prima](alert) per l'attività [Tennis](tag) in [Sport](category)
-
-    - vorrei inserire l'attività [Studio](tag)
-    - inserisci l'attività [Studio](tag)
-    - aggiungi l'attività [Studio](tag)
-    - inserisci l'attività con titolo [Studio](tag)
-    - aggiungi l'attività con titolo [Studio](tag)
-    - vorrei inserire l'attività [Studio](tag) in [Università](category)
-    - inserisci l'attività [Studio](tag) in [Università](category)
-    - aggiungi l' attività [Studio](tag) in [Università](category) 
-    - aggiungi [Studio](tag) nella categoria [Università](category) 
-    - aggiungi [Studio](tag) in [Università](category) 
-    - in [Università](category) aggiungi [Studio](tag)
-    - a [Università](category) aggiungi [Studio](tag)
-    - nella categoria [Università](category) aggiungi l'attività [Studio](tag)
-    - nella categoria [Università](category) inserisci l'attività con titolo [Studio](tag)
-    - inserisci l'attività [Studio](tag) in [Università](category) fino a [11/08/2015](date)[11:15](time)
-    - inserisci l'attività [Studio](tag) in [Università](category) fino a [13:40](time)[05/07/2019](date)
-    - inserisci l'attività [Studio](tag) in [Università](category) con scadenza [14:20](time)[14/05/2020](date)
-    - inserisci l'attività [Studio](tag) in [Università](category) con scadenza [15/10/2007](date)[23:50](time)
-    - inserisci l'attività [Studio](tag) in [Università](category) il [18/03/2000](date) alle [16:19](time)
-    - inserisci l'attività [Studio](tag) in [Università](category) il [06/09/2008](date)
-    - inserisci l'attività [Studio](tag) in [Università](category) alle [22:35](time)
-    - inserisci un avviso [10 minuti prima](alert)
-    - avvisami [40 minuti prima](alert) per l'attività [Tennis](tag) in [Sport](category) 
-    - inserisci un avviso [1 giorno prima](alert) per l'attività [Tennis](tag) in [Sport](category)
-
-
-- intent: remove
+ #Remove 
+- intent: remove_task
   examples: |
     - vorrei cancellare l'attività [Cognitive Robotics](tag)
     - Elimina l'attività [Cognitive Robotics](tag)
@@ -220,7 +216,6 @@ nlu:
     - mi piacerebbe rimuovere l'attività [Cognitive Robotics](tag) in [Esami](category)
     - Cancella l'attività [Cognitive Robotics] in [Esami](category)
     - Togli l'attività [Cognitive Robotics](tag) in [Esami](category)
-
     - rimuovi l'attività [Pizza](tag) in [Spesa](category)
     - vorrei cancellare l'attività [Pomodori](tag)
     - voglio rimuovere l'attività [Pizza](tag) in [Spesa](category)
@@ -228,7 +223,6 @@ nlu:
     - Elimina l'attività [Antenne](tag)
     - Togli l'attività [Antenne](tag) in [Esami](category)
     - Rimuovi l'utente [Antonio](user)
-
     - vorrei cancellare l'attività [Tennis](tag)
     - Elimina l'attività [Tennis](tag)
     - Rimuovi l'attività [Tennis](tag)
@@ -238,7 +232,6 @@ nlu:
     - mi piacerebbe rimuovere l'attività [Tennis](tag) in [Sport](category)
     - Cancella l'attività [Tennis] in [Sport](category)
     - Togli l'attività [Tennis](tag) in [Sport](category)
-
     - vorrei cancellare l'attività [Compleanno](tag)
     - Elimina l'attività [Compleanno](tag)
     - Rimuovi l'attività [Compleanno](tag)
@@ -248,8 +241,30 @@ nlu:
     - mi piacerebbe rimuovere l'attività [Compleanno](tag) in [Personale](category)
     - Cancella l'attività [Compleanno] in [Personale](category)
     - Togli l'attività [Compleanno](tag) in [Personale](category)
+- intent: remove_alert
+  examples: |
+    - rimuovi l'avviso per l'attività [Cognitive Robotics](tag) in [Esami](category)
+    - rimuovi l'alert per l'attività [Cognitive Robotics](tag) in [Esami](category)
+    - elimina l'alert per l'attività [Tennis](tag) in [Sport](category)
+    - elimina l'avviso per l'attività [Tennis](tag) in [Sport](category)
+    - elimina il reminder
+    - rimuovi l'avviso
+    - rimuovi l'alert
+    - elimina l'alert
+    - elimina l'avviso
+- intent: remove_user
+  examples: |
+    - rimuovi l'utente [Antonio](user)
+    - rimuovi l'utente [Francesca](user)
+    - rimuovi l'utente [Giovanni](user)
+    - rimuovi l'utente [Geraldino](user)
+    - rimuovi l'utente [Luigi](user)s
+    - rimuovi l'utente [Marco](user)
+    - rimuovi l'utente [Dario](user)
+    - rimuovi l'utente [Angela](user)
+    - rimuovi l'utente [antonio](user)
 
-
+#View
 - intent: view
   examples: |
     - visualizza l'attività [Cognitive Robotics](tag) in [Esami](category)
@@ -262,7 +277,6 @@ nlu:
     - vorrei visualizzare un'attività
     - mostrami l'attività [Cognitive Robotics](tag)
     - mostrami l'attività [Cognitive Robotics](tag) in [Esami](category)
-
     - visualizza l'attività [Antenne](tag) in [Esami](category)
     - voglio vedere l'attività [Antenne](tag) in [Esami](category)
     - fammi vedere l'attività [Antenne](tag)
@@ -275,7 +289,6 @@ nlu:
     - voglio vedere l'attività [pizza](tag) in [Spesa](category)
     - fammi vedere l'attività [pomodori](tag)?
     - mi fai vedere l'attività [pizza](tag)?
-
     - visualizza l'attività [Tennis](tag) in [Sport](category)
     - voglio vedere l'attività [Tennis](tag) in [Sport](category)
     - posso vedere le attività in [Sport](category)?
@@ -284,7 +297,6 @@ nlu:
     - voglio visualizzare l'attività [Tennis](tag)
     - mostrami l'attività [Tennis](tag)
     - mostrami l'attività [Tennis](tag) in [Sport](category)
-
     - visualizza l'attività [Studio](tag) in [Università](category)
     - voglio vedere l'attività [Studio](tag) in [Università](category)
     - posso vedere le attività in [Studio](category)?
@@ -293,8 +305,6 @@ nlu:
     - voglio visualizzare l'attività [Studio](tag)
     - mostrami l'attività [Studio](tag)
     - mostrami l'attività [Studio](tag) in [Università](category)
-
-      visualizza l'attività [Compleanno](tag) in [Personale](category)
     - voglio vedere l'attività [Compleanno](tag) in [Personale](category)
     - posso vedere le attività in [Personale](category)?
     - fammi vedere l'attività [Compleanno](tag)
@@ -303,9 +313,8 @@ nlu:
     - mostrami l'attività [Compleanno](tag)
     - mostrami l'attività [Compleanno](tag) in [Personale](category)
 
-
-
-- intent: modify
+#Modify
+- intent: modify_task_category
   examples: |
     - voglio modificare l'attivata [Cognitive Robotics](tag)
     - vorrei modificare l'attiità [Cognitive Robotics](tag)
@@ -319,11 +328,6 @@ nlu:
     - nell'attività [Cognitive Robotics](tag) voglio cambiare la categoria con [Università](category)
     - voglio modificare la categoria di [Cognitive Robotics](tag) con [Università](category)
     - vorrei aggionare la categoria di [Cognitive Robotics](tag) con [Università](category)
-    - vorrei cambiare la scadenza di [Cognitive Robotics] con [28/06/2022](date)
-    - voglio cambiare la scadenza e la categoria di [Cognitive Robotics](tag) con [21/07/2021](date) e [Università](category)
-    - vorrei cambiare l'avviso di [Cognitive Robotics](tag) con [15 minuti prima](alert)
-    - voglio modificare l'avviso di [Cognitive Robotics] con [3 ore prima](alert)
-
     - voglio modificare l'attivata [Tennis](tag)
     - vorrei modificare l'attiità [Tennis](tag)
     - voglio cambiare l'attività [Tennis](tag)
@@ -336,13 +340,8 @@ nlu:
     - nell'attività [Tennis](tag) voglio cambiare la categoria con [Sport](category)
     - voglio modificare la categoria di [Tennis](tag) con [Sport](category)
     - vorrei aggionare la categoria di [Tennis](tag) con [Sport](category)
-    - vorrei cambiare la scadenza di [Tennis] con [25/09/2015](date)
-    - voglio cambiare la scadenza e la categoria di [Tennis](tag) con [11/12/2018](date) e [Sport](category)
-    - vorrei cambiare l'avviso di [Tennis](tag) con [15 minuti prima](alert)
-    - volgio modificare l'avviso di [Tennis](tag) con [4 ore prima](alert)
-
     - voglio modificare l'attivata [Studio](tag)
-    - vorrei modificare l'attiità [Studio](tag)
+    - vorrei modificare l'attività [Studio](tag)
     - voglio cambiare l'attività [Studio](tag)
     - vorrei cambiare l'attività [Studio](tag)
     - mi piacerebbe cambiare l'attività [Studio](tag)
@@ -355,9 +354,22 @@ nlu:
     - vorrei aggionare la categoria di [Studio](tag) con [Personale](category)
     - vorrei cambiare la scadenza di [Studio] con [09/08/1989](date)
     - voglio cambiare la scadenza e la categoria di [Studio](tag) con [17/10/2019](date) e [Personale](category)
+
+- intent: modify_alert
+  examples: |
+    - vorrei cambiare l'avviso di [Cognitive Robotics](tag) con [15 minuti prima](alert)
+    - voglio modificare l'avviso di [Cognitive Robotics] con [3 ore prima](alert)
+    - vorrei cambiare l'avviso di [Tennis](tag) con [15 minuti prima](alert)
+    - voglio modificare l'avviso di [Tennis](tag) con [4 ore prima](alert)
     - vorrei cambiare l'avviso di [Studio](tag) con [35 minuti prima](alert)
     - voglio modificare l'avviso di [Studio] con [5 ore prima](alert)
 
+- intent: modify_deadline
+  examples: |
+    - vorrei cambiare la scadenza di [Cognitive Robotics] con [28/06/2022](date)
+    - voglio cambiare la scadenza e la categoria di [Cognitive Robotics](tag) con [21/07/2021](date) e [Università](category)
+    - vorrei cambiare la scadenza di [Tennis] con [25/09/2015](date)
+    - voglio cambiare la scadenza e la categoria di [Tennis](tag) con [11/12/2018](date) e [Sport](category)
 
 - intent: identification
   examples: |
@@ -368,7 +380,6 @@ nlu:
     - io sono [Marco](user)
     - io sono [Dario](user)
     - io sono [Angela](user)
-
     - sono [Antonio](user)
     - sono [Giovanni](user)
     - sono [Geraldino](user)
@@ -376,7 +387,6 @@ nlu:
     - sono [Marco](user)
     - sono [Dario](user)
     - sono [Angela](user)
-
     - mi chiamo [Antonio](user)
     - mi chiamo [Giovanni](user)
     - mi chiamo [Geraldino](user)
@@ -384,8 +394,6 @@ nlu:
     - mi chiamo [Marco](user)
     - mi chiamo [Dario](user)
     - mi chiamo [Angela](user)
-
-
 - intent: bot_challenge
   examples: |
     - Chi sei?

@@ -93,8 +93,8 @@ stories:
   steps:
   - checkpoint: request_mod_category
   - intent: affirm
-  - action: modify_category_form
   - action: utter_op_affirm
+  - action: modify_category_form
   - action: action_move_task
   - action: action_reset
 

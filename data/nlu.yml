@@ -92,7 +92,7 @@ nlu:
     - [Spesa](category)
     - [Esami](category)
     - [Esami primo anno](category)
-    - [Esami secondo anno](category)
+    - [Esami secondo anno](category_new)
     - [10 minuti prima](alert)
     - [1 ora](alert)
     - [2 ore](alert)
@@ -329,7 +329,7 @@ nlu:
 #Modify
 - intent: modify_task_category
   examples: |
-    - voglio modificare l'attivata [Cognitive Robotics](tag)
+    - voglio modificare l'attivata [Cognitive Robotics](tag) 
     - vorrei modificare l'attiità [Cognitive Robotics](tag)
     - voglio cambiare l'attività [Cognitive Robotics](tag)
     - vorrei cambiare l'attività [Cognitive Robotics](tag)
@@ -341,7 +341,8 @@ nlu:
     - nell'attività [Cognitive Robotics](tag) voglio cambiare la categoria con [Università](category)
     - voglio modificare la categoria di [Cognitive Robotics](tag) con [Università](category)
     - vorrei aggionare la categoria di [Cognitive Robotics](tag) con [Università](category)
-    - voglio modificare l'attivata [Tennis](tag)
+    - voglio modificare l'attività [Tennis](tag) in [Esami](category) con l'attività [Elettrotenica](tag_new)
+    - voglio modificare l'attività [Tennis](tag) in [Esami](category) con l'attività [Elettrotenica](tag_new) e [Esami secondo anno](category_new)
     - vorrei modificare l'attiità [Tennis](tag)
     - voglio cambiare l'attività [Tennis](tag)
     - vorrei cambiare l'attività [Tennis](tag)
@@ -365,8 +366,7 @@ nlu:
     - nell'attività [Studio](tag) voglio cambiare la categoria con [Personale](category)
     - voglio modificare la categoria di [Studio](tag) con [Personale](category)
     - vorrei aggionare la categoria di [Studio](tag) con [Personale](category)
-    - vorrei cambiare la scadenza di [Studio] con [09/08/1989](date)
-    - voglio cambiare la scadenza e la categoria di [Studio](tag) con [17/10/2019](date) e [Personale](category)
+
 
 - intent: modify_alert
   examples: |
@@ -383,6 +383,8 @@ nlu:
     - voglio cambiare la scadenza e la categoria di [Cognitive Robotics](tag) con [21/07/2021](date) e [Università](category)
     - vorrei cambiare la scadenza di [Tennis](tag) con [25/09/2015](date)
     - voglio cambiare la scadenza e la categoria di [Tennis](tag) con [11/12/2018](date) e [Sport](category)
+    - vorrei cambiare la scadenza di [Studio](tag) con [09/08/1989](date)
+    - voglio cambiare la scadenza e la categoria di [Studio](tag) con [17/10/2019](date) e [Personale](category)
 
 - intent: modify_user
   examples: |

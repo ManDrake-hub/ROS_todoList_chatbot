@@ -1,16 +1,5 @@
 
----- insert_alert
----- insert_user
----- insert_task 
----- remove_task
----- remove_alert (fa l'azione ma nella visualizzazione non esce 'None')
----- remove_category
----- remove_user
----- view (gestione categoria vuota)
 - modify_task_category
----- modify_alert 
-- modify_deadline
----- modify_user
----- identification 
-- bot_challenge
+
+categorie_vuote
 

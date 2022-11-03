@@ -400,7 +400,7 @@ class ActionModifyAlert(ActionWrapper):
         delta = get_alert(tracker)
 
         try:
-            ActionWrapper.todo.modify_task(category, tag, alarm_new=None)
+            ActionWrapper.todo.modify_task(category, tag, alarm_new=delta)
         except ExceptionRasa as e:
             dispatcher.utter_message(text=str(e))
             return []

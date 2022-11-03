@@ -219,7 +219,7 @@ class ActionReadTasks(ActionWrapper):
             return []
 
         for category in categories:
-            message = f"For the category \"{category}\" you have the following tasks:"
+            message = f"Per la categoria \"{category}\" sono presenti i seguenti task:"
             for tag in ActionWrapper.todo.get_tasks_of_category(category):
                 message += f"\n - {tag}"
             dispatcher.utter_message(text=(message+"\n"))

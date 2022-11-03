@@ -18,7 +18,7 @@ rules:
 
 - rule: Set user
   steps:
-  - intent: identificaion
+  - intent: identification
   - action: user_form
   - action: action_set_user
   - action: action_reset
@@ -48,8 +48,7 @@ rules:
   - action: action_reset
 
 #View
-- rule: View tasks and category
+- rule: View tasks
   steps:
     - intent: view
     - action: action_read_tasks
-    - action: action_read_categories

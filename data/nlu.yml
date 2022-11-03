@@ -204,6 +204,13 @@ nlu:
     - aggiungi l'utente [Marco](user)
     - aggiungi l'utente [Dario](user)
     - aggiungi l'utente [Angela](user)
+    - inserisci [Antonio](user)
+    - inserisci [Francesca](user)
+    - inserisci [Giovanni](user)
+    - inserisci [Geraldino](user)
+    - inserisci [Luigi](user)
+    - inserisci [Marco](user)
+    - inserisci [Dario](user)
 
  #Remove 
 - intent: remove_task
@@ -242,6 +249,11 @@ nlu:
     - mi piacerebbe rimuovere l'attività [Compleanno](tag) in [Personale](category)
     - Cancella l'attività [Compleanno] in [Personale](category)
     - Togli l'attività [Compleanno](tag) in [Personale](category)
+- intent: remove_category
+  examples: |
+    - Rimuovi la categoria [Esami](category)
+    - Voglio rimuovere la categoria [Esami](category)
+    - rimuovi la categoria [Sport](category)
 - intent: remove_alert
   examples: |
     - rimuovi l'avviso per l'attività [Cognitive Robotics](tag) in [Esami](category)

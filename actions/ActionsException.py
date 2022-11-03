@@ -34,11 +34,9 @@ class ExceptionNoCategories(ExceptionRasa):
 ##########################################################################
 # Date and time Exceptions                                               #
 ##########################################################################
-class ExceptionDateFormatInvalid(ExceptionRasa):
-    pass # <-- Add feedback like other exceptions
-
-class ExceptionTimeFormatInvalid(ExceptionRasa):
-    pass # <-- Add feedback like other exceptions
+class ExceptionDateTimeFormatInvalid(ExceptionRasa):
+    def __init__(self) -> None:
+        super().__init__(f"Deadline in un formato non riconosciuto")
 
 class ExceptionDateTimeBeforeNow(ExceptionRasa):
     def __init__(self) -> None:

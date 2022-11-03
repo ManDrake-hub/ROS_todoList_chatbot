@@ -3,7 +3,7 @@ from typing import Any, Sequence, Tuple, Dict, List, Any
 from rasa_sdk import Tracker
 from actions.Task import Task
 from actions.ToDo import ToDo
-from actions.ActionsException import ExceptionNoCategories, ExceptionDateTimeBeforeNow
+from actions.ActionsException import ExceptionNoCategories, ExceptionDateTimeBeforeNow, ExceptionDateTimeFormatInvalid
 from dateutil.parser import parse
 
 
@@ -31,7 +31,10 @@ def get_deadline(tracker: Tracker) -> Any:
 
     if date is None or time is None:
         raise Exception()
-    dt = convert_deadline_to_datetime(date, time)
+    try:
+        dt = convert_deadline_to_datetime(date, time)
+    except:
+        raise ExceptionDateTimeFormatInvalid()
     if is_datetime_before_now(dt):
         raise ExceptionDateTimeBeforeNow()
     return dt

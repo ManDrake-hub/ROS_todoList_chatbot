@@ -1,6 +1,6 @@
 import datetime
 from typing import Dict, List, Any
-from actions.actions import ActionRenameUser, ActionWrapper, ActionAddTask, ActionRemoveTask, ActionMoveTask, ActionCreateUser, ActionSetUser, ActionRemoveUser, ActionGetUser
+from actions.actions import ActionRenameUser, ActionWrapper, ActionAddTask, ActionRemoveTask, ActionMoveTask, ActionCreateUser, ActionSetUser, ActionRemoveUser, ActionGetUser, ActionReadTasks, ActionAddAlert
 from actions.Task import Task
 from actions.utils import check_equals, print_todo, print_todo_dict
 from actions.ToDo import ToDo
@@ -49,6 +49,8 @@ if __name__ == "__main__":
     # Test add
     dt = datetime.datetime(year=2023, month=10, day=10, hour=10, minute=10, second=10)
     test_action(ActionAddTask, {"category": "a", "tag": "add", "date": "10/10/2023", "time": "10:10:10"}, {"a": [Task("add", dt), ]}, clear=True)
+    test_action(ActionAddAlert, {"category": "a", "tag": "add", "alert": "due ore prima"}, {"a": [Task("add", dt), ]}, clear=False)
+    test_action(ActionReadTasks, {}, {}, clear=False)
 
     # Test remove
     test_action(ActionAddTask, {"category": "b", "tag": "remove", "date": "10/10/2023", "time": "10:10:10"}, {"a": [Task("add", dt), ], "b": [Task("remove", dt), ]}, clear=False)
@@ -67,3 +69,5 @@ if __name__ == "__main__":
     # test_action(ActionRemoveUser, {"user": "giggi"}, {}, clear=False)
     test_action(ActionGetUser, {}, {}, clear=False)
     test_action(ActionRenameUser, {"user": "giggi", "user_new": "giggi_v2"}, {}, clear=False)
+
+    ##########################################################################

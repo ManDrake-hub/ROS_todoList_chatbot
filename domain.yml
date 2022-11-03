@@ -1,9 +1,6 @@
 version: '2.0'
-session_config:
-  session_expiration_time: 60
-  carry_over_slots_to_new_session: true
+
 intents:
-- remove_user
 - affirm
 - greet
 - goodbye
@@ -211,4 +208,7 @@ actions:
 - utter_op_request
 - utter_op_modify_category_request
 
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
 

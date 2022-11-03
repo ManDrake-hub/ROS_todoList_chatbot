@@ -1,22 +1,16 @@
-rimuovi l'utente (sistemare rimozione non immediata)
 
-
-- remove_user
-- affirm
-- greet
-- goodbye
-- deny
-- inform
-- insert_alert
+---- insert_alert
 ---- insert_user
 ---- insert_task ("task non aggiunto" se deadline non va bene; sistemare deadline)
-- remove_task
-- remove_alert
-- remove_category
----- view
+---- remove_task
+---- remove_alert (fa l'azione ma nella visualizzazione non esce 'None')
+---- remove_category
+---- remove_user
+---- view (gestione categoria vuota)
 - modify_task_category
-- modify_alert
+---- modify_alert (non cambia l'alarm, nel codice alarm_new = None invece di delta)[abbiamo notato che le due funzioni sono identiche]
 - modify_deadline
-- modify_user
-- identification
+---- modify_user
+---- identification (quando cambi utente, le attività non rimangono salvate e quindi non vengono visualizzate (potrebbe essere un problema di visualizzazione))
 - bot_challenge
+

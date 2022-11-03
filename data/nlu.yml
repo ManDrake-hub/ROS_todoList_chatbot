@@ -379,9 +379,9 @@ nlu:
 
 - intent: modify_deadline
   examples: |
-    - vorrei cambiare la scadenza di [Cognitive Robotics] con [28/06/2022](date)
+    - vorrei cambiare la scadenza di [Cognitive Robotics](tag) con [28/06/2022](date)
     - voglio cambiare la scadenza e la categoria di [Cognitive Robotics](tag) con [21/07/2021](date) e [Università](category)
-    - vorrei cambiare la scadenza di [Tennis] con [25/09/2015](date)
+    - vorrei cambiare la scadenza di [Tennis](tag) con [25/09/2015](date)
     - voglio cambiare la scadenza e la categoria di [Tennis](tag) con [11/12/2018](date) e [Sport](category)
 
 - intent: modify_user

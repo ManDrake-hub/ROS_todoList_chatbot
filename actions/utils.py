@@ -1,8 +1,8 @@
+import datetime
 from typing import Any, Sequence, Tuple, Dict, List, Any
 from rasa_sdk import Tracker
 from actions.Task import Task
 from actions.ToDo import ToDo
-import datetime
 from actions.ActionsException import ExceptionNoCategories, ExceptionDateTimeBeforeNow
 from dateutil.parser import parse
 
@@ -126,7 +126,7 @@ def convert_deadline_to_datetime(date: str, time: str) -> datetime.datetime:
         if dt < datetime.datetime.now():
             return parse(time, default=datetime.datetime.now() + datetime.timedelta(days=1))
         return dt
-    return parse(date + " " + time)
+    return parse(date + " " + time, dayfirst=True)
 
 def is_datetime_before_now(dt: datetime.datetime) -> bool:
     return dt < datetime.datetime.now()

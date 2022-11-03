@@ -47,6 +47,8 @@ nlu:
     - non penso
     - non credo
     - non proprio
+
+#TO-DO: slots: tag, tag_new, category, category_new, date, time, user, user_new, alert
 - intent: inform
   examples: |
     - [Cognitive Robotics](tag)
@@ -111,6 +113,7 @@ nlu:
     - [Chiara](user_new)
 
 #Insert
+#TO-DO: slots: tag, category, date, time
 - intent: insert_task
   examples: |
     - vorrei inserire l'attività [Cognitive Robotics](tag)
@@ -176,6 +179,7 @@ nlu:
     - inserisci l'attività [Studio](tag) in [Università](category) il [18/03/2000](date) alle [16:19](time)
     - inserisci l'attività [Studio](tag) in [Università](category) il [06/09/2008](date)
     - inserisci l'attività [Studio](tag) in [Università](category) alle [22:35](time)
+#TO-DO: slots: tag, category, alert
 - intent: insert_alert
   examples: |
     - inserisci un avviso [2 ore prima](alert)
@@ -186,6 +190,7 @@ nlu:
     - inserisci un avviso [10 minuti prima](alert)
     - avvisami [40 minuti prima](alert) per l'attività [Tennis](tag) in [Sport](category)
     - inserisci un avviso [1 giorno prima](alert) per l'attività [Tennis](tag) in [Sport](category)
+#TO-DO: slots: user
 - intent: insert_user
   examples: |
     - inserisci l'utente [Antonio](user)
@@ -212,7 +217,8 @@ nlu:
     - inserisci [Marco](user)
     - inserisci [Dario](user)
 
- #Remove 
+#Remove 
+#TO-DO: slots: tag, category
 - intent: remove_task
   examples: |
     - vorrei cancellare l'attività [Cognitive Robotics](tag)
@@ -249,11 +255,13 @@ nlu:
     - mi piacerebbe rimuovere l'attività [Compleanno](tag) in [Personale](category)
     - Cancella l'attività [Compleanno] in [Personale](category)
     - Togli l'attività [Compleanno](tag) in [Personale](category)
+#TO-DO: slots: category
 - intent: remove_category
   examples: |
     - Rimuovi la categoria [Esami](category)
     - Voglio rimuovere la categoria [Esami](category)
     - rimuovi la categoria [Sport](category)
+#TO-DO: slots: tag, category
 - intent: remove_alert
   examples: |
     - rimuovi l'avviso per l'attività [Cognitive Robotics](tag) in [Esami](category)
@@ -265,6 +273,7 @@ nlu:
     - rimuovi l'alert
     - elimina l'alert
     - elimina l'avviso
+#TO-DO: slots: user
 - intent: remove_user
   examples: |
     - rimuovi l'utente [Antonio](user)
@@ -278,6 +287,7 @@ nlu:
     - rimuovi l'utente [antonio](user)
 
 #View
+#TO-DO: slots: tag, category, date, time
 - intent: view
   examples: |
     - visualizza l'attività [Cognitive Robotics](tag) in [Esami](category)
@@ -327,6 +337,7 @@ nlu:
     - mostrami l'attività [Compleanno](tag) in [Personale](category)
 
 #Modify
+#TO-DO: slots: tag, tag_new, category, category_new
 - intent: modify_task_category
   examples: |
     - voglio modificare l'attivata [Cognitive Robotics](tag) 
@@ -367,7 +378,7 @@ nlu:
     - voglio modificare la categoria di [Studio](tag) con [Personale](category)
     - vorrei aggionare la categoria di [Studio](tag) con [Personale](category)
 
-
+#TO-DO: slots: tag, category, alert
 - intent: modify_alert
   examples: |
     - vorrei cambiare l'avviso di [Cognitive Robotics](tag) con [15 minuti prima](alert)
@@ -377,6 +388,7 @@ nlu:
     - vorrei cambiare l'avviso di [Studio](tag) con [35 minuti prima](alert)
     - voglio modificare l'avviso di [Studio] con [5 ore prima](alert)
 
+#TO-DO: slots: tag, category, date, time
 - intent: modify_deadline
   examples: |
     - vorrei cambiare la scadenza di [Cognitive Robotics](tag) con [28/06/2022](date)
@@ -386,10 +398,12 @@ nlu:
     - vorrei cambiare la scadenza di [Studio](tag) con [09/08/1989](date)
     - voglio cambiare la scadenza e la categoria di [Studio](tag) con [17/10/2019](date) e [Personale](category)
 
+#TO-DO: slots: user, user_new
 - intent: modify_user
   examples: |
     - vorrei modificare l'utente [Antonio](user) con l'utente [Chiara](user_new)
 
+#TO-DO: user
 - intent: identification
   examples: |
     - io sono [Antonio](user)

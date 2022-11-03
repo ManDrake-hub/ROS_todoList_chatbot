@@ -13,11 +13,14 @@ intents:
 - insert_user
 - insert_task
 - remove_task
+- remove_category
 - remove_alert
+- remove_user
 - view
 - modify_task_category
 - modify_alert
 - modify_deadline
+- modify_user
 - identification
 - bot_challenge
 entities:
@@ -183,7 +186,6 @@ actions:
 - action_add_alert
 - action_add_task
 - action_create_user
-- action_read_categories
 - action_read_tasks
 - action_remove_alert
 - action_remove_category

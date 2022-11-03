@@ -1,0 +1,22 @@
+rimuovi l'utente (sistemare rimozione non immediata)
+
+
+- remove_user
+- affirm
+- greet
+- goodbye
+- deny
+- inform
+- insert_alert
+---- insert_user
+---- insert_task ("task non aggiunto" se deadline non va bene; sistemare deadline)
+- remove_task
+- remove_alert
+- remove_category
+---- view
+- modify_task_category
+- modify_alert
+- modify_deadline
+- modify_user
+- identification
+- bot_challenge

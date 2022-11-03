@@ -5,7 +5,7 @@ from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.events import AllSlotsReset
 from actions.ToDo import ToDo
 from actions.ActionsException import ExceptionRasa
-from actions.utils import get_user_new, get_category, get_deadline, get_info, get_tag, sequence_to_str, get_tag_new, get_alert, get_category_new, get_user
+from actions.utils import get_user_new, get_category, get_deadline, get_tag, get_tag_new, get_alert, get_category_new, get_user
 from actions.Task import Task
 
 class ActionWrapper(Action):
@@ -23,17 +23,6 @@ class ActionReset(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         return [AllSlotsReset()]
-
-class ActionSave(Action):
-    def name(self) -> Text:
-        return "action_save"
-
-    def run(self, dispatcher: CollectingDispatcher,
-            tracker: Tracker,
-            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-
-        ActionWrapper.todo.store(ActionWrapper.todo.get_loaded_user())
-        return []
 
 class ActionCreateUser(Action):
     def name(self) -> Text:

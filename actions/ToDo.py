@@ -95,10 +95,12 @@ class ToDo:
             self._todo[category].append(Task(tag, deadline, alarm))
         else:
             self._todo[category] = [Task(tag, deadline, alarm)]
+        self.store(self.get_loaded_user())
 
     def remove_task(self, category, tag) -> None:
         self._check_task(category, tag)
         self._todo[category] = [task for task in self._todo[category] if task.tag != tag]
+        self.store(self.get_loaded_user())
 
     def modify_task(self, category, tag, tag_new=None, deadline_new=None, alarm_new=None) -> None:
         self._check_task(category, tag)

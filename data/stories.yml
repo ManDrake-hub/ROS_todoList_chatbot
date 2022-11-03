@@ -117,6 +117,7 @@ stories:
   steps:
   - intent: modify_deadline
   - action: id_task_form
+  - action: deadline_form
   - action: action_modify_deadline
   - action: action_reset
 

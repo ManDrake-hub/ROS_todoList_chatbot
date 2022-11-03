@@ -5,7 +5,7 @@ from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.events import AllSlotsReset
 from actions.ToDo import ToDo
 from actions.ActionsException import ExceptionRasa
-from actions.utils import get_category, get_deadline, get_info, get_tag, sequence_to_str, get_tag_new, get_alert, get_category_new, get_user
+from actions.utils import get_user_new, get_category, get_deadline, get_info, get_tag, sequence_to_str, get_tag_new, get_alert, get_category_new, get_user
 from actions.Task import Task
 
 class ActionWrapper(Action):
@@ -58,6 +58,31 @@ class ActionSetUser(Action):
 
         ActionWrapper.todo = ToDo.load(user)
         dispatcher.utter_message(text=f"Caricata la todo-list di {user}")
+        return []
+
+class ActionModifyUser(Action):
+    def name(self) -> Text:
+        return "action_modify_user"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        user = get_user(tracker)
+        user_new = get_user_new(tracker)
+
+        if not ToDo.is_user_available(user):
+            dispatcher.utter_message(text=f"Todo-list di {user} non esistente")
+            return []
+
+        if ToDo.is_user_available(user_new):
+            dispatcher.utter_message(text=f"Todo-list di {user} già esistente")
+            return []
+
+        ActionWrapper.todo._store(user_new)
+        ActionWrapper.todo.remove_user(user)
+        ActionWrapper.todo = ToDo.load(user_new)
+        dispatcher.utter_message(text=f"Modificata e caricata la todo-list di {user_new}")
         return []
 
 class ActionGetUser(Action):

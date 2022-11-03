@@ -200,7 +200,7 @@ class ActionReadTask(ActionWrapper):
             dispatcher.utter_message(text=str(e))
             return []
 
-        dispatcher.utter_message(text=f"Il task \"{tag}\" ha \"{category}\" come categoria e \"{str(val.deadline)}\" come scadenza{'' if val.alarm is not None else ' e {val.alarm} come allarme'}")
+        dispatcher.utter_message(text=f"Il task \"{tag}\" ha \"{category}\" come categoria e \"{str(val.deadline)}\" come scadenza{'' if val.alarm is not None else f' e {val.alarm} come allarme'}")
         return []
 
 class ActionReadTasks(ActionWrapper):
@@ -220,8 +220,8 @@ class ActionReadTasks(ActionWrapper):
 
         for category in categories:
             message = f"Per la categoria \"{category}\" sono presenti i seguenti task:"
-            for tag in ActionWrapper.todo.get_tasks_of_category(category):
-                message += f"\n - {tag}"
+            for task in ActionWrapper.todo.get_tasks_of_category(category):
+                message += f"\n - {task}"
             dispatcher.utter_message(text=(message+"\n"))
         return[]
 

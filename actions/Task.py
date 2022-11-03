@@ -5,4 +5,4 @@ class Task:
         self.alarm = alarm
 
     def __str__(self) -> str:
-        return f"Task con tag: '{self.tag}', deadline: '{self.deadline}', alarm: '{self.alarm}'"
+        return f"Task \"{self.tag}\" con \"{str(self.deadline)}\" come scadenza{'' if self.alarm is not None else f' e {self.alarm} come allarme'}"

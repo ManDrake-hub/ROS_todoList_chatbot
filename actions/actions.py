@@ -1,5 +1,5 @@
 import os
-from typing import Any, Text, Dict, List
+from typing import Any, Sequence, Text, Dict, List
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.events import AllSlotsReset
@@ -200,7 +200,7 @@ class ActionReadTask(ActionWrapper):
             dispatcher.utter_message(text=str(e))
             return []
 
-        dispatcher.utter_message(text=f"Il task \"{tag}\" ha \"{category}\" come categoria e \"{str(val.deadline)}\" come scadenza{'' if val.alarm is not None else f' e {val.alarm} come allarme'}")
+        dispatcher.utter_message(text=f"Il task \"{tag}\" ha \"{category}\" come categoria e \"{str(val.deadline)}\" come scadenza{'' if val.alarm is None else f' e {val.alarm} come allarme'}")
         return []
 
 class ActionReadTasks(ActionWrapper):
@@ -213,14 +213,14 @@ class ActionReadTasks(ActionWrapper):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         try:
-            categories = ActionWrapper.todo.get_tasks()
+            tasks: Dict[str, Sequence[Task]] = ActionWrapper.todo.get_tasks()
         except ExceptionRasa as e:
             dispatcher.utter_message(text=str(e))
             return []
 
-        for category in categories:
+        for category in tasks:
             message = f"Per la categoria \"{category}\" sono presenti i seguenti task:"
-            for task in ActionWrapper.todo.get_tasks_of_category(category):
+            for task in tasks[category]:
                 message += f"\n - {task}"
             dispatcher.utter_message(text=(message+"\n"))
         return[]
@@ -378,7 +378,7 @@ class ActionRemoveAlert(ActionWrapper):
         category = get_category(tracker)
 
         try:
-            ActionWrapper.todo.modify_task(category, tag, alarm_new=None)
+            ActionWrapper.todo.remove_task_alarm(category, tag)
         except ExceptionRasa as e:
             dispatcher.utter_message(text=str(e))
             return []

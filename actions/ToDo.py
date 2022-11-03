@@ -111,6 +111,15 @@ class ToDo:
                                 deadline_new if deadline_new is not None else task_old.deadline, 
                                 alarm_new if alarm_new is not None else task_old.alarm)
 
+    def remove_task_alarm(self, category, tag) -> None:
+        self._check_task(category, tag)
+
+        task_old = self.get_task(category, tag)
+        self.remove_task(category, tag)
+        self.add_task(category, task_old.tag,
+                                task_old.deadline, 
+                                None)
+
     def move_task(self, category, tag, category_new) -> None:
         self._check_category(category_new)
         self._check_task(category, tag)

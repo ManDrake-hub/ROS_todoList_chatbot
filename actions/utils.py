@@ -10,6 +10,9 @@ from dateutil.parser import parse
 def get_user(tracker: Tracker) -> Any:
     return tracker.get_slot("user")
 
+def get_user_new(tracker: Tracker) -> Any:
+    return tracker.get_slot("user_new")
+
 def get_tag(tracker: Tracker) -> Any:
     return tracker.get_slot("tag")
 

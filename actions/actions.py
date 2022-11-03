@@ -60,9 +60,9 @@ class ActionSetUser(Action):
         dispatcher.utter_message(text=f"Caricata la todo-list di {user}")
         return []
 
-class ActionModifyUser(Action):
+class ActionRenameUser(Action):
     def name(self) -> Text:
-        return "action_modify_user"
+        return "action_rename_user"
 
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
@@ -76,7 +76,7 @@ class ActionModifyUser(Action):
             return []
 
         if ToDo.is_user_available(user_new):
-            dispatcher.utter_message(text=f"Todo-list di {user} già esistente")
+            dispatcher.utter_message(text=f"Todo-list di {user_new} già esistente")
             return []
 
         ActionWrapper.todo._store(user_new)

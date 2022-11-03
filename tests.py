@@ -1,6 +1,6 @@
 import datetime
 from typing import Dict, List, Any
-from actions.actions import ActionModifyUser, ActionWrapper, ActionAddTask, ActionRemoveTask, ActionMoveTask, ActionCreateUser, ActionSetUser, ActionRemoveUser, ActionGetUser
+from actions.actions import ActionRenameUser, ActionWrapper, ActionAddTask, ActionRemoveTask, ActionMoveTask, ActionCreateUser, ActionSetUser, ActionRemoveUser, ActionGetUser
 from actions.Task import Task
 from actions.utils import check_equals, print_todo, print_todo_dict
 from actions.ToDo import ToDo
@@ -66,4 +66,4 @@ if __name__ == "__main__":
     test_action(ActionSetUser, {"user": "giggi"}, {}, clear=False)
     # test_action(ActionRemoveUser, {"user": "giggi"}, {}, clear=False)
     test_action(ActionGetUser, {}, {}, clear=False)
-    test_action(ActionModifyUser, {"user": "giggi", "user_new": "giggi_v2"}, {}, clear=False)
+    test_action(ActionRenameUser, {"user": "giggi", "user_new": "giggi_v2"}, {}, clear=False)

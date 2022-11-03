@@ -48,6 +48,11 @@ class ToDo:
         user_path = f"./todo_{user}.pickle"
         return os.path.exists(user_path)
 
+    @staticmethod
+    def remove_user(user: str) -> None:
+        user_path = f"./todo_{user}.pickle"
+        os.remove(user_path)
+
     ##########################################################################
     # Checks                                                                 #
     ##########################################################################

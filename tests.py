@@ -1,3 +1,4 @@
+import datetime
 from typing import Dict, List, Any
 from actions.actions import ActionWrapper, ActionAddTask, ActionRemoveTask, ActionMoveTask, ActionCreateUser, ActionSetUser, ActionRemoveUser, ActionGetUser
 from actions.Task import Task
@@ -40,22 +41,28 @@ if __name__ == "__main__":
     CollectingDispatcherFake.debug = True
 
     ##########################################################################
-    # Test add
-    test_action(ActionAddTask, {"category": "a", "tag": "add", "date": "10/10/2020", "time": "10:10:10"}, {"a": [Task("add", "10/10/2020 10:10:10"), ]}, clear=True)
+    # Test add with wrong datetime 
+    # dt = datetime.datetime(year=2020, month=10, day=10, hour=10, minute=10, second=10)
+    # test_action(ActionAddTask, {"category": "a", "tag": "add", "date": "10/10/2020", "time": "10:10:10"}, {"a": [Task("add", dt), ]}, clear=True)
 
-    # Test remove
-    test_action(ActionAddTask, {"category": "b", "tag": "remove", "date": "10/10/2020", "time": "10:10:10"}, {"a": [Task("add", "10/10/2020 10:10:10"), ], "b": [Task("remove", "10/10/2020 10:10:10"), ]}, clear=False)
-    test_action(ActionRemoveTask, {"category": "b", "tag": "remove"}, {"a": [Task("add", "10/10/2020 10:10:10"), ], "b": []}, clear=False)
-
-    # Test move to another category
-    test_action(ActionMoveTask, {"category": "a", "tag": "add", "category_new": "b"}, {"a": [], "b": [Task("add", "10/10/2020 10:10:10"), ]}, clear=False)
     ##########################################################################
     # Test add
-    test_action(ActionAddTask, {"category": "a", "tag": "add", "date": "10/10/2020", "time": "10:10:10"}, {"a": [Task("add", "10/10/2020 10:10:10"), ]}, clear=True)
-    test_action(ActionAddTask, {"category": "a", "tag": "add", "date": "10/10/2020", "time": "10:10:10"}, {"a": [Task("add", "10/10/2020 10:10:10"), ]}, clear=False)
+    dt = datetime.datetime(year=2023, month=10, day=10, hour=10, minute=10, second=10)
+    test_action(ActionAddTask, {"category": "a", "tag": "add", "date": "10/10/2023", "time": "10:10:10"}, {"a": [Task("add", dt), ]}, clear=True)
+
+    # Test remove
+    test_action(ActionAddTask, {"category": "b", "tag": "remove", "date": "10/10/2023", "time": "10:10:10"}, {"a": [Task("add", dt), ], "b": [Task("remove", dt), ]}, clear=False)
+    test_action(ActionRemoveTask, {"category": "b", "tag": "remove"}, {"a": [Task("add", dt), ], "b": []}, clear=False)
+
+    # Test move to another category
+    test_action(ActionMoveTask, {"category": "a", "tag": "add", "category_new": "b"}, {"a": [], "b": [Task("add", dt), ]}, clear=False)
+    ##########################################################################
+    # Test add
+    test_action(ActionAddTask, {"category": "a", "tag": "add", "date": "10/10/2023", "time": "10:10:10"}, {"a": [Task("add", dt), ]}, clear=True)
+    test_action(ActionAddTask, {"category": "a", "tag": "add", "date": "10/10/2023", "time": "10:10:10"}, {"a": [Task("add", dt), ]}, clear=False)
 
     ##########################################################################
     test_action(ActionCreateUser, {"user": "giggi"}, {}, clear=True)
     test_action(ActionSetUser, {"user": "giggi"}, {}, clear=False)
-    # test_action(ActionRemoveUser, {"user": "giggi"}, {}, clear=False)
+    test_action(ActionRemoveUser, {"user": "giggi"}, {}, clear=False)
     test_action(ActionGetUser, {}, {}, clear=False)

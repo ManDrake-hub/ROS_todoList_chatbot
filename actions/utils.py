@@ -3,7 +3,7 @@ from rasa_sdk import Tracker
 from actions.Task import Task
 from actions.ToDo import ToDo
 import datetime
-from actions.ActionsException import ExceptionTimeFormatInvalid, ExceptionNoCategories
+from actions.ActionsException import ExceptionNoCategories, ExceptionDateTimeBeforeNow
 from dateutil.parser import parse
 
 
@@ -27,8 +27,11 @@ def get_deadline(tracker: Tracker) -> Any:
     time = tracker.get_slot("time")
 
     if date is None or time is None:
-        raise Exception
-    return date + " " + time
+        raise Exception()
+    dt = convert_deadline_to_datetime(date, time)
+    if is_datetime_before_now(dt):
+        raise ExceptionDateTimeBeforeNow()
+    return dt
 
 def get_alert(tracker: Tracker) -> Any:
     return tracker.get_slot("alert")
@@ -40,6 +43,12 @@ def sequence_to_str(seq: Sequence) -> str:
     return ", ".join(seq)
 
 def print_todo(todo: ToDo):
+    try:
+        if not todo.get_categories():
+            return
+    except ExceptionNoCategories:
+        return
+
     print("These are the categories: ", list(todo.get_categories()))
 
     for k in todo.get_categories():
@@ -49,6 +58,12 @@ def print_todo(todo: ToDo):
             print(f"         - {str(t)}")
 
 def print_todo_dict(todo: Dict):
+    try:
+        if not todo.keys():
+            return
+    except ExceptionNoCategories:
+        return
+
     print("These are the categories: ", list(todo.keys()))
 
     for k in todo.keys():
@@ -67,6 +82,7 @@ def check_equals(real: ToDo, expected: Dict[str, List[Task]]):
     except ExceptionNoCategories:
         if len(expected.keys()) == 0:
             return True
+        return False
 
     for k in real.get_categories():
         if k not in expected.keys():
@@ -101,5 +117,13 @@ Casi testati in cui funziona:
 - [23:59](time)
 - [20:7](time)
 """
-def conver_deadline_to_datetime(deadline: str) -> datetime.datetime:
-    return parse(deadline)
+def convert_deadline_to_datetime(date: str, time: str) -> datetime.datetime:
+    if date == "" or date is None:
+        dt = parse(time)
+        if dt < datetime.datetime.now():
+            return parse(time, default=datetime.datetime.now() + datetime.timedelta(days=1))
+        return dt
+    return parse(date + " " + time)
+
+def is_datetime_before_now(dt: datetime.datetime) -> bool:
+    return dt < datetime.datetime.now()

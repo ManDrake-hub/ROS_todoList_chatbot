@@ -39,3 +39,7 @@ class ExceptionDateFormatInvalid(ExceptionRasa):
 
 class ExceptionTimeFormatInvalid(ExceptionRasa):
     pass # <-- Add feedback like other exceptions
+
+class ExceptionDateTimeBeforeNow(ExceptionRasa):
+    def __init__(self) -> None:
+        super().__init__(f"Deadline antecedente al tempo corrente")

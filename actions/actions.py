@@ -81,16 +81,15 @@ class ActionRemoveUser(Action):
 
         user = get_user(tracker)
 
-        user_path = f"./todo_{user}.pickle"
-        if not os.path.exists(user_path):
+        if not ActionWrapper.todo.is_user_available(user):
             dispatcher.utter_message(text=f"Todo-list di {user} non esistente")
             return []
 
-        if ActionWrapper.todo.latest_path == user_path:
+        if ActionWrapper.todo.get_loaded_user() == user:
             ActionWrapper.todo = ToDo.load()
             dispatcher.utter_message(text=f"Caricata la todo-list di default")
 
-        os.remove(user_path)
+        ActionWrapper.todo.remove_user(user)
         dispatcher.utter_message(text=f"Cancellata la todo-list di {user}")
         return []
 
@@ -103,9 +102,12 @@ class ActionAddTask(ActionWrapper):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        tag, category, deadline = get_info(tracker)
+        tag = get_tag(tracker)
+        category = get_category(tracker)
 
-        try:
+        try:            
+            deadline = get_deadline(tracker)
+            
             ActionWrapper.todo.add_task(category, tag, deadline)
         except ExceptionRasa as e:
             dispatcher.utter_message(text=str(e))
@@ -299,9 +301,10 @@ class ActionModifyDeadline(ActionWrapper):
 
         tag = get_tag(tracker)
         category = get_category(tracker)
-        deadline_new = get_deadline(tracker)
 
         try: 
+            deadline_new = get_deadline(tracker)
+            
             ActionWrapper.todo.modify_task(category, tag, deadline_new=deadline_new)
         except ExceptionRasa as e:
             dispatcher.utter_message(text=str(e))

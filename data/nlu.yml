@@ -48,69 +48,136 @@ nlu:
     - non credo
     - non proprio
 
-#TO-DO: slots: tag, tag_new, category, category_new, date, time, user, user_new, alert
 - intent: inform
   examples: |
-    - [Cognitive Robotics](tag)
+    - [Lezioni](tag)
+    - [Pullman](tag)
+    - [Mensa](tag)
+    - [Tennis](tag)
+    - [Pallavolo](tag)
+    - [Calcio](tag)
+    - [Viaggi](tag)
+    - [Uscita](tag)
+    - [Riunione](tag)
+    - [Incontro](tag)
+    - [Progetto](tag)
+    - [Visita Medica](tag)
+    - [Computer](tag)
+    - [Materie da fare](tag)
+    - [Compleanno](tag)
+    - [Cena](tag)
+    - [Spesa](tag)
+    - [Bollette](tag)
+    - [Machine Learning](tag)
+    - [Visione Artificiale](tag) 
     - [Robotica Cognitiva](tag)
-    - [Antenne](tag)
-    - [Analisi 1](tag)
-    - [Fisica 1](tag)
-    - [Fondamenti di programmazione](tag)
-    - [Pere](tag)
-    - [Mele](tag)
-    - [Pizza](tag)
-    - [Banana](tag)
-    - [Latte](tag)
-    - [6 Uova](tag)
-    - [200kg di farina](tag)
-    - [100gr di prosciutto](tag)
-    - [Artificial Vision](tag_new)
-    - [Visione Artificiale](tag_new)
-    - [Basi di dati](tag_new)
-    - [Database](tag_new)
-    - [Geometria](tag_new)
-    - [Reti logiche](tag_new)
-    - [Elettrotecnica](tag_new)
+    - [Elettrotecnica](tag) 
+    - [Lezioni](tag_new)
+    - [Pullman](tag_new)
+    - [Mensa](tag_new)
+    - [Tennis](tag_new)
+    - [Pallavolo](tag_new)
+    - [Calcio](tag_new)
+    - [Viaggi](tag_new)
+    - [Uscita](tag_new)
+    - [Riunione](tag_new)
+    - [Incontro](tag_new)
+    - [Progetto](tag_new)
+    - [Visita Medica](tag_new)
+    - [Computer](tag_new)
+    - [Materie da fare](tag_new)
+    - [Compleanno](tag_new)
+    - [Cena](tag_new)
+    - [Spesa](tag_new)
+    - [Bollette](tag_new)
     - [Machine Learning](tag_new)
-    - [Intelligenza Artificiale](tag_new)
-    - [2kg di Broccoli](tag_new)
-    - [Cornetto](tag_new)
-    - [500gr di zucchero](tag_new)
-    - [Melone](tag_new)
-    - [20/11/1969](date)
-    - [12-10-1999](date)
-    - [30-06-1965](date)
-    - [15/03/1987](date)
-    - [13-8-2004](date)
-    - [4/8/2003](date)
-    - [4.8.2003](date)
-    - [20.11.1969](date)
+    - [Visione Artificiale](tag_new) 
+    - [Robotica Cognitiva](tag_new)
+    - [Elettrotecnica](tag_new) 
+    - [20/11/2022](date)
+    - [12-10-2045](date)
+    - [4/8/2030](date)
+    - [4.8.2025](date)
+    - [20.11.2023](date)
     - [04:25](time)
     - [7:30](time)
     - [7:7](time)
     - [23:59](time)
     - [20:7](time)
-    - [Spesa](category)
-    - [Esami](category)
-    - [Esami primo anno](category)
-    - [Esami secondo anno](category_new)
-    - [10 minuti prima](alert)
-    - [1 ora](alert)
-    - [2 ore](alert)
-    - [2 ore prima](alert)
-    - [5 secondi prima](alert)
-    - [10 secondi](alert)
-    - [1 giorno prima](alert)
-    - [2 settimane prima](alert)
-    - [Antonio](user)
-    - [Giovanni](user)
-    - [Geraldino](user)
-    - [Luigi](user)
-    - [Marco](user)
-    - [Dario](user)
-    - [Angela](user)
-    - [Chiara](user_new)
+    - [Università] (category)
+    - [Sport] (category)
+    - [Tempo libero] (category)
+    - [Lavoro] (category)
+    - [Impegni] (category)
+    - [Tecnologia] (category)
+    - [Studio] (category)
+    - [famiglia] (category)
+    - [Casa] (category)
+    - [Esami] (category)
+    - [Università] (category_new)
+    - [Sport] (category_new)
+    - [Tempo libero] (category_new)
+    - [Lavoro] (category_new)
+    - [Impegni] (category_new)
+    - [Tecnologia] (category_new)
+    - [Studio] (category_new)
+    - [famiglia] (category_new)
+    - [Casa] (category_new)
+    - [Esami] (category_new)
+    - [15 minuti prima] (alert)
+    - [30 minuti prima] (alert)
+    - [1 minuto prima] (alert)
+    - [45 minuti prima] (alert)
+    - [1 ora prima] (alert)
+    - [2 ore dopo] (alert)
+    - [25 minuti dopo] (alert)
+    - [12 minuti dopo] (alert)
+    - [50 minuti dopo] (alert)
+    - [50 secondi prima] (alert)
+    - [60 secondi dopo] (alert)
+    - [3 ore prima] (alert)
+    - [4 ore dopo] (alert)
+    - [6 ore prima] (alert)
+    - [Luigi] (user)
+    - [Francesca] (user)
+    - [Giovanni] (user)
+    - [Antonio] (user)
+    - [Gerry] (user)
+    - [Lucia] (user)
+    - [Gianluca] (user)
+    - [Ugo] (user)
+    - [Andrea] (user)
+    - [Simone] (user)
+    - [Dario] (user)
+    - [Angela] (user)
+    - [Marco] (user)
+    - [Arianna] (user)
+    - [MariaRosaria] (user)
+    - [Matteo] (user)
+    - [Mario] (user)
+    - [Federica] (user)
+    - [Camilla] (user)
+    - [Mattia] (user)
+    - [Luigi] (user_new)
+    - [Francesca] (user_new)
+    - [Giovanni] (user_new)
+    - [Antonio] (user_new)
+    - [Gerry] (user_new)
+    - [Lucia] (user_new)
+    - [Gianluca] (user_new)
+    - [Ugo] (user_new)
+    - [Andrea] (user_new)
+    - [Simone] (user_new)
+    - [Dario] (user_new)
+    - [Angela] (user_new)
+    - [Marco] (user_new)
+    - [Arianna] (user_new)
+    - [MariaRosaria] (user_new)
+    - [Matteo] (user_new)
+    - [Mario] (user_new)
+    - [Federica] (user_new)
+    - [Camilla] (user_new)
+    - [Mattia] (user_new)
 
 #Insert
 #TO-DO: slots: tag, category, date, time
@@ -190,151 +257,147 @@ nlu:
     - inserisci un avviso [10 minuti prima](alert)
     - avvisami [40 minuti prima](alert) per l'attività [Tennis](tag) in [Sport](category)
     - inserisci un avviso [1 giorno prima](alert) per l'attività [Tennis](tag) in [Sport](category)
-#TO-DO: slots: user
 - intent: insert_user
   examples: |
-    - inserisci l'utente [Antonio](user)
+    - inserisci l'utente
+    - aggiungi l'utente
+    - inserisci l'utente [Luigi](user)
     - inserisci l'utente [Francesca](user)
     - inserisci l'utente [Giovanni](user)
-    - inserisci l'utente [Geraldino](user)
-    - inserisci l'utente [Luigi](user)
-    - inserisci l'utente [Marco](user)
-    - inserisci l'utente [Dario](user)
-    - inserisci l'utente [Angela](user)
-    - aggiungi l'utente [Antonio](user)
-    - aggiungi l'utente [Francesca](user)
-    - aggiungi l'utente [Giovanni](user)
-    - aggiungi l'utente [Geraldino](user)
-    - aggiungi l'utente [Luigi](user)
-    - aggiungi l'utente [Marco](user)
+    - inserisci l'utente [Antonio](user)
+    - inserisci l'utente [Gerry](user)
+    - inserisci l'utente [Lucia](user)
+    - inserisci l'utente [Gianluca](user)
+    - aggiungi l'utente [Ugo](user)
+    - aggiungi l'utente [Andrea](user)
+    - aggiungi l'utente [Simone](user)
     - aggiungi l'utente [Dario](user)
     - aggiungi l'utente [Angela](user)
-    - inserisci [Antonio](user)
-    - inserisci [Francesca](user)
-    - inserisci [Giovanni](user)
-    - inserisci [Geraldino](user)
-    - inserisci [Luigi](user)
-    - inserisci [Marco](user)
+    - aggiungi l'utente [Marco](user)
+    - aggiungi l'utente [Arianna](user)
+    - aggiungi [MariaRosaria](user)
+    - aggiungi [Matteo](user)
+    - aggiungi [Mario](user)
+    - aggiungi [Federica](user)
+    - aggiungi [Camilla](user)
+    - aggiungi [Mattia](user)
+    - inserisci [Lucia](user)
+    - inserisci [Gianluca](user)
+    - inserisci [Andrea](user)
+    - inserisci [Simone](user)
     - inserisci [Dario](user)
-
+    - inserisci [Marco](user)
+    - inserisci [Arianna](user)
+   
 #Remove 
-#TO-DO: slots: tag, category
 - intent: remove_task
   examples: |
-    - vorrei cancellare l'attività [Cognitive Robotics](tag)
-    - Elimina l'attività [Cognitive Robotics](tag)
-    - Rimuovi l'attività [Cognitive Robotics](tag)
-    - Voglio rimuovere l'attività [Cognitive Robotics](tag)
-    - rimuovi l'attività [Cognitive Robotics](tag) in [Esami](category)
-    - voglio rimuovere l'attività [Cognitive Robotics](tag) in [Esami](category)
-    - mi piacerebbe rimuovere l'attività [Cognitive Robotics](tag) in [Esami](category)
-    - Cancella l'attività [Cognitive Robotics] in [Esami](category)
-    - Togli l'attività [Cognitive Robotics](tag) in [Esami](category)
-    - rimuovi l'attività [Pizza](tag) in [Spesa](category)
-    - vorrei cancellare l'attività [Pomodori](tag)
-    - voglio rimuovere l'attività [Pizza](tag) in [Spesa](category)
-    - Cancella l'attivita [Latte] in [Spesa](category)
-    - Elimina l'attività [Antenne](tag)
-    - Togli l'attività [Antenne](tag) in [Esami](category)
-    - Rimuovi l'utente [Antonio](user)
-    - vorrei cancellare l'attività [Tennis](tag)
-    - Elimina l'attività [Tennis](tag)
-    - Rimuovi l'attività [Tennis](tag)
-    - Voglio rimuovere l'attività [Tennis](tag)
-    - rimuovi l'attività [Tennis](tag) in [Sport](category)
-    - voglio rimuovere l'attività [Tennis](tag) in [Sport](category)
-    - mi piacerebbe rimuovere l'attività [Tennis](tag) in [Sport](category)
-    - Cancella l'attività [Tennis] in [Sport](category)
-    - Togli l'attività [Tennis](tag) in [Sport](category)
-    - vorrei cancellare l'attività [Compleanno](tag)
-    - Elimina l'attività [Compleanno](tag)
-    - Rimuovi l'attività [Compleanno](tag)
-    - Voglio rimuovere l'attività [Compleanno](tag)
-    - rimuovi l'attività [Compleanno](tag) in [Personale](category)
-    - voglio rimuovere l'attività [Compleanno](tag) in [Personale](category)
-    - mi piacerebbe rimuovere l'attività [Compleanno](tag) in [Personale](category)
-    - Cancella l'attività [Compleanno] in [Personale](category)
-    - Togli l'attività [Compleanno](tag) in [Personale](category)
+    - vorrei cancellare l'attività
+    - vorrei rimuovere l'attività
+    - rimuovi l'attività
+    - cancella l'attività
+    - elimina l'attività 
+    - mi piacerebbe rimuovere l'attività
+    - togli l'attività
+    - vorrei cancellare l'attività [Robotica Cognitiva](tag)
+    - vorrei cancellare l'attività [Elettrotecnica](tag)
+    - vorrei rimuovere l'attività [Machine Learning](tag)
+    - vorrei rimuovere l'attività [Visione Artificiale](tag)
+    - elimina l'attività [Spesa](tag)
+    - elimina l'attività [Bollette](tag)
+    - voglio rimuovere l'attività [Compleanno](tag)
+    - voglio rimuovere l'attività [Cena](tag)
+    - voglio rimuovere l'attività [Pallavolo](tag) in [Sport](category)
+    - voglio rimuovere l'attività [Calcio](tag) in [Tempo libero](category)
+    - voglio rimuovere l'attività [Visita Medica](tag) in [Università](category)
+    - mi piacerebbe rimuovere l'attività [Riunione](tag) in [Lavoro](category)
+    - mi piacerebbe rimuovere l'attività [Visita Medica](tag) in [Impegni](category)
+    - mi piacerebbe rimuovere l'attività [Progetto](tag) in [Tecnologia](category)
+    - mi piacerebbe rimuovere l'attività [Viaggi](tag) in [Studio](category)
+    - togli l'attività [Visione Artificiale](tag) in [Università](category)
+    - togli l'attività [Lezioni](tag) in [Tempo libero](category)
+    - togli l'attività [Calcio](tag) in [Lavoro](category)
+    - togli l'attività [Robotica Cognitiva](tag) in [Impegni](category)
+    - togli l'attività [Cena](tag) in [Tecnologia](category)
+    - cancella l'attività [Riunione](tag) in [Lavoro](category)
+    - cancella l'attività [Pallavolo](tag) in [Impegni](category)
+    - cancella l'attività [Incontro](tag) in [Studio](category)
+    - cancella l'attività [Spesa](tag) in [famiglia](category)
+
 #TO-DO: slots: category
 - intent: remove_category
   examples: |
     - Rimuovi la categoria [Esami](category)
     - Voglio rimuovere la categoria [Esami](category)
     - rimuovi la categoria [Sport](category)
-#TO-DO: slots: tag, category
 - intent: remove_alert
   examples: |
-    - rimuovi l'avviso per l'attività [Cognitive Robotics](tag) in [Esami](category)
-    - rimuovi l'alert per l'attività [Cognitive Robotics](tag) in [Esami](category)
-    - elimina l'alert per l'attività [Tennis](tag) in [Sport](category)
-    - elimina l'avviso per l'attività [Tennis](tag) in [Sport](category)
+    - rimuovi l'avviso per l'attività [Lezioni](tag) in [Università](category)
+    - rimuovi l'avviso per l'attività [Pullman](tag) in [Università](category)
+    - rimuovi l'avviso per l'attività [Tennis](tag) in [Tempo libero](category)
+    - rimuovi l'avviso per l'attività [Tennis](tag) in [Lavoro](category)
+    - rimuovi l'alert per l'attività [Calcio](tag) in [Impegni](category)
+    - rimuovi l'alert per l'attività [Progetto](tag) in [Casa](category)
+    - rimuovi l'alert per l'attività [Tennis](tag) in [Esami](category)
+    - elimina l'alert per l'attività [Lezioni](tag) in [Sport](category)
+    - elimina l'alert per l'attività [Mensa](tag) in [Tempo libero](category)
+    - elimina l'alert per l'attività [Pallavolo](tag) in [Lavoro](category)
+    - elimina l'alert per l'attività [Riunione](tag) in [Impegni](category)
+    - elimina l'alert per l'attività [Progetto](tag) in [Tecnologia](category)
+    - elimina l'avviso per l'attività [Pallavolo](tag) in [Università](category)
+    - elimina l'avviso per l'attività [Mensa](tag) in [Sport](category)
+    - elimina l'avviso per l'attività [Pallavolo](tag) in [Tempo libero](category)
+    - elimina l'avviso per l'attività [Visita Medica](tag) in [Tecnologia](category)
+    - elimina l'avviso per l'attività [Compleanno](tag) in [famiglia](category)
+    - per l'attività [Lezioni](tag) in [Università](category) elimina l'avviso
+    - per l'attività [Pullman](tag) in [Università](category) elimina l'avviso
+    - per l'attività [Materie da fare](tag) in [Università](category) elimina l'avviso
+    - per l'attività [Compleanno](tag) in [Università](category) elimina l'avviso
+    - per l'attività [Uscita](tag) in [Sport](category) elimina l'avviso
+    - per l'attività [Viaggi](tag) in [Casa](category) elimina l'avviso
+    - per l'attività [Spesa](tag) in [Casa](category) elimina l'avviso
+    - per l'attività [Incontro](tag) in [Esami](category) elimina l'avviso
+    - per l'attività [Visione Artificiale](tag) in [Esami](category) elimina l'avviso
+    - per l'attività [Robotica Cognitiva](tag) in [Esami](category) elimina l'avviso
+    - per l'attività [Robotica Cognitiva](tag) in [Università](category) elimina l'alert
+    - per l'attività [Materie da fare](tag) in [Esami](category) elimina l'alert
     - elimina il reminder
     - rimuovi l'avviso
     - rimuovi l'alert
     - elimina l'alert
     - elimina l'avviso
-#TO-DO: slots: user
 - intent: remove_user
   examples: |
-    - rimuovi l'utente [Antonio](user)
+    - rimuovi l'utente
+    - cancella l'utente
+    - elimina l'utente
+    - rimuovi l'utente [Luigi](user)
     - rimuovi l'utente [Francesca](user)
     - rimuovi l'utente [Giovanni](user)
-    - rimuovi l'utente [Geraldino](user)
-    - rimuovi l'utente [Luigi](user)s
-    - rimuovi l'utente [Marco](user)
-    - rimuovi l'utente [Dario](user)
-    - rimuovi l'utente [Angela](user)
-    - rimuovi l'utente [antonio](user)
+    - rimuovi l'utente [Antonio](user)
+    - cancella l'utente [Gerry](user)
+    - cancella l'utente [Lucia](user)
+    - cancella l'utente [Gianluca](user)
+    - cancella l'utente [Ugo](user)
+    - cancella [Andrea](user)
+    - cancella [Simone](user)
+    - cancella [Dario](user)
+    - cancella [Angela](user)
+    - rimuovi [Marco](user)
+    - rimuovi [Arianna](user)
+    - rimuovi [MariaRosaria](user)
+    - rimuovi [Matteo](user)
 
 #View
-#TO-DO: slots: tag, category, date, time
 - intent: view
   examples: |
-    - visualizza l'attività [Cognitive Robotics](tag) in [Esami](category)
-    - voglio vedere l'attività [Cognitive Robotics](tag) in [Esami](category)
-    - posso vedere le attività in [Esami](category)?
-    - fammi vedere l'attività [Cognitive Robotics](tag)
-    - mi fai vedere l'attività [Cognitive Robotics](tag)?
-    - voglio visualizzare l'attività [Cognitive Robotics](tag)
-    - mi piacerebbe vedere le attività
-    - vorrei visualizzare un'attività
-    - mostrami l'attività [Cognitive Robotics](tag)
-    - mostrami l'attività [Cognitive Robotics](tag) in [Esami](category)
-    - visualizza l'attività [Antenne](tag) in [Esami](category)
-    - voglio vedere l'attività [Antenne](tag) in [Esami](category)
-    - fammi vedere l'attività [Antenne](tag)
-    - mi fai vedere l'attività [Antenne](tag)?
-    - voglio visualizzare l'attività [Antenne](tag)
-    - voglio visualizzare l'attivitò [Antenne](tag) in [Esami](category)
-    - mostrami l'attività [Antenne](tag)
-    - mostrami l'attività [Antenne](tag) in [Esami](category)
-    - visualizza l'attività [pomodori](tag) in [Spesa](category)
-    - voglio vedere l'attività [pizza](tag) in [Spesa](category)
-    - fammi vedere l'attività [pomodori](tag)?
-    - mi fai vedere l'attività [pizza](tag)?
-    - visualizza l'attività [Tennis](tag) in [Sport](category)
-    - voglio vedere l'attività [Tennis](tag) in [Sport](category)
-    - posso vedere le attività in [Sport](category)?
-    - fammi vedere l'attività [Tennis](tag)
-    - mi fai vedere l'attività [tennis](tag)?
-    - voglio visualizzare l'attività [Tennis](tag)
-    - mostrami l'attività [Tennis](tag)
-    - mostrami l'attività [Tennis](tag) in [Sport](category)
-    - visualizza l'attività [Studio](tag) in [Università](category)
-    - voglio vedere l'attività [Studio](tag) in [Università](category)
-    - posso vedere le attività in [Studio](category)?
-    - fammi vedere l'attività [Studio](tag)
-    - mi fai vedere l'attività [Studio](tag)?
-    - voglio visualizzare l'attività [Studio](tag)
-    - mostrami l'attività [Studio](tag)
-    - mostrami l'attività [Studio](tag) in [Università](category)
-    - voglio vedere l'attività [Compleanno](tag) in [Personale](category)
-    - posso vedere le attività in [Personale](category)?
-    - fammi vedere l'attività [Compleanno](tag)
-    - mi fai vedere l'attività [Compleanno](tag)?
-    - voglio visualizzare l'attività [Compleanno](tag)
-    - mostrami l'attività [Compleanno](tag)
-    - mostrami l'attività [Compleanno](tag) in [Personale](category)
+    - voglio vedere le attività
+    - fammi vedere le attività
+    - visualizza le attività
+    - mostrami le attività
+    - voglio visualizzare le attività 
+    - mostrami le attività
+    - fammi vedere le attività
 
 #Modify
 #TO-DO: slots: tag, tag_new, category, category_new
@@ -378,15 +441,40 @@ nlu:
     - voglio modificare la categoria di [Studio](tag) con [Personale](category)
     - vorrei aggionare la categoria di [Studio](tag) con [Personale](category)
 
-#TO-DO: slots: tag, category, alert
+#TO-DO: slots: category
 - intent: modify_alert
   examples: |
-    - vorrei cambiare l'avviso di [Cognitive Robotics](tag) con [15 minuti prima](alert)
-    - voglio modificare l'avviso di [Cognitive Robotics] con [3 ore prima](alert)
-    - vorrei cambiare l'avviso di [Tennis](tag) con [15 minuti prima](alert)
-    - voglio modificare l'avviso di [Tennis](tag) con [4 ore prima](alert)
-    - vorrei cambiare l'avviso di [Studio](tag) con [35 minuti prima](alert)
-    - voglio modificare l'avviso di [Studio] con [5 ore prima](alert)
+    - vorrei cambiare l'avviso
+    - vorrei modificare l'avviso
+    - modifica l'avviso
+    - vorrei cambiare l'avviso di [Lezioni](tag) in [15 minuti prima](alert)
+    - vorrei cambiare l'avviso di [Lezioni](tag) in [30 minuti prima](alert)
+    - vorrei cambiare l'avviso di [Pullman](tag) in [1 minuto prima](alert)
+    - vorrei cambiare l'avviso di [Pullman](tag) in [45 minuti prima](alert)
+    - vorrei cambiare l'avviso di [Mensa](tag) in [1 ora prima](alert)
+    - vorrei cambiare l'avviso di [Mensa](tag) in [2 ore dopo](alert)
+    - vorrei cambiare l'avviso di [Tennis](tag) in [25 minuti dopo](alert)
+    - vorrei cambiare l'avviso di [Tennis](tag) in [12 minuti dopo](alert)
+    - vorrei cambiare l'avviso di [Pallavolo](tag) in [50 minuti dopo](alert)
+    - vorrei cambiare l'avviso di [Pallavolo](tag) in [50 secondi prima](alert)
+    - vorrei cambiare l'avviso di [Calcio](tag) in [60 secondi dopo](alert)
+    - vorrei cambiare l'avviso di [Calcio](tag) in [3 ore prima](alert)
+    - vorrei cambiare l'avviso di [Viaggi](tag) in [4 ore dopo](alert)
+    - vorrei cambiare l'avviso di [Viaggi](tag) in [6 ore prima](alert)
+    - voglio modificare l'avviso di [Uscita](tag) in [15 minuti prima](alert)
+    - voglio modificare l'avviso di [Uscita](tag) in [30 minuti prima](alert)
+    - voglio modificare l'avviso di [Riunione](tag) in [1 minuto prima](alert)
+    - voglio modificare l'avviso di [Riunione](tag) in [45 minuti prima](alert)
+    - voglio modificare l'avviso di [Incontro](tag) in [1 ora prima](alert)
+    - voglio modificare l'avviso di [Incontro](tag) in [2 ore dopo](alert)
+    - voglio modificare l'avviso di [Progetto](tag) in [25 minuti dopo](alert)
+    - voglio modificare l'avviso di [Progetto](tag) in [12 minuti dopo](alert)
+    - voglio modificare l'avviso di [Visita Medica](tag) in [50 minuti dopo](alert)
+    - voglio modificare l'avviso di [Visita Medica](tag) in [50 secondi prima](alert)
+    - voglio modificare l'avviso di [Computer](tag) in [60 secondi dopo](alert)
+    - voglio modificare l'avviso di [Computer](tag) in [3 ore prima](alert)
+    - voglio modificare l'avviso di [Visione Artificiale](tag) in [4 ore dopo](alert)
+    - voglio modificare l'avviso di [Visione Artificiale](tag) in [6 ore prima](alert)
 
 #TO-DO: slots: tag, category, date, time
 - intent: modify_deadline
@@ -403,30 +491,42 @@ nlu:
   examples: |
     - vorrei modificare l'utente [Antonio](user) con l'utente [Chiara](user_new)
 
-#TO-DO: user
+
 - intent: identification
   examples: |
-    - io sono [Antonio](user)
-    - io sono [Giovanni](user)
-    - io sono [Geraldino](user)
+    - io sono 
+    - mi chiamo
+    - il mio nome è 
+    - sono
     - io sono [Luigi](user)
-    - io sono [Marco](user)
-    - io sono [Dario](user)
-    - io sono [Angela](user)
-    - sono [Antonio](user)
-    - sono [Giovanni](user)
-    - sono [Geraldino](user)
-    - sono [Luigi](user)
-    - sono [Marco](user)
+    - io sono [Francesca](user)
+    - io sono [Giovanni](user)
+    - io sono [Antonio](user)
+    - io sono [Gerry](user)
+    - io sono [Lucia](user)
+    - io sono [Gianluca](user)
+    - sono [Ugo](user)
+    - sono [Andrea](user)
+    - sono [Simone](user)
     - sono [Dario](user)
     - sono [Angela](user)
-    - mi chiamo [Antonio](user)
-    - mi chiamo [Giovanni](user)
-    - mi chiamo [Geraldino](user)
-    - mi chiamo [Luigi](user)
-    - mi chiamo [Marco](user)
-    - mi chiamo [Dario](user)
-    - mi chiamo [Angela](user)
+    - sono [Marco](user)
+    - sono [Arianna](user)
+    - mi chiamo [Arianna](user)
+    - mi chiamo [MariaRosaria](user)
+    - mi chiamo [Matteo](user)
+    - mi chiamo [Mario](user)
+    - mi chiamo [Federica](user)
+    - mi chiamo [Camilla](user)
+    - mi chiamo [Mattia](user)
+    - il mio nome è [Dario](user)
+    - il mio nome è [Angela](user)
+    - il mio nome è [Marco](user)
+    - il mio nome è [Arianna](user)
+    - il mio nome è [MariaRosaria](user)
+    - il mio nome è [Matteo](user)
+    - il mio nome è [Mario](user)
+  
 - intent: bot_challenge
   examples: |
     - Chi sei?

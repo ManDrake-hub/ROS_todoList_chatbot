@@ -20,21 +20,35 @@ intents:
 - modify_user
 - identification
 - bot_challenge
+
 entities:
+- tag:
+    roles:
+      - tag_current
+      - tag_new
+- category:
+    roles:
+      - category_current
+      - category_new
 - alert
-- category
-- category_new
 - date
-- tag
-- tag_new
 - time
-- user
-- user_new
+- user:
+    roles:
+      - user_current
+      - user_new
+
 slots:
-  tag:
+  tag_current:
     type: text
     influence_conversation: false
   tag_new:
+    type: text
+    influence_conversation: false
+  category_current:
+    type: text
+    influence_conversation: false
+  category_new:
     type: text
     influence_conversation: false
   date:
@@ -43,30 +57,27 @@ slots:
   time:
     type: text
     influence_conversation: false
-  category:
-    type: text
-    influence_conversation: false
-  category_new:
-    type: text
-    influence_conversation: false
   alert:
     type: text
     influence_conversation: false
-  user:
+  user_current:
     type: text
     influence_conversation: false
   user_new:
     type: text
     influence_conversation: false
+
 forms:
   id_task_form:
     required_slots:
-      tag:
+      tag_current:
       - type: from_entity
         entity: tag
-      category:
+        role: tag_current
+      category_current:
       - type: from_entity
         entity: category
+        role: category_current
   deadline_form:
     required_slots:
       date:
@@ -77,34 +88,39 @@ forms:
         entity: time
   alert_form:
     required_slots:
-      alert:
+      alert: 
       - type: from_entity
         entity: alert
   user_form:
     required_slots:
-      user:
+      user_new:
       - type: from_entity
         entity: user
+        role: user_new
   modify_user_form:
     required_slots:
       user_new:
       - type: from_entity
-        entity: user_new  
+        entity: user
+        role: user_new
   modify_tag_form:
     required_slots:
       tag_new:
       - type: from_entity
-        entity: tag_new
+        entity: tag
+        role: tag_new
   list_task_form:
     required_slots:
-      category:
+      category_current:
       - type: from_entity
         entity: category
+        role: category_current
   modify_category_form:
     required_slots:
       category_new:
       - type: from_entity
-        entity: category_new
+        entity: category
+        role: category_new
 
 responses:
   utter_greet:
@@ -174,6 +190,8 @@ responses:
   - text: L'avviso quanto prima lo devo inviare?
   utter_ask_user:
   - text: Inserisci il nome utente
+  utter_ask_user_new:
+  - text: Inserisci il nuovo nome utente
   utter_iamabot:
   - text: Io sono un bot, realizzato con Rasa per la gestione di una ToDoList.
   - text: Sono un bot, realizzato da un team di sviluppatori con Rasa

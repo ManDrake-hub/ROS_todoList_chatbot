@@ -302,7 +302,6 @@ nlu:
     - elimina la categoria [famiglia](category)
     - cancella la categoria [Casa](category)
     - cancella la categoria [Esami](category)
-
 - intent: remove_alert
   examples: |
     - rimuovi l'avviso per l'attività [Lezioni](tag) in [Università](category)
@@ -434,7 +433,6 @@ nlu:
     - vorrei cambiare la scadenza dell'attività [Incontro](tag) in [Tempo libero](category) il giorno [4.8.2025](date) alle ore [04:25](time)
     - cambia la scadenza in [20/11/2022](date) alle [20:7](time) dell'attività [Bollette](tag) in [Studio](category)
     - cambia la scadenza in [4.8.2025](date) alle [23:59](time) dell'attività [Lezioni](tag) in [Esami](category)
-
 - intent: modify_user
   examples: |
     - vorrei modificare l'utente 
@@ -442,6 +440,7 @@ nlu:
     - voglio modificare il nome utente
     - cambia il nome utente
     - rinomina
+    - rinomina l'utente
     - modifica il nome utente [Gianluca](user)
     - vorrei modificare il nome utente [Dario](user)
     - cambia il nome utente [Simone](user)

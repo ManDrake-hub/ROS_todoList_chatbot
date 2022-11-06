@@ -111,7 +111,7 @@ nlu:
     - [Impegni] (category)
     - [Tecnologia] (category)
     - [Studio] (category)
-    - [famiglia] (category)
+    - [Famiglia] (category)
     - [Casa] (category)
     - [Esami] (category)
     - [Università] (category_new)
@@ -121,7 +121,7 @@ nlu:
     - [Impegni] (category_new)
     - [Tecnologia] (category_new)
     - [Studio] (category_new)
-    - [famiglia] (category_new)
+    - [Famiglia] (category_new)
     - [Casa] (category_new)
     - [Esami] (category_new)
     - [15 minuti prima] (alert)
@@ -180,83 +180,48 @@ nlu:
     - [Mattia] (user_new)
 
 #Insert
-#TO-DO: slots: tag, category, date, time
 - intent: insert_task
   examples: |
-    - vorrei inserire l'attività [Cognitive Robotics](tag)
-    - inserisci l'attività [Cognitive Robotics](tag)
-    - aggiungi l'attività [Cognitive Robotics](tag)
-    - inserisci l'attività con titolo [Cognitive Robotics](tag)
-    - aggiungi l'attività con titolo [Cognitive Robotics](tag)
-    - vorrei inserire l'attività [Cognitive Robotics](tag) in [Esami](category)
-    - inserisci l'attività [Cognitive Robotics](tag) in [Esami](category)
-    - aggiungi l' attività [Cognitive Robotics](tag) in [Esami](category)
-    - aggiungi [Cognitive Robotics](tag) nella categoria [Esami](category)
-    - aggiungi [Cognitive Robotics](tag) in [Esami](category)
-    - in [Esami](category) aggiungi [Cognitive Robotics](tag)
-    - a [Esami](category) aggiungi [Cognitive Robotics](tag)
-    - nella categoria [Esami](category) aggiungi l'attività [Cognitive Robotics](tag)
-    - nella categoria [Esami](category) inserisci l'attività con titolo [Cognitive Robotics](tag)
-    - inserisci l'attività [Cognitive Robotics](tag) in [Esami](category) fino a [20/11/1969](date)[7:30](time)
-    - inserisci l'attività [Cognitive Robotics](tag) in [Esami](category) fino a [7:30](time)[20/11/1969](date)
-    - inserisci l'attività [Cognitive Robotics](tag) in [Esami](category) con scadenza [7:30](time)[20/11/1969](date)
-    - inserisci l'attività [Cognitive Robotics](tag) in [Esami](category) con scadenza [20/11/1969](date)[7:30](time)
-    - inserisci l'attività [Cognitive Robotics](tag) in [Esami](category) il [20/11/1969](date) alle [7:30](time)
-    - inserisci l'attività [Cognitive Robotics](tag) in [Esami](category) il [20/11/1969](date)
-    - inserisci l'attività [Cognitive Robotics](tag) in [Esami](category) alle [7:30](time)
-    - vorrei inserire l'attività [Tennis](tag)
-    - inserisci l'attività [Tennis](tag)
-    - aggiungi l'attività [Tennis](tag)
-    - inserisci l'attività con titolo [Tennis](tag)
-    - aggiungi l'attività con titolo [Tennis](tag)
-    - vorrei inserire l'attività [Tennis](tag) in [Sport](category)
-    - inserisci l'attività [Tennis](tag) in [Sport](category)
-    - aggiungi l' attività [Tennis](tag) in [Sport](category)
-    - aggiungi [Tennis](tag) nella categoria [Sport](category)
-    - aggiungi [Tennis](tag) in [Sport](category)
-    - in [Sport](category) aggiungi [Tennis](tag)
-    - a [Sport](category) aggiungi [Tennis](tag)
-    - nella categoria [Sport](category) aggiungi l'attività [Tennis](tag)
-    - nella categoria [Sport](category) inserisci l'attività con titolo [Tennis](tag)
-    - inserisci l'attività [Tennis](tag) in [Sport](category) fino a [20/11/1969](date)[7:30](time)
-    - inserisci l'attività [Tennis](tag) in [Sport](category) fino a [18:30](time)[20/11/2022](date)
-    - inserisci l'attività [Tennis](tag) in [Sport](category) con scadenza [19:30](time)[25/11/2021](date)
-    - inserisci l'attività [Tennis](tag) in [Sport](category) con scadenza [10/12/2003](date)[17:30](time)
-    - inserisci l'attività [Tennis](tag) in [Sport](category) il [29/04/2005](date) alle [12:10](time)
-    - inserisci l'attività [Tennis](tag) in [Sport](category) il [21/01/2009](date)
-    - inserisci l'attività [Tennis](tag) in [Sport](category) alle [10:45](time)
-    - vorrei inserire l'attività [Studio](tag)
-    - inserisci l'attività [Studio](tag)
-    - aggiungi l'attività [Studio](tag)
-    - inserisci l'attività con titolo [Studio](tag)
-    - aggiungi l'attività con titolo [Studio](tag)
-    - vorrei inserire l'attività [Studio](tag) in [Università](category)
-    - inserisci l'attività [Studio](tag) in [Università](category)
-    - aggiungi l' attività [Studio](tag) in [Università](category)
-    - aggiungi [Studio](tag) nella categoria [Università](category)
-    - aggiungi [Studio](tag) in [Università](category)
-    - in [Università](category) aggiungi [Studio](tag)
-    - a [Università](category) aggiungi [Studio](tag)
-    - nella categoria [Università](category) aggiungi l'attività [Studio](tag)
-    - nella categoria [Università](category) inserisci l'attività con titolo [Studio](tag)
-    - inserisci l'attività [Studio](tag) in [Università](category) fino a [11/08/2015](date)[11:15](time)
-    - inserisci l'attività [Studio](tag) in [Università](category) fino a [13:40](time)[05/07/2019](date)
-    - inserisci l'attività [Studio](tag) in [Università](category) con scadenza [14:20](time)[14/05/2020](date)
-    - inserisci l'attività [Studio](tag) in [Università](category) con scadenza [15/10/2007](date)[23:50](time)
-    - inserisci l'attività [Studio](tag) in [Università](category) il [18/03/2000](date) alle [16:19](time)
-    - inserisci l'attività [Studio](tag) in [Università](category) il [06/09/2008](date)
-    - inserisci l'attività [Studio](tag) in [Università](category) alle [22:35](time)
-#TO-DO: slots: tag, category, alert
+    - inserisci l'attività
+    - vorrei inserire l'attività
+    - vorrei aggiungere l'attività
+    - aggiungi l'attività
+    - inserisci l'attività [Progetto](tag) in [Lavoro](category)
+    - vorrei aggiungere l'attività [Elettrotecnica](tag) in [famiglia](category)
+    - inserisci l'attività [Calcio](tag)
+    - vorrei aggiungere l'attività [Materie da fare](tag)
+    - inserisci l'attività [Riunione](tag) in [Lavoro](category)
+    - vorrei aggiungere l'attività [Calcio](tag) in [Università](category)
+    - inserisci l'attività [Computer](tag) in [Esami](category) il [20/11/2022](date)
+    - inserisci l'attività [Robotica Cognitiva](tag) in [Tempo libero](category) il [4/8/2030](date)
+    - vorrei inserire l'attività [Machine Learning](tag) in [Tecnologia](category) fino al [12-10-2045](date)
+    - vorrei inserire l'attività [Computer](tag) in [famiglia](category) fino al [4.8.2025](date)
+    - vorrei aggiungere l'attività [Bollette](tag) in [Esami](category) il [20/11/2022](date)
+    - vorrei aggiungere l'attività [Visita Medica](tag) in [Impegni](category) il [4/8/2030](date)
+    - aggiungi l'attività [Calcio](tag) in [Tempo libero](category) con scadenza [12-10-2045](date)
+    - aggiungi l'attività [Robotica Cognitiva](tag) in [Casa](category) con scadenza [4.8.2025](date)
+    - in [Impegni](category) aggiungi l'attività [Tennis](tag) il [20/11/2022](date)
+    - in [famiglia](category) aggiungi l'attività [Materie da fare](tag) il [4/8/2030](date)
+    - inserisci l'attività [Calcio](tag) in [Casa](category) il [20.11.2023](date) alle [20:7](time)
+    - vorrei inserire l'attività [Machine Learning](tag) in [Studio](category) il [12-10-2045](date) alle [04:25](time)
+    - vorrei aggiungere l'attività [Visione Artificiale](tag) in [Casa](category) il giorno [4/8/2030](date) alle ore [04:25](time)
+    - aggiungi l'attività [Bollette](tag) in [Tempo libero](category) fino a [20.11.2023](date)[23:59](time)
+    - in [Studio](category) aggiungi l'attività [Elettrotecnica](tag) il [4/8/2030](date) alle [20:7](time)
 - intent: insert_alert
   examples: |
+    - inserisci un avviso
+    - inserisci un alert
+    - avvisami
+    - inserisci un avviso [15 minuti prima](alert)
     - inserisci un avviso [2 ore prima](alert)
-    - avvisami [2 ore prima](alert) per l'attività [Cognitive Robotics](tag) in [Esami](category)
+    - avvisami [15 minuti prima](alert) per l'attività [Cena](tag)
+    - avvisami [2 ore dopo](alert) per l'attività [Uscita](tag)
+    - inserisci un alert [45 minuti prima](alert) per l'attività [Computer](tag)
+    - inserisci un alert [25 minuti dopo](alert) per l'attività [Machine Learning](tag)
     - inserisci un avviso [2 ore prima](alert) per l'attività [Cognitive Robotics](tag) in [Esami](category)
     - avvisami [2 ore prima](alert) per l'attività [Tennis](tag) in [Sport](category)
-    - inserisci un avviso [1 ora prima](alert) per l'attività [Tennis](tag) in [Sport](category)
-    - inserisci un avviso [10 minuti prima](alert)
-    - avvisami [40 minuti prima](alert) per l'attività [Tennis](tag) in [Sport](category)
-    - inserisci un avviso [1 giorno prima](alert) per l'attività [Tennis](tag) in [Sport](category)
+    - per l'attività [Riunione](tag) in [Tecnologia](category) inserisci un avviso [1 ora prima](alert)
+    - inserisci un alert [15 minuti prima](alert) per l'attività [Pullman](tag) in [Tecnologia](category)
 - intent: insert_user
   examples: |
     - inserisci l'utente
@@ -294,6 +259,7 @@ nlu:
   examples: |
     - vorrei cancellare l'attività
     - vorrei rimuovere l'attività
+    - vorrei eliminare l'attività
     - rimuovi l'attività
     - cancella l'attività
     - elimina l'attività 
@@ -322,14 +288,21 @@ nlu:
     - cancella l'attività [Riunione](tag) in [Lavoro](category)
     - cancella l'attività [Pallavolo](tag) in [Impegni](category)
     - cancella l'attività [Incontro](tag) in [Studio](category)
-    - cancella l'attività [Spesa](tag) in [famiglia](category)
-
-#TO-DO: slots: category
+    - cancella l'attività [Spesa](tag) in [Famiglia](category)
 - intent: remove_category
   examples: |
-    - Rimuovi la categoria [Esami](category)
-    - Voglio rimuovere la categoria [Esami](category)
-    - rimuovi la categoria [Sport](category)
+    - rimuovi la categoria
+    - voglio rimuovere la categoria
+    - cancella la categoria
+    - rimuovi la categoria [Studio](category)
+    - rimuovi la categoria [famiglia](category)
+    - rimuovi la categoria [Esami](category)
+    - elimina la categoria
+    - elimina la categoria [Studio](category)
+    - elimina la categoria [famiglia](category)
+    - cancella la categoria [Casa](category)
+    - cancella la categoria [Esami](category)
+
 - intent: remove_alert
   examples: |
     - rimuovi l'avviso per l'attività [Lezioni](tag) in [Università](category)
@@ -348,7 +321,7 @@ nlu:
     - elimina l'avviso per l'attività [Mensa](tag) in [Sport](category)
     - elimina l'avviso per l'attività [Pallavolo](tag) in [Tempo libero](category)
     - elimina l'avviso per l'attività [Visita Medica](tag) in [Tecnologia](category)
-    - elimina l'avviso per l'attività [Compleanno](tag) in [famiglia](category)
+    - elimina l'avviso per l'attività [Compleanno](tag) in [Famiglia](category)
     - per l'attività [Lezioni](tag) in [Università](category) elimina l'avviso
     - per l'attività [Pullman](tag) in [Università](category) elimina l'avviso
     - per l'attività [Materie da fare](tag) in [Università](category) elimina l'avviso
@@ -400,97 +373,84 @@ nlu:
     - fammi vedere le attività
 
 #Modify
-#TO-DO: slots: tag, tag_new, category, category_new
 - intent: modify_task_category
   examples: |
-    - voglio modificare l'attivata [Cognitive Robotics](tag) 
-    - vorrei modificare l'attiità [Cognitive Robotics](tag)
-    - voglio cambiare l'attività [Cognitive Robotics](tag)
-    - vorrei cambiare l'attività [Cognitive Robotics](tag)
-    - mi piacerebbe cambiare l'attività [Cognitive Robotics](tag)
-    - mi piacerebbe modificare l'attività [Cognitive Robotics](tag)
-    - devo aggiornare l'attivita [Cognitive Robotics](tag)
-    - dovrei modificare l'attività [Cognitive Robotics](tag)
-    - dovrei aggiornare l'attività [Cognitive Robotics](tag)
-    - nell'attività [Cognitive Robotics](tag) voglio cambiare la categoria con [Università](category)
-    - voglio modificare la categoria di [Cognitive Robotics](tag) con [Università](category)
-    - vorrei aggionare la categoria di [Cognitive Robotics](tag) con [Università](category)
-    - voglio modificare l'attività [Tennis](tag) in [Esami](category) con l'attività [Elettrotenica](tag_new)
-    - voglio modificare l'attività [Tennis](tag) in [Esami](category) con l'attività [Elettrotenica](tag_new) e [Esami secondo anno](category_new)
-    - vorrei modificare l'attiità [Tennis](tag)
-    - voglio cambiare l'attività [Tennis](tag)
-    - vorrei cambiare l'attività [Tennis](tag)
-    - mi piacerebbe cambiare l'attività [Tennis](tag)
-    - mi piacerebbe modificare l'attività [Tennis](tag)
-    - devo aggiornare l'attivita [Tennis](tag)
-    - dovrei modificare l'attività [Tennis](tag)
-    - dovrei aggiornare l'attività [Tennis](tag)
-    - nell'attività [Tennis](tag) voglio cambiare la categoria con [Sport](category)
-    - voglio modificare la categoria di [Tennis](tag) con [Sport](category)
-    - vorrei aggionare la categoria di [Tennis](tag) con [Sport](category)
-    - voglio modificare l'attivata [Studio](tag)
-    - vorrei modificare l'attività [Studio](tag)
-    - voglio cambiare l'attività [Studio](tag)
-    - vorrei cambiare l'attività [Studio](tag)
-    - mi piacerebbe cambiare l'attività [Studio](tag)
-    - mi piacerebbe modificare l'attività [Studio](tag)
-    - devo aggiornare l'attivita [Studio](tag)
-    - dovrei modificare l'attività [Studio](tag)
-    - dovrei aggiornare l'attività [Studio](tag)
-    - nell'attività [Studio](tag) voglio cambiare la categoria con [Personale](category)
-    - voglio modificare la categoria di [Studio](tag) con [Personale](category)
-    - vorrei aggionare la categoria di [Studio](tag) con [Personale](category)
-
-#TO-DO: slots: category
+    - voglio modificare l'attività
+    - voglio modificare il titolo dell'attività
+    - modifica l'attività
+    - aggiorna l'attività
+    - cambia l'attività
+    - modifica l'attività [Bollette](tag)
+    - voglio cambiare l'attività [Riunione](tag)
+    - aggiorna l'attività [Robotica Cognitiva](tag)
+    - aggiorna l'attività [Lezioni](tag) con titolo [Lezioni](tag_new)
+    - aggiorna l'attività [Uscita](tag) con titolo [Elettrotecnica](tag_new)
+    - cambia l'attività [Pallavolo](tag) con titolo [Elettrotecnica](tag_new)
+    - cambia l'attività [Calcio](tag) con titolo [Lezioni](tag_new)
+    - voglio modificare il titolo dell'attività [Pullman](tag) nella categoria [Impegni](category) con il nuovo titolo [Progetto](tag_new)
+    - cambia l'attività [Lezioni](tag) in [Università](category) con [Cena](tag_new)
+    - voglio modificare il titolo dell'attività [Computer](tag) nella categoria [Tecnologia](category) con il nuovo titolo [Computer](tag_new)
+    - voglio aggiornare l'attività [Visita Medica](tag) in [Tempo libero](category) con [Computer](tag_new) in [Tempo libero](category_new)
+    - voglio aggiornare l'attività [Computer](tag) in [Impegni](category) con [Machine Learning](tag_new) in [Impegni](category_new)
+    - voglio aggiornare l'attività [Viaggi](tag) in [Sport](category) con [Pallavolo](tag_new) in [Sport](category_new)
+    - cambia la categoria dell'attività [Elettrotecnica](tag) in [Esami](category) con l'attività [Machine Learning](tag_new) in [Esami](category_new)
 - intent: modify_alert
   examples: |
     - vorrei cambiare l'avviso
     - vorrei modificare l'avviso
     - modifica l'avviso
     - vorrei cambiare l'avviso di [Lezioni](tag) in [15 minuti prima](alert)
-    - vorrei cambiare l'avviso di [Lezioni](tag) in [30 minuti prima](alert)
     - vorrei cambiare l'avviso di [Pullman](tag) in [1 minuto prima](alert)
-    - vorrei cambiare l'avviso di [Pullman](tag) in [45 minuti prima](alert)
     - vorrei cambiare l'avviso di [Mensa](tag) in [1 ora prima](alert)
-    - vorrei cambiare l'avviso di [Mensa](tag) in [2 ore dopo](alert)
     - vorrei cambiare l'avviso di [Tennis](tag) in [25 minuti dopo](alert)
-    - vorrei cambiare l'avviso di [Tennis](tag) in [12 minuti dopo](alert)
     - vorrei cambiare l'avviso di [Pallavolo](tag) in [50 minuti dopo](alert)
-    - vorrei cambiare l'avviso di [Pallavolo](tag) in [50 secondi prima](alert)
-    - vorrei cambiare l'avviso di [Calcio](tag) in [60 secondi dopo](alert)
-    - vorrei cambiare l'avviso di [Calcio](tag) in [3 ore prima](alert)
-    - vorrei cambiare l'avviso di [Viaggi](tag) in [4 ore dopo](alert)
-    - vorrei cambiare l'avviso di [Viaggi](tag) in [6 ore prima](alert)
-    - voglio modificare l'avviso di [Uscita](tag) in [15 minuti prima](alert)
-    - voglio modificare l'avviso di [Uscita](tag) in [30 minuti prima](alert)
-    - voglio modificare l'avviso di [Riunione](tag) in [1 minuto prima](alert)
-    - voglio modificare l'avviso di [Riunione](tag) in [45 minuti prima](alert)
-    - voglio modificare l'avviso di [Incontro](tag) in [1 ora prima](alert)
-    - voglio modificare l'avviso di [Incontro](tag) in [2 ore dopo](alert)
-    - voglio modificare l'avviso di [Progetto](tag) in [25 minuti dopo](alert)
-    - voglio modificare l'avviso di [Progetto](tag) in [12 minuti dopo](alert)
-    - voglio modificare l'avviso di [Visita Medica](tag) in [50 minuti dopo](alert)
-    - voglio modificare l'avviso di [Visita Medica](tag) in [50 secondi prima](alert)
-    - voglio modificare l'avviso di [Computer](tag) in [60 secondi dopo](alert)
-    - voglio modificare l'avviso di [Computer](tag) in [3 ore prima](alert)
-    - voglio modificare l'avviso di [Visione Artificiale](tag) in [4 ore dopo](alert)
-    - voglio modificare l'avviso di [Visione Artificiale](tag) in [6 ore prima](alert)
-
-#TO-DO: slots: tag, category, date, time
+    - vorrei cambiare l'avviso di [Calcio](tag) 
+    - vorrei cambiare l'avviso di [Viaggi](tag) 
+    - voglio modificare l'avviso di [Uscita](tag) 
+    - voglio modificare l'avviso di [Riunione](tag) di [Personale](category)
+    - voglio modificare l'avviso di [Incontro](tag) di [Università](category)
+    - voglio modificare l'avviso di [Visita Medica](tag) della categoria [Università](category)
+    - voglio modificare l'avviso di [Computer](tag) della categoria [Sport](category)
 - intent: modify_deadline
   examples: |
-    - vorrei cambiare la scadenza di [Cognitive Robotics](tag) con [28/06/2022](date)
-    - voglio cambiare la scadenza e la categoria di [Cognitive Robotics](tag) con [21/07/2021](date) e [Università](category)
-    - vorrei cambiare la scadenza di [Tennis](tag) con [25/09/2015](date)
-    - voglio cambiare la scadenza e la categoria di [Tennis](tag) con [11/12/2018](date) e [Sport](category)
-    - vorrei cambiare la scadenza di [Studio](tag) con [09/08/1989](date)
-    - voglio cambiare la scadenza e la categoria di [Studio](tag) con [17/10/2019](date) e [Personale](category)
+    - modifica la scadenza
+    - vorrei modificare la scadenza
+    - cambia la scadenza
+    - modifica la deadline
+    - modifica la scadenza in [4/8/2030](date)
+    - modifica la scadenza in [4.8.2025](date)
+    - cambia la scadenza in [20/11/2022](date) alle [7:30](time)
+    - cambia la scadenza in [4/8/2030](date) alle [23:59](time)
+    - modifica la deadline di [Spesa](tag) alle [23:59](time) del giorno [4.8.2025](date)
+    - modifica la deadline di [Robotica Cognitiva](tag) alle [20:7](time) del giorno [4/8/2030](date)
+    - modifica la scadenza dell'attività [Tennis](tag) in [category] alle [20:7](time)
+    - modifica la scadenza dell'attività [Uscita](tag) in [category] alle [7:30](time)
+    - modifica la scadenza dell'attività [Machine Learning](tag) in [category] alle [23:59](time)
+    - cambia la scadenza dell'attività [Lezioni](tag) in [category] il [12-10-2045](date)
+    - cambia la scadenza dell'attività [Calcio](tag) in [category] il [20.11.2023](date) 
+    - cambia l'attività [Tennis](tag) al [12-10-2045](date) alle [7:7](time)
+    - cambia l'attività [Viaggi](tag) al [20.11.2023](date) alle [20:7](time)
+    - vorrei cambiare la scadenza dell'attività [Materie da fare](tag) in [Università](category) il giorno [20/11/2022](date) alle ore [7:7](time)
+    - vorrei cambiare la scadenza dell'attività [Incontro](tag) in [Tempo libero](category) il giorno [4.8.2025](date) alle ore [04:25](time)
+    - cambia la scadenza in [20/11/2022](date) alle [20:7](time) dell'attività [Bollette](tag) in [Studio](category)
+    - cambia la scadenza in [4.8.2025](date) alle [23:59](time) dell'attività [Lezioni](tag) in [Esami](category)
 
-#TO-DO: slots: user, user_new
 - intent: modify_user
   examples: |
-    - vorrei modificare l'utente [Antonio](user) con l'utente [Chiara](user_new)
-
+    - vorrei modificare l'utente 
+    - modifica il nome utente
+    - voglio modificare il nome utente
+    - cambia il nome utente
+    - rinomina
+    - modifica il nome utente [Gianluca](user)
+    - vorrei modificare il nome utente [Dario](user)
+    - cambia il nome utente [Simone](user)
+    - rinomina il nome utente [Marco](user)
+    - rinomina il nome utente [Luigi](user) in [Luigi](user_new)
+    - rinomina il nome utente [Francesca](user) in [Antonio](user_new)
+    - modifica il nome di [Mario](user) con il nome [Marco](user_new)
+    - cambia il nome utente [Giovanni](user) con il nome  utente [Mario](user_new)
+    - cambia il nome di [Camilla](user) in [Dario](user_new)
 
 - intent: identification
   examples: |

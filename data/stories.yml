@@ -128,3 +128,75 @@ stories:
   - action: modify_user_form
   - action: action_rename_user
   - action: action_reset
+
+#Insert
+- story: insert_task
+  steps:
+  - intent: insert_task
+  - action: id_task_form
+  - action: deadline_form
+  - action: action_add_task
+  - action: action_reset
+
+- story: create_user
+  steps:
+  - intent: insert_user
+  - action: user_form
+  - action: action_create_user
+  - action: action_reset
+
+- story: insert_alert
+  steps:
+  - intent: insert_alert
+  - action: id_task_form
+  - action: alert_form
+  - action: action_add_alert
+  - action: action_reset
+
+#Identification
+- story: first_use
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: identification
+    entities:
+    - user
+  - slot_was_set:
+    - user
+  - action: user_form
+  - active_loop: user_form
+  - slot_was_set:
+    - user
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_set_user
+  - action: action_reset
+  - intent: insert_user
+    entities:
+    - user
+  - slot_was_set:
+    - user
+  - action: user_form
+  - active_loop: user_form
+  - slot_was_set:
+    - user
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_create_user
+  - action: action_reset
+  - intent: identification
+    entities:
+    - user
+  - slot_was_set:
+    - user
+  - action: user_form
+  - active_loop: user_form
+  - slot_was_set:
+    - user
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_set_user
+  - action: action_reset

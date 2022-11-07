@@ -1,6 +1,7 @@
 version: '2.0'
 
 intents:
+- cancel
 - affirm
 - greet
 - goodbye
@@ -22,35 +23,53 @@ intents:
 - bot_challenge
 
 entities:
-- tag:
+- tags:
     roles:
-      - tag_current
+      - tag
       - tag_new
-- category:
+    group:
+    - 1
+    - 2
+- categories:
     roles:
-      - category_current
+      - category
       - category_new
+    group:
+    - 1
+    - 4
 - alert
-- date
-- time
-- user:
+- date: 
+    group:
+    - 5
+- time: 
+    group:
+    - 5
+- users:
     roles:
-      - user_current
+      - user
       - user_new
+    group:
+    - 3
+- user
+- user_new
+- tag
+- tag_new
+- category
+- category_new
 
 slots:
-  tag_current:
+  tag:
     type: text
-    influence_conversation: false
+    influence_conversation: true
   tag_new:
     type: text
-    influence_conversation: false
-  category_current:
+    influence_conversation: true
+  category:
     type: text
-    influence_conversation: false
+    influence_conversation: true
   category_new:
     type: text
-    influence_conversation: false
+    influence_conversation: true
   date:
     type: text
     influence_conversation: false
@@ -60,32 +79,42 @@ slots:
   alert:
     type: text
     influence_conversation: false
-  user_current:
+  user:
     type: text
-    influence_conversation: false
+    influence_conversation: true
   user_new:
     type: text
-    influence_conversation: false
+    influence_conversation: true
 
 forms:
   id_task_form:
     required_slots:
-      tag_current:
+      tag:
       - type: from_entity
-        entity: tag
-        role: tag_current
-      category_current:
+        entity: tags
+        role: tag
+        group:
+        - 1
+        - 2
+      category:
       - type: from_entity
-        entity: category
-        role: category_current
+        entity: categories
+        role: category
+        group:
+        - 1
+        - 4
   deadline_form:
     required_slots:
       date:
       - type: from_entity
-        entity: date
+        entity: date   
+        group:
+        - 5
       time:
       - type: from_entity
         entity: time
+        group:
+        - 5
   alert_form:
     required_slots:
       alert: 
@@ -93,34 +122,42 @@ forms:
         entity: alert
   user_form:
     required_slots:
-      user_new:
+      user:
       - type: from_entity
-        entity: user
-        role: user_new
+        entity: users
+        role: user
+        group:
+        - 3
   modify_user_form:
     required_slots:
       user_new:
       - type: from_entity
-        entity: user
+        entity: users
         role: user_new
+        group:
+        - 3
   modify_tag_form:
     required_slots:
       tag_new:
       - type: from_entity
-        entity: tag
+        entity: tags
         role: tag_new
+        group:
+        - 2
   list_task_form:
     required_slots:
-      category_current:
+      category:
       - type: from_entity
-        entity: category
-        role: category_current
+        entity: categories
+        role: category
   modify_category_form:
     required_slots:
       category_new:
       - type: from_entity
-        entity: category
+        entity: categories
         role: category_new
+        group:
+        - 4
 
 responses:
   utter_greet:
@@ -192,10 +229,15 @@ responses:
   - text: Inserisci il nome utente
   utter_ask_user_new:
   - text: Inserisci il nuovo nome utente
+  utter_default:
+  - text: Scusami non ho capito. Puoi ripetere per favore?  
+  #utter_please_rephrase:
+  #- text: Scusami non ho capito. Puoi ripetere per favore? 
   utter_iamabot:
   - text: Io sono un bot, realizzato con Rasa per la gestione di una ToDoList.
   - text: Sono un bot, realizzato da un team di sviluppatori con Rasa
   - text: Stai parlando con un bot, che si occupa di gestire una ToDoList
+  
 actions:
 - action_set_user
 - action_add_alert

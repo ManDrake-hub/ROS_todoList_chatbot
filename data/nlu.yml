@@ -47,7 +47,7 @@ nlu:
     - non penso
     - non credo
     - non proprio
-
+#TO_DO: change tag_new and category_new
 - intent: inform
   examples: |
     - [Lezioni](tag)
@@ -56,9 +56,9 @@ nlu:
     - [Tennis](tag)
     - [Pallavolo](tag)
     - [Calcio](tag)
-    - [Viaggi](tag)
-    - [Uscita](tag)
-    - [Riunione](tag)
+    - [Viaggi]{"entity": "tags", "role": "tag"}
+    - [Uscita]{"entity": "tags", "role": "tag"}
+    - [Riunione]{"entity": "tags", "role": "tag"}
     - [Incontro](tag)
     - [Progetto](tag)
     - [Visita Medica](tag)
@@ -83,9 +83,9 @@ nlu:
     - [Riunione](tag_new)
     - [Incontro](tag_new)
     - [Progetto](tag_new)
-    - [Visita Medica](tag_new)
-    - [Computer](tag_new)
-    - [Materie da fare](tag_new)
+    - [Visita Medica]{"entity": "tags", "role": "tag_new"}
+    - [Computer]{"entity": "tags", "role": "tag_new"}
+    - [Materie da fare]{"entity": "tags", "role": "tag_new"}
     - [Compleanno](tag_new)
     - [Cena](tag_new)
     - [Spesa](tag_new)
@@ -104,80 +104,80 @@ nlu:
     - [7:7](time)
     - [23:59](time)
     - [20:7](time)
-    - [Università] (category)
-    - [Sport] (category)
-    - [Tempo libero] (category)
-    - [Lavoro] (category)
-    - [Impegni] (category)
-    - [Tecnologia] (category)
-    - [Studio] (category)
-    - [Famiglia] (category)
-    - [Casa] (category)
-    - [Esami] (category)
-    - [Università] (category_new)
-    - [Sport] (category_new)
-    - [Tempo libero] (category_new)
-    - [Lavoro] (category_new)
-    - [Impegni] (category_new)
-    - [Tecnologia] (category_new)
-    - [Studio] (category_new)
-    - [Famiglia] (category_new)
-    - [Casa] (category_new)
-    - [Esami] (category_new)
-    - [15 minuti prima] (alert)
-    - [30 minuti prima] (alert)
-    - [1 minuto prima] (alert)
-    - [45 minuti prima] (alert)
-    - [1 ora prima] (alert)
-    - [2 ore dopo] (alert)
-    - [25 minuti dopo] (alert)
-    - [12 minuti dopo] (alert)
-    - [50 minuti dopo] (alert)
-    - [50 secondi prima] (alert)
-    - [60 secondi dopo] (alert)
-    - [3 ore prima] (alert)
-    - [4 ore dopo] (alert)
-    - [6 ore prima] (alert)
-    - [Luigi] (user)
-    - [Francesca] (user)
-    - [Giovanni] (user)
-    - [Antonio] (user)
-    - [Gerry] (user)
-    - [Lucia] (user)
-    - [Gianluca] (user)
-    - [Ugo] (user)
-    - [Andrea] (user)
-    - [Simone] (user)
-    - [Dario] (user)
-    - [Angela] (user)
-    - [Marco] (user)
-    - [Arianna] (user)
-    - [MariaRosaria] (user)
-    - [Matteo] (user)
-    - [Mario] (user)
-    - [Federica] (user)
-    - [Camilla] (user)
-    - [Mattia] (user)
-    - [Luigi] (user_new)
-    - [Francesca] (user_new)
-    - [Giovanni] (user_new)
-    - [Antonio] (user_new)
-    - [Gerry] (user_new)
-    - [Lucia] (user_new)
-    - [Gianluca] (user_new)
-    - [Ugo] (user_new)
-    - [Andrea] (user_new)
-    - [Simone] (user_new)
-    - [Dario] (user_new)
-    - [Angela] (user_new)
-    - [Marco] (user_new)
-    - [Arianna] (user_new)
-    - [MariaRosaria] (user_new)
-    - [Matteo] (user_new)
-    - [Mario] (user_new)
-    - [Federica] (user_new)
-    - [Camilla] (user_new)
-    - [Mattia] (user_new)
+    - [Università]{"entity": "categories", "role": "category"}
+    - [Sport]{"entity": "categories", "role": "category"}
+    - [Tempo libero]{"entity": "categories", "role": "category"}
+    - [Lavoro](category)
+    - [Impegni](category)
+    - [Tecnologia](category)
+    - [Studio](category)
+    - [Famiglia](category)
+    - [Casa](category)
+    - [Esami](category)
+    - [Università](category_new)
+    - [Sport](category_new)
+    - [Tempo libero](category_new)
+    - [Lavoro](category_new)
+    - [Impegni](category_new)
+    - [Tecnologia](category_new)
+    - [Studio](category_new)
+    - [Famiglia]{"entity": "categories", "role": "category_new"}
+    - [Casa]{"entity": "categories", "role": "category_new"}
+    - [Esami]{"entity": "categories", "role": "category_new"}
+    - [15 minuti prima](alert)
+    - [30 minuti prima](alert)
+    - [1 minuto prima](alert)
+    - [45 minuti prima](alert)
+    - [1 ora prima](alert)
+    - [2 ore dopo](alert)
+    - [25 minuti dopo](alert)
+    - [12 minuti dopo](alert)
+    - [50 minuti dopo](alert)
+    - [50 secondi prima](alert)
+    - [60 secondi dopo](alert)
+    - [3 ore prima](alert)
+    - [4 ore dopo](alert)
+    - [6 ore prima](alert)
+    - [Luigi]{"entity": "users", "role": "user"}
+    - [Francesca]{"entity": "users", "role": "user"}
+    - [Giovanni]{"entity": "users", "role": "user"}
+    - [Antonio](user)
+    - [Gerry](user)
+    - [Lucia](user)
+    - [Gianluca](user)
+    - [Ugo](user)
+    - [Andrea](user)
+    - [Simone](user)
+    - [Dario](user)
+    - [Angela](user)
+    - [Marco](user)
+    - [Arianna](user)
+    - [MariaRosaria](user)
+    - [Matteo](user)
+    - [Mario](user)
+    - [Federica](user)
+    - [Camilla](user)
+    - [Mattia](user)
+    - [Luigi](user_new)
+    - [Francesca](user_new)
+    - [Giovanni](user_new)
+    - [Antonio](user_new)
+    - [Gerry](user_new)
+    - [Lucia](user_new)
+    - [Gianluca]{"entity": "users", "role": "user_new"}
+    - [Ugo]{"entity": "users", "role": "user_new"}
+    - [Andrea]{"entity": "users", "role": "user_new"}
+    - [Simone](user_new)
+    - [Dario](user_new)
+    - [Angela](user_new)
+    - [Marco](user_new)
+    - [Arianna](user_new)
+    - [MariaRosaria](user_new)
+    - [Matteo](user_new)
+    - [Mario](user_new)
+    - [Federica](user_new)
+    - [Camilla](user_new)
+    - [Mattia](user_new)
 
 #Insert
 - intent: insert_task
@@ -187,26 +187,26 @@ nlu:
     - vorrei aggiungere l'attività
     - aggiungi l'attività
     - inserisci l'attività [Progetto](tag) in [Lavoro](category)
-    - vorrei aggiungere l'attività [Elettrotecnica](tag) in [famiglia](category)
-    - inserisci l'attività [Calcio](tag)
-    - vorrei aggiungere l'attività [Materie da fare](tag)
-    - inserisci l'attività [Riunione](tag) in [Lavoro](category)
-    - vorrei aggiungere l'attività [Calcio](tag) in [Università](category)
+    - vorrei aggiungere l'attività [Elettrotecnica](tag) in [Famiglia](category)
+    - inserisci l'attività [Calcio]{"entity": "tags", "role": "tag"}
+    - vorrei aggiungere l'attività [Materie da fare]{"entity": "tags", "role": "tag"}
+    - inserisci l'attività [Riunione]{"entity": "tags", "role": "tag", "group": "1"} in [Lavoro]{"entity": "categories", "role": "category", "group": "1"}
+    - vorrei aggiungere l'attività [Calcio]{"entity": "tags", "role": "tag", "group": "1"} in [Università]{"entity": "categories", "role": "category", "group": "1"}
     - inserisci l'attività [Computer](tag) in [Esami](category) il [20/11/2022](date)
     - inserisci l'attività [Robotica Cognitiva](tag) in [Tempo libero](category) il [4/8/2030](date)
-    - vorrei inserire l'attività [Machine Learning](tag) in [Tecnologia](category) fino al [12-10-2045](date)
-    - vorrei inserire l'attività [Computer](tag) in [famiglia](category) fino al [4.8.2025](date)
+    - vorrei inserire l'attività [Machine Learning]{"entity": "tags", "role": "tag", "group": "1"} in [Tecnologia]{"entity": "categories", "role": "category", "group": "1"} fino al [12-10-2045](date)
+    - vorrei inserire l'attività [Computer]{"entity": "tags", "role": "tag", "group": "1"}  in [famiglia]{"entity": "categories", "role": "category", "group": "1"}  fino al [4.8.2025](date) 
     - vorrei aggiungere l'attività [Bollette](tag) in [Esami](category) il [20/11/2022](date)
     - vorrei aggiungere l'attività [Visita Medica](tag) in [Impegni](category) il [4/8/2030](date)
     - aggiungi l'attività [Calcio](tag) in [Tempo libero](category) con scadenza [12-10-2045](date)
     - aggiungi l'attività [Robotica Cognitiva](tag) in [Casa](category) con scadenza [4.8.2025](date)
-    - in [Impegni](category) aggiungi l'attività [Tennis](tag) il [20/11/2022](date)
+    - in [Impegni]{"entity": "categories", "role": "category", "group": "1"} aggiungi l'attività [Tennis]{"entity": "tags", "role": "tag", "group": "1"} il [20/11/2022](date) 
     - in [famiglia](category) aggiungi l'attività [Materie da fare](tag) il [4/8/2030](date)
     - inserisci l'attività [Calcio](tag) in [Casa](category) il [20.11.2023](date) alle [20:7](time)
     - vorrei inserire l'attività [Machine Learning](tag) in [Studio](category) il [12-10-2045](date) alle [04:25](time)
-    - vorrei aggiungere l'attività [Visione Artificiale](tag) in [Casa](category) il giorno [4/8/2030](date) alle ore [04:25](time)
+    - vorrei aggiungere l'attività [Visione Artificiale]{"entity": "tags", "role": "tag", "group": "1"} in [Casa]{"entity": "categories", "role": "category", "group": "1"} il giorno [4/8/2030](date) alle ore [04:25](time)
     - aggiungi l'attività [Bollette](tag) in [Tempo libero](category) fino a [20.11.2023](date)[23:59](time)
-    - in [Studio](category) aggiungi l'attività [Elettrotecnica](tag) il [4/8/2030](date) alle [20:7](time)
+    - in [Studio]{"entity": "categories", "role": "category", "group": "1"} aggiungi l'attività [Elettrotecnica]{"entity": "tags", "role": "tag", "group": "1"} il [4/8/2030](date) alle [20:7](time)
 - intent: insert_alert
   examples: |
     - inserisci un avviso
@@ -215,18 +215,18 @@ nlu:
     - inserisci un avviso [15 minuti prima](alert)
     - inserisci un avviso [2 ore prima](alert)
     - avvisami [15 minuti prima](alert) per l'attività [Cena](tag)
-    - avvisami [2 ore dopo](alert) per l'attività [Uscita](tag)
+    - avvisami [2 ore dopo](alert) per l'attività [Uscita]{"entity": "tags", "role": "tag", "group": "1"}
     - inserisci un alert [45 minuti prima](alert) per l'attività [Computer](tag)
     - inserisci un alert [25 minuti dopo](alert) per l'attività [Machine Learning](tag)
     - inserisci un avviso [2 ore prima](alert) per l'attività [Cognitive Robotics](tag) in [Esami](category)
     - avvisami [2 ore prima](alert) per l'attività [Tennis](tag) in [Sport](category)
     - per l'attività [Riunione](tag) in [Tecnologia](category) inserisci un avviso [1 ora prima](alert)
-    - inserisci un alert [15 minuti prima](alert) per l'attività [Pullman](tag) in [Tecnologia](category)
+    - inserisci un alert [15 minuti prima](alert) per l'attività [Pullman]{"entity": "tags", "role": "tag", "group": "1"} in [Tecnologia]{"entity": "categories", "role": "category", "group": "1"}
 - intent: insert_user
   examples: |
     - inserisci l'utente
     - aggiungi l'utente
-    - inserisci l'utente [Luigi](user)
+    - inserisci l'utente [Luigi]{"entity": "users", "role": "user"}
     - inserisci l'utente [Francesca](user)
     - inserisci l'utente [Giovanni](user)
     - inserisci l'utente [Antonio](user)
@@ -239,7 +239,7 @@ nlu:
     - aggiungi l'utente [Dario](user)
     - aggiungi l'utente [Angela](user)
     - aggiungi l'utente [Marco](user)
-    - aggiungi l'utente [Arianna](user)
+    - aggiungi l'utente [Arianna]{"entity": "users", "role": "user"}
     - aggiungi [MariaRosaria](user)
     - aggiungi [Matteo](user)
     - aggiungi [Mario](user)
@@ -248,7 +248,7 @@ nlu:
     - aggiungi [Mattia](user)
     - inserisci [Lucia](user)
     - inserisci [Gianluca](user)
-    - inserisci [Andrea](user)
+    - inserisci [Andrea]{"entity": "users", "role": "user"}
     - inserisci [Simone](user)
     - inserisci [Dario](user)
     - inserisci [Marco](user)
@@ -265,25 +265,25 @@ nlu:
     - elimina l'attività 
     - mi piacerebbe rimuovere l'attività
     - togli l'attività
-    - vorrei cancellare l'attività [Robotica Cognitiva](tag)
+    - vorrei cancellare l'attività [Robotica Cognitiva]{"entity": "tags", "role": "tag", "group": "1"}
     - vorrei cancellare l'attività [Elettrotecnica](tag)
     - vorrei rimuovere l'attività [Machine Learning](tag)
     - vorrei rimuovere l'attività [Visione Artificiale](tag)
     - elimina l'attività [Spesa](tag)
     - elimina l'attività [Bollette](tag)
-    - voglio rimuovere l'attività [Compleanno](tag)
+    - voglio rimuovere l'attività [Compleanno]{"entity": "tags", "role": "tag", "group": "1"}
     - voglio rimuovere l'attività [Cena](tag)
     - voglio rimuovere l'attività [Pallavolo](tag) in [Sport](category)
     - voglio rimuovere l'attività [Calcio](tag) in [Tempo libero](category)
     - voglio rimuovere l'attività [Visita Medica](tag) in [Università](category)
     - mi piacerebbe rimuovere l'attività [Riunione](tag) in [Lavoro](category)
     - mi piacerebbe rimuovere l'attività [Visita Medica](tag) in [Impegni](category)
-    - mi piacerebbe rimuovere l'attività [Progetto](tag) in [Tecnologia](category)
+    - mi piacerebbe rimuovere l'attività [Progetto]{"entity": "tags", "role": "tag", "group": "1"} in [Tecnologia]{"entity": "categories", "role": "category", "group": "1"}
     - mi piacerebbe rimuovere l'attività [Viaggi](tag) in [Studio](category)
     - togli l'attività [Visione Artificiale](tag) in [Università](category)
     - togli l'attività [Lezioni](tag) in [Tempo libero](category)
     - togli l'attività [Calcio](tag) in [Lavoro](category)
-    - togli l'attività [Robotica Cognitiva](tag) in [Impegni](category)
+    - togli l'attività [Robotica Cognitiva]{"entity": "tags", "role": "tag", "group": "1"} in [Impegni]{"entity": "categories", "role": "category", "group": "1"}
     - togli l'attività [Cena](tag) in [Tecnologia](category)
     - cancella l'attività [Riunione](tag) in [Lavoro](category)
     - cancella l'attività [Pallavolo](tag) in [Impegni](category)
@@ -296,15 +296,15 @@ nlu:
     - cancella la categoria
     - rimuovi la categoria [Studio](category)
     - rimuovi la categoria [famiglia](category)
-    - rimuovi la categoria [Esami](category)
+    - rimuovi la categoria [Esami]{"entity": "categories", "role": "category"}
     - elimina la categoria
     - elimina la categoria [Studio](category)
     - elimina la categoria [famiglia](category)
     - cancella la categoria [Casa](category)
-    - cancella la categoria [Esami](category)
+    - cancella la categoria [Esami]{"entity": "categories", "role": "category"}
 - intent: remove_alert
   examples: |
-    - rimuovi l'avviso per l'attività [Lezioni](tag) in [Università](category)
+    - rimuovi l'avviso per l'attività [Lezioni]{"entity": "tags", "role": "tag", "group": "1"} in [Università]{"entity": "categories", "role": "category", "group": "1"}
     - rimuovi l'avviso per l'attività [Pullman](tag) in [Università](category)
     - rimuovi l'avviso per l'attività [Tennis](tag) in [Tempo libero](category)
     - rimuovi l'avviso per l'attività [Tennis](tag) in [Lavoro](category)
@@ -326,7 +326,7 @@ nlu:
     - per l'attività [Materie da fare](tag) in [Università](category) elimina l'avviso
     - per l'attività [Compleanno](tag) in [Università](category) elimina l'avviso
     - per l'attività [Uscita](tag) in [Sport](category) elimina l'avviso
-    - per l'attività [Viaggi](tag) in [Casa](category) elimina l'avviso
+    - per l'attività [Viaggi]{"entity": "tags", "role": "tag", "group": "1"} in [Casa]{"entity": "categories", "role": "category", "group": "1"} elimina l'avviso
     - per l'attività [Spesa](tag) in [Casa](category) elimina l'avviso
     - per l'attività [Incontro](tag) in [Esami](category) elimina l'avviso
     - per l'attività [Visione Artificiale](tag) in [Esami](category) elimina l'avviso
@@ -346,18 +346,18 @@ nlu:
     - rimuovi l'utente [Luigi](user)
     - rimuovi l'utente [Francesca](user)
     - rimuovi l'utente [Giovanni](user)
-    - rimuovi l'utente [Antonio](user)
+    - rimuovi l'utente [Antonio]{"entity": "users", "role": "user"}
     - cancella l'utente [Gerry](user)
     - cancella l'utente [Lucia](user)
     - cancella l'utente [Gianluca](user)
     - cancella l'utente [Ugo](user)
     - cancella [Andrea](user)
     - cancella [Simone](user)
-    - cancella [Dario](user)
+    - cancella [Dario]{"entity": "users", "role": "user"}
     - cancella [Angela](user)
     - rimuovi [Marco](user)
     - rimuovi [Arianna](user)
-    - rimuovi [MariaRosaria](user)
+    - rimuovi [MariaRosaria]{"entity": "users", "role": "user"}
     - rimuovi [Matteo](user)
 
 #View
@@ -381,18 +381,18 @@ nlu:
     - cambia l'attività
     - modifica l'attività [Bollette](tag)
     - voglio cambiare l'attività [Riunione](tag)
-    - aggiorna l'attività [Robotica Cognitiva](tag)
+    - aggiorna l'attività [Robotica Cognitiva]{"entity": "tags", "role": "tag"}
     - aggiorna l'attività [Lezioni](tag) con titolo [Lezioni](tag_new)
-    - aggiorna l'attività [Uscita](tag) con titolo [Elettrotecnica](tag_new)
+    - aggiorna l'attività [Uscita]{"entity": "tags", "role": "tag", "group": "2"} con titolo [Elettrotecnica]{"entity": "tags", "role": "tag_new", "group": "2"}
     - cambia l'attività [Pallavolo](tag) con titolo [Elettrotecnica](tag_new)
     - cambia l'attività [Calcio](tag) con titolo [Lezioni](tag_new)
     - voglio modificare il titolo dell'attività [Pullman](tag) nella categoria [Impegni](category) con il nuovo titolo [Progetto](tag_new)
-    - cambia l'attività [Lezioni](tag) in [Università](category) con [Cena](tag_new)
+    - cambia l'attività [Lezioni]{"entity": "tags", "role": "tag", "group": "2"} in [Università](category) con [Cena]{"entity": "tags", "role": "tag_new", "group": "2"}
     - voglio modificare il titolo dell'attività [Computer](tag) nella categoria [Tecnologia](category) con il nuovo titolo [Computer](tag_new)
     - voglio aggiornare l'attività [Visita Medica](tag) in [Tempo libero](category) con [Computer](tag_new) in [Tempo libero](category_new)
-    - voglio aggiornare l'attività [Computer](tag) in [Impegni](category) con [Machine Learning](tag_new) in [Impegni](category_new)
+    - voglio aggiornare l'attività [Computer]{"entity": "tags", "role": "tag", "group": "2"} in [Impegni]{"entity": "categories", "role": "category_new", "group": "4"} con [Machine Learning]{"entity": "tags", "role": "tag_new", "group": "2"} in [Impegni]{"entity": "categories", "role": "category", "group": "4"}
     - voglio aggiornare l'attività [Viaggi](tag) in [Sport](category) con [Pallavolo](tag_new) in [Sport](category_new)
-    - cambia la categoria dell'attività [Elettrotecnica](tag) in [Esami](category) con l'attività [Machine Learning](tag_new) in [Esami](category_new)
+    - cambia la categoria dell'attività [Elettrotecnica]{"entity": "tags", "role": "tag", "group": "2"} in [Esami]{"entity": "categories", "role": "category", "group": "4"} con l'attività [Machine Learning]{"entity": "tags", "role": "tag_new", "group": "2"} in [Esami]{"entity": "categories", "role": "category_new", "group": "4"}
 - intent: modify_alert
   examples: |
     - vorrei cambiare l'avviso
@@ -406,7 +406,7 @@ nlu:
     - vorrei cambiare l'avviso di [Calcio](tag) 
     - vorrei cambiare l'avviso di [Viaggi](tag) 
     - voglio modificare l'avviso di [Uscita](tag) 
-    - voglio modificare l'avviso di [Riunione](tag) di [Personale](category)
+    - voglio modificare l'avviso di [Riunione]{"entity": "tags", "role": "tag", "group": "1"} di [Personale]{"entity": "categories", "role": "category", "group": "1"}
     - voglio modificare l'avviso di [Incontro](tag) di [Università](category)
     - voglio modificare l'avviso di [Visita Medica](tag) della categoria [Università](category)
     - voglio modificare l'avviso di [Computer](tag) della categoria [Sport](category)
@@ -418,18 +418,18 @@ nlu:
     - modifica la deadline
     - modifica la scadenza in [4/8/2030](date)
     - modifica la scadenza in [4.8.2025](date)
-    - cambia la scadenza in [20/11/2022](date) alle [7:30](time)
+    - cambia la scadenza in [20/11/2022](date)  alle [7:30](time) 
     - cambia la scadenza in [4/8/2030](date) alle [23:59](time)
     - modifica la deadline di [Spesa](tag) alle [23:59](time) del giorno [4.8.2025](date)
     - modifica la deadline di [Robotica Cognitiva](tag) alle [20:7](time) del giorno [4/8/2030](date)
-    - modifica la scadenza dell'attività [Tennis](tag) in [category] alle [20:7](time)
-    - modifica la scadenza dell'attività [Uscita](tag) in [category] alle [7:30](time)
-    - modifica la scadenza dell'attività [Machine Learning](tag) in [category] alle [23:59](time)
-    - cambia la scadenza dell'attività [Lezioni](tag) in [category] il [12-10-2045](date)
-    - cambia la scadenza dell'attività [Calcio](tag) in [category] il [20.11.2023](date) 
+    - modifica la scadenza dell'attività [Tennis](tag) in [category]alle [20:7](time)
+    - modifica la scadenza dell'attività [Uscita](tag) in [category]alle [7:30](time)
+    - modifica la scadenza dell'attività [Machine Learning](tag) in [category]alle [23:59](time)
+    - cambia la scadenza dell'attività [Lezioni](tag) in [category]il [12-10-2045](date)
+    - cambia la scadenza dell'attività [Calcio](tag) in [category]il [20.11.2023](date) 
     - cambia l'attività [Tennis](tag) al [12-10-2045](date) alle [7:7](time)
     - cambia l'attività [Viaggi](tag) al [20.11.2023](date) alle [20:7](time)
-    - vorrei cambiare la scadenza dell'attività [Materie da fare](tag) in [Università](category) il giorno [20/11/2022](date) alle ore [7:7](time)
+    - vorrei cambiare la scadenza dell'attività [Materie da fare]{"entity": "tags", "role": "tag", "group": "1"} in [Università]{"entity": "categories", "role": "category", "group": "1"} il giorno [20/11/2022](date)  alle ore [7:7](time) 
     - vorrei cambiare la scadenza dell'attività [Incontro](tag) in [Tempo libero](category) il giorno [4.8.2025](date) alle ore [04:25](time)
     - cambia la scadenza in [20/11/2022](date) alle [20:7](time) dell'attività [Bollette](tag) in [Studio](category)
     - cambia la scadenza in [4.8.2025](date) alle [23:59](time) dell'attività [Lezioni](tag) in [Esami](category)
@@ -445,10 +445,10 @@ nlu:
     - vorrei modificare il nome utente [Dario](user)
     - cambia il nome utente [Simone](user)
     - rinomina il nome utente [Marco](user)
-    - rinomina il nome utente [Luigi](user) in [Luigi](user_new)
+    - rinomina il nome utente [Luigi]{"entity": "users", "role": "user", "group": "2"} in [Luigi]{"entity": "users", "role": "user_new", "group": "2"}
     - rinomina il nome utente [Francesca](user) in [Antonio](user_new)
     - modifica il nome di [Mario](user) con il nome [Marco](user_new)
-    - cambia il nome utente [Giovanni](user) con il nome  utente [Mario](user_new)
+    - cambia il nome utente [Giovanni]{"entity": "users", "role": "user", "group": "2"} con il nome  utente [Mario]{"entity": "users", "role": "user_new", "group": "2"}
     - cambia il nome di [Camilla](user) in [Dario](user_new)
 
 - intent: identification
@@ -457,7 +457,7 @@ nlu:
     - mi chiamo
     - il mio nome è 
     - sono
-    - io sono [Luigi](user)
+    - io sono [Luigi]{"entity": "users", "role": "user"}
     - io sono [Francesca](user)
     - io sono [Giovanni](user)
     - io sono [Antonio](user)
@@ -465,14 +465,14 @@ nlu:
     - io sono [Lucia](user)
     - io sono [Gianluca](user)
     - sono [Ugo](user)
-    - sono [Andrea](user)
+    - sono [Andrea]{"entity": "users", "role": "user"}
     - sono [Simone](user)
     - sono [Dario](user)
     - sono [Angela](user)
     - sono [Marco](user)
     - sono [Arianna](user)
     - mi chiamo [Arianna](user)
-    - mi chiamo [MariaRosaria](user)
+    - mi chiamo [MariaRosaria]{"entity": "users", "role": "user"}
     - mi chiamo [Matteo](user)
     - mi chiamo [Mario](user)
     - mi chiamo [Federica](user)
@@ -481,11 +481,20 @@ nlu:
     - il mio nome è [Dario](user)
     - il mio nome è [Angela](user)
     - il mio nome è [Marco](user)
-    - il mio nome è [Arianna](user)
+    - il mio nome è [Arianna]{"entity": "users", "role": "user"}
     - il mio nome è [MariaRosaria](user)
     - il mio nome è [Matteo](user)
     - il mio nome è [Mario](user)
-  
+
+#Cancel
+- intent: cancel
+  examples: |
+    - Stop
+    - Fermo
+    - Annulla
+    - Cancella
+    - Ricomincia
+
 - intent: bot_challenge
   examples: |
     - Chi sei?

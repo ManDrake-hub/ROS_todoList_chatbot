@@ -16,40 +16,30 @@ rules:
   - intent: bot_challenge
   - action: utter_iamabot
 
-- rule: Set user
+- rule: Change ToDo list if user indentifies
   steps:
   - intent: identification
   - action: user_form
   - action: action_set_user
   - action: action_reset
 
-#Insert
-- rule: Insert task
-  steps:
-  - intent: insert_task
-  - action: id_task_form
-  - action: deadline_form
-  - action: action_add_task
-  - action: action_reset
-
-- rule: Create user
-  steps:
-  - intent: insert_user
-  - action: user_form
-  - action: action_create_user
-  - action: action_reset
-
-- rule: Insert alert
-  steps:
-  - intent: insert_alert
-  - action: id_task_form
-  - action: alert_form
-  - action: action_add_alert
-  - action: action_reset
-
 #View
-- rule: View tasks
+- rule: View tasks after user's request
   steps:
     - intent: view
     - action: action_read_tasks
     - action: action_reset
+
+##Cancel
+#- rule: Cancel slot if I say stop
+#  steps:
+#    - intent: cancel
+#    - action: utter_op_deny
+#    - action: action_reset
+    
+##Rephrase
+#- rule: ask to repeat
+#  steps:
+#    - intent: nlu_fallback
+#    - action: utter_please_rephrase
+#    - action: action_reset

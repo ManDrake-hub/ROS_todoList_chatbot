@@ -7,13 +7,8 @@ intents:
 - goodbye
 - deny
 - inform
-- insert_alert
-- insert_user
-- insert_task
-- remove_task
-- remove_category
-- remove_alert
-- remove_user
+- insert
+- remove
 - view
 - modify_task_category
 - modify_alert
@@ -23,33 +18,9 @@ intents:
 - bot_challenge
 
 entities:
-- tags:
-    roles:
-      - tag
-      - tag_new
-    group:
-    - 1
-    - 2
-- categories:
-    roles:
-      - category
-      - category_new
-    group:
-    - 1
-    - 4
 - alert
-- date: 
-    group:
-    - 5
-- time: 
-    group:
-    - 5
-- users:
-    roles:
-      - user
-      - user_new
-    group:
-    - 3
+- date
+- time
 - user
 - user_new
 - tag
@@ -60,104 +31,60 @@ entities:
 slots:
   tag:
     type: text
-    influence_conversation: true
   tag_new:
     type: text
-    influence_conversation: true
   category:
     type: text
-    influence_conversation: true
   category_new:
     type: text
-    influence_conversation: true
   date:
     type: text
-    influence_conversation: false
   time:
     type: text
-    influence_conversation: false
   alert:
     type: text
-    influence_conversation: false
   user:
     type: text
-    influence_conversation: true
   user_new:
     type: text
-    influence_conversation: true
 
 forms:
   id_task_form:
     required_slots:
       tag:
       - type: from_entity
-        entity: tags
-        role: tag
-        group:
-        - 1
-        - 2
+        entity: tag
       category:
       - type: from_entity
-        entity: categories
-        role: category
-        group:
-        - 1
-        - 4
+        entity: category
   deadline_form:
     required_slots:
       date:
       - type: from_entity
-        entity: date   
-        group:
-        - 5
+        entity: date
       time:
       - type: from_entity
         entity: time
-        group:
-        - 5
-  alert_form:
-    required_slots:
-      alert: 
-      - type: from_entity
-        entity: alert
   user_form:
     required_slots:
       user:
       - type: from_entity
-        entity: users
-        role: user
-        group:
-        - 3
+        entity: user
   modify_user_form:
     required_slots:
       user_new:
       - type: from_entity
-        entity: users
-        role: user_new
-        group:
-        - 3
+        entity: user_new
   modify_tag_form:
     required_slots:
       tag_new:
       - type: from_entity
-        entity: tags
-        role: tag_new
-        group:
-        - 2
-  list_task_form:
-    required_slots:
-      category:
-      - type: from_entity
-        entity: categories
-        role: category
+        entity: tag_new
   modify_category_form:
     required_slots:
       category_new:
       - type: from_entity
-        entity: categories
-        role: category_new
-        group:
-        - 4
+        entity: category_new
 
 responses:
   utter_greet:

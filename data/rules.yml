@@ -16,20 +16,118 @@ rules:
   - intent: bot_challenge
   - action: utter_iamabot
 
-- rule: Change ToDo list if user indentifies
+#Identification
+- rule: Change or create ToDo list if user indentifies
   steps:
   - intent: identification
   - action: user_form
+  - action: action_create_user
   - action: action_set_user
   - action: action_reset
 
 #View
 - rule: View tasks after user's request
   steps:
-    - intent: view
-    - action: action_read_tasks
-    - action: action_reset
+  - intent: view
+  - action: action_read_tasks
+  - action: action_reset
 
+#Insert
+- rule: insert_task
+  condition:
+    - slot_was_set:
+      - alert: null
+  steps:
+  - intent: insert
+  - action: id_task_form
+  - action: deadline_form
+  - action: action_add_task
+  - action: action_reset
+
+- rule: insert_alert
+  condition:
+    - slot_was_set:
+      - alert
+  steps:
+  - intent: insert
+  - action: id_task_form
+  - action: action_add_alert
+  - action: action_reset
+
+#Remove
+- rule: remove_task
+  condition:
+    - slot_was_set:
+      - tag
+  steps:
+  - intent: remove
+  - action: id_task_form
+  - action: action_remove_task
+  - action: action_reset
+
+- rule: remove_category
+  condition:
+    - slot_was_set:
+      - category
+  steps:
+  - intent: remove
+  - action: action_remove_category
+  - action: action_reset
+
+- rule: remove_alert
+  steps:
+  - intent: remove
+  - action: id_task_form
+  - action: action_remove_alert
+  - action: action_reset
+  
+- rule: remove_user
+  condition:
+    - slot_was_set:
+      - user
+  steps:
+  - intent: remove
+  - action: action_remove_user
+  - action: action_reset
+
+
+##Modify
+#- rule: modify_task
+#  steps:
+#  - intent: modify_task_category
+#  - action: id_task_form
+#  - action: modify_tag_form
+#  - action: action_modify_task_name
+#  - action: modify_category_form
+#  - action: action_move_task
+#  - action: action_reset
+#
+#- rule: modify_alert
+#  steps:
+#  - intent: modify_alert
+#  - action: id_task_form
+#  - action: alert_form
+#  - action: action_modify_alert
+#  - action: action_reset
+#
+#- rule: modify_deadline
+#  steps:
+#  - intent: modify_deadline
+#  - action: id_task_form
+#  - action: deadline_form
+#  - action: action_modify_deadline
+#  - action: action_reset
+#
+#- rule: modify_user
+#  steps:
+#  - intent: modify_user
+#  - action: user_form
+#  - action: modify_user_form
+#  - action: action_rename_user
+#  - action: action_reset
+#
+#
+#
 ##Cancel
 #- rule: Cancel slot if I say stop
 #  steps:

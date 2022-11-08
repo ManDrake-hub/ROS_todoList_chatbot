@@ -23,7 +23,6 @@ nlu:
     - ci vediamo
     - buona giornata
     - ci sentiamo in giro
-    - ci vediamo in giro
 - intent: affirm
   examples: |
     - si
@@ -53,23 +52,6 @@ nlu:
     - [Mensa](tag)
     - [Tennis](tag)
     - [Pallavolo](tag)
-    - [Calcio](tag)
-    - [Viaggi](tag)
-    - [Uscita](tag)
-    - [Riunione](tag)
-    - [Incontro](tag)
-    - [Progetto](tag)
-    - [Visita Medica](tag)
-    - [Computer](tag)
-    - [Materie da fare](tag)
-    - [Compleanno](tag)
-    - [Cena](tag)
-    - [Spesa](tag)
-    - [Bollette](tag)
-    - [Machine Learning](tag)
-    - [Visione Artificiale](tag) 
-    - [Robotica Cognitiva](tag)
-    - [Elettrotecnica](tag) 
     - [20/11/2022](date)
     - [12-10-2045](date)
     - [4/8/2030](date)
@@ -85,187 +67,134 @@ nlu:
     - [Tempo libero](category)
     - [Lavoro](category)
     - [Impegni](category)
-    - [Tecnologia](category)
-    - [Studio](category)
-    - [Famiglia](category)
-    - [Casa](category)
-    - [Esami](category)
     - [15 minuti prima](alert)
-    - [30 minuti prima](alert)
-    - [1 minuto prima](alert)
-    - [45 minuti prima](alert)
     - [1 ora prima](alert)
-    - [2 ore dopo](alert)
-    - [25 minuti dopo](alert)
-    - [12 minuti dopo](alert)
-    - [50 minuti dopo](alert)
     - [50 secondi prima](alert)
-    - [60 secondi dopo](alert)
+    - [30 minuti prima](alert)
     - [3 ore prima](alert)
-    - [4 ore dopo](alert)
-    - [6 ore prima](alert)
     - [Luigi](user)
     - [Francesca](user)
     - [Giovanni](user)
     - [Antonio](user)
     - [Gerry](user)
-    - [Lucia](user)
-    - [Gianluca](user)
-    - [Ugo](user)
-    - [Andrea](user)
-    - [Simone](user)
-    - [Dario](user)
-    - [Angela](user)
-    - [Marco](user)
-    - [Arianna](user)
-    - [MariaRosaria](user)
-    - [Matteo](user)
-    - [Mario](user)
-    - [Federica](user)
-    - [Camilla](user)
-    - [Mattia](user)
 
 #Insert
 - intent: insert
   examples: |
-    - inserisci l'attività
-    - vorrei inserire l'attività
+    - inserisci l'attività 
     - vorrei aggiungere l'attività
     - aggiungi l'attività
-    - inserisci l'attività [Progetto](tag) in [Lavoro](category)
-    - vorrei aggiungere l'attività [Elettrotecnica](tag) in [famiglia](category)
-    - inserisci l'attività [Calcio](tag)
-    - vorrei aggiungere l'attività [Materie da fare](tag)
-    - inserisci l'attività [Riunione](tag) in [Lavoro](category)
-    - vorrei aggiungere l'attività [Calcio](tag) in [Università](category)
-    - inserisci l'attività [Computer](tag) in [Esami](category) il [20/11/2022](date)
-    - inserisci l'attività [Robotica Cognitiva](tag) in [Tempo libero](category) il [4/8/2030](date)
-    - vorrei inserire l'attività [Machine Learning](tag) in [Tecnologia](category) fino al [12-10-2045](date)
-    - vorrei inserire l'attività [Computer](tag) in [famiglia](category) fino al [4.8.2025](date)
-    - vorrei aggiungere l'attività [Bollette](tag) in [Esami](category) il [20/11/2022](date)
-    - vorrei aggiungere l'attività [Visita Medica](tag) in [Impegni](category) il [4/8/2030](date)
-    - aggiungi l'attività [Calcio](tag) in [Tempo libero](category) con scadenza [12-10-2045](date)
-    - aggiungi l'attività [Robotica Cognitiva](tag) in [Casa](category) con scadenza [4.8.2025](date)
-    - in [Impegni](category) aggiungi l'attività [Tennis](tag) il [20/11/2022](date)
-    - in [famiglia](category) aggiungi l'attività [Materie da fare](tag) il [4/8/2030](date)
-    - inserisci l'attività [Calcio](tag) in [Casa](category) il [20.11.2023](date) alle [20:7](time)
-    - vorrei inserire l'attività [Machine Learning](tag) in [Studio](category) il [12-10-2045](date) alle [04:25](time)
-    - vorrei aggiungere l'attività [Visione Artificiale](tag) in [Casa](category) il giorno [4/8/2030](date) alle ore [04:25](time)
-    - aggiungi l'attività [Bollette](tag) in [Tempo libero](category) fino a [20.11.2023](date) [23:59](time)
+    - inserisci l'attività [Lezioni](tag)
+    - inserisci l'attività [Mensa](tag)
+    - aggiungi l'attività [Tennis](tag)
+    - aggiungi l'attività [Pullman](tag)
+    - vorrei aggiungere l'attività [Pallavolo](tag)
+    - inserisci l'attività [Lezioni](tag) nella categoria [Lavoro](category)
+    - inserisci l'attività [Mensa](tag) nella categoria [Tempo libero](category)
+    - aggiungi l'attività [Tennis](tag) nella categoria [Università](category)
+    - aggiungi l'attività [Pullman](tag) nella categoria [Sport](category)
+    - vorrei aggiungere l'attività [Pallavolo](tag) nella categoria [Impegni](category)
+    - inserisci l'attività [Lezioni](tag) nella categoria [Sport](category) il [20/11/2022](date) alle [04:25](time)
+    - inserisci l'attività [Mensa](tag) nella categoria [Università](category) il [12-10-2045](date) alle [23:59](time)
+    - aggiungi l'attività [Tennis](tag) nella categoria [Tempo Libero](category) il [12-10-2045](date) alle [7:30](time)
+    - aggiungi l'attività [Pullman](tag) nella categoria [Lavoro](category) il [20/11/2022](date) alle [7:30](time)
+    - vorrei aggiungere l'attività [Pallavolo](tag) nella categoria [Impegni](category) il [20/11/2022](date) alle [7:30](time)
+    - nella categoria [Studio](category) aggiungi l'attività [Elettrotecnica](tag) il [4/8/2030](date) alle [20:7](time)
+    - nella categoria [Studio](category) aggiungi l'attività [Elettrotecnica](tag) il [4/8/2030](date) alle [20:7](time)
+    - nella categoria [Studio](category) aggiungi l'attività [Elettrotecnica](tag) il [4/8/2030](date) alle [20:7](time)
+    - inserisci l'attività [Lezioni](tag) in [Lavoro](category)
+    - inserisci l'attività [Mensa](tag) in [Tempo libero](category)
+    - aggiungi l'attività [Tennis](tag) in [Università](category)
+    - aggiungi l'attività [Pullman](tag) in [Sport](category)
+    - vorrei aggiungere l'attività [Pallavolo](tag) in [Impegni](category)
     - in [Studio](category) aggiungi l'attività [Elettrotecnica](tag) il [4/8/2030](date) alle [20:7](time)
-    - inserisci un avviso
-    - inserisci un alert
-    - avvisami
+    - in [Studio](category) aggiungi l'attività [Elettrotecnica](tag) il [4/8/2030](date) alle [20:7](time)
+    - in [Studio](category) aggiungi l'attività [Elettrotecnica](tag) il [4/8/2030](date) alle [20:7](time)
     - inserisci un avviso [15 minuti prima](alert)
-    - inserisci un avviso [2 ore prima](alert)
-    - avvisami [15 minuti prima](alert) per l'attività [Cena](tag)
-    - avvisami [2 ore dopo](alert) per l'attività [Uscita](tag)
-    - inserisci un alert [45 minuti prima](alert) per l'attività [Computer](tag)
-    - inserisci un alert [25 minuti dopo](alert) per l'attività [Machine Learning](tag)
-    - inserisci un avviso [2 ore prima](alert) per l'attività [Cognitive Robotics](tag) in [Esami](category)
-    - avvisami [2 ore prima](alert) per l'attività [Tennis](tag) in [Sport](category)
-    - per l'attività [Riunione](tag) in [Tecnologia](category) inserisci un avviso [1 ora prima](alert)
-    - inserisci un alert [15 minuti prima](alert) per l'attività [Pullman](tag) in [Tecnologia](category)
+    - inserisci un avviso [1 ora prima](alert)
+    - avvisami [50 secondi prima](alert)
+    - avvisami [30 minuti prima](alert)
+    - inserisci un alert [3 ore prima](alert)
+    - inserisci un avviso [15 minuti prima](alert) per l'attività [Lezioni](tag)
+    - inserisci un avviso [1 ora prima](alert) per l'attività [Pullman](tag)
+    - avvisami [50 secondi prima](alert) per l'attività [Mensa](tag)
+    - avvisami [30 minuti prima](alert) per l'attività [Tennis](tag)
+    - inserisci un alert [3 ore prima](alert) per l'attività [Pallavolo](tag)
+    - inserisci un avviso [15 minuti prima](alert) per l'attività [Lezioni](tag) nella categoria [Università](category)
+    - inserisci un avviso [1 ora prima](alert) per l'attività [Pullman](tag) nella categoria [Tempo libero](category)
+    - avvisami [50 secondi prima](alert) per l'attività [Mensa](tag) nella categoria [Lavoro](category)
+    - avvisami [30 minuti prima](alert) per l'attività [Tennis](tag) nella categoria [Sport](category)
+    - inserisci un alert [3 ore prima](alert) per l'attività [Pallavolo](tag) nella categoria [Impegni](category)
+    - per l'attività [Lezioni](tag) nella categoria [Università](category) inserisci un avviso [15 minuti prima](alert)
+    - per l'attività [Pullman](tag) nella categoria [Tempo libero](category) avvisami [50 secondi prima](alert)
+    - per l'attività [Mensa](tag) nella categoria [Lavoro](category) nserisci un alert [3 ore prima](alert)
+    - inserisci un avviso [15 minuti prima](alert) per l'attività [Lezioni](tag) in [Università](category)
+    - inserisci un avviso [1 ora prima](alert) per l'attività [Pullman](tag) in [Tempo libero](category)
+    - avvisami [50 secondi prima](alert) per l'attività [Mensa](tag) in [Lavoro](category)
+    - avvisami [30 minuti prima](alert) per l'attività [Tennis](tag) in [Sport](category)
+    - inserisci un alert [3 ore prima](alert) per l'attività [Pallavolo](tag) in [Impegni](category)
+    - per l'attività [Lezioni](tag) in [Università](category) inserisci un avviso [15 minuti prima](alert)
+    - per l'attività [Pullman](tag) in [Tempo libero](category) avvisami [50 secondi prima](alert)
+    - per l'attività [Mensa](tag) in [Lavoro](category) nserisci un alert [3 ore prima](alert)
     
-#Remove 
+#Remove 55 frasi
 - intent: remove
   examples: |
-    - vorrei cancellare l'attività
-    - vorrei rimuovere l'attività
-    - vorrei eliminare l'attività
-    - rimuovi l'attività
-    - cancella l'attività
-    - elimina l'attività 
-    - mi piacerebbe rimuovere l'attività
-    - togli l'attività
-    - vorrei cancellare l'attività [Robotica Cognitiva](tag)
-    - vorrei cancellare l'attività [Elettrotecnica](tag)
-    - vorrei rimuovere l'attività [Machine Learning](tag)
-    - vorrei rimuovere l'attività [Visione Artificiale](tag)
-    - elimina l'attività [Spesa](tag)
-    - elimina l'attività [Bollette](tag)
-    - voglio rimuovere l'attività [Compleanno](tag)
-    - voglio rimuovere l'attività [Cena](tag)
-    - voglio rimuovere l'attività [Pallavolo](tag) in [Sport](category)
-    - voglio rimuovere l'attività [Calcio](tag) in [Tempo libero](category)
-    - voglio rimuovere l'attività [Visita Medica](tag) in [Università](category)
-    - mi piacerebbe rimuovere l'attività [Riunione](tag) in [Lavoro](category)
-    - mi piacerebbe rimuovere l'attività [Visita Medica](tag) in [Impegni](category)
-    - mi piacerebbe rimuovere l'attività [Progetto](tag) in [Tecnologia](category)
-    - mi piacerebbe rimuovere l'attività [Viaggi](tag) in [Studio](category)
-    - togli l'attività [Visione Artificiale](tag) in [Università](category)
-    - togli l'attività [Lezioni](tag) in [Tempo libero](category)
-    - togli l'attività [Calcio](tag) in [Lavoro](category)
-    - togli l'attività [Robotica Cognitiva](tag) in [Impegni](category)
-    - togli l'attività [Cena](tag) in [Tecnologia](category)
-    - cancella l'attività [Riunione](tag) in [Lavoro](category)
-    - cancella l'attività [Pallavolo](tag) in [Impegni](category)
-    - cancella l'attività [Incontro](tag) in [Studio](category)
-    - cancella l'attività [Spesa](tag) in [Famiglia](category)
-    - rimuovi la categoria
-    - voglio rimuovere la categoria
-    - cancella la categoria
-    - rimuovi la categoria [Studio](category)
-    - rimuovi la categoria [famiglia](category)
-    - rimuovi la categoria [Esami](category)
-    - elimina la categoria
-    - elimina la categoria [Studio](category)
-    - elimina la categoria [famiglia](category)
-    - cancella la categoria [Casa](category)
-    - cancella la categoria [Esami](category)
-    - rimuovi l'avviso per l'attività [Lezioni](tag) in [Università](category)
-    - rimuovi l'avviso per l'attività [Pullman](tag) in [Università](category)
-    - rimuovi l'avviso per l'attività [Tennis](tag) in [Tempo libero](category)
-    - rimuovi l'avviso per l'attività [Tennis](tag) in [Lavoro](category)
-    - rimuovi l'alert per l'attività [Calcio](tag) in [Impegni](category)
-    - rimuovi l'alert per l'attività [Progetto](tag) in [Casa](category)
-    - rimuovi l'alert per l'attività [Tennis](tag) in [Esami](category)
-    - elimina l'alert per l'attività [Lezioni](tag) in [Sport](category)
-    - elimina l'alert per l'attività [Mensa](tag) in [Tempo libero](category)
-    - elimina l'alert per l'attività [Pallavolo](tag) in [Lavoro](category)
-    - elimina l'alert per l'attività [Riunione](tag) in [Impegni](category)
-    - elimina l'alert per l'attività [Progetto](tag) in [Tecnologia](category)
-    - elimina l'avviso per l'attività [Pallavolo](tag) in [Università](category)
-    - elimina l'avviso per l'attività [Mensa](tag) in [Sport](category)
-    - elimina l'avviso per l'attività [Pallavolo](tag) in [Tempo libero](category)
-    - elimina l'avviso per l'attività [Visita Medica](tag) in [Tecnologia](category)
-    - elimina l'avviso per l'attività [Compleanno](tag) in [Famiglia](category)
-    - per l'attività [Lezioni](tag) in [Università](category) elimina l'avviso
-    - per l'attività [Pullman](tag) in [Università](category) elimina l'avviso
-    - per l'attività [Materie da fare](tag) in [Università](category) elimina l'avviso
-    - per l'attività [Compleanno](tag) in [Università](category) elimina l'avviso
-    - per l'attività [Uscita](tag) in [Sport](category) elimina l'avviso
-    - per l'attività [Viaggi](tag) in [Casa](category) elimina l'avviso
-    - per l'attività [Spesa](tag) in [Casa](category) elimina l'avviso
-    - per l'attività [Incontro](tag) in [Esami](category) elimina l'avviso
-    - per l'attività [Visione Artificiale](tag) in [Esami](category) elimina l'avviso
-    - per l'attività [Robotica Cognitiva](tag) in [Esami](category) elimina l'avviso
-    - per l'attività [Robotica Cognitiva](tag) in [Università](category) elimina l'alert
-    - per l'attività [Materie da fare](tag) in [Esami](category) elimina l'alert
-    - elimina il reminder
-    - rimuovi l'avviso
-    - rimuovi l'alert
-    - elimina l'alert
-    - elimina l'avviso
-    - rimuovi l'utente
-    - cancella l'utente
-    - elimina l'utente
+    - rimuovi l'attività [Pallavolo](tag)
+    - rimuovi l'attività [Mensa](tag)
+    - elimina l'attività [Tennis](tag)
+    - elimina l'attività [Pullman](tag)
+    - cancella l'attività [Lezioni](tag)
+    - cancella l'attività [Pallavolo](tag)
+    - rimuovi l'attività [Lezioni](tag) nella categoria [Impegni](category)
+    - rimuovi l'attività [Mensa](tag) nella categoria [Sport](category)
+    - elimina l'attività [Tennis](tag) nella categoria [Lavoro](category)
+    - elimina l'attività [Pullman](tag) nella categoria [Università](category)
+    - cancella l'attività [Pallavolo](tag) nella categoria [Tempo libero](category)
+    - rimuovi l'attività [Lezioni](tag) in [Impegni](category)
+    - rimuovi l'attività [Mensa](tag) in[Sport](category)
+    - elimina l'attività [Tennis](tag) in [Lavoro](category)
+    - elimina l'attività [Pullman](tag) in [Università](category)
+    - cancella l'attività [Pallavolo](tag) in [Tempo libero](category)
+    - rimuovi la categoria [Università](category)
+    - rimuovi la categoria [Sport](category)
+    - cancella la categoria [Tempo libero](category)
+    - cancella la categoria [Lavoro](category)
+    - elimina la categoria [Impegni](category)
+    - rimuovi l'avviso [15 minuti prima](alert)
+    - rimuovi l'avviso [1 ora prima](alert)
+    - elimina l'avviso [50 secondi prima](alert)
+    - elimina l'avviso [30 minuti prima](alert)
+    - cancella l'attività [3 ore prima](alert)
+    - rimuovi l'avviso [15 minuti prima](alert) dell'attività [Lezioni](tag) nella categoria [Impegni](category)
+    - rimuovi l'avviso [1 ora prima](alert) dell'attività [Mensa](tag) nella categoria [Sport](category)
+    - elimina l'avviso [50 secondi prima](alert) dell'attività [Tennis](tag) nella categoria [Lavoro](category)
+    - elimina l'avviso [30 minuti prima](alert) dell'attività [Pullman](tag) nella categoria [Università](category)
+    - cancella l'attività [3 ore prima](alert) dell'attività [Pallavolo](tag) nella categoria [Tempo libero](category)
+    - rimuovi l'avviso [50 secondi prima](alert) dell'attività [Mensa](tag) nella categoria [Lavoro](category)
+    - rimuovi l'avviso [30 minuti prima](alert) dell'attività [Pullman](tag) nella categoria [Tempo libero](category)
+    - elimina l'avviso [1 ora prima](alert) dell'attività [Lezioni](tag) nella categoria [Sport](category)
+    - elimina l'avviso [15 minuti prima](alert) dell'attività [Pallavolo](tag) nella categoria [Università](category)
+    - cancella l'attività [3 ore prima](alert) dell'attività [Tennis](tag) nella categoria [Impegni](category)
+    - rimuovi l'avviso [50 secondi prima](alert) dell'attività [Mensa](tag) in [Lavoro](category)
+    - rimuovi l'avviso [30 minuti prima](alert) dell'attività [Pullman](tag) in [Tempo libero](category)
+    - elimina l'avviso [1 ora prima](alert) dell'attività [Lezioni](tag) in [Sport](category)
+    - elimina l'avviso [15 minuti prima](alert) dell'attività [Pallavolo](tag) in [Università](category)
+    - cancella l'attività [3 ore prima](alert) dell'attività [Tennis](tag) in [Impegni](category)
+    - rimuovi l'avviso [30 minuti prima](alert) dell'attività [Lezioni](tag) in [Impegni](category)
+    - rimuovi l'avviso [3 ora prima](alert) dell'attività [Mensa](tag) in[Sport](category)
+    - elimina l'avviso [15 minuti prima](alert) dell'attività [Tennis](tag) in [Lavoro](category)
+    - elimina l'avviso [50 secondi prima](alert) dell'attività [Pullman](tag) in [Università](category)
+    - cancella l'attività [1 ora prima](alert) dell'attività [Pallavolo](tag) in [Tempo libero](category)
     - rimuovi l'utente [Luigi](user)
+    - rimuovi l'utente [Gerry](user)
     - rimuovi l'utente [Francesca](user)
-    - rimuovi l'utente [Giovanni](user)
-    - rimuovi l'utente [Antonio](user)
-    - cancella l'utente [Gerry](user)
-    - cancella l'utente [Lucia](user)
-    - cancella l'utente [Gianluca](user)
-    - cancella l'utente [Ugo](user)
-    - cancella [Andrea](user)
-    - cancella [Simone](user)
-    - cancella [Dario](user)
-    - cancella [Angela](user)
-    - rimuovi [Marco](user)
-    - rimuovi [Arianna](user)
-    - rimuovi [MariaRosaria](user)
-    - rimuovi [Matteo](user)
+    - cancella l'utente [Antonio](user)
+    - cancella l'utente [Giovanni](user)
+    - cancella l'utente [Luigi](user)
+    - elimina l'utente [Antonio](user)
+    - elimina l'utente [Gerry](user)
+    - elimina l'utente [Francesca](user)
 
 #View
 - intent: view
@@ -278,93 +207,82 @@ nlu:
     - mostrami le attività
     - fammi vedere le attività
 
-#Modify
-- intent: modify_task_category
-  examples: |
-    - voglio modificare l'attività
-    - voglio modificare il titolo dell'attività
-    - modifica l'attività
-    - aggiorna l'attività
-    - cambia l'attività
-    - modifica l'attività [Bollette](tag)
-    - voglio cambiare l'attività [Riunione](tag)
-    - aggiorna l'attività [Robotica Cognitiva](tag)
-    - aggiorna l'attività [Lezioni](tag) con titolo [Lezioni](tag_new)
-    - aggiorna l'attività [Uscita](tag) con titolo [Elettrotecnica](tag_new)
-    - cambia l'attività [Pallavolo](tag) con titolo [Elettrotecnica](tag_new)
-    - cambia l'attività [Calcio](tag) con titolo [Lezioni](tag_new)
-    - voglio modificare il titolo dell'attività [Pullman](tag) nella categoria [Impegni](category) con il nuovo titolo [Progetto](tag_new)
-    - cambia l'attività [Lezioni](tag) in [Università](category) con [Cena](tag_new)
-    - voglio modificare il titolo dell'attività [Computer](tag) nella categoria [Tecnologia](category) con il nuovo titolo [Computer](tag_new)
-    - voglio aggiornare l'attività [Visita Medica](tag) in [Tempo libero](category) con [Computer](tag_new) in [Tempo libero](category_new)
-    - voglio aggiornare l'attività [Computer](tag) in [Impegni](category) con [Machine Learning](tag_new) in [Impegni](category_new)
-    - voglio aggiornare l'attività [Viaggi](tag) in [Sport](category) con [Pallavolo](tag_new) in [Sport](category_new)
-    - cambia la categoria dell'attività [Elettrotecnica](tag) in [Esami](category) con l'attività [Machine Learning](tag_new) in [Esami](category_new)
-- intent: modify_alert
-  examples: |
-    - vorrei cambiare l'avviso
-    - vorrei modificare l'avviso
-    - modifica l'avviso
-    - vorrei cambiare l'avviso di [Lezioni](tag) in [15 minuti prima](alert)
-    - vorrei cambiare l'avviso di [Pullman](tag) in [1 minuto prima](alert)
-    - vorrei cambiare l'avviso di [Mensa](tag) in [1 ora prima](alert)
-    - vorrei cambiare l'avviso di [Tennis](tag) in [25 minuti dopo](alert)
-    - vorrei cambiare l'avviso di [Pallavolo](tag) in [50 minuti dopo](alert)
-    - vorrei cambiare l'avviso di [Calcio](tag) 
-    - vorrei cambiare l'avviso di [Viaggi](tag) 
-    - voglio modificare l'avviso di [Uscita](tag) 
-    - voglio modificare l'avviso di [Riunione](tag) di [Personale](category)
-    - voglio modificare l'avviso di [Incontro](tag) di [Università](category)
-    - voglio modificare l'avviso di [Visita Medica](tag) della categoria [Università](category)
-    - voglio modificare l'avviso di [Computer](tag) della categoria [Sport](category)
-- intent: modify_deadline
-  examples: |
-    - modifica la scadenza
-    - vorrei modificare la scadenza
-    - cambia la scadenza
-    - modifica la deadline
-    - modifica la scadenza in [4/8/2030](date)
-    - modifica la scadenza in [4.8.2025](date)
-    - cambia la scadenza in [20/11/2022](date) alle [7:30](time)
-    - cambia la scadenza in [4/8/2030](date) alle [23:59](time)
-    - modifica la deadline di [Spesa](tag) alle [23:59](time) del giorno [4.8.2025](date)
-    - modifica la deadline di [Robotica Cognitiva](tag) alle [20:7](time) del giorno [4/8/2030](date)
-    - modifica la scadenza dell'attività [Tennis](tag) in [category]alle [20:7](time)
-    - modifica la scadenza dell'attività [Uscita](tag) in [category]alle [7:30](time)
-    - modifica la scadenza dell'attività [Machine Learning](tag) in [category]alle [23:59](time)
-    - cambia la scadenza dell'attività [Lezioni](tag) in [category]il [12-10-2045](date)
-    - cambia la scadenza dell'attività [Calcio](tag) in [category]il [20.11.2023](date) 
-    - cambia l'attività [Tennis](tag) al [12-10-2045](date) alle [7:7](time)
-    - cambia l'attività [Viaggi](tag) al [20.11.2023](date) alle [20:7](time)
-    - vorrei cambiare la scadenza dell'attività [Materie da fare](tag) in [Università](category) il giorno [20/11/2022](date) alle ore [7:7](time)
-    - vorrei cambiare la scadenza dell'attività [Incontro](tag) in [Tempo libero](category) il giorno [4.8.2025](date) alle ore [04:25](time)
-    - cambia la scadenza in [20/11/2022](date) alle [20:7](time) dell'attività [Bollette](tag) in [Studio](category)
-    - cambia la scadenza in [4.8.2025](date) alle [23:59](time) dell'attività [Lezioni](tag) in [Esami](category)
-
-- intent: modify_user
-  examples: |
-    - vorrei modificare l'utente 
-    - modifica il nome utente
-    - voglio modificare il nome utente
-    - cambia il nome utente
-    - rinomina
-    - rinomina l'utente
-    - modifica il nome utente [Gianluca](user)
-    - vorrei modificare il nome utente [Dario](user)
-    - cambia il nome utente [Simone](user)
-    - rinomina il nome utente [Marco](user)
-    - rinomina il nome utente [Luigi](user) in [Luigi](user_new)
-    - rinomina il nome utente [Francesca](user) in [Antonio](user_new)
-    - modifica il nome di [Mario](user) con il nome [Marco](user_new)
-    - cambia il nome utente [Giovanni](user) con il nome  utente [Mario](user_new)
-    - cambia il nome di [Camilla](user) in [Dario](user_new)
-
+##Modify
+#- intent: modify
+#  examples: |
+#    - voglio modificare l'attività
+#    - voglio modificare il titolo dell'attività
+#    - modifica l'attività
+#    - aggiorna l'attività
+#    - cambia l'attività
+#    - modifica l'attività [Bollette](tag)
+#    - voglio cambiare l'attività [Riunione](tag)
+#    - aggiorna l'attività [Robotica Cognitiva](tag)
+#    - aggiorna l'attività [Lezioni](tag) con titolo [Lezioni](tag_new)
+#    - aggiorna l'attività [Uscita](tag) con titolo [Elettrotecnica](tag_new)
+#    - cambia l'attività [Pallavolo](tag) con titolo [Elettrotecnica](tag_new)
+#    - cambia l'attività [Calcio](tag) con titolo [Lezioni](tag_new)
+#    - voglio modificare il titolo dell'attività [Pullman](tag) nella categoria [Impegni](category) con il nuovo titolo [Progetto](tag_new)
+#    - cambia l'attività [Lezioni](tag) in [Università](category) con [Cena](tag_new)
+#    - voglio modificare il titolo dell'attività [Computer](tag) nella categoria [Tecnologia](category) con il nuovo titolo [Computer](tag_new)
+#    - voglio aggiornare l'attività [Visita Medica](tag) in [Tempo libero](category) con [Computer](tag_new) in [Tempo libero](category_new)
+#    - voglio aggiornare l'attività [Computer](tag) in [Impegni](category) con [Machine Learning](tag_new) in [Impegni](category_new)
+#    - voglio aggiornare l'attività [Viaggi](tag) in [Sport](category) con [Pallavolo](tag_new) in [Sport](category_new)
+#    - cambia la categoria dell'attività [Elettrotecnica](tag) in [Esami](category) con l'attività [Machine Learning](tag_new) in [Esami](category_new)
+#    - vorrei cambiare l'avviso
+#    - vorrei modificare l'avviso
+#    - modifica l'avviso
+#    - vorrei cambiare l'avviso di [Lezioni](tag) in [15 minuti prima](alert)
+#    - vorrei cambiare l'avviso di [Pullman](tag) in [1 minuto prima](alert)
+#    - vorrei cambiare l'avviso di [Mensa](tag) in [1 ora prima](alert)
+#    - vorrei cambiare l'avviso di [Tennis](tag) in [25 minuti dopo](alert)
+#    - vorrei cambiare l'avviso di [Pallavolo](tag) in [50 minuti dopo](alert)
+#    - vorrei cambiare l'avviso di [Calcio](tag) 
+#    - vorrei cambiare l'avviso di [Viaggi](tag) 
+#    - voglio modificare l'avviso di [Uscita](tag) 
+#    - voglio modificare l'avviso di [Riunione](tag) di [Personale](category)
+#    - voglio modificare l'avviso di [Incontro](tag) di [Università](category)
+#    - voglio modificare l'avviso di [Visita Medica](tag) della categoria [Università](category)
+#    - voglio modificare l'avviso di [Computer](tag) della categoria [Sport](category)
+#    - modifica la scadenza
+#    - vorrei modificare la scadenza
+#    - cambia la scadenza
+#    - modifica la deadline
+#    - modifica la scadenza in [4/8/2030](date)
+#    - modifica la scadenza in [4.8.2025](date)
+#    - cambia la scadenza in [20/11/2022](date) alle [7:30](time)
+#    - cambia la scadenza in [4/8/2030](date) alle [23:59](time)
+#    - modifica la deadline di [Spesa](tag) alle [23:59](time) del giorno [4.8.2025](date)
+#    - modifica la deadline di [Robotica Cognitiva](tag) alle [20:7](time) del giorno [4/8/2030](date)
+#    - modifica la scadenza dell'attività [Tennis](tag) in [category]alle [20:7](time)
+#    - modifica la scadenza dell'attività [Uscita](tag) in [category]alle [7:30](time)
+#    - modifica la scadenza dell'attività [Machine Learning](tag) in [category]alle [23:59](time)
+#    - cambia la scadenza dell'attività [Lezioni](tag) in [category]il [12-10-2045](date)
+#    - cambia la scadenza dell'attività [Calcio](tag) in [category]il [20.11.2023](date) 
+#    - cambia l'attività [Tennis](tag) al [12-10-2045](date) alle [7:7](time)
+#    - cambia l'attività [Viaggi](tag) al [20.11.2023](date) alle [20:7](time)
+#    - vorrei cambiare la scadenza dell'attività [Materie da fare](tag) in [Università](category) il giorno [20/11/2022](date) alle ore [7:7](time)
+#    - vorrei cambiare la scadenza dell'attività [Incontro](tag) in [Tempo libero](category) il giorno [4.8.2025](date) alle ore [04:25](time)
+#    - cambia la scadenza in [20/11/2022](date) alle [20:7](time) dell'attività [Bollette](tag) in [Studio](category)
+#    - cambia la scadenza in [4.8.2025](date) alle [23:59](time) dell'attività [Lezioni](tag) in [Esami](category)
+#    - vorrei modificare l'utente 
+#    - modifica il nome utente
+#    - voglio modificare il nome utente
+#    - cambia il nome utente
+#    - rinomina
+#    - rinomina l'utente
+#    - modifica il nome utente [Gianluca](user)
+#    - vorrei modificare il nome utente [Dario](user)
+#    - cambia il nome utente [Simone](user)
+#    - rinomina il nome utente [Marco](user)
+#    - rinomina il nome utente [Luigi](user) in [Luigi](user_new)
+#    - rinomina il nome utente [Francesca](user) in [Antonio](user_new)
+#    - modifica il nome di [Mario](user) con il nome [Marco](user_new)
+#    - cambia il nome utente [Giovanni](user) con il nome  utente [Mario](user_new)
+#    - cambia il nome di [Camilla](user) in [Dario](user_new)
+#
 - intent: identification
   examples: |
-    - io sono 
-    - mi chiamo
-    - il mio nome è 
-    - sono
     - io sono [Luigi](user)
     - io sono [Francesca](user)
     - io sono [Giovanni](user)
@@ -430,3 +348,19 @@ nlu:
     - Sei un umano?
     - Sto parlando con un bot?
     - Sto parlando con un umano?
+
+- regex: tag
+  examples: |
+    - (?<=\battività\s)(\w+)
+
+- regex: category
+  examples: |
+    - (?<=\bcategoria\s)(\w+)
+
+- regex: user
+  examples: |
+    - (?<=\butente\s)(\w+)
+
+- regex: alert
+  examples: |
+    - (?<=\bavviso\s)(\w+)

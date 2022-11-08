@@ -69,12 +69,17 @@ rules:
   condition:
     - slot_was_set:
       - category
+      - tag: null
+      - alert: null
   steps:
   - intent: remove
   - action: action_remove_category
   - action: action_reset
 
 - rule: remove_alert
+  condition:
+    - slot_was_set:
+      - category: null
   steps:
   - intent: remove
   - action: id_task_form

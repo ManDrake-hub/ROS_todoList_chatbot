@@ -1,7 +1,6 @@
 version: '2.0'
 
 intents:
-- cancel
 - affirm
 - greet
 - goodbye
@@ -10,10 +9,7 @@ intents:
 - insert
 - remove
 - view
-- modify_task_category
-- modify_alert
-- modify_deadline
-- modify_user
+#- modify
 - identification
 - bot_challenge
 
@@ -22,21 +18,21 @@ entities:
 - date
 - time
 - user
-- user_new
+#- user_new
 - tag
-- tag_new
+#- tag_new
 - category
-- category_new
+#- category_new
 
 slots:
   tag:
     type: text
-  tag_new:
-    type: text
+  #tag_new:
+  #  type: text
   category:
     type: text
-  category_new:
-    type: text
+  #category_new:
+  #  type: text
   date:
     type: text
   time:
@@ -45,8 +41,8 @@ slots:
     type: text
   user:
     type: text
-  user_new:
-    type: text
+  #user_new:
+  #  type: text
 
 forms:
   id_task_form:
@@ -70,21 +66,21 @@ forms:
       user:
       - type: from_entity
         entity: user
-  modify_user_form:
-    required_slots:
-      user_new:
-      - type: from_entity
-        entity: user_new
-  modify_tag_form:
-    required_slots:
-      tag_new:
-      - type: from_entity
-        entity: tag_new
-  modify_category_form:
-    required_slots:
-      category_new:
-      - type: from_entity
-        entity: category_new
+  #modify_user_form:
+  #  required_slots:
+  #    user_new:
+  #    - type: from_entity
+  #      entity: user_new
+  #modify_tag_form:
+  #  required_slots:
+  #    tag_new:
+  #    - type: from_entity
+  #      entity: tag_new
+  #modify_category_form:
+  #  required_slots:
+  #    category_new:
+  #    - type: from_entity
+  #      entity: category_new
 
 responses:
   utter_greet:
@@ -125,12 +121,12 @@ responses:
   - text: Titolo dell'attività?
   - text: Mi dici il titolo dell'attività?
   - text: Puoi dirmi il titolo?
-  utter_ask_tag_new:
-  - text: Inserisci il nuovo titolo dell' attività
-  - text: Qual è il nuovo titolo dell' attività?
-  - text: Nuovo titolo dell'attività?
-  - text: Mi dici il nuovo titolo dell'attività?
-  - text: Puoi dirmi il nuovo titolo?
+  #utter_ask_tag_new:
+  #- text: Inserisci il nuovo titolo dell' attività
+  #- text: Qual è il nuovo titolo dell' attività?
+  #- text: Nuovo titolo dell'attività?
+  #- text: Mi dici il nuovo titolo dell'attività?
+  #- text: Puoi dirmi il nuovo titolo?
   utter_ask_date:
   - text: Inserisci la data di scadenza
   - text: Qual è la data di scadenza?
@@ -144,22 +140,20 @@ responses:
   - text: Inserisci la categoria dell'attività
   - text: Qual è la categoria?
   - text: Categoria?
-  utter_ask_category_new:
-  - text: Inserisci la nuova categoria dell'attività
-  - text: Qual è la nuova categoria?
-  - text: Nuova categoria?
+  #utter_ask_category_new:
+  #- text: Inserisci la nuova categoria dell'attività
+  #- text: Qual è la nuova categoria?
+  #- text: Nuova categoria?
   utter_ask_alert:
   - text: Quanto tempo prima vuoi ricevere un avviso?
   - text: Quanto prima ti devo inviare l'avviso?
   - text: L'avviso quanto prima lo devo inviare?
   utter_ask_user:
   - text: Inserisci il nome utente
-  utter_ask_user_new:
-  - text: Inserisci il nuovo nome utente
+  #utter_ask_user_new:
+  #- text: Inserisci il nuovo nome utente
   utter_default:
   - text: Scusami non ho capito. Puoi ripetere per favore?  
-  #utter_please_rephrase:
-  #- text: Scusami non ho capito. Puoi ripetere per favore? 
   utter_iamabot:
   - text: Io sono un bot, realizzato con Rasa per la gestione di una ToDoList.
   - text: Sono un bot, realizzato da un team di sviluppatori con Rasa
@@ -185,7 +179,7 @@ actions:
 - utter_ask_category
 - utter_ask_date
 - utter_ask_tag
-- utter_ask_tag_new
+#- utter_ask_tag_new
 - utter_ask_time
 - utter_goodbye
 - utter_greet

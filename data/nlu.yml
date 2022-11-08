@@ -102,6 +102,64 @@ nlu:
     - [Camilla](user)
     - [Mattia](user)
 
+#Identification
+- intent: identification
+  examples: |
+    - sono io
+    - io sono [Alessio](user)
+    - io sono [Gabriele](user)
+    - io sono [Luigi](user)
+    - io sono [Francesca](user)
+    - io sono [Giovanni](user)
+    - io sono [Antonio](user)
+    - io sono [Gerry](user)
+    - sono [Alessio](user)
+    - sono [Gabriele](user)
+    - sono [Luigi](user)
+    - sono [Francesca](user)
+    - sono [Giovanni](user)
+    - sono [Antonio](user)
+    - sono [Gerry](user)
+    - mi chiamo [Alessio](user)
+    - mi chiamo [Gabriele](user)
+    - mi chiamo [Luigi](user)
+    - mi chiamo [Francesca](user)
+    - mi chiamo [Giovanni](user)
+    - mi chiamo [Antonio](user)
+    - mi chiamo [Gerry](user)
+    - il mio nome è [Alessio](user)
+    - il mio nome è [Gabriele](user)
+    - il mio nome è [Luigi](user)
+    - il mio nome è [Francesca](user)
+    - il mio nome è [Giovanni](user)
+    - il mio nome è [Antonio](user)
+    - il mio nome è [Gerry](user)
+    - inserisci l'utente
+    - aggiungi l'utente
+    - inserisci l'utente [Alessio](user)
+    - inserisci l'utente [Gabriele](user)
+    - inserisci l'utente [Luigi](user)
+    - inserisci l'utente [Francesca](user)
+    - inserisci l'utente [Giovanni](user)
+    - inserisci l'utente [Antonio](user)
+    - inserisci l'utente [Gerry](user)
+    - aggiungi l'utente [Alessio](user)
+    - aggiungi l'utente [Gabriele](user)
+    - aggiungi l'utente [Luigi](user)
+    - aggiungi l'utente [Francesca](user)
+    - aggiungi l'utente [Giovanni](user)
+    - aggiungi l'utente [Antonio](user)
+    - aggiungi l'utente [Gabriele](user)
+    - aggiungi la todo list dell'utente [Luigi](user)
+    - aggiungi la todo list dell'utente [Francesca](user)
+    - aggiungi la todo list dell'utente [Giovanni](user)
+    - aggiungi la todo list dell'utente [Antonio](user)
+    - inserisci la todo list dell'utente [Gabriele](user)
+    - inserisci la todo list dell'utente [Luigi](user)
+    - inserisci la todo list dell'utente [Francesca](user)
+    - inserisci la todo list dell'utente [Giovanni](user)
+    - inserisci la todo list dell'utente [Antonio](user)
+
 #Insert
 - intent: insert
   examples: |
@@ -160,7 +218,7 @@ nlu:
     - per l'attività [Lezioni](tag) in [Università](category) inserisci un avviso [15 minuti prima](alert)
     - per l'attività [Pullman](tag) in [Tempo libero](category) avvisami [50 secondi prima](alert)
     
-#Remove 55 frasi
+#Remove 
 - intent: remove
   examples: |
     - rimuovi l'attività [Cuffie wireless](tag)
@@ -174,47 +232,47 @@ nlu:
     - elimina l'attività [Lampada da studio](tag) nella categoria [Bollette di casa](category)
     - elimina l'attività [Aereo](tag) nella categoria [Lingue](category)
     - cancella l'attività [Cuffie wireless](tag) nella categoria [Stipendi](category)
+    - cancella l'attività [Cuffie wireless](tag) nella categoria [Ginnastica](category)
     - rimuovi l'attività [Palestra](tag) in [Backup iPhone](category)
-    - rimuovi l'attività [Monitor](tag) in[Ginnastica](category)
+    - rimuovi l'attività [Monitor](tag) in [Ginnastica](category)
     - elimina l'attività [Lampada da studio](tag) in [Bollette di casa](category)
     - elimina l'attività [Aereo](tag) in [Lingue](category)
     - cancella l'attività [Cuffie wireless](tag) in [Stipendi](category)
+    - cancella l'attività [Cuffie wireless](tag) in [Ginnastica](category)
     - rimuovi la categoria [Lingue](category)
     - rimuovi la categoria [Ginnastica](category)
     - cancella la categoria [Stipendi](category)
     - cancella la categoria [Bollette di casa](category)
     - elimina la categoria [Backup iPhone](category)
-    - rimuovi l'avviso [5 minuti prima](alert)
-    - rimuovi l'avviso [7 ore prima](alert)
-    - elimina l'avviso [8 secondi prima](alert)
-    - elimina l'avviso [120 minuti prima](alert)
-    - cancella l'attività [10 ore prima](alert)
-    - rimuovi l'avviso [5 minuti prima](alert) dell'attività [Palestra](tag) nella categoria [Backup iPhone](category)
-    - rimuovi l'avviso [7 ore prima](alert) dell'attività [Monitor](tag) nella categoria [Ginnastica](category)
-    - elimina l'avviso [8 secondi prima](alert) dell'attività [Lampada da studio](tag) nella categoria [Bollette di casa](category)
-    - elimina l'avviso [120 minuti prima](alert) dell'attività [Aereo](tag) nella categoria [Lingue](category)
-    - cancella l'attività [10 ore prima](alert) dell'attività [Cuffie wireless](tag) nella categoria [Stipendi](category)
-    - rimuovi l'avviso [8 secondi prima](alert) dell'attività [Monitor](tag) nella categoria [Bollette di casa](category)
-    - rimuovi l'avviso [120 minuti prima](alert) dell'attività [Aereo](tag) nella categoria [Stipendi](category)
-    - elimina l'avviso [7 ore prima](alert) dell'attività [Palestra](tag) nella categoria [Ginnastica](category)
-    - elimina l'avviso [5 minuti prima](alert) dell'attività [Cuffie wireless](tag) nella categoria [Lingue](category)
-    - cancella l'attività [10 ore prima](alert) dell'attività [Lampada da studio](tag) nella categoria [Backup iPhone](category)
-    - rimuovi l'avviso [8 secondi prima](alert) dell'attività [Monitor](tag) in [Bollette di casa](category)
-    - rimuovi l'avviso [120 minuti prima](alert) dell'attività [Aereo](tag) in [Stipendi](category)
-    - elimina l'avviso [7 ore prima](alert) dell'attività [Palestra](tag) in [Ginnastica](category)
-    - elimina l'avviso [5 minuti prima](alert) dell'attività [Cuffie wireless](tag) in [Lingue](category)
-    - cancella l'attività [10 ore prima](alert) dell'attività [Lampada da studio](tag) in [Backup iPhone](category)
-    - rimuovi l'avviso [120 minuti prima](alert) dell'attività [Palestra](tag) in [Backup iPhone](category)
-    - rimuovi l'avviso [3 ora prima](alert) dell'attività [Monitor](tag) in[Ginnastica](category)
-    - elimina l'avviso [5 minuti prima](alert) dell'attività [Lampada da studio](tag) in [Bollette di casa](category)
-    - elimina l'avviso [8 secondi prima](alert) dell'attività [Aereo](tag) in [Lingue](category)
-    - cancella l'attività [7 ore prima](alert) dell'attività [Cuffie wireless](tag) in [Stipendi](category)
+    - rimuovi l'avviso
+    - cancella l'avviso
+    - elimina l'avviso
+    - rimuovi l'avviso dell'attività [Palestra](tag) nella categoria [Backup iPhone](category)
+    - rimuovi l'avviso dell'attività [Monitor](tag) nella categoria [Ginnastica](category)
+    - elimina l'avviso dell'attività [Lampada da studio](tag) nella categoria [Bollette di casa](category)
+    - elimina l'avviso dell'attività [Aereo](tag) nella categoria [Lingue](category)
+    - cancella l'avviso dell'attività [Cuffie wireless](tag) nella categoria [Stipendi](category)
+    - cancella l'avviso dell'attività [Cuffie wireless](tag) nella categoria [Bollette di casa](category)
+    - rimuovi l'avviso dell'attività [Monitor](tag) nella categoria [Bollette di casa](category)
+    - rimuovi l'avviso dell'attività [Aereo](tag) nella categoria [Stipendi](category)
+    - elimina l'avviso dell'attività [Palestra](tag) nella categoria [Ginnastica](category)
+    - elimina l'avviso dell'attività [Cuffie wireless](tag) nella categoria [Lingue](category)
+    - cancella l'avviso dell'attività [Lampada da studio](tag) nella categoria [Backup iPhone](category)
+    - cancella l'avviso dell'attività [Lampada da studio](tag) nella categoria [Stipendi](category)
+    - rimuovi l'avviso dell'attività [Monitor](tag) in [Bollette di casa](category)
+    - rimuovi l'avviso dell'attività [Aereo](tag) in [Stipendi](category)
+    - elimina l'avviso dell'attività [Palestra](tag) in [Ginnastica](category)
+    - elimina l'avviso dell'attività [Cuffie wireless](tag) in [Lingue](category)
+    - cancella l'avviso dell'attività [Lampada da studio](tag) in [Backup iPhone](category)
+    - rimuovi l'avviso dell'attività [Palestra](tag) in [Backup iPhone](category)
+    - rimuovi l'avviso dell'attività [Monitor](tag) in [Ginnastica](category)
+    - elimina l'avviso dell'attività [Lampada da studio](tag) in [Bollette di casa](category)
+    - cancella l'avviso dell'attività [Cuffie wireless](tag) in [Stipendi](category)
+    - cancella l'avviso dell'attività [Cuffie wireless](tag) in [Lingue](category)
     - rimuovi l'utente [Anastasia](user)
     - rimuovi l'utente [Genoveffa](user)
-    - rimuovi l'utente [Chiara](user)
     - cancella l'utente [Tommaso](user)
     - cancella l'utente [Chiara](user)
-    - cancella l'utente [Giuseppe](user)
     - elimina l'utente [Tommaso](user)
     - elimina l'utente [Giuseppe](user)
 
@@ -307,62 +365,6 @@ nlu:
 #    - cambia il nome utente [Giovanni](user) con il nome  utente [Mario](user_new)
 #    - cambia il nome di [Camilla](user) in [Dario](user_new)
 #
-- intent: identification
-  examples: |
-    - sono io
-    - io sono [Alessio](user)
-    - io sono [Gabriele](user)
-    - io sono [Luigi](user)
-    - io sono [Francesca](user)
-    - io sono [Giovanni](user)
-    - io sono [Antonio](user)
-    - io sono [Gerry](user)
-    - sono [Alessio](user)
-    - sono [Gabriele](user)
-    - sono [Luigi](user)
-    - sono [Francesca](user)
-    - sono [Giovanni](user)
-    - sono [Antonio](user)
-    - sono [Gerry](user)
-    - mi chiamo [Alessio](user)
-    - mi chiamo [Gabriele](user)
-    - mi chiamo [Luigi](user)
-    - mi chiamo [Francesca](user)
-    - mi chiamo [Giovanni](user)
-    - mi chiamo [Antonio](user)
-    - mi chiamo [Gerry](user)
-    - il mio nome è [Alessio](user)
-    - il mio nome è [Gabriele](user)
-    - il mio nome è [Luigi](user)
-    - il mio nome è [Francesca](user)
-    - il mio nome è [Giovanni](user)
-    - il mio nome è [Antonio](user)
-    - il mio nome è [Gerry](user)
-    - inserisci l'utente
-    - aggiungi l'utente
-    - inserisci l'utente [Alessio](user)
-    - inserisci l'utente [Gabriele](user)
-    - inserisci l'utente [Luigi](user)
-    - inserisci l'utente [Francesca](user)
-    - inserisci l'utente [Giovanni](user)
-    - inserisci l'utente [Antonio](user)
-    - inserisci l'utente [Gerry](user)
-    - aggiungi l'utente [Alessio](user)
-    - aggiungi l'utente [Gabriele](user)
-    - aggiungi l'utente [Luigi](user)
-    - aggiungi l'utente [Francesca](user)
-    - aggiungi l'utente [Giovanni](user)
-    - aggiungi l'utente [Antonio](user)
-    - aggiungi [Gabriele](user)
-    - aggiungi [Luigi](user)
-    - aggiungi [Francesca](user)
-    - aggiungi [Giovanni](user)
-    - aggiungi [Antonio](user)
-    - inserisci [Gabriele](user)
-    - inserisci [Luigi](user)
-    - inserisci [Francesca](user)
-    - inserisci [Giovanni](user)
-    - inserisci [Antonio](user)
   
 - intent: bot_challenge
   examples: |
@@ -372,18 +374,18 @@ nlu:
     - Sto parlando con un bot?
     - Sto parlando con un umano?
 
-- regex: tag
-  examples: |
-    - (?<=\battività\s)(\w+)
-
-- regex: category
-  examples: |
-    - (?<=\bcategoria\s)(\w+)
-
-- regex: user
-  examples: |
-    - (?<=\butente\s)(\w+)
-
-- regex: alert
-  examples: |
-    - (?<=\bavviso\s)(\w+)
+#- regex: tag
+#  examples: |
+#    - (?<=\battività\s)(\w+)
+#
+#- regex: category
+#  examples: |
+#    - (?<=\bcategoria\s)(\w+)
+#
+#- regex: user
+#  examples: |
+#    - (?<=\butente\s)(\w+)
+#
+#- regex: alert
+#  examples: |
+#    - (?<=\bavviso\s)(\w+)

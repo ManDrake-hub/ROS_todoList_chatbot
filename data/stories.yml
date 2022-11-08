@@ -8,3 +8,19 @@ stories:
   - intent: goodbye
   - action: utter_goodbye
 
+- story: request
+  steps:
+  - action: utter_op_request
+  - checkpoint: check_request
+
+- story: request_yes
+  steps:
+  - checkpoint: check_request
+  - intent: affirm
+  - action: utter_op_affirm
+
+- story: request_no
+  steps:
+  - checkpoint: check_request
+  - intent: deny
+  - action: utter_op_deny

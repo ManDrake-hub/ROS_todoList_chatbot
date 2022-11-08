@@ -70,7 +70,6 @@ rules:
     - slot_was_set:
       - category
       - tag: null
-      - alert: null
   steps:
   - intent: remove
   - action: action_remove_category
@@ -80,6 +79,8 @@ rules:
   condition:
     - slot_was_set:
       - category: null
+      - user: null
+      - tag: null
   steps:
   - intent: remove
   - action: id_task_form

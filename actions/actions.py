@@ -357,6 +357,30 @@ class ActionMoveTask(ActionWrapper):
         dispatcher.utter_message(text=f"Categoria del task \"{tag}\" cambiata in \"{category_new}\"")
         return []
 
+class ActionMoveModifyTask(ActionWrapper):
+    """Modify the category of a task"""
+    def name(self) -> Text:
+        return "action_move_modify_task"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        tag = get_tag(tracker)
+        tag_new = get_tag_new(tracker)
+        category = get_category(tracker)
+        category_new = get_category_new(tracker)
+
+        try: 
+            ActionWrapper.todo.move_task(category, tag, category_new)
+            ActionWrapper.todo.modify_task(category_new, tag, tag_new=tag_new)
+        except ExceptionRasa as e:
+            dispatcher.utter_message(text=str(e))
+            return []
+
+        dispatcher.utter_message(text=f"Task \"{tag}\" cambiata in \"{ActionWrapper.todo.get_task(category_new, tag_new)}\"")
+        return []
+
 class ActionModifyDeadline(ActionWrapper):
     """Modify the deadline of a task"""
     def name(self) -> Text:

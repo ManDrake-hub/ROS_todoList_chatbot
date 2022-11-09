@@ -1,15 +1,15 @@
 version: '2.0'
 
 intents:
-- affirm
 - greet
 - goodbye
+- affirm
 - deny
 - inform
 - insert
 - remove
 - view
-#- modify
+- modify
 - identification
 - bot_challenge
 
@@ -18,31 +18,48 @@ entities:
 - date
 - time
 - user
-#- user_new
+- user_new
 - tag
-#- tag_new
+- tag_new
 - category
-#- category_new
+- category_new
+- logical_deadline
+- logical_alert
 
 slots:
   tag:
     type: text
-  #tag_new:
-  #  type: text
+    influence_conversation: false
+  tag_new:
+    type: text
+    influence_conversation: false
   category:
     type: text
-  #category_new:
-  #  type: text
+    influence_conversation: false
+  category_new:
+    type: text
+    influence_conversation: false
   date:
     type: text
+    influence_conversation: false
   time:
     type: text
+    influence_conversation: false
   alert:
     type: text
+    influence_conversation: false
   user:
     type: text
-  #user_new:
-  #  type: text
+    influence_conversation: false
+  user_new:
+    type: text
+    influence_conversation: false
+  logical_deadline:
+    type: bool
+    influence_conversation: false
+  logical_alert:
+    type: bool
+    influence_conversation: false
 
 forms:
   id_task_form:
@@ -53,6 +70,11 @@ forms:
       category:
       - type: from_entity
         entity: category
+      logical_deadline:
+      - type: from_intent
+        intent: deny
+        value: False
+      
   deadline_form:
     required_slots:
       date:
@@ -61,6 +83,13 @@ forms:
       time:
       - type: from_entity
         entity: time
+      logical_alert:
+      - type: from_intent
+        intent: deny
+        value: False
+      - type: from_intent
+        intent: affirm
+        value: True
   user_form:
     required_slots:
       user:
@@ -152,8 +181,14 @@ responses:
   - text: Inserisci il nome utente
   #utter_ask_user_new:
   #- text: Inserisci il nuovo nome utente
+  utter_ask_logical_deadline:
+  - text: Vuoi inserire una deadline?
+  utter_ask_logical_alert:
+  - text: Vuoi inserire un alert?
   utter_default:
   - text: Scusami non ho capito. Puoi ripetere per favore?  
+  utter_please_rephrase:
+  - text: Scusami non ho capito. Puoi ripetere per favore? 
   utter_iamabot:
   - text: Io sono un bot, realizzato con Rasa per la gestione di una ToDoList.
   - text: Sono un bot, realizzato da un team di sviluppatori con Rasa
@@ -187,6 +222,8 @@ actions:
 - utter_op_affirm
 - utter_op_deny
 - utter_op_request
+- utter_default
+- utter_please_rephrase
 - utter_op_modify_category_request
 
 session_config:

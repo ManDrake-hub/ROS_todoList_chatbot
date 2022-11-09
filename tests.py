@@ -40,6 +40,8 @@ def test_action(action_to_test: ActionWrapper, slots: Dict[str, Any], todo_expec
 if __name__ == "__main__":
     CollectingDispatcherFake.debug = True
 
+    ToDo().store()
+
     ##########################################################################
     # Test add with wrong datetime 
     # dt = datetime.datetime(year=2020, month=10, day=10, hour=10, minute=10, second=10)

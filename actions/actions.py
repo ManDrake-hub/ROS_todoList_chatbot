@@ -7,7 +7,7 @@ from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.events import AllSlotsReset, SlotSet
 from actions.ToDo import ToDo
 from actions.ActionsException import ExceptionRasa
-from actions.utils import get_user_new, get_category, get_deadline, get_tag, get_tag_new, get_alert, get_category_new, get_user
+from actions.utils import get_user_new, get_category, get_deadline, get_tag, get_tag_new, get_alert, get_category_new, get_user, get_logical_alert
 from actions.Task import Task
 
 class ActionWrapper(Action):
@@ -144,11 +144,14 @@ class ActionAddTask(ActionWrapper):
 
         tag = get_tag(tracker)
         category = get_category(tracker)
+        logical_alert = get_logical_alert(tracker)
 
         try:            
             deadline = get_deadline(tracker)
             
             ActionWrapper.todo.add_task(category, tag, deadline)
+            if logical_alert:
+                ActionAddAlert().run(dispatcher, tracker, domain)
         except ExceptionRasa as e:
             dispatcher.utter_message(text=str(e))
             return []

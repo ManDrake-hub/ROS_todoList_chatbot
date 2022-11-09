@@ -149,7 +149,9 @@ class ActionAddTask(ActionWrapper):
         try:            
             deadline = get_deadline(tracker)
             
-            ActionWrapper.todo.add_task(category, tag, deadline, alarm="5 minuti prima" if logical_alert else None)
+            ActionWrapper.todo.add_task(category, tag, deadline)
+            if logical_alert:
+                ActionAddAlert().run(dispatcher, tracker, domain)
         except ExceptionRasa as e:
             dispatcher.utter_message(text=str(e))
             return []

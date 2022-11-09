@@ -7,9 +7,12 @@ intents:
 - deny
 - inform
 - insert
+- insert_alert
 - remove
+- remove_alert
 - view
 - modify
+- modify_alert
 - identification
 - bot_challenge
 
@@ -98,6 +101,11 @@ forms:
       user:
       - type: from_entity
         entity: user
+  alert_form:
+    required_slots:
+      alert:
+      - type: from_entity
+        entity: alert
   #modify_user_form:
   #  required_slots:
   #    user_new:

@@ -176,6 +176,8 @@ nlu:
     - in [Lingue](category) aggiungi l'attività [Albicocca](tag) il [24-7-2055](date) alle [13:59](time)
     - in [Esami primo anno](category) aggiungi l'attività [Mela](tag) il [20/10/2066](date) alle [9:25](time)
     - in [Scuola di musica](category) aggiungi l'attività [Cereali](tag) il [27/7/2074](date) alle [15:17](time)
+- intent: insert_alert
+  examples: |
     - inserisci un avviso [22 minuti prima](alert)
     - inserisci un avviso [36 ore prima](alert)
     - avvisami [54 secondi prima](alert)
@@ -228,6 +230,14 @@ nlu:
     - cancella la categoria [Studio](category)
     - cancella la categoria [Machine Learning](category)
     - elimina la categoria [Sport](category)
+    - rimuovi l'utente [Domenico](user)
+    - rimuovi l'utente [Vito](user)
+    - cancella l'utente [Alberto](user)
+    - cancella l'utente [Claudio](user)
+    - elimina l'utente [Mario](user)
+    - elimina l'utente [Vito](user)
+- intent: remove_alert
+  examples: |
     - rimuovi l'avviso
     - cancella l'avviso
     - elimina l'avviso
@@ -253,12 +263,6 @@ nlu:
     - elimina l'avviso dell'attività [Mulo](tag) in [Progetto](category)
     - cancella l'avviso dell'attività [Matita](tag) in [Febbraio](category)
     - cancella l'avviso dell'attività [Aereo](tag) in [Dicembre](category)
-    - rimuovi l'utente [Domenico](user)
-    - rimuovi l'utente [Vito](user)
-    - cancella l'utente [Alberto](user)
-    - cancella l'utente [Claudio](user)
-    - elimina l'utente [Mario](user)
-    - elimina l'utente [Vito](user)
 
 #View
 - intent: view
@@ -275,81 +279,77 @@ nlu:
     - mostrami le attività
     - fammi vedere le attività
 
-##Modify
-#- intent: modify
-#  examples: |
-#    - voglio modificare l'attività
-#    - voglio modificare il titolo dell'attività
-#    - modifica l'attività
-#    - aggiorna l'attività
-#    - cambia l'attività
-#    - modifica l'attività [Automobile](tag)
-#    - voglio cambiare l'attività [Criceto](tag)
-#    - aggiorna l'attività [Computer fisso](tag)
-#    - aggiorna l'attività [Tennis](tag) con titolo [Lezioni](tag_new)
-#    - aggiorna l'attività [Cena](tag) con titolo [Elettrotecnica](tag_new)
-#    - cambia l'attività [Avena](tag) con titolo [Elettrotecnica](tag_new)
-#    - cambia l'attività [Balena](tag) con titolo [Lezioni](tag_new)
-#    - voglio modificare il titolo dell'attività [Pinguino](tag) nella categoria [Ginnastica](category) con il nuovo titolo [Progetto](tag_new)
-#    - cambia l'attività [Fisica](tag) in [Tecnologia](category) con [Cena](tag_new)
-#    - voglio modificare il titolo dell'attività [Cavolo](tag) nella categoria [Maestro](category) con il nuovo titolo [Computer](tag_new)
-#    - voglio aggiornare l'attività [Istituto superiore](tag) in [Maggio](category) con [Computer](tag_new) in [Tempo libero](category_new)
-#    - voglio aggiornare l'attività [Mango](tag) in [Progetto](category) con [Machine Learning](tag_new) in [Impegni](category_new)
-#    - voglio aggiornare l'attività [Balena](tag) in [Giugno](category) con [Pallavolo](tag_new) in [Sport](category_new)
-#    - cambia la categoria dell'attività [Istituto](tag) in [Supermercato](category) con l'attività [Machine Learning](tag_new) in [Esami](category_new)
-#    - vorrei cambiare l'avviso
-#    - vorrei modificare l'avviso
-#    - modifica l'avviso
-#    - vorrei cambiare l'avviso di [Ferrovia](tag) in [33 secondi prima](alert)
-#    - vorrei cambiare l'avviso di [Doccia](tag) in [2 secondi prima](alert)
-#    - vorrei cambiare l'avviso di [Scuola](tag) in [73 ore prima](alert)
-#    - vorrei cambiare l'avviso di [Computer portatile](tag) in [75 ore prima](alert)
-#    - vorrei cambiare l'avviso di [Lampada da studio](tag) in [21 minuti prima](alert)
-#    - vorrei cambiare l'avviso di [Bisnonna](tag) 
-#    - vorrei cambiare l'avviso di [Insegnamento](tag) 
-#    - voglio modificare l'avviso di [Istituto superiore](tag) 
-#    - voglio modificare l'avviso di [Religione](tag) di [Sport](category)
-#    - voglio modificare l'avviso di [Mela](tag) di [Impegni](category)
-#    - voglio modificare l'avviso di [Istituto](tag) della categoria [Progetto](category)
-#    - voglio modificare l'avviso di [Telefono fisso](tag) della categoria [Prescrizione](category)
-#    - modifica la scadenza
-#    - vorrei modificare la scadenza
-#    - cambia la scadenza
-#    - modifica la deadline
-#    - modifica la scadenza in [27/1/2058](date)
-#    - modifica la scadenza in [24-11-2032](date)
-#    - cambia la scadenza in [27/7/2074](date) alle [7:15](time)
-#    - cambia la scadenza in [14/3/2053](date) alle [3:23](time)
-#    - modifica la deadline di [Cognata](tag) alle [10:19](time) del giorno [13-1-2030](date)
-#    - modifica la deadline di [Bollette](tag) alle [6:5](time) del giorno [4-6-2054](date)
-#    - modifica la scadenza dell'attività [Insegnamento](tag) in [category]alle [21:39](time)
-#    - modifica la scadenza dell'attività [Automobile](tag) in [category]alle [9:11](time)
-#    - modifica la scadenza dell'attività [Aereo](tag) in [category]alle [16:23](time)
-#    - cambia la scadenza dell'attività [Zucchine](tag) in [category]il [8/3/2029](date)
-#    - cambia la scadenza dell'attività [Telefono fisso](tag) in [category]il [8/3/2029](date) 
-#    - cambia l'attività [Avena](tag) al [19-12-2063](date) alle [21:39](time)
-#    - cambia l'attività [Balcone](tag) al [12-2-2040](date) alle [17:3](time)
-#    - vorrei cambiare la scadenza dell'attività [Tavola](tag) in [Famiglia](category) il giorno [4-4-2027](date) alle ore [1:49](time)
-#    - vorrei cambiare la scadenza dell'attività [Visione Artificiale](tag) in [Dicembre](category) il giorno [26-6-2027](date) alle ore [2:18](time)
-#    - cambia la scadenza in [21/5/2030](date) alle [17:55](time) dell'attività [Latte](tag) in [Supermercato](category)
-#    - cambia la scadenza in [26/1/2072](date) alle [9:32](time) dell'attività [Mela](tag) in [Scuola di musica](category)
-#    - vorrei modificare l'utente 
-#    - modifica il nome utente
-#    - voglio modificare il nome utente
-#    - cambia il nome utente
-#    - rinomina
-#    - rinomina l'utente
-#    - modifica il nome utente [Vincenzo](user)
-#    - vorrei modificare il nome utente [Gianmarco](user)
-#    - cambia il nome utente [Jacopo](user)
-#    - rinomina il nome utente [Massimiliano](user)
-#    - rinomina il nome utente [Michele](user) in [Luigi](user_new)
-#    - rinomina il nome utente [Matteo](user) in [Antonio](user_new)
-#    - modifica il nome di [Matteo](user) con il nome [Marco](user_new)
-#    - cambia il nome utente [Nicolo](user) con il nome  utente [Mario](user_new)
-#    - cambia il nome di [Davide](user) in [Dario](user_new)
-#
-  
+#l'attività (tag) in (category) con il nuovo titolo (tag_new) nella nuova categoria (category_new)
+#l'attività (tag) nella categoria (category) con il nuovo titolo (tag_new) nella nuova categoria (category_new)
+#l'attività (tag) in (category) con  (tag_new) in (category_new)
+- intent: modify
+  examples: |
+    - voglio modificare l'attività
+    - voglio modificare il titolo dell'attività
+    - modifica l'attività
+    - aggiorna l'attività
+    - cambia l'attività
+    - modifica l'attività [Automobile](tag)
+    - voglio cambiare l'attività [Criceto](tag)
+    - aggiorna l'attività [Computer fisso](tag)
+    - aggiorna l'attività [Tennis](tag) con titolo [Lezioni](tag_new)
+    - aggiorna l'attività [Cena](tag) con titolo [Elettrotecnica](tag_new)
+    - cambia l'attività [Avena](tag) con titolo [Elettrotecnica](tag_new)
+    - cambia l'attività [Balena](tag) con titolo [Lezioni](tag_new)
+    - voglio modificare il titolo dell'attività [Pinguino](tag) nella categoria [Ginnastica](category) con il nuovo titolo [Progetto](tag_new)
+    - cambia l'attività [Fisica](tag) in [Tecnologia](category) con [Cena](tag_new)
+    - voglio modificare il titolo dell'attività [Cavolo](tag) nella categoria [Maestro](category) con il nuovo titolo [Computer](tag_new)
+    - voglio aggiornare l'attività [Istituto superiore](tag) in [Maggio](category) con [Computer](tag_new) in [Tempo libero](category_new)
+    - voglio aggiornare l'attività [Mango](tag) in [Progetto](category) con [Machine Learning](tag_new) in [Impegni](category_new)
+    - voglio aggiornare l'attività [Balena](tag) in [Giugno](category) con [Pallavolo](tag_new) in [Sport](category_new)
+    - cambia la categoria dell'attività [Istituto](tag) in [Supermercato](category) con l'attività [Machine Learning](tag_new) in [Esami](category_new)
+    - vorrei modificare il nome utente [Gianmarco](user)
+    - cambia il nome utente [Jacopo](user)
+    - rinomina il nome utente [Massimiliano](user)
+    - rinomina il nome utente [Michele](user) in [Luigi](user_new)
+    - rinomina il nome utente [Matteo](user) in [Antonio](user_new)
+    - modifica il nome di [Matteo](user) con il nome [Marco](user_new)
+    - cambia il nome utente [Nicolo](user) con il nome  utente [Mario](user_new)
+    - cambia il nome di [Davide](user) in [Dario](user_new)
+    - modifica la scadenza
+    - vorrei modificare la scadenza
+    - cambia la scadenza
+    - modifica la deadline
+    - modifica la scadenza in [27/1/2058](date)
+    - modifica la scadenza in [24-11-2032](date)
+    - cambia la scadenza in [27/7/2074](date) alle [7:15](time)
+    - cambia la scadenza in [14/3/2053](date) alle [3:23](time)
+    - modifica la deadline di [Cognata](tag) alle [10:19](time) del giorno [13-1-2030](date)
+    - modifica la deadline di [Bollette](tag) alle [6:5](time) del giorno [4-6-2054](date)
+    - modifica la scadenza dell'attività [Insegnamento](tag) in [category] alle [21:39](time)
+    - modifica la scadenza dell'attività [Automobile](tag) in [category] alle [9:11](time)
+    - modifica la scadenza dell'attività [Aereo](tag) in [category] alle [16:23](time)
+    - cambia la scadenza dell'attività [Zucchine](tag) in [category] il [8/3/2029](date)
+    - cambia la scadenza dell'attività [Telefono fisso](tag) in [category] il [8/3/2029](date) 
+    - cambia l'attività [Avena](tag) al [19-12-2063](date) alle [21:39](time)
+    - cambia l'attività [Balcone](tag) al [12-2-2040](date) alle [17:3](time)
+    - vorrei cambiare la scadenza dell'attività [Tavola](tag) in [Famiglia](category) il giorno [4-4-2027](date) alle ore [1:49](time)
+    - vorrei cambiare la scadenza dell'attività [Visione Artificiale](tag) in [Dicembre](category) il giorno [26-6-2027](date) alle ore [2:18](time)
+    - cambia la scadenza in [21/5/2030](date) alle [17:55](time) dell'attività [Latte](tag) in [Supermercato](category)
+    - cambia la scadenza in [26/1/2072](date) alle [9:32](time) dell'attività [Mela](tag) in [Scuola di musica](category)
+- intent: modify_alert
+  examples: |
+    - vorrei cambiare l'avviso
+    - vorrei modificare l'avviso
+    - modifica l'avviso
+    - vorrei cambiare l'avviso di [Ferrovia](tag) in [33 secondi prima](alert)
+    - vorrei cambiare l'avviso di [Doccia](tag) in [2 secondi prima](alert)
+    - vorrei cambiare l'avviso di [Scuola](tag) in [73 ore prima](alert)
+    - vorrei cambiare l'avviso di [Computer portatile](tag) in [75 ore prima](alert)
+    - vorrei cambiare l'avviso di [Lampada da studio](tag) in [21 minuti prima](alert)
+    - vorrei cambiare l'avviso di [Bisnonna](tag) 
+    - vorrei cambiare l'avviso di [Insegnamento](tag) 
+    - voglio modificare l'avviso di [Istituto superiore](tag) 
+    - voglio modificare l'avviso di [Religione](tag) di [Sport](category)
+    - voglio modificare l'avviso di [Mela](tag) di [Impegni](category)
+    - voglio modificare l'avviso di [Istituto](tag) della categoria [Progetto](category)
+    - voglio modificare l'avviso di [Telefono fisso](tag) della categoria [Prescrizione](category)
+
 - intent: bot_challenge
   examples: |
     - Chi sei?
@@ -358,18 +358,3 @@ nlu:
     - Sto parlando con un bot?
     - Sto parlando con un umano?
 
-#- regex: tag
-#  examples: |
-#    - (?<=\battività\s)(\w+)
-#
-#- regex: category
-#  examples: |
-#    - (?<=\bcategoria\s)(\w+)
-#
-#- regex: user
-#  examples: |
-#    - (?<=\butente\s)(\w+)
-#
-#- regex: alert
-#  examples: |
-#    - (?<=\bavviso\s)(\w+)

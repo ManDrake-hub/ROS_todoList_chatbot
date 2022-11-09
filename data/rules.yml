@@ -40,7 +40,7 @@ rules:
   steps:
   - intent: insert
   - action: id_task_form
-  - action: deadline_form
+  #- action: deadline_form
   - action: action_add_task
   - action: action_reset
 

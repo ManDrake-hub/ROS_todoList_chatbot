@@ -1,4 +1,6 @@
 import os
+from datetime import datetime
+from datetime import timedelta
 from typing import Any, Sequence, Text, Dict, List
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
@@ -375,9 +377,7 @@ class ActionModifyDeadline(ActionWrapper):
         dispatcher.utter_message(text=f"Deadline del task \"{tag}\" cambiata in \"{str(deadline_new)}\"")
         return []
 
-# TO-DO specify the type of vars cause this function not works
-# Replace the ActionWrapper calls to merge that with the changes
-# done to the class
+#TODO : check the presence od "deadline" cause the contest specifies that it should not necessarily be set.
 class ActionAddAlert(ActionWrapper):
     """Add an alert to a task and notify it to the user"""
     def name(self) -> Text:
@@ -386,20 +386,20 @@ class ActionAddAlert(ActionWrapper):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-
+        minutes = 5
         tag = get_tag(tracker)
         category = get_category(tracker)
-        delta = get_alert(tracker)
-
+        deadline = get_deadline(tracker)
+        alert = deadline - timedelta(minutes=minutes)
         try:
-            ActionWrapper.todo.modify_task(category, tag, alarm_new=delta)
+            ActionWrapper.todo.modify_task(category, tag, alarm_new=alert)
         except ExceptionRasa as e:
             dispatcher.utter_message(text=str(e))
             return []
 
         # ActionWrapper.todo[tag]["alert"].append(datetime.timedelta(delta.to_datetime()).replace(microsecond=0))
         # dispatcher.utter_message(text=f"Il task \"{tag}\" sarà notificato {datetime.timedelta(delta.to_datetime()).replace(microsecond=0)} prima della sua deadline")
-        dispatcher.utter_message(text=f"Il task \"{tag}\" sarà notificato {str(delta)} prima della sua deadline")
+        dispatcher.utter_message(text=f"Il task \"{tag}\" sarà notificato {str(minutes)} prima della sua deadline")
         return []
 
 class ActionRemoveAlert(ActionWrapper):
@@ -423,6 +423,7 @@ class ActionRemoveAlert(ActionWrapper):
         dispatcher.utter_message(text=f"Il task \"{tag}\" non verrà più notificato")
         return []
 
+# TODO: We have to remove this method cause, at the moment, the contest specifies that the chatbot cannot implement this function
 class ActionModifyAlert(ActionWrapper):
     """Add an alert to a task and notify it to the user"""
     def name(self) -> Text:

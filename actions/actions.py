@@ -426,7 +426,7 @@ class ActionAddAlert(ActionWrapper):
 
         # ActionWrapper.todo[tag]["alert"].append(datetime.timedelta(delta.to_datetime()).replace(microsecond=0))
         # dispatcher.utter_message(text=f"Il task \"{tag}\" sarà notificato {datetime.timedelta(delta.to_datetime()).replace(microsecond=0)} prima della sua deadline")
-        dispatcher.utter_message(text=f"Il task \"{tag}\" sarà notificato {str(minutes)} prima della sua deadline")
+        dispatcher.utter_message(text=f"Il task \"{tag}\" sarà notificato {str(minutes)} minuti prima della sua deadline")
         return []
 
 class ActionRemoveAlert(ActionWrapper):
@@ -470,5 +470,5 @@ class ActionModifyAlert(ActionWrapper):
             dispatcher.utter_message(text=str(e))
             return []
 
-        dispatcher.utter_message(text=f"Il task \"{tag}\" sarà ora notificato {str(delta)} prima della sua deadline")
+        dispatcher.utter_message(text=f"Il task \"{tag}\" sarà ora notificato {str(delta)} della sua deadline")
         return []

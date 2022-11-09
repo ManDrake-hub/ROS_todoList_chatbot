@@ -37,19 +37,46 @@ rules:
   steps:
   - intent: insert
   - action: id_task_form
-  - active_loop: id_task_form
+  - action: request_deadline
+  - active_loop: request_deadline
   - active_loop: null
   - action: action_add_task
 
-- rule: insert_deadline
+- rule: insert_deadline_alert
   condition:
   - slot_was_set:
     - logical_deadline: True
   steps:
   - intent: affirm
   - action: deadline_form
+  - action: request_alert
   - action: action_add_task
   - action: action_reset
+
+#- rule: insert_alert
+#  condition:
+#  - slot_was_set:
+#    - alert
+#    - date: null
+#    - time: null
+#  steps:
+#  - intent: insert
+#  - action: id_task_form
+#  - action: action_add_task
+#  - action: action_reset
+#
+#- rule: insert_deadline
+#  condition:
+#  - slot_was_set:
+#    - date
+#    - alert: null
+#  steps:
+#  - intent: insert
+#  - action: id_task_form
+#  - action: deadline_form
+#  - action: request_alert
+#  - action: action_add_task
+#  - action: action_reset
 
 #- rule: insert_alert
 #  condition:

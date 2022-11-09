@@ -70,11 +70,12 @@ forms:
       category:
       - type: from_entity
         entity: category
+  request_deadline:
+    required_slots:
       logical_deadline:
       - type: from_intent
         intent: deny
         value: False
-      
   deadline_form:
     required_slots:
       date:
@@ -83,6 +84,8 @@ forms:
       time:
       - type: from_entity
         entity: time
+  request_alert:
+    required_slots:
       logical_alert:
       - type: from_intent
         intent: deny

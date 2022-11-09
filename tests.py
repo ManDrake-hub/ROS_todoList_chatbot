@@ -1,6 +1,6 @@
 import datetime
 from typing import Dict, List, Any
-from actions.actions import ActionRenameUser, ActionWrapper, ActionAddTask, ActionRemoveTask, ActionMoveTask, ActionCreateUser, ActionSetUser, ActionRemoveUser, ActionGetUser, ActionReadTasks, ActionAddAlert
+from actions.actions import ActionRemoveDeadline, ActionRenameUser, ActionWrapper, ActionAddTask, ActionRemoveTask, ActionMoveTask, ActionCreateUser, ActionSetUser, ActionRemoveUser, ActionGetUser, ActionReadTasks, ActionAddAlert
 from actions.Task import Task
 from actions.utils import check_equals, print_todo, print_todo_dict
 from actions.ToDo import ToDo
@@ -24,7 +24,7 @@ class TrackerFake:
     def get_slot(self, slot: str):
         return self._slots[slot]
 
-def test_action(action_to_test: ActionWrapper, slots: Dict[str, Any], todo_expected: Dict[str, List[Task]], clear: bool=True):
+def test_action(action_to_test: ActionWrapper, slots: Dict[str, Any], todo_expected: Dict[str, List[Task]], clear: bool=True, check=True):
     todo: ToDo = ActionWrapper.todo
 
     if clear:
@@ -32,7 +32,7 @@ def test_action(action_to_test: ActionWrapper, slots: Dict[str, Any], todo_expec
     tracker_fake = TrackerFake(slots)
     action_to_test().run(CollectingDispatcherFake, tracker_fake, None)
 
-    if not check_equals(ActionWrapper.todo, todo_expected):
+    if check and not check_equals(ActionWrapper.todo, todo_expected):
         print_todo(todo)
         print_todo_dict(todo_expected)
         raise Exception("ToDo does not match the one expected")
@@ -50,7 +50,9 @@ if __name__ == "__main__":
     dt = datetime.datetime(year=2023, month=10, day=10, hour=10, minute=10, second=10)
     test_action(ActionAddTask, {"category": "a", "tag": "add", "date": "10/10/2023", "time": "10:10:10"}, {"a": [Task("add", dt), ]}, clear=True)
     test_action(ActionAddAlert, {"category": "a", "tag": "add", "alert": "due ore prima"}, {"a": [Task("add", dt, "due ore prima"), ]}, clear=False)
-    test_action(ActionReadTasks, {}, {"a": [Task("add", dt, "due ore prima"), ]}, clear=False)
+    test_action(ActionReadTasks, {}, {}, clear=False, check=False)
+    test_action(ActionRemoveDeadline, {"category": "a", "tag": "add"}, {"a": [Task("add", None, None), ]}, clear=False)
+    test_action(ActionReadTasks, {}, {}, clear=False, check=False)
 
 """
     # Test remove

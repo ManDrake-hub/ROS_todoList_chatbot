@@ -190,11 +190,13 @@ class ActionRemoveDeadline(ActionWrapper):
         try:
             t = ActionWrapper.todo.get_task(category=category, tag=tag)
             t.remove_deadline()
+            t.remove_alarm()
+
         except ExceptionRasa as e:
             dispatcher.utter_message(text=str(e))
             return []
 
-        dispatcher.utter_message(text=f"Deadline per {t} rimossa")
+        dispatcher.utter_message(text=f"Deadline ed allarme per {t} rimossi")
         return []
 
 class ActionRemoveCategory(ActionWrapper):

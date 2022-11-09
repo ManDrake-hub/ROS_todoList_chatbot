@@ -83,13 +83,8 @@ rules:
   - action: action_reset
 
 - rule: remove_alert
-  condition:
-    - slot_was_set:
-      - category: null
-      - user: null
-      - tag: null
   steps:
-  - intent: remove
+  - intent: remove_alert
   - action: id_task_form
   - action: action_remove_alert
   - action: action_reset
@@ -103,16 +98,25 @@ rules:
   - action: action_remove_user
   - action: action_reset
 
-
-##Modify
-#- rule: modify_task
+#Modify
+- rule: modify_task
   steps:
-  - intent: modify_task_category
+  - intent: modify
   - action: id_task_form
   - action: modify_tag_form
+  - action: request_category
+  - active_loop: request_category
+  - active_loop: null
   - action: action_modify_task_name
+
+- rule: modify_task_category
+  condition:
+  - slot_was_set:
+    - logical_category: True
+  steps:
+  - intent: affirm
   - action: modify_category_form
-  - action: action_move_task
+  - action: action_move_modify_task
   - action: action_reset
 
 - rule: modify_alert
@@ -123,18 +127,20 @@ rules:
   - action: action_modify_alert
   - action: action_reset
 
-- rule: modify_deadline
-  steps:
-  - intent: modify_deadline
-  - action: id_task_form
-  - action: deadline_form
-  - action: action_modify_deadline
-  - action: action_reset
+#- rule: modify_deadline
+#  steps:
+#  - intent: modify
+#  - action: id_task_form
+#  - action: deadline_form
+#  - action: action_modify_deadline
+#  - action: action_reset
 
 - rule: modify_user
+  condition:
+    - slot_was_set:
+      - user
   steps:
-  - intent: modify_user
-  - action: user_form
+  - intent: modify
   - action: modify_user_form
   - action: action_rename_user
   - action: action_reset

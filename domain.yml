@@ -28,6 +28,7 @@ entities:
 - category_new
 - logical_deadline
 - logical_alert
+- logical_category
 
 slots:
   tag:
@@ -61,6 +62,9 @@ slots:
     type: bool
     influence_conversation: false
   logical_alert:
+    type: bool
+    influence_conversation: false
+  logical_category:
     type: bool
     influence_conversation: false
 
@@ -106,21 +110,27 @@ forms:
       alert:
       - type: from_entity
         entity: alert
-  #modify_user_form:
-  #  required_slots:
-  #    user_new:
-  #    - type: from_entity
-  #      entity: user_new
-  #modify_tag_form:
-  #  required_slots:
-  #    tag_new:
-  #    - type: from_entity
-  #      entity: tag_new
-  #modify_category_form:
-  #  required_slots:
-  #    category_new:
-  #    - type: from_entity
-  #      entity: category_new
+  modify_user_form:
+    required_slots:
+      user_new:
+      - type: from_entity
+        entity: user_new
+  modify_tag_form:
+    required_slots:
+      tag_new:
+      - type: from_entity
+        entity: tag_new
+  request_category:
+    required_slots:
+      logical_category:
+      - type: from_intent
+        intent: deny
+        value: False
+  modify_category_form:
+    required_slots:
+      category_new:
+      - type: from_entity
+        entity: category_new
 
 responses:
   utter_greet:

@@ -25,6 +25,9 @@ def get_category(tracker: Tracker) -> Any:
 def get_category_new(tracker: Tracker) -> Any:
     return tracker.get_slot("category_new")
 
+def get_logical_alert(tracker: Tracker) -> Any:
+    return tracker.get_slot("logical_alert")
+
 def get_deadline(tracker: Tracker) -> Any:
     date = tracker.get_slot("date")
     time = tracker.get_slot("time")

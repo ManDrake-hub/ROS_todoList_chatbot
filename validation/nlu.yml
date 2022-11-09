@@ -1,0 +1,243 @@
+version: "2.0"
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - ciao
+    - ue
+    - buon giorno
+    - buona sera
+    - buon pomeriggio
+    - buongiorno
+    - buonasera
+    - salve
+    - buona notte
+    - buonanotte
+    - salute
+- intent: goodbye
+  examples: |
+    - arrivederci
+    - addio
+    - ci sentiamo
+    - a risentirci
+    - ci vediamo
+    - buona giornata
+    - ci sentiamo in giro
+- intent: affirm
+  examples: |
+    - si
+    - s
+    - ok
+    - certo
+    - va bene
+    - corretto
+    - certamente
+    - va benissimo
+    - sicuro
+- intent: deny
+  examples: |
+    - no
+    - n
+    - mai
+    - incorretto
+    - non va bene
+    - non penso
+    - non credo
+    - non proprio
+
+#Identification
+- intent: identification
+  examples: |
+    - sono io
+    - io sono [Valaria](user)
+    - io sono [Shameeka](user)
+    - io sono [Diona](user)
+    - io sono [Corby](user)
+    - io sono [Chantele](user)
+    - io sono [Natavia](user)
+    - io sono [Falicia](user)
+    - sono [Alene](user)
+    - sono [Deneisha](user)
+    - sono [Sierra](user)
+    - sono [Jhamal](user)
+    - sono [Nicolo](user)
+    - sono [Tabbetha](user)
+    - sono [Mai](user)
+    - mi chiamo [Rivka](user)
+    - mi chiamo [Dorrell](user)
+    - mi chiamo [Dj](user)
+    - mi chiamo [Napolean](user)
+    - mi chiamo [Keone](user)
+    - mi chiamo [Tammera](user)
+    - mi chiamo [Alisson](user)
+    - il mio nome è [Jerrad](user)
+    - il mio nome è [Ramos](user)
+    - il mio nome è [Vaneza](user)
+    - il mio nome è [Takasha](user)
+    - il mio nome è [Tynia](user)
+    - il mio nome è [Ebonique](user)
+    - il mio nome è [Alichia](user)
+    - inserisci l'utente
+    - aggiungi l'utente
+    - inserisci l'utente [Dino](user)
+    - inserisci l'utente [Issaac](user)
+    - inserisci l'utente [Andrewjames](user)
+    - inserisci l'utente [Josedejesus](user)
+    - inserisci l'utente [Faydra](user)
+    - inserisci l'utente [Marsell](user)
+    - inserisci l'utente [Joyanna](user)
+    - aggiungi l'utente [Latishia](user)
+    - aggiungi l'utente [Panayiota](user)
+    - aggiungi l'utente [Katrese](user)
+    - aggiungi l'utente [Kineta](user)
+    - aggiungi l'utente [Saren](user)
+    - aggiungi l'utente [Denton](user)
+    - aggiungi l'utente [Trayvon](user)
+    - aggiungi la todo list dell'utente [Shareen](user)
+    - aggiungi la todo list dell'utente [Terrie](user)
+    - aggiungi la todo list dell'utente [Irisha](user)
+    - aggiungi la todo list dell'utente [Vincente](user)
+    - inserisci la todo list dell'utente [Tiwana](user)
+    - inserisci la todo list dell'utente [Jamesedward](user)
+    - inserisci la todo list dell'utente [Taneisha](user)
+    - inserisci la todo list dell'utente [Roneisha](user)
+    - inserisci la todo list dell'utente [Allon](user)
+
+#Insert
+- intent: insert
+  examples: |
+    - inserisci l'attività 
+    - vorrei aggiungere l'attività
+    - aggiungi l'attività
+    - inserisci l'attività [fondo](tag)
+    - inserisci l'attività [latte](tag)
+    - aggiungi l'attività [zia](tag)
+    - aggiungi l'attività [accendere](tag)
+    - vorrei aggiungere l'attività [meglio](tag)
+    - inserisci l'attività [strumento](tag) nella categoria [godere](category)
+    - inserisci l'attività [che](tag) nella categoria [silenzio](category)
+    - aggiungi l'attività [pane](tag) nella categoria [fretta](category)
+    - aggiungi l'attività [processo](tag) nella categoria [nascondere](category)
+    - vorrei aggiungere l'attività [padrone](tag) nella categoria [operaio](category)
+    - inserisci l'attività [interno](tag) nella categoria [opporre](category) il [11-10-2067](date) alle [10:19](time)
+    - inserisci l'attività [entro](tag) nella categoria [dove](category) il [4-6-2054](date) alle [21:34](time)
+    - aggiungi l'attività [cambiare](tag) nella categoria [pietà](category) il [5-7-2047](date) alle [17:53](time)
+    - aggiungi l'attività [desiderio](tag) nella categoria [uno](category) il [28-12-2045](date) alle [3:55](time)
+    - vorrei aggiungere l'attività [sentire](tag) nella categoria [aiuto](category) il [28/4/2075](date) alle [15:17](time)
+    - nella categoria [là](category) aggiungi l'attività [caffè](tag) il [21/2/2046](date) alle [9:25](time)
+    - nella categoria [destino](category) aggiungi l'attività [leggero](tag) il [5-7-2076](date) alle [7:48](time)
+    - nella categoria [verde](category) aggiungi l'attività [considerare](tag) il [8-8-2036](date) alle [22:14](time)
+    - inserisci l'attività [puro](tag) in [morte](category)
+    - inserisci l'attività [notare](tag) in [carne](category)
+    - aggiungi l'attività [conseguenza](tag) in [ricordare](category)
+    - aggiungi l'attività [oro](tag) in [andare](category)
+    - vorrei aggiungere l'attività [giungere](tag) in [creare](category)
+    - in [pena](category) aggiungi l'attività [lì](tag) il [8/3/2029](date) alle [15:17](time)
+    - in [bello](category) aggiungi l'attività [guardia](tag) il [2-4-2049](date) alle [17:53](time)
+    - in [parola](category) aggiungi l'attività [azione](tag) il [18/6/2041](date) alle [6:4](time)
+    - inserisci un avviso [92 ore prima](alert)
+    - inserisci un avviso [54 minuti prima](alert)
+    - avvisami [62 minuti prima](alert)
+    - avvisami [42 minuti prima](alert)
+    - inserisci un alert [69 secondi prima](alert)
+    - inserisci un avviso [82 ore prima](alert) per l'attività [luce](tag)
+    - inserisci un avviso [23 ore prima](alert) per l'attività [male](tag)
+    - avvisami [49 ore prima](alert) per l'attività [centrale](tag)
+    - avvisami [66 ore prima](alert) per l'attività [genere](tag)
+    - inserisci un alert [43 secondi prima](alert) per l'attività [provare](tag)
+    - inserisci un avviso [26 secondi prima](alert) per l'attività [ombra](tag) nella categoria [compagno](category)
+    - inserisci un avviso [71 ore prima](alert) per l'attività [movimento](tag) nella categoria [sinistro](category)
+    - avvisami [87 minuti prima](alert) per l'attività [voce](tag) nella categoria [luna](category)
+    - avvisami [81 minuti prima](alert) per l'attività [giocare](tag) nella categoria [papà](category)
+    - inserisci un alert [50 secondi prima](alert) per l'attività [limitare](tag) nella categoria [specie](category)
+    - per l'attività [programma](tag) nella categoria [esperienza](category) inserisci un avviso [81 minuti prima](alert)
+    - per l'attività [intendere](tag) nella categoria [lingua](category) avvisami [26 secondi prima](alert)
+    - per l'attività [aumentare](tag) nella categoria [sviluppo](category) nserisci un alert [26 secondi prima](alert)
+    - inserisci un avviso [74 minuti prima](alert) per l'attività [madre](tag) in [magari](category)
+    - inserisci un avviso [9 secondi prima](alert) per l'attività [annunciare](tag) in [infatti](category)
+    - avvisami [2 ore prima](alert) per l'attività [arma](tag) in [suonare](category)
+    - avvisami [41 minuti prima](alert) per l'attività [importante](tag) in [muro](category)
+    - inserisci un alert [75 minuti prima](alert) per l'attività [fabbrica](tag) in [parlare](category)
+    - per l'attività [attimo](tag) in [pagina](category) inserisci un avviso [35 secondi prima](alert)
+    - per l'attività [inizio](tag) in [lì](category) avvisami [99 secondi prima](alert)
+    
+#Remove 
+- intent: remove
+  examples: |
+    - rimuovi l'attività [scendere](tag)
+    - rimuovi l'attività [peso](tag)
+    - elimina l'attività [mangiare](tag)
+    - elimina l'attività [interessare](tag)
+    - cancella l'attività [naturale](tag)
+    - cancella l'attività [verità](tag)
+    - rimuovi l'attività [attività](tag) nella categoria [povero](category)
+    - rimuovi l'attività [atto](tag) nella categoria [figurare](category)
+    - elimina l'attività [malattia](tag) nella categoria [attorno](category)
+    - elimina l'attività [assistere](tag) nella categoria [allora](category)
+    - cancella l'attività [produzione](tag) nella categoria [succedere](category)
+    - cancella l'attività [consiglio](tag) nella categoria [pietra](category)
+    - rimuovi l'attività [pranzo](tag) in [oltre](category)
+    - rimuovi l'attività [legge](tag) in [giudizio](category)
+    - elimina l'attività [condurre](tag) in [appoggiare](category)
+    - elimina l'attività [prossimo](tag) in [braccio](category)
+    - cancella l'attività [occorrere](tag) in [niente](category)
+    - cancella l'attività [soffrire](tag) in [stringere](category)
+    - rimuovi la categoria [soprattutto](category)
+    - rimuovi la categoria [domenica](category)
+    - cancella la categoria [elevare](category)
+    - cancella la categoria [affatto](category)
+    - elimina la categoria [dubbio](category)
+    - rimuovi l'avviso
+    - cancella l'avviso
+    - elimina l'avviso
+    - rimuovi l'avviso dell'attività [seguito](tag) nella categoria [carattere](category)
+    - rimuovi l'avviso dell'attività [maestro](tag) nella categoria [pubblico](category)
+    - elimina l'avviso dell'attività [tardi](tag) nella categoria [riunire](category)
+    - elimina l'avviso dell'attività [denaro](tag) nella categoria [mi](category)
+    - cancella l'avviso dell'attività [organizzare](tag) nella categoria [estero](category)
+    - cancella l'avviso dell'attività [soltanto](tag) nella categoria [bambina](category)
+    - rimuovi l'avviso dell'attività [comprendere](tag) nella categoria [migliore](category)
+    - rimuovi l'avviso dell'attività [diritto](tag) nella categoria [prima](category)
+    - elimina l'avviso dell'attività [vi](tag) nella categoria [termine](category)
+    - elimina l'avviso dell'attività [voltare](tag) nella categoria [soluzione](category)
+    - cancella l'avviso dell'attività [vestire](tag) nella categoria [tale](category)
+    - cancella l'avviso dell'attività [relazione](tag) nella categoria [spirito](category)
+    - rimuovi l'avviso dell'attività [ripetere](tag) in [arma](category)
+    - rimuovi l'avviso dell'attività [luce](tag) in [base](category)
+    - elimina l'avviso dell'attività [rispetto](tag) in [concedere](category)
+    - elimina l'avviso dell'attività [improvviso](tag) in [pazzo](category)
+    - cancella l'avviso dell'attività [resistere](tag) in [almeno](category)
+    - rimuovi l'avviso dell'attività [vero](tag) in [contenere](category)
+    - rimuovi l'avviso dell'attività [perfino](tag) in [bestia](category)
+    - elimina l'avviso dell'attività [vero](tag) in [mercato](category)
+    - cancella l'avviso dell'attività [ragazzo](tag) in [scendere](category)
+    - cancella l'avviso dell'attività [rispetto](tag) in [personale](category)
+    - rimuovi l'utente [Sharesa](user)
+    - rimuovi l'utente [Evelina](user)
+    - cancella l'utente [Cressie](user)
+    - cancella l'utente [Jelani](user)
+    - elimina l'utente [Kanisha](user)
+    - elimina l'utente [Zeina](user)
+
+#View
+- intent: view
+  examples: |
+    - visualizza
+    - visualizza la todo-list
+    - visualizza l'intera todo-list
+    - stampami il contenuto
+    - voglio vedere le attività
+    - fammi vedere le attività
+    - visualizza le attività
+    - mostrami le attività
+    - voglio visualizzare le attività 
+    - mostrami le attività
+    - fammi vedere le attività
+  
+- intent: bot_challenge
+  examples: |
+    - Chi sei?
+    - Sei un bot?
+    - Sei un umano?
+    - Sto parlando con un bot?
+    - Sto parlando con un umano?

@@ -2,7 +2,7 @@ import os
 from typing import Any, Sequence, Text, Dict, List
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
-from rasa_sdk.events import AllSlotsReset
+from rasa_sdk.events import AllSlotsReset, SlotSet
 from actions.ToDo import ToDo
 from actions.ActionsException import ExceptionRasa
 from actions.utils import get_user_new, get_category, get_deadline, get_tag, get_tag_new, get_alert, get_category_new, get_user
@@ -13,6 +13,19 @@ class ActionWrapper(Action):
 
     def name(self) -> Text:
         return "None"
+
+class ActionSet(Action):
+    def name(self) -> Text:
+        return "action_reset"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        entity_slot_names = ({"entity": "", "role": "", "slot": ""}, )
+
+        return [SlotSet(x["slot"], tracker.get_latest_entity_values(entity_type=x["entity"], entity_role=x["role"]) if
+                                   tracker.get_latest_entity_values(entity_type=x["entity"], entity_role=x["role"]) else []) for x in entity_slot_names]
 
 class ActionReset(Action):
     def name(self) -> Text:
@@ -138,7 +151,7 @@ class ActionAddTask(ActionWrapper):
             dispatcher.utter_message(text=str(e))
             return []
 
-        dispatcher.utter_message(text=f"Aggiunto \"{tag}\" con \"{category}\" come categoria e \"{str(deadline)}\" come scadenza")
+        dispatcher.utter_message(text=f'Aggiunta la {ActionWrapper.todo.get_task(category=category, tag=tag)}')
         return []
 
 class ActionRemoveTask(ActionWrapper):
@@ -160,6 +173,30 @@ class ActionRemoveTask(ActionWrapper):
             return []
 
         dispatcher.utter_message(text=f"Task \"{tag}\" rimosso")
+        return []
+
+class ActionRemoveDeadline(ActionWrapper):
+    """Remove a task from the todo-list and notify that to the user"""
+    def name(self) -> Text:
+        return "action_remove_deadline"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        tag = get_tag(tracker)
+        category = get_category(tracker)
+
+        try:
+            t = ActionWrapper.todo.get_task(category=category, tag=tag)
+            t.remove_deadline()
+            t.remove_alarm()
+
+        except ExceptionRasa as e:
+            dispatcher.utter_message(text=str(e))
+            return []
+
+        dispatcher.utter_message(text=f"Deadline ed allarme per {t} rimossi")
         return []
 
 class ActionRemoveCategory(ActionWrapper):
@@ -200,7 +237,7 @@ class ActionReadTask(ActionWrapper):
             dispatcher.utter_message(text=str(e))
             return []
 
-        dispatcher.utter_message(text=f"Il task \"{tag}\" ha \"{category}\" come categoria e \"{str(val.deadline)}\" come scadenza{'' if val.alarm is None else f' e {val.alarm} come allarme'}")
+        dispatcher.utter_message(text=f"Il task \"{tag}\" ha \"{category}\" come categoria {'' if val.deadline is None else f'e {str(val.deadline)} come scadenza'}{'' if val.alarm is None else f' e {val.alarm} come allarme'}")
         return []
 
 class ActionReadTasks(ActionWrapper):

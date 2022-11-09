@@ -29,8 +29,10 @@ def get_deadline(tracker: Tracker) -> Any:
     date = tracker.get_slot("date")
     time = tracker.get_slot("time")
 
-    if date is None or time is None:
-        raise Exception()
+    if ((isinstance(date, list) or date is None) or 
+        (isinstance(time, list) or time is None)):
+        return None
+
     try:
         dt = convert_deadline_to_datetime(date, time)
     except:

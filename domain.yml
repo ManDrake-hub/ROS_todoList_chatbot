@@ -49,7 +49,7 @@ forms:
     required_slots:
       tag:
       - type: from_entity
-        entity: tag
+        entity: category
       category:
       - type: from_entity
         entity: category

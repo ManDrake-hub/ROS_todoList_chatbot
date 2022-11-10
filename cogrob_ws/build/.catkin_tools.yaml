@@ -1,6 +1,0 @@
-devel_space: /home/colander/projects/ROS_todoList_chatbot/cogrob_ws/devel
-install: false
-install_space: /home/colander/projects/ROS_todoList_chatbot/cogrob_ws/install
-profile: default
-source_space: /home/colander/projects/ROS_todoList_chatbot/cogrob_ws/src
-workspace: /home/colander/projects/ROS_todoList_chatbot/cogrob_ws

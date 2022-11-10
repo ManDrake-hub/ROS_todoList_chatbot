@@ -1,1 +1,1 @@
-/home/colander/projects/ROS_todoList_chatbot/cogrob_ws/devel/.private/rasa_ros/share/roseus/ros/rasa_ros/manifest.l
+/home/francesca/Scrivania/ROS_todoList_chatbot/cogrob_ws/devel/.private/rasa_ros/share/roseus/ros/rasa_ros/manifest.l

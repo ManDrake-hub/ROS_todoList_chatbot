@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/colander/projects/ROS_todoList_chatbot/cogrob_ws/devel/.private/rasa_ros/share/roseus/ros/rasa_ros/manifest.l"
-  "/home/colander/projects/ROS_todoList_chatbot/cogrob_ws/devel/.private/rasa_ros/share/roseus/ros/rasa_ros/srv/Dialogue.l"
+  "/home/francesca/Scrivania/ROS_todoList_chatbot/cogrob_ws/devel/.private/rasa_ros/share/roseus/ros/rasa_ros/manifest.l"
+  "/home/francesca/Scrivania/ROS_todoList_chatbot/cogrob_ws/devel/.private/rasa_ros/share/roseus/ros/rasa_ros/srv/Dialogue.l"
   "CMakeFiles/rasa_ros_generate_messages_eus"
 )
 

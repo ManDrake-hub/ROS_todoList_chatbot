@@ -7,8 +7,7 @@
 # new environment variables
 
 # modified environment variables
-export CMAKE_PREFIX_PATH="/home/colander/projects/ROS_todoList_chatbot/cogrob_ws/devel/.private/catkin_tools_prebuild:$CMAKE_PREFIX_PATH"
-export PATH='/opt/ros/noetic/bin:/home/colander/virtual_environments/CognitiveRobotics/bin:/home/colander/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'
-export PWD='/home/colander/projects/ROS_todoList_chatbot/cogrob_ws/build/catkin_tools_prebuild'
-export ROSLISP_PACKAGE_DIRECTORIES='/home/colander/projects/ROS_todoList_chatbot/cogrob_ws/devel/.private/catkin_tools_prebuild/share/common-lisp'
-export ROS_PACKAGE_PATH="/home/colander/projects/ROS_todoList_chatbot/cogrob_ws/build/catkin_tools_prebuild:$ROS_PACKAGE_PATH"
+export CMAKE_PREFIX_PATH="/home/francesca/Scrivania/ROS_todoList_chatbot/cogrob_ws/devel/.private/catkin_tools_prebuild:$CMAKE_PREFIX_PATH"
+export PWD='/home/francesca/Scrivania/ROS_todoList_chatbot/cogrob_ws/build/catkin_tools_prebuild'
+export ROSLISP_PACKAGE_DIRECTORIES='/home/francesca/Scrivania/ROS_todoList_chatbot/cogrob_ws/devel/.private/catkin_tools_prebuild/share/common-lisp'
+export ROS_PACKAGE_PATH="/home/francesca/Scrivania/ROS_todoList_chatbot/cogrob_ws/build/catkin_tools_prebuild:$ROS_PACKAGE_PATH"

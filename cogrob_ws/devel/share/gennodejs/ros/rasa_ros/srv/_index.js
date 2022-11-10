@@ -1,1 +1,1 @@
-/home/colander/projects/ROS_todoList_chatbot/cogrob_ws/devel/.private/rasa_ros/share/gennodejs/ros/rasa_ros/srv/_index.js
+/home/francesca/Scrivania/ROS_todoList_chatbot/cogrob_ws/devel/.private/rasa_ros/share/gennodejs/ros/rasa_ros/srv/_index.js

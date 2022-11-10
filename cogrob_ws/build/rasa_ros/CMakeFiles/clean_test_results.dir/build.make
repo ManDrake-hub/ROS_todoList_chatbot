@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/colander/projects/ROS_todoList_chatbot/cogrob_ws/src/rasa_ros
+CMAKE_SOURCE_DIR = /home/francesca/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/rasa_ros
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/colander/projects/ROS_todoList_chatbot/cogrob_ws/build/rasa_ros
+CMAKE_BINARY_DIR = /home/francesca/Scrivania/ROS_todoList_chatbot/cogrob_ws/build/rasa_ros
 
 # Utility rule file for clean_test_results.
 
@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/colander/projects/ROS_todoList_chatbot/cogrob_ws/build/
 include CMakeFiles/clean_test_results.dir/progress.make
 
 CMakeFiles/clean_test_results:
-	/home/colander/virtual_environments/CognitiveRobotics/bin/python3 /opt/ros/noetic/share/catkin/cmake/test/remove_test_results.py /home/colander/projects/ROS_todoList_chatbot/cogrob_ws/build/rasa_ros/test_results
+	/usr/bin/python3 /opt/ros/noetic/share/catkin/cmake/test/remove_test_results.py /home/francesca/Scrivania/ROS_todoList_chatbot/cogrob_ws/build/rasa_ros/test_results
 
 clean_test_results: CMakeFiles/clean_test_results
 clean_test_results: CMakeFiles/clean_test_results.dir/build.make
@@ -71,6 +71,6 @@ CMakeFiles/clean_test_results.dir/clean:
 .PHONY : CMakeFiles/clean_test_results.dir/clean
 
 CMakeFiles/clean_test_results.dir/depend:
-	cd /home/colander/projects/ROS_todoList_chatbot/cogrob_ws/build/rasa_ros && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/colander/projects/ROS_todoList_chatbot/cogrob_ws/src/rasa_ros /home/colander/projects/ROS_todoList_chatbot/cogrob_ws/src/rasa_ros /home/colander/projects/ROS_todoList_chatbot/cogrob_ws/build/rasa_ros /home/colander/projects/ROS_todoList_chatbot/cogrob_ws/build/rasa_ros /home/colander/projects/ROS_todoList_chatbot/cogrob_ws/build/rasa_ros/CMakeFiles/clean_test_results.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/francesca/Scrivania/ROS_todoList_chatbot/cogrob_ws/build/rasa_ros && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/francesca/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/rasa_ros /home/francesca/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/rasa_ros /home/francesca/Scrivania/ROS_todoList_chatbot/cogrob_ws/build/rasa_ros /home/francesca/Scrivania/ROS_todoList_chatbot/cogrob_ws/build/rasa_ros /home/francesca/Scrivania/ROS_todoList_chatbot/cogrob_ws/build/rasa_ros/CMakeFiles/clean_test_results.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/clean_test_results.dir/depend
 

@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/colander/projects/ROS_todoList_chatbot/cogrob_ws/src/rasa_ros
+CMAKE_SOURCE_DIR = /home/francesca/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/rasa_ros
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/colander/projects/ROS_todoList_chatbot/cogrob_ws/build/rasa_ros
+CMAKE_BINARY_DIR = /home/francesca/Scrivania/ROS_todoList_chatbot/cogrob_ws/build/rasa_ros
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -137,9 +137,9 @@ install/local/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/colander/projects/ROS_todoList_chatbot/cogrob_ws/build/rasa_ros/CMakeFiles /home/colander/projects/ROS_todoList_chatbot/cogrob_ws/build/rasa_ros/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/francesca/Scrivania/ROS_todoList_chatbot/cogrob_ws/build/rasa_ros/CMakeFiles /home/francesca/Scrivania/ROS_todoList_chatbot/cogrob_ws/build/rasa_ros/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/colander/projects/ROS_todoList_chatbot/cogrob_ws/build/rasa_ros/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/francesca/Scrivania/ROS_todoList_chatbot/cogrob_ws/build/rasa_ros/CMakeFiles 0
 .PHONY : all
 
 # The main clean target

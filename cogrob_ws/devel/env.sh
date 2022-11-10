@@ -1,1 +1,1 @@
-/home/colander/projects/ROS_todoList_chatbot/cogrob_ws/devel/.private/catkin_tools_prebuild/env.sh
+/home/francesca/Scrivania/ROS_todoList_chatbot/cogrob_ws/devel/.private/catkin_tools_prebuild/env.sh

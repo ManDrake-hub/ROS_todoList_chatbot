@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/colander/projects/ROS_todoList_chatbot/cogrob_ws/src/rasa_ros
+CMAKE_SOURCE_DIR = /home/francesca/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/rasa_ros
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/colander/projects/ROS_todoList_chatbot/cogrob_ws/build/rasa_ros
+CMAKE_BINARY_DIR = /home/francesca/Scrivania/ROS_todoList_chatbot/cogrob_ws/build/rasa_ros
 
 # Utility rule file for _rasa_ros_generate_messages_check_deps_Dialogue.
 
@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/colander/projects/ROS_todoList_chatbot/cogrob_ws/build/
 include CMakeFiles/_rasa_ros_generate_messages_check_deps_Dialogue.dir/progress.make
 
 CMakeFiles/_rasa_ros_generate_messages_check_deps_Dialogue:
-	catkin_generated/env_cached.sh /home/colander/virtual_environments/CognitiveRobotics/bin/python3 /opt/ros/noetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py rasa_ros /home/colander/projects/ROS_todoList_chatbot/cogrob_ws/src/rasa_ros/srv/Dialogue.srv 
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py rasa_ros /home/francesca/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/rasa_ros/srv/Dialogue.srv 
 
 _rasa_ros_generate_messages_check_deps_Dialogue: CMakeFiles/_rasa_ros_generate_messages_check_deps_Dialogue
 _rasa_ros_generate_messages_check_deps_Dialogue: CMakeFiles/_rasa_ros_generate_messages_check_deps_Dialogue.dir/build.make
@@ -71,6 +71,6 @@ CMakeFiles/_rasa_ros_generate_messages_check_deps_Dialogue.dir/clean:
 .PHONY : CMakeFiles/_rasa_ros_generate_messages_check_deps_Dialogue.dir/clean
 
 CMakeFiles/_rasa_ros_generate_messages_check_deps_Dialogue.dir/depend:
-	cd /home/colander/projects/ROS_todoList_chatbot/cogrob_ws/build/rasa_ros && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/colander/projects/ROS_todoList_chatbot/cogrob_ws/src/rasa_ros /home/colander/projects/ROS_todoList_chatbot/cogrob_ws/src/rasa_ros /home/colander/projects/ROS_todoList_chatbot/cogrob_ws/build/rasa_ros /home/colander/projects/ROS_todoList_chatbot/cogrob_ws/build/rasa_ros /home/colander/projects/ROS_todoList_chatbot/cogrob_ws/build/rasa_ros/CMakeFiles/_rasa_ros_generate_messages_check_deps_Dialogue.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/francesca/Scrivania/ROS_todoList_chatbot/cogrob_ws/build/rasa_ros && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/francesca/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/rasa_ros /home/francesca/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/rasa_ros /home/francesca/Scrivania/ROS_todoList_chatbot/cogrob_ws/build/rasa_ros /home/francesca/Scrivania/ROS_todoList_chatbot/cogrob_ws/build/rasa_ros /home/francesca/Scrivania/ROS_todoList_chatbot/cogrob_ws/build/rasa_ros/CMakeFiles/_rasa_ros_generate_messages_check_deps_Dialogue.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/_rasa_ros_generate_messages_check_deps_Dialogue.dir/depend
 

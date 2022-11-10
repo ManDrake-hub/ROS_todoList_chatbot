@@ -62,6 +62,14 @@ rules:
   - action: action_add_alert
   - action: action_reset
 
+- rule: insert_deadline
+  steps:
+  - intent: insert_deadline
+  - action: deadline_form
+  - action: id_task_form
+  - action: action_add_task
+  - action: action_reset
+
 #Remove
 - rule: remove_task
   steps:
@@ -70,22 +78,31 @@ rules:
   - action: action_remove_task
   - action: action_reset
 
+- rule: remove_deadline
+  steps:
+  - intent: remove_deadline
+  - action: id_task_form
+  - action: action_remove_task
+  - action: action_reset
+
+#FORSE CON CONDITION IN ACTIONS
 #- rule: remove_category
 #  condition:
 #    - slot_was_set:
-#      - category
+#      - category: true
 #  steps:
 #  - intent: remove
 #  - action: action_remove_category
 #  - action: action_reset
-#
-#- rule: remove_alert
-#  steps:
-#  - intent: remove_alert
-#  - action: id_task_form
-#  - action: action_remove_alert
-#  - action: action_reset
-#  
+
+- rule: remove_alert
+  steps:
+  - intent: remove_alert
+  - action: id_task_form
+  - action: action_remove_alert
+  - action: action_reset
+
+#FORSE CON CONDITION IN ACTIONS  
 #- rule: remove_user
 #  condition:
 #    - slot_was_set:
@@ -95,21 +112,19 @@ rules:
 #  - action: action_remove_user
 #  - action: action_reset
 #
-##Modify
-#- rule: modify_task
-#  condition:
-#  - slot_was_set:
-#    - user: null
-#  steps:
-#  - intent: modify
-#  - action: id_task_form
-#  - action: modify_tag_form
+#Modify
+- rule: modify_task
+  steps:
+  - intent: modify
+  - action: id_task_form
+  - action: modify_tag_form
 #  - action: request_category
 #  - active_loop: request_category
 #  - active_loop: null
-#  - action: action_modify_task_name
-#  - action: action_reset
-#
+  - action: action_modify_task_name
+  - action: action_reset
+
+#FORSE DA GESTIRE CON CONDIZIONI COME REMOVE
 #- rule: modify_task_category
 #  condition:
 #  - slot_was_set:
@@ -119,34 +134,35 @@ rules:
 #  - action: modify_category_form
 #  - action: action_move_modify_task
 #  - action: action_reset
-#
-#- rule: modify_alert
-#  steps:
-#  - intent: modify_alert
-#  - action: id_task_form
-#  - action: alert_form
-#  - action: action_modify_alert
-#  - action: action_reset
-#
-##- rule: modify_deadline
-#  steps:
-#  - intent: modify
-#  - action: id_task_form
-#  - action: deadline_form
-#  - action: action_modify_deadline
-#  - action: action_reset
 
-- rule: modify_user
-  condition:
-    - slot_was_set:
-      - user
+- rule: modify_alert
   steps:
-  - intent: modify
-  - action: modify_user_form
-  - action: action_rename_user
+  - intent: modify_alert
+  - action: id_task_form
+  - action: alert_form
+  - action: action_modify_alert
   - action: action_reset
 
-##Cancel
+- rule: modify_deadline
+  steps:
+  - intent: modify_deadline
+  - action: id_task_form
+  - action: deadline_form
+  - action: action_modify_deadline
+  - action: action_reset
+
+#FORSE CON CONDITION IN ACTIONS
+#- rule: modify_user
+#  condition:
+#    - slot_was_set:
+#      - user
+#  steps:
+#  - intent: modify
+#  - action: modify_user_form
+#  - action: action_rename_user
+#  - action: action_reset
+
+#Cancel
 #- rule: Cancel slot if I say stop
 #  steps:
 #    - intent: cancel

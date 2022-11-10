@@ -19,9 +19,9 @@ stories:
     - requested_slot: user
   - intent: inform
     entities:
-    - user
+    - user: Francesca
   - slot_was_set:
-    - user
+    - user: Francesca
   - slot_was_set:
     - requested_slot: null
   - active_loop: null

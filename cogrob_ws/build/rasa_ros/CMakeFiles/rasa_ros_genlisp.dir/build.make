@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/colander/projects/cogrob/cogrob_ws/src/rasa_ros
+CMAKE_SOURCE_DIR = /home/colander/projects/ROS_todoList_chatbot/cogrob_ws/src/rasa_ros
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/colander/projects/cogrob/cogrob_ws/build/rasa_ros
+CMAKE_BINARY_DIR = /home/colander/projects/ROS_todoList_chatbot/cogrob_ws/build/rasa_ros
 
 # Utility rule file for rasa_ros_genlisp.
 
@@ -67,6 +67,6 @@ CMakeFiles/rasa_ros_genlisp.dir/clean:
 .PHONY : CMakeFiles/rasa_ros_genlisp.dir/clean
 
 CMakeFiles/rasa_ros_genlisp.dir/depend:
-	cd /home/colander/projects/cogrob/cogrob_ws/build/rasa_ros && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/colander/projects/cogrob/cogrob_ws/src/rasa_ros /home/colander/projects/cogrob/cogrob_ws/src/rasa_ros /home/colander/projects/cogrob/cogrob_ws/build/rasa_ros /home/colander/projects/cogrob/cogrob_ws/build/rasa_ros /home/colander/projects/cogrob/cogrob_ws/build/rasa_ros/CMakeFiles/rasa_ros_genlisp.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/colander/projects/ROS_todoList_chatbot/cogrob_ws/build/rasa_ros && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/colander/projects/ROS_todoList_chatbot/cogrob_ws/src/rasa_ros /home/colander/projects/ROS_todoList_chatbot/cogrob_ws/src/rasa_ros /home/colander/projects/ROS_todoList_chatbot/cogrob_ws/build/rasa_ros /home/colander/projects/ROS_todoList_chatbot/cogrob_ws/build/rasa_ros /home/colander/projects/ROS_todoList_chatbot/cogrob_ws/build/rasa_ros/CMakeFiles/rasa_ros_genlisp.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/rasa_ros_genlisp.dir/depend
 

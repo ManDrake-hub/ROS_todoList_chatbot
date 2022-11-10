@@ -1,31 +1,39 @@
-[35m[1mScanning dependencies of target std_msgs_generate_messages_eus[0m
-[35m[1mScanning dependencies of target std_msgs_generate_messages_nodejs[0m
 [35m[1mScanning dependencies of target std_msgs_generate_messages_py[0m
-[35m[1mScanning dependencies of target std_msgs_generate_messages_cpp[0m
 [35m[1mScanning dependencies of target _rasa_ros_generate_messages_check_deps_Dialogue[0m
 [35m[1mScanning dependencies of target std_msgs_generate_messages_lisp[0m
-[  0%] Built target std_msgs_generate_messages_nodejs
-[  0%] Built target std_msgs_generate_messages_eus
-[  0%] Built target std_msgs_generate_messages_cpp
+[35m[1mScanning dependencies of target std_msgs_generate_messages_nodejs[0m
+[35m[1mScanning dependencies of target std_msgs_generate_messages_eus[0m
+[35m[1mScanning dependencies of target std_msgs_generate_messages_cpp[0m
 [  0%] Built target std_msgs_generate_messages_py
+[  0%] Built target std_msgs_generate_messages_nodejs
+[  0%] Built target std_msgs_generate_messages_cpp
 [  0%] Built target std_msgs_generate_messages_lisp
+[  0%] Built target std_msgs_generate_messages_eus
 [  0%] Built target _rasa_ros_generate_messages_check_deps_Dialogue
-[35m[1mScanning dependencies of target rasa_ros_generate_messages_nodejs[0m
-[35m[1mScanning dependencies of target rasa_ros_generate_messages_cpp[0m
-[35m[1mScanning dependencies of target rasa_ros_generate_messages_lisp[0m
-[35m[1mScanning dependencies of target rasa_ros_generate_messages_py[0m
 [35m[1mScanning dependencies of target rasa_ros_generate_messages_eus[0m
-[ 14%] [34m[1mGenerating C++ code from rasa_ros/Dialogue.srv[0m
-[ 42%] [34m[1mGenerating Python code from SRV rasa_ros/Dialogue[0m
-[ 42%] [34m[1mGenerating Lisp code from rasa_ros/Dialogue.srv[0m
-[ 57%] [34m[1mGenerating Javascript code from rasa_ros/Dialogue.srv[0m
-[ 85%] [34m[1mGenerating EusLisp code from rasa_ros/Dialogue.srv[0m
-[ 85%] [34m[1mGenerating EusLisp manifest code for rasa_ros[0m
+[35m[1mScanning dependencies of target rasa_ros_generate_messages_lisp[0m
+[35m[1mScanning dependencies of target rasa_ros_generate_messages_nodejs[0m
+[35m[1mScanning dependencies of target rasa_ros_generate_messages_py[0m
+[35m[1mScanning dependencies of target rasa_ros_generate_messages_cpp[0m
+[ 14%] [34m[1mGenerating Lisp code from rasa_ros/Dialogue.srv[0m
+[ 28%] [34m[1mGenerating C++ code from rasa_ros/Dialogue.srv[0m
+[ 71%] [34m[1mGenerating Javascript code from rasa_ros/Dialogue.srv[0m
+[ 71%] [34m[1mGenerating EusLisp code from rasa_ros/Dialogue.srv[0m
+[ 71%] [34m[1mGenerating EusLisp manifest code for rasa_ros[0m
+[ 85%] [34m[1mGenerating Python code from SRV rasa_ros/Dialogue[0m
+Traceback (most recent call last):
+  File "/opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/gensrv_py.py", line 43, in <module>
+    import genpy.generator
+  File "/opt/ros/noetic/lib/python3/dist-packages/genpy/__init__.py", line 34, in <module>
+    from . message import Message, SerializationError, DeserializationError, MessageException, struct_I
+  File "/opt/ros/noetic/lib/python3/dist-packages/genpy/message.py", line 48, in <module>
+    import yaml
+ModuleNotFoundError: No module named 'yaml'
+make[2]: *** [CMakeFiles/rasa_ros_generate_messages_py.dir/build.make:63: /home/colander/projects/ROS_todoList_chatbot/cogrob_ws/devel/.private/rasa_ros/lib/python3/dist-packages/rasa_ros/srv/_Dialogue.py] Error 1
+make[1]: *** [CMakeFiles/Makefile2:706: CMakeFiles/rasa_ros_generate_messages_py.dir/all] Error 2
+make[1]: *** Waiting for unfinished jobs....
 [ 85%] Built target rasa_ros_generate_messages_lisp
 [ 85%] Built target rasa_ros_generate_messages_nodejs
-[100%] [34m[1mGenerating Python srv __init__.py for rasa_ros[0m
-[100%] Built target rasa_ros_generate_messages_cpp
-[100%] Built target rasa_ros_generate_messages_eus
-[100%] Built target rasa_ros_generate_messages_py
-[35m[1mScanning dependencies of target rasa_ros_generate_messages[0m
-[100%] Built target rasa_ros_generate_messages
+[ 85%] Built target rasa_ros_generate_messages_cpp
+[ 85%] Built target rasa_ros_generate_messages_eus
+make: *** [Makefile:141: all] Error 2

@@ -1,1 +1,1 @@
-/home/colander/projects/cogrob/cogrob_ws/devel/.private/catkin_tools_prebuild/local_setup.sh
+/home/colander/projects/ROS_todoList_chatbot/cogrob_ws/devel/.private/catkin_tools_prebuild/local_setup.sh

@@ -1,2 +1,3 @@
 /home/francesca/Scrivania/cogrob/cogrob_ws/devel/./cmake.lock 1
 /home/colander/projects/cogrob/cogrob_ws/devel/./cmake.lock 4
+/home/colander/projects/ROS_todoList_chatbot/cogrob_ws/devel/./cmake.lock 3

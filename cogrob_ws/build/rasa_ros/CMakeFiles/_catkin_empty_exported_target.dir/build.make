@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/colander/projects/cogrob/cogrob_ws/src/rasa_ros
+CMAKE_SOURCE_DIR = /home/colander/projects/ROS_todoList_chatbot/cogrob_ws/src/rasa_ros
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/colander/projects/cogrob/cogrob_ws/build/rasa_ros
+CMAKE_BINARY_DIR = /home/colander/projects/ROS_todoList_chatbot/cogrob_ws/build/rasa_ros
 
 # Utility rule file for _catkin_empty_exported_target.
 
@@ -67,6 +67,6 @@ CMakeFiles/_catkin_empty_exported_target.dir/clean:
 .PHONY : CMakeFiles/_catkin_empty_exported_target.dir/clean
 
 CMakeFiles/_catkin_empty_exported_target.dir/depend:
-	cd /home/colander/projects/cogrob/cogrob_ws/build/rasa_ros && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/colander/projects/cogrob/cogrob_ws/src/rasa_ros /home/colander/projects/cogrob/cogrob_ws/src/rasa_ros /home/colander/projects/cogrob/cogrob_ws/build/rasa_ros /home/colander/projects/cogrob/cogrob_ws/build/rasa_ros /home/colander/projects/cogrob/cogrob_ws/build/rasa_ros/CMakeFiles/_catkin_empty_exported_target.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/colander/projects/ROS_todoList_chatbot/cogrob_ws/build/rasa_ros && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/colander/projects/ROS_todoList_chatbot/cogrob_ws/src/rasa_ros /home/colander/projects/ROS_todoList_chatbot/cogrob_ws/src/rasa_ros /home/colander/projects/ROS_todoList_chatbot/cogrob_ws/build/rasa_ros /home/colander/projects/ROS_todoList_chatbot/cogrob_ws/build/rasa_ros /home/colander/projects/ROS_todoList_chatbot/cogrob_ws/build/rasa_ros/CMakeFiles/_catkin_empty_exported_target.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/_catkin_empty_exported_target.dir/depend
 

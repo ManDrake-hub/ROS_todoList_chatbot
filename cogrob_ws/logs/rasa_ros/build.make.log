@@ -1,12 +1,15 @@
-[  0%] Built target std_msgs_generate_messages_py
 [  0%] Built target std_msgs_generate_messages_lisp
 [  0%] Built target std_msgs_generate_messages_nodejs
 [  0%] Built target std_msgs_generate_messages_eus
+[  0%] Built target std_msgs_generate_messages_py
 [  0%] Built target std_msgs_generate_messages_cpp
 [  0%] Built target _rasa_ros_generate_messages_check_deps_Dialogue
-[ 42%] Built target rasa_ros_generate_messages_cpp
+[ 14%] [34m[1mGenerating Python code from SRV rasa_ros/Dialogue[0m
+[ 28%] Built target rasa_ros_generate_messages_nodejs
 [ 42%] Built target rasa_ros_generate_messages_lisp
-[ 57%] Built target rasa_ros_generate_messages_py
-[ 71%] Built target rasa_ros_generate_messages_nodejs
-[100%] Built target rasa_ros_generate_messages_eus
+[ 71%] Built target rasa_ros_generate_messages_eus
+[ 85%] Built target rasa_ros_generate_messages_cpp
+[100%] [34m[1mGenerating Python srv __init__.py for rasa_ros[0m
+[100%] Built target rasa_ros_generate_messages_py
+[35m[1mScanning dependencies of target rasa_ros_generate_messages[0m
 [100%] Built target rasa_ros_generate_messages

@@ -67,14 +67,14 @@ set(rasa_ros_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(rasa_ros_SOURCE_PREFIX /home/colander/projects/cogrob/cogrob_ws/src/rasa_ros)
-  set(rasa_ros_DEVEL_PREFIX /home/colander/projects/cogrob/cogrob_ws/devel/.private/rasa_ros)
+  set(rasa_ros_SOURCE_PREFIX /home/colander/projects/ROS_todoList_chatbot/cogrob_ws/src/rasa_ros)
+  set(rasa_ros_DEVEL_PREFIX /home/colander/projects/ROS_todoList_chatbot/cogrob_ws/devel/.private/rasa_ros)
   set(rasa_ros_INSTALL_PREFIX "")
   set(rasa_ros_PREFIX ${rasa_ros_DEVEL_PREFIX})
 else()
   set(rasa_ros_SOURCE_PREFIX "")
   set(rasa_ros_DEVEL_PREFIX "")
-  set(rasa_ros_INSTALL_PREFIX /home/colander/projects/cogrob/cogrob_ws/install)
+  set(rasa_ros_INSTALL_PREFIX /home/colander/projects/ROS_todoList_chatbot/cogrob_ws/install)
   set(rasa_ros_PREFIX ${rasa_ros_INSTALL_PREFIX})
 endif()
 
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/colander/projects/cogrob/cogrob_ws/install/lib;/home/colander/projects/cogrob/cogrob_ws/devel/lib;/opt/ros/noetic/lib)
+    foreach(path /home/colander/projects/ROS_todoList_chatbot/cogrob_ws/install/lib;/home/colander/projects/ROS_todoList_chatbot/cogrob_ws/devel/lib;/opt/ros/noetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

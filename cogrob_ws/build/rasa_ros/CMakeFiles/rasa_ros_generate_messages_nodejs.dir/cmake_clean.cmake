@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "/home/colander/projects/cogrob/cogrob_ws/devel/.private/rasa_ros/share/gennodejs/ros/rasa_ros/srv/Dialogue.js"
+  "/home/colander/projects/ROS_todoList_chatbot/cogrob_ws/devel/.private/rasa_ros/share/gennodejs/ros/rasa_ros/srv/Dialogue.js"
   "CMakeFiles/rasa_ros_generate_messages_nodejs"
 )
 

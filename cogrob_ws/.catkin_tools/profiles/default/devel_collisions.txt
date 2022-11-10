@@ -1,0 +1,2 @@
+/home/francesca/Scrivania/cogrob/cogrob_ws/devel/./cmake.lock 1
+/home/colander/projects/cogrob/cogrob_ws/devel/./cmake.lock 4

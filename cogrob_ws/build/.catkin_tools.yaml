@@ -1,0 +1,6 @@
+devel_space: /home/colander/projects/cogrob/cogrob_ws/devel
+install: false
+install_space: /home/colander/projects/cogrob/cogrob_ws/install
+profile: default
+source_space: /home/colander/projects/cogrob/cogrob_ws/src
+workspace: /home/colander/projects/cogrob/cogrob_ws

@@ -1,0 +1,1 @@
+/home/colander/projects/cogrob/cogrob_ws/devel/.private/rasa_ros/include/rasa_ros/DialogueResponse.h

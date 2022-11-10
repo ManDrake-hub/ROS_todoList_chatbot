@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/colander/projects/cogrob/cogrob_ws/devel/.private/rasa_ros/setup.sh

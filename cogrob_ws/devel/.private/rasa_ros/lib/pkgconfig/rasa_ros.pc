@@ -1,0 +1,8 @@
+prefix=/home/colander/projects/ROS_todoList_chatbot/cogrob_ws/devel/.private/rasa_ros
+
+Name: rasa_ros
+Description: Description of rasa_ros
+Version: 0.0.0
+Cflags: -I/home/colander/projects/ROS_todoList_chatbot/cogrob_ws/devel/.private/rasa_ros/include
+Libs: -L${prefix}/lib 
+Requires: 

@@ -1,8 +1,0 @@
-prefix=/home/francesca/Scrivania/ROS_todoList_chatbot/cogrob_ws/install
-
-Name: rasa_ros
-Description: Description of rasa_ros
-Version: 0.0.0
-Cflags: -I${prefix}/include
-Libs: -L${prefix}/lib 
-Requires: 

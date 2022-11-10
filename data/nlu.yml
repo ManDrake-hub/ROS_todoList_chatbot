@@ -255,6 +255,8 @@ nlu:
     - cancella la categoria [Studio](category)
     - cancella la categoria [Machine Learning](category)
     - elimina la categoria [Sport](category)
+- intent: remove_user
+  examples: |
     - rimuovi l'utente [Domenico](user)
     - rimuovi l'utente [Vito](user)
     - cancella l'utente [Alberto](user)
@@ -364,6 +366,16 @@ nlu:
     - modifica l'avviso di [Mela](tag) di [Impegni](category)
     - voglio modificare l'avviso di [Istituto](tag) della categoria [Progetto](category)
     - modifica l'avviso di [Telefono fisso](tag) della categoria [Prescrizione](category)
+- intent: modify_user
+  examples: |
+    - vorrei modificare il nome utente [Gianmarco](user)
+    - cambia il nome utente [Jacopo](user)
+    - rinomina l' utente [Massimiliano](user)
+    - rinomina l' utente [Michele](user) in [Luigi](user_new)
+    - rinomina l' utente [Matteo](user) in [Antonio](user_new)
+    - modifica il nome di [Matteo](user) con il nuovo nome [Marco](user_new)
+    - cambia il nome utente [Nicolo](user) con il nome utente [Mario](user_new)
+    - cambia il nome di [Davide](user) in [Dario](user_new)
 
 
 - intent: bot_challenge

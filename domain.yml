@@ -12,6 +12,7 @@ intents:
 - remove
 - remove_alert
 - remove_deadline
+- remove_user
 - view
 - modify
 - modify_alert

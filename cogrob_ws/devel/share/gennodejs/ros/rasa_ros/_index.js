@@ -1,1 +1,0 @@
-/home/colander/projects/cogrob/cogrob_ws/devel/.private/rasa_ros/share/gennodejs/ros/rasa_ros/_index.js

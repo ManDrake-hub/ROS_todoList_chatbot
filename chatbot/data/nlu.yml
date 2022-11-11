@@ -65,8 +65,8 @@ nlu:
     - data [4.8.2025](date)
     - data [20.11.2023](date)
     - ora [04:25](time)
-    - ora [7:30](time)
-    - ora [7:7](time)
+    - ore [7:30](time)
+    - ore [7:7](time)
     - ora [23:59](time)
     - ora [20:7](time)
     - categoria [Maggio](category)
@@ -238,7 +238,7 @@ nlu:
     - cancella l'attività [Manzo](tag) in [Maggio](category)
 - intent: remove_category
   examples: |
-    - rimuovi unaa categoria
+    - rimuovi una categoria
     - elimina una categoria
     - cancella una categoria
     - rimuovi la categoria [Occhiali](category)
@@ -297,40 +297,40 @@ nlu:
     - cancella un avviso
     - elimina  un avviso
     - rimuovi l'avviso dell'attività [Ospedale](tag) nella categoria [Aprile](category)
-    - rimuovi l'avviso dell'attività [Religione](tag) nella categoria [Dottoresse](category)
+    - rimuovi l'avviso per l'attività [Religione](tag) nella categoria [Dottoresse](category)
     - elimina l'avviso dell'attività [Bagno](tag) nella categoria [Operazione](category)
-    - elimina l'avviso dell'attività [Zucchine](tag) nella categoria [Tecnologia](category)
+    - elimina l'avviso per l'attività [Zucchine](tag) nella categoria [Tecnologia](category)
     - cancella l'avviso dell'attività [Discorso](tag) nella categoria [Lingue](category)
-    - cancella l'avviso dell'attività [Istituto superiore](tag) nella categoria [Febbraio](category)
+    - cancella l'avviso per l'attività [Istituto superiore](tag) nella categoria [Febbraio](category)
     - rimuovi l'avviso dell'attività [Cena](tag) nella categoria [Esami](category)
-    - rimuovi l'avviso dell'attività [Cena](tag) nella categoria [Operazione](category)
+    - rimuovi l'avviso per l'attività [Cena](tag) nella categoria [Operazione](category)
     - elimina l'avviso dell'attività [Cereali](tag) nella categoria [Supermercato](category)
-    - elimina l'avviso dell'attività [Bollette](tag) nella categoria [Dicembre](category)
+    - elimina l'avviso per l'attività [Bollette](tag) nella categoria [Dicembre](category)
     - cancella l'avviso dell'attività [Cereali](tag) nella categoria [Tecnologia](category)
-    - cancella l'avviso dell'attività [Koala](tag) nella categoria [Giugno](category)
+    - cancella l'avviso per l'attività [Koala](tag) nella categoria [Giugno](category)
     - rimuovi l'avviso dell'attività [Computer portatile](tag) in [Università](category)
-    - rimuovi l'avviso dell'attività [Ambulanza](tag) in [Bollette di casa](category)
+    - rimuovi l'avviso per l'attività [Ambulanza](tag) in [Bollette di casa](category)
     - elimina l'avviso dell'attività [Insegnamento](tag) in [Prescrizione](category)
-    - elimina l'avviso dell'attività [Koala](tag) in [Borsone palestra](category)
+    - elimina l'avviso per l'attività [Koala](tag) in [Borsone palestra](category)
     - cancella l'avviso dell'attività [Pullman](tag) in [Tecnologia](category)
-    - rimuovi l'avviso dell'attività [Funivia](tag) in [Studio](category)
+    - rimuovi l'avviso per l'attività [Funivia](tag) in [Studio](category)
     - elimina l'avviso dell'attività [Mulo](tag) in [Progetto](category)
-    - cancella l'avviso dell'attività [Matita](tag) in [Febbraio](category)
+    - cancella l'avviso per l'attività [Matita](tag) in [Febbraio](category)
 - intent: remove_deadline
   examples: |
     - rimuovi una deadline
     - cancella una deadline
     - elimina una scadenza
-    - rimuovi la deadline [16/09/1879](date)
-    - cancella la deadline [12-11-2000](date)
-    - rimuovi la deadline [25-10-2001](date)
-    - cancella la deadline [24/04/1987](date)
-    - elimina la scadenza [10/08/1900](date)
-    - cancella la scadenza [06-03-2004](date)
-    - rimuovi la scadenza [20-05-2007](date)
-    - elimina la scadenza [11/11/2020](date)
-    - elimina la scadenza [16/06/2002](date) alle [15:13](time)
-    - rimuovi la deadline [19-07-1956](date) per le [16:15](time)
+    - rimuovi la deadline dell'attività [Telefono](tag)
+    - cancella la deadline per l'attività [collana](tag)
+    - rimuovi la deadline dell'attività [Filo](tag)
+    - cancella la deadline per l'attività [occhiali](tag)
+    - elimina la scadenza dell'attività [Occhiali da sole](tag)
+    - cancella la scadenza per l'attività [soffitto](tag)
+    - rimuovi la scadenza dell'attività [Mensola](tag)
+    - elimina la scadenza per l'attività [lattina](tag)
+    - elimina la scadenza dell'attività [pallina da tennis](tag) in [Mappamondo](category)
+    - rimuovi la deadline per l'attività [cucina](tag) nella categoria [custodia](category)
     - rimuovi la deadline [27/11/2060](date) alle [16:23](time) per l'attività [Rana](tag) nella categoria [Aprile](category)
     - cancella la scadenza [22-1-2023](date) alle [10:31](time) per l'attività [Incontro](tag) nella categoria [Esami](category)
     - cancella la deadline [27/5/2032](date) alle [18:32](time) per l'attività [Istituto](tag) nella categoria [Materie da fare](category)
@@ -367,11 +367,13 @@ nlu:
     - modifica un'attività
     - aggiorna un'attività
     - modifica un'attività [Automobile](tag)
+    - aggiorna l'attività [Cena](tag) nella categoria [Famiglia](category)
+    - cambia l'attività [Avena](tag) in [Elettrotecnica](category)
     - voglio modificare l'attività [Criceto](tag)
     - aggiorna l'attività [Computer fisso](tag)
     - aggiorna l'attività [Tennis](tag) con il nuovo titolo [Lezioni](tag_new)
     - aggiorna l'attività [Cena](tag) con il nuovo titolo [Elettrotecnica](tag_new)
-    - modifica cambia l'attività [Avena](tag) con il nuovo titolo [Elettrotecnica](tag_new)
+    - cambia l'attività [Avena](tag) con il nuovo titolo [Elettrotecnica](tag_new)
     - modifica l'attività [Balena](tag) con il nuovo titolo [Lezioni](tag_new)
     - voglio modificare il titolo dell'attività [Pinguino](tag) nella nuova categoria [Ginnastica](category) con il nuovo titolo [Progetto](tag_new)
     - aggiorna l'attività [Fisica](tag) in [Tecnologia](category) con [Cena](tag_new)
@@ -384,9 +386,9 @@ nlu:
     - voglio spostare un'attività
     - sposta un'attività in un'altra categoria 
     - voglio muovere l'attività [Istituto superiore](tag) in [Maggio](category) nella nuova categoria [Esame di latino](category_new)
-    - voglio spostare l'attività [Mango](tag) in [Progetto](category) in [Maggio](category_new)
-    - voglio muovere l'attività [Balena](tag) in [Giugno](category) nella categoria [Cartolibreria](category_new)
-    - muovi l'attività [Istituto](tag) in [Supermercato](category) in [Medicine](category_new)
+    - voglio spostare l'attività [Mango](tag) in [Progetto](category)
+    - voglio muovere l'attività [Balena](tag) in [Giugno](category)
+    - muovi l'attività [Istituto](tag) in [Supermercato](category)
     - voglio muovere l'attività [Cavolo](tag) in [Supermercato](category) nella nuova categoria [Operazione](category_new)
     - voglio spostare l'attività [Telefono fisso](tag) in [Dicembre](category) in [Lingue](category_new)
     - voglio muovere l'attività [Autostrada](tag) in [Borsone palestra](category) nella categoria [Viaggi](category_new)
@@ -406,7 +408,7 @@ nlu:
     - modifica la scadenza in [27/1/2058](date)
     - modifica la scadenza in [24-11-2032](date)
     - cambia la scadenza in [27/7/2074](date) alle [7:15](time)
-    - cambia la scadenza in [14/3/2053](date) alle [3:23](time)
+    - cambia la scadenza in [14/3/2053](date) per le [3:23](time)
     - modifica la deadline di [Cognata](tag) alle [10:19](time) del giorno [13-1-2030](date)
     - aggiorna la deadline di [Bollette](tag) alle [6:5](time) del giorno [4-6-2054](date)
     - modifica la scadenza dell'attività [Insegnamento](tag) in [category] alle [21:39](time)

@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 
 import rospy
+import warnings
+warnings.filterwarnings("ignore")
 from rasa_ros.srv import Dialogue, DialogueResponse
 
 class TerminalInterface:

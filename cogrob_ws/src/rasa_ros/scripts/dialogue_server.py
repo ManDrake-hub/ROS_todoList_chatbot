@@ -3,6 +3,8 @@ from rasa_ros.srv import Dialogue, DialogueResponse
 
 import rospy
 import requests
+import warnings
+warnings.filterwarnings("ignore")
 
 
 def handle_service(req):

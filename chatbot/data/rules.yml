@@ -66,7 +66,7 @@ rules:
   - intent: insert_deadline
   - action: deadline_form
   - action: id_task_form
-  - action: action_add_task
+  - action: action_modify_deadline
   - action: action_reset
 
 #Remove
@@ -81,7 +81,7 @@ rules:
   steps:
   - intent: remove_deadline
   - action: id_task_form
-  - action: action_remove_task
+  - action: action_remove_deadline
   - action: action_reset
 
 - rule: remove_category
@@ -120,14 +120,6 @@ rules:
   - action: action_move_task
   - action: action_reset
 
-#- rule: modify_alert
-#  steps:
-#  - intent: modify_alert
-#  - action: id_task_form
-#  - action: alert_form
-#  - action: action_modify_alert
-#  - action: action_reset
-
 - rule: modify_deadline
   steps:
   - intent: modify_deadline
@@ -142,13 +134,6 @@ rules:
   - action: modify_user_form
   - action: action_rename_user
   - action: action_reset
-
-#Cancel
-#- rule: Cancel slot if I say stop
-#  steps:
-#    - intent: cancel
-#    - action: utter_op_deny
-#    - action: action_reset
     
 #Rephrase
 - rule: ask to repeat

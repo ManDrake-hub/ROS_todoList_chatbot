@@ -138,6 +138,7 @@ forms:
       category_new:
       - type: from_entity
         entity: category_new
+  
 
 responses:
   utter_greet:

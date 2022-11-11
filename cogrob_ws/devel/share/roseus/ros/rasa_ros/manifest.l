@@ -1,1 +1,0 @@
-/home/colander/projects/cogrob/cogrob_ws/devel/.private/rasa_ros/share/roseus/ros/rasa_ros/manifest.l

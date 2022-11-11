@@ -139,4 +139,3 @@ rules:
   steps:
     - intent: nlu_fallback
     - action: utter_please_rephrase
-    - action: action_reset

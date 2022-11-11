@@ -8,23 +8,6 @@ stories:
   - intent: goodbye
   - action: utter_goodbye
 
-- story: request
-  steps:
-  - action: utter_op_request
-  - checkpoint: check_request
-
-- story: request_yes
-  steps:
-  - checkpoint: check_request
-  - intent: affirm
-  - action: utter_op_affirm
-
-- story: request_no
-  steps:
-  - checkpoint: check_request
-  - intent: deny
-  - action: utter_op_deny
-
 - story: begin
   steps:
   - intent: greet
@@ -36,9 +19,9 @@ stories:
     - requested_slot: user
   - intent: inform
     entities:
-    - user
+    - user: Francesca
   - slot_was_set:
-    - user
+    - user: Francesca
   - slot_was_set:
     - requested_slot: null
   - active_loop: null
@@ -47,28 +30,3 @@ stories:
   - action: action_reset
   - intent: view
   - action: action_read_tasks
-  - action: action_reset
-
-#- story: fill_category
-#  steps:
-#  - slot_was_set:
-#    - requested_slot: category
-#  - intent: inform
-#    entities:
-#    - category
-#
-#- story: fill_user
-#  steps:
-#  - slot_was_set:
-#    - requested_slot: user
-#  - intent: inform
-#    entities:
-#    - user
-#  
-#- story: fill_tag
-#  steps:
-#  - slot_was_set:
-#    - requested_slot: tag
-#  - intent: inform
-#    entities:
-#    - tag

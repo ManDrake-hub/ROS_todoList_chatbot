@@ -30,7 +30,6 @@ rules:
   steps:
   - intent: view
   - action: action_read_tasks
-  - action: action_reset
 
 ##Insert
 - rule: insert_task

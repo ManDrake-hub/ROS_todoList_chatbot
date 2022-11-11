@@ -30,4 +30,3 @@ stories:
   - action: action_reset
   - intent: view
   - action: action_read_tasks
-  - action: action_reset

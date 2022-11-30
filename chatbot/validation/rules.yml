@@ -1,0 +1,142 @@
+version: "2.0"
+
+rules:
+- rule: Say hi anytime the user says hi
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+#Identification
+- rule: Change or create ToDo list if user indentifies
+  steps:
+  - intent: identification
+  - action: user_form
+  - action: action_create_user
+  - action: action_set_user
+  - action: action_reset
+
+#View
+- rule: View tasks after user's request
+  steps:
+  - intent: view
+  - action: action_read_tasks
+
+##Insert
+- rule: insert_task
+  steps:
+  - intent: insert
+  - action: id_task_form
+  - action: request_deadline
+  - active_loop: request_deadline
+  - active_loop: null
+  - action: action_add_task
+  - action: action_reset
+
+- rule: insert_deadline_alert
+  condition:
+  - slot_was_set:
+    - logical_deadline: True
+  steps:
+  - intent: affirm
+  - action: deadline_form
+  - action: request_alert
+  - action: action_add_task
+  - action: action_reset
+
+- rule: active_alert
+  steps:
+  - intent: activate_alert
+  - action: id_task_form
+  - action: action_add_alert
+  - action: action_reset
+
+- rule: insert_deadline
+  steps:
+  - intent: insert_deadline
+  - action: deadline_form
+  - action: id_task_form
+  - action: action_modify_deadline
+  - action: action_reset
+
+#Remove
+- rule: remove_task
+  steps:
+  - intent: remove
+  - action: id_task_form
+  - action: action_remove_task
+  - action: action_reset
+
+- rule: remove_deadline
+  steps:
+  - intent: remove_deadline
+  - action: id_task_form
+  - action: action_remove_deadline
+  - action: action_reset
+
+- rule: remove_category
+  steps:
+  - intent: remove_category
+  - action: action_remove_category
+  - action: action_reset
+
+- rule: deactivate_alert
+  steps:
+  - intent: deactivate_alert
+  - action: id_task_form
+  - action: action_remove_alert
+  - action: action_reset
+ 
+- rule: remove_user
+  steps:
+  - intent: remove_user
+  - action: action_remove_user
+  - action: action_reset
+
+#Modify
+- rule: modify_task
+  steps:
+  - intent: modify_task
+  - action: id_task_form
+  - action: modify_tag_form
+  - action: action_modify_task_name
+  - action: action_reset
+
+- rule: move_task
+  steps:
+  - intent: move_task
+  - action: id_task_form
+  - action: modify_category_form
+  - action: action_move_task
+  - action: action_reset
+
+- rule: modify_deadline
+  steps:
+  - intent: modify_deadline
+  - action: id_task_form
+  - action: deadline_form
+  - action: action_modify_deadline
+  - action: action_reset
+
+- rule: modify_user
+  steps:
+  - intent: modify_user
+  - action: modify_user_form
+  - action: action_rename_user
+  - action: action_reset
+    
+#Rephrase
+- rule: ask to repeat
+  steps:
+    - intent: nlu_fallback
+    - action: utter_please_rephrase
+    - action: action_reset

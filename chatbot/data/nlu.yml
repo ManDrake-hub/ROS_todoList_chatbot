@@ -1,0 +1,460 @@
+version: "2.0"
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - ciao
+    - ue
+    - buon giorno
+    - buona sera
+    - buon pomeriggio
+    - buongiorno
+    - buonasera
+    - salve
+    - buona notte
+    - buonanotte
+    - salute
+- intent: goodbye
+  examples: |
+    - arrivederci
+    - addio
+    - ci sentiamo
+    - a risentirci
+    - ci vediamo
+    - buona giornata
+    - ci sentiamo in giro
+- intent: affirm
+  examples: |
+    - si
+    - s
+    - ok
+    - certo
+    - va bene
+    - corretto
+    - certamente
+    - va benissimo
+    - sicuro
+- intent: deny
+  examples: |
+    - no
+    - n
+    - mai
+    - incorretto
+    - non va bene
+    - non penso
+    - non credo
+    - non proprio
+
+- intent: inform
+  examples: |
+    - attività [Balena](tag)
+    - attività [Bisnonna](tag)
+    - attività [Palestra](tag)
+    - attività [Insegnamento](tag)
+    - attività [Rana](tag)
+    - attività [Ambulanza](tag)
+    - attività [Insegnamento](tag)
+    - nuovo titolo [Pronipote](tag_new)
+    - nuovo titolo [Telefono fisso](tag_new)
+    - nuovo titolo [Jet Ski](tag_new)
+    - nuovo titolo [Premio](tag_new)
+    - nuovo titolo [Balena](tag_new)
+    - data [20/11/2022](date)
+    - data [12-10-2045](date)
+    - data [4/8/2030](date)
+    - data [4.8.2025](date)
+    - data [20.11.2023](date)
+    - ora [04:25](time)
+    - ore [7:30](time)
+    - ore [7:7](time)
+    - ora [23:59](time)
+    - ora [20:7](time)
+    - categoria [Maggio](category)
+    - categoria [Esami fuoricorso](category)
+    - categoria [Maggio](category)
+    - categoria [Machine Learning](category)
+    - categoria [Stipendi](category)
+    - categoria [Famiglia](category)
+    - nuovo gruppo [Giugno](category_new)
+    - nuovo gruppo [Esame di latino](category_new)
+    - nuovo gruppo [Viaggi](category_new)
+    - nuovo gruppo [Progetto](category_new)
+    - nuovo gruppo [Ginnastica](category_new)
+    - nuovo gruppo [Bollette di casa](category_new)
+    - utente [Marco](user)
+    - utente [Cristiano](user)
+    - utente [Mario](user)
+    - utente [Nicolo](user)
+    - utente [Rosario](user)
+    - utente [David](user)
+    - utente [Vittorio](user)
+    - utente [Francesco](user)
+    - utente [Edoardo](user)
+    - utente [Stefano](user)
+    - nuovo nome [Luigi](user_new)
+    - nuovo nome [Manuel](user_new)
+    - nuovo nome [Antonio](user_new)
+    - nuovo nome [Alessio](user_new)
+    - nuovo nome [Fabio](user_new)
+    - nuovo nome [Emanuele](user_new)
+
+#Identification
+- intent: identification
+  examples: |
+    - sono io
+    - io sono [Antonio](user)
+    - io sono [Edoardo](user)
+    - io sono [Mauro](user)
+    - io sono [Gennaro](user)
+    - sono [Alessandro](user)
+    - sono [Loris](user)
+    - sono [Pasquale](user)
+    - sono [Giulio](user)
+    - mi chiamo [Samuele](user)
+    - mi chiamo [Massimo](user)
+    - mi chiamo [Samuel](user)
+    - mi chiamo [Salvatore](user)
+    - il mio nome è [Dario](user)
+    - il mio nome è [Nicola](user)
+    - il mio nome è [Pietro](user)
+    - il mio nome è [Mirko](user)
+    - inserisci un utente
+    - aggiungi un utente
+    - inserisci l'utente [Francesco pio](user)
+    - inserisci l'utente [Enrico](user)
+    - inserisci l'utente [Matteo](user)
+    - inserisci l'utente [Daniel](user)
+    - aggiungi l'utente [Michael](user)
+    - aggiungi l'utente [Rosario](user)
+    - aggiungi l'utente [Ciro](user)
+    - aggiungi l'utente [Vincenzo](user)
+
+#Insert
+- intent: insert
+  examples: |
+    - inserisci un'attività 
+    - vorrei aggiungere un'attività
+    - aggiungi un'attività
+    - inserisci l'attività [Koala](tag)
+    - inserisci l'attività [Jet Ski](tag)
+    - aggiungi l'attività [Istituto superiore](tag)
+    - aggiungi l'attività [Nonno](tag)
+    - vorrei aggiungere l'attività [Tavola](tag)
+    - vorrei aggiungere l'attività [Lavagna](tag)
+    - inserisci l'attività [Visita Medica](tag) nella categoria [Esami fuoricorso](category)
+    - inserisci l'attività [Tennis](tag) nella categoria [Sport](category)
+    - aggiungi l'attività [Mulo](tag) nella categoria [Dottoresse](category)
+    - aggiungi l'attività [Bisnonna](tag) nella categoria [Famiglia](category)
+    - inserisci l'attività [Spesa](tag) in [Esami primo anno](category)
+    - inserisci l'attività [Pallavolo](tag) in [Borsone palestra](category)
+    - aggiungi l'attività [Cuffie wireless](tag) in [Febbraio](category)
+    - aggiungi l'attività [Mulo](tag) in [Backup iPhone](category)
+    - aggiungi l'attività [Porta](tag) nella categoria [Portatile](category)
+    - aggiungi l'attività [Alunno](tag) nella categoria [Banco](category)
+    - vorrei aggiungere l'attività [Bisnonna](tag) in [Febbraio](category)
+    - vorrei aggiungere l'attività [Sport](tag) nella categoria [Cartolibreria](category)
+- intent: insert_deadline
+  examples: |
+    - inserisci una deadline
+    - aggiungi una deadline
+    - inserisci una scadenza
+    - aggiungi una scadenza
+    - inserisci la deadline [16/09/1879](date)
+    - aggiungi la deadline [12-11-2000](date)
+    - inserisci la deadline [25-10-2001](date)
+    - aggiungi la deadline [24/04/1987](date)
+    - inserisci la scadenza [10/08/1900](date)
+    - aggiungi la scadenza [06-03-2004](date)
+    - inserisci la scadenza [20-05-2007](date)
+    - aggiungi la scadenza [11/11/2020](date)
+    - inserisci la scadenza [16/06/2002](date) alle [15:13](time)
+    - aggiungi la deadline [19-07-1956](date) per le [16:15](time)
+    - inserisci la deadline [27/11/2060](date) alle [16:23](time) per l'attività [Rana](tag) nella categoria [Aprile](category)
+    - inserisci la scadenza [22-1-2023](date) alle [10:31](time) per l'attività [Incontro](tag) nella categoria [Esami](category)
+    - aggiungi la deadline [27/5/2032](date) alle [18:32](time) per l'attività [Istituto](tag) nella categoria [Materie da fare](category)
+    - aggiungi la scadenza [8-10-2070](date) alle [1:32](time) all'attività [Ferrovia](tag) nella categoria [Scuola di musica](category)
+    - inserisci la scadenza [7/3/2032](date) alle [1:49](time) all'attività [Computer portatile](tag) in [Materie da fare](category)
+    - aggiungi la deadline [21/2/2046](date) alle [17:55](time) all'attività [Palestra](tag) in [Negozio](category)
+    - inserisci la dealine [28-12-2045](date) alle [3:23](time) per [Tennis](tag) in [Lavoro](category)
+    - aggiungi la scadenza [16/1/2047](date) alle [11:20](time) in [Università](category) per [Cognata](tag)
+    - inserisci la deadline [24-7-2055](date) alle [13:59](time) nella categoria [Lingue](category) per [Albicocca](tag)
+    - aggiungi la deadline [20/10/2066](date) alle [9:25](time) in [Esami primo anno](category) per l'attività [Mela](tag)
+    - in [Scuola di musica](category) per l'attività [Cereali](tag) aggiungi la deadline [27/7/2074](date) alle [15:17](time)
+    - in [Abbigliamento](category) per l'attività [Maglia](tag) inserisci la scadenza [20/10/2008](date) alle [17:17](time)
+- intent: activate_alert
+  examples: |
+    - aggiungi un avviso
+    - inserisci un avviso
+    - attiva un avviso
+    - aggiungi un alert
+    - inserisci un alert
+    - attiva un alert
+    - aggiungi l'avviso dell'attività [Ospedale](tag) nella categoria [Aprile](category)
+    - aggiungi l'avviso per l'attività [Religione](tag) nella categoria [Dottoresse](category)
+    - inserisci l'avviso dell'attività [Bagno](tag) nella categoria [Operazione](category)
+    - inserisci l'avviso per l'attività [Zucchine](tag) nella categoria [Tecnologia](category)
+    - attiva l'avviso dell'attività [Discorso](tag) nella categoria [Lingue](category)
+    - attiva l'avviso per l'attività [Istituto superiore](tag) nella categoria [Febbraio](category)
+    - aggiungi l'avviso dell'attività [Cena](tag) nella categoria [Esami](category)
+    - aggiungi l'avviso per l'attività [Cena](tag) nella categoria [Operazione](category)
+    - inserisci l'avviso dell'attività [Cereali](tag) nella categoria [Supermercato](category)
+    - inserisci l'avviso per l'attività [Bollette](tag) nella categoria [Dicembre](category)
+    - attiva l'avviso dell'attività [Cereali](tag) nella categoria [Tecnologia](category)
+    - attiva l'avviso per l'attività [Koala](tag) nella categoria [Giugno](category)
+    - aggiungi l'avviso dell'attività [Computer portatile](tag) in [Università](category)
+    - aggiungi l'avviso per l'attività [Ambulanza](tag) in [Bollette di casa](category)
+    - inserisci l'avviso per l'attività [Insegnamento](tag) in [Prescrizione](category)
+    - inserisci l'avviso dell'attività [Koala](tag) in [Borsone palestra](category)
+    - attiva l'avviso per l'attività [Pullman](tag) in [Tecnologia](category)
+    - aggiungi l'avviso dell'attività [Funivia](tag) in [Studio](category)
+    - aggiungi l'avviso per l'attività [Religione](tag) in [Sport](category)
+    - inserisci l'avviso dell'attività [Mulo](tag) in [Progetto](category)
+    - attiva l'avviso per l'attività [Matita](tag) in [Febbraio](category)
+    - attiva l'avviso dell'attività [Aereo](tag) in [Dicembre](category)
+    
+#Remove 
+- intent: remove
+  examples: |
+    - rimuovi un'attività 
+    - cancella un'attività
+    - elimina un'attività
+    - rimuovi l'attività [Religione](tag)
+    - rimuovi l'attività [Premio](tag)
+    - elimina l'attività [Armadillo](tag)
+    - elimina l'attività [Pinguino](tag)
+    - cancella l'attività [Armadillo](tag)
+    - cancella l'attività [Padre](tag)
+    - rimuovi l'attività [Latte](tag) nella categoria [Bollette di casa](category)
+    - rimuovi l'attività [Mango](tag) nella categoria [Dottoresse](category)
+    - elimina l'attività [Premio](tag) nella categoria [Viaggi](category)
+    - elimina l'attività [Sport](tag) nella categoria [Tecnologia](category)
+    - cancella l'attività [Criceto](tag) nella categoria [Esami](category)
+    - cancella l'attività [Pallavolo](tag) nella categoria [Dottoresse](category)
+    - rimuovi l'attività [Drago](tag) in [Esame di latino](category)
+    - rimuovi l'attività [Cena](tag) in [Medicine](category)
+    - elimina l'attività [Tavola](tag) in [Maestro](category)
+    - elimina l'attività [Latte](tag) in [Borsone palestra](category)
+    - cancella l'attività [Pallavolo](tag) in [Gennaio](category)
+    - cancella l'attività [Manzo](tag) in [Maggio](category)
+- intent: remove_category
+  examples: |
+    - rimuovi una categoria
+    - elimina una categoria
+    - cancella una categoria
+    - rimuovi la categoria [Occhiali](category)
+    - rimuovi la categoria [Torta salata](category)
+    - cancella la categoria [Acciughe](category)
+    - cancella la categoria [Albero](category)
+    - elimina la categoria [Paletta](category)
+    - elimina la categoria [Ciambellotto quadrato](category)
+    - rimuovi la categoria [Carta da parati](category)
+    - rimuovi la categoria [Panchina](category)
+    - cancella la categoria [Drone](category)
+    - cancella la categoria [Ciotola](category)
+    - elimina la categoria [Uscita](category)
+    - elimina la categoria [Maniglia](category)
+    - rimuovi la categoria [Segnale stradale](category)
+    - rimuovi la categoria [Sticker](category)
+    - cancella la categoria [Adesivo](category)
+    - cancella la categoria [Scarpe](category)
+    - elimina la categoria [Montacarichi](category)
+    - elimina la categoria [Porta scorrevole](category)
+    - rimuovi la categoria [Papillion](category)
+    - cancella la categoria [Maglia](category)
+    - elimina la categoria [Proiettore](category)
+- intent: remove_user
+  examples: |
+    - rimuovi un utente
+    - cancella un utente
+    - elimina un utente
+    - rimuovi l'utente [Antonino](user)
+    - rimuovi l'utente [Elia](user)
+    - cancella l'utente [Marcello](user)
+    - cancella l'utente [Gianluca](user)
+    - elimina l'utente [Francesco pio](user)
+    - elimina l'utente [Cristian](user)
+    - rimuovi l'utente [Carmelo](user)
+    - rimuovi l'utente [Nicholas](user)
+    - cancella l'utente [Gabriele](user)
+    - cancella l'utente [Gianluca](user)
+    - elimina l'utente [Fabrizio](user)
+    - elimina l'utente [Alfonso](user)
+    - rimuovi l'utente [Umberto](user)
+    - rimuovi l'utente [Carmelo](user)
+    - cancella l'utente [Vittorio](user)
+    - cancella l'utente [Diego](user)
+    - elimina l'utente [Massimiliano](user)
+    - elimina l'utente [Luigi](user)
+    - rimuovi l'utente [Nicolo](user)
+    - rimuovi l'utente [Mauro](user)
+    - cancella l'utente [Salvatore](user)
+    - cancella l'utente [Marcello](user)
+    - elimina l'utente [Omar](user)
+    - elimina l'utente [Samuel](user)
+- intent: deactivate_alert
+  examples: |
+    - rimuovi  un avviso
+    - cancella un avviso
+    - elimina  un avviso
+    - rimuovi l'avviso dell'attività [Ospedale](tag) nella categoria [Aprile](category)
+    - rimuovi l'avviso per l'attività [Religione](tag) nella categoria [Dottoresse](category)
+    - elimina l'avviso dell'attività [Bagno](tag) nella categoria [Operazione](category)
+    - elimina l'avviso per l'attività [Zucchine](tag) nella categoria [Tecnologia](category)
+    - cancella l'avviso dell'attività [Discorso](tag) nella categoria [Lingue](category)
+    - cancella l'avviso per l'attività [Istituto superiore](tag) nella categoria [Febbraio](category)
+    - rimuovi l'avviso dell'attività [Cena](tag) nella categoria [Esami](category)
+    - rimuovi l'avviso per l'attività [Cena](tag) nella categoria [Operazione](category)
+    - elimina l'avviso dell'attività [Cereali](tag) nella categoria [Supermercato](category)
+    - elimina l'avviso per l'attività [Bollette](tag) nella categoria [Dicembre](category)
+    - cancella l'avviso dell'attività [Cereali](tag) nella categoria [Tecnologia](category)
+    - cancella l'avviso per l'attività [Koala](tag) nella categoria [Giugno](category)
+    - rimuovi l'avviso dell'attività [Computer portatile](tag) in [Università](category)
+    - rimuovi l'avviso per l'attività [Ambulanza](tag) in [Bollette di casa](category)
+    - elimina l'avviso dell'attività [Insegnamento](tag) in [Prescrizione](category)
+    - elimina l'avviso per l'attività [Koala](tag) in [Borsone palestra](category)
+    - cancella l'avviso dell'attività [Pullman](tag) in [Tecnologia](category)
+    - rimuovi l'avviso per l'attività [Funivia](tag) in [Studio](category)
+    - elimina l'avviso dell'attività [Mulo](tag) in [Progetto](category)
+    - cancella l'avviso per l'attività [Matita](tag) in [Febbraio](category)
+- intent: remove_deadline
+  examples: |
+    - rimuovi una deadline
+    - cancella una deadline
+    - elimina una scadenza
+    - rimuovi la deadline dell'attività [Telefono](tag)
+    - cancella la deadline per l'attività [collana](tag)
+    - rimuovi la deadline dell'attività [Filo](tag)
+    - cancella la deadline per l'attività [occhiali](tag)
+    - elimina la scadenza dell'attività [Occhiali da sole](tag)
+    - cancella la scadenza per l'attività [soffitto](tag)
+    - rimuovi la scadenza dell'attività [Mensola](tag)
+    - elimina la scadenza per l'attività [lattina](tag)
+    - elimina la scadenza dell'attività [pallina da tennis](tag) in [Mappamondo](category)
+    - rimuovi la deadline per l'attività [cucina](tag) nella categoria [custodia](category)
+    - rimuovi la deadline [27/11/2060](date) alle [16:23](time) per l'attività [Rana](tag) nella categoria [Aprile](category)
+    - cancella la scadenza [22-1-2023](date) alle [10:31](time) per l'attività [Incontro](tag) nella categoria [Esami](category)
+    - cancella la deadline [27/5/2032](date) alle [18:32](time) per l'attività [Istituto](tag) nella categoria [Materie da fare](category)
+    - elimina la scadenza [8-10-2070](date) alle [1:32](time) all'attività [Ferrovia](tag) nella categoria [Scuola di musica](category)
+    - elimina la scadenza [7/3/2032](date) alle [1:49](time) all'attività [Computer portatile](tag) in [Materie da fare](category)
+    - rimuovi la deadline [21/2/2046](date) alle [17:55](time) all'attività [Palestra](tag) in [Negozio](category)
+    - cancella la dealine [28-12-2045](date) alle [3:23](time) per [Tennis](tag) in [Lavoro](category)
+    - elimina la scadenza [16/1/2047](date) alle [11:20](time) in [Università](category) per [Cognata](tag)
+    - rimuovi la deadline [24-7-2055](date) alle [13:59](time) nella categoria [Lingue](category) per [Albicocca](tag)
+    - cancella la deadline [20/10/2066](date) alle [9:25](time) in [Esami primo anno](category) per l'attività [Mela](tag)
+    - in [Scuola di musica](category) per l'attività [Cereali](tag) elimina la deadline [27/7/2074](date) alle [15:17](time)
+    - in [Musica](category) per l'attività [Chitarra](tag) cancella la deadline [22/09/2030](date) alle [14:29](time)
+
+#View
+- intent: view
+  examples: |
+    - visualizza
+    - visualizza la todo-list
+    - visualizza l'intera todo-list
+    - stampami il contenuto
+    - voglio vedere le attività
+    - fammi vedere le attività
+    - visualizza le attività
+    - mostrami le attività
+    - voglio visualizzare le attività 
+    - mostrami le attività
+    - fammi vedere le attività
+
+#Modify
+- intent: modify_task
+  examples: |
+    - voglio modificare un'attività
+    - voglio modificare il titolo dell'attività
+    - modifica un'attività
+    - aggiorna un'attività
+    - modifica un'attività [Automobile](tag)
+    - aggiorna l'attività [Cena](tag) nella categoria [Famiglia](category)
+    - cambia l'attività [Avena](tag) in [Elettrotecnica](category)
+    - voglio modificare l'attività [Criceto](tag)
+    - aggiorna l'attività [Computer fisso](tag)
+    - aggiorna l'attività [Tennis](tag) con il nuovo titolo [Lezioni](tag_new)
+    - aggiorna l'attività [Cena](tag) con il nuovo titolo [Elettrotecnica](tag_new)
+    - cambia l'attività [Avena](tag) con il nuovo titolo [Elettrotecnica](tag_new)
+    - modifica l'attività [Balena](tag) con il nuovo titolo [Lezioni](tag_new)
+    - voglio modificare il titolo dell'attività [Pinguino](tag) nella nuova categoria [Ginnastica](category) con il nuovo titolo [Progetto](tag_new)
+    - aggiorna l'attività [Fisica](tag) in [Tecnologia](category) con [Cena](tag_new)
+    - voglio modificare il titolo dell'attività [Cavolo](tag) nella categoria [Maestro](category) con il nuovo titolo [Computer](tag_new)
+- intent: move_task
+  examples: |
+    - sposta un'attività
+    - muovi un'attività
+    - voglio muovere un'attività
+    - voglio spostare un'attività
+    - sposta un'attività in un'altra categoria 
+    - voglio muovere l'attività [Istituto superiore](tag) in [Maggio](category) nella nuova categoria [Esame di latino](category_new)
+    - voglio spostare l'attività [Mango](tag) in [Progetto](category)
+    - voglio muovere l'attività [Balena](tag) in [Giugno](category)
+    - muovi l'attività [Istituto](tag) in [Supermercato](category)
+    - voglio muovere l'attività [Cavolo](tag) in [Supermercato](category) nella nuova categoria [Operazione](category_new)
+    - voglio spostare l'attività [Telefono fisso](tag) in [Dicembre](category) in [Lingue](category_new)
+    - voglio muovere l'attività [Autostrada](tag) in [Borsone palestra](category) nella categoria [Viaggi](category_new)
+    - muovi l'attività [Criceto](tag) in [Impegni](category) in [Borsone palestra](category_new)
+    - voglio muovere l'attività [Cognata](tag) in [Studio](category) nella nuova categoria [Giugno](category_new)
+    - voglio spostare l'attività [Asilo](tag) in [Febbraio](category) in [Scuola di musica](category_new)
+    - voglio muovere l'attività [Funivia](tag) in [Dottoresse](category) nella categoria [Famiglia](category_new)
+    - muovi l'attività [Bambino](tag) in [Gennaio](category) in [Marzo](category_new)
+    - voglio muovere l'attività [Sorella](tag) in [Cartolibreria](category) nella nuova categoria [Maestro](category_new)
+    - voglio spostare l'attività [Manzo](tag) in [Prescrizione](category) in [Impegni](category_new)
+- intent: modify_deadline
+  examples: |
+    - modifica una scadenza
+    - vorrei modificare una scadenza
+    - cambia una scadenza
+    - modifica una deadline
+    - modifica la scadenza in [27/1/2058](date)
+    - modifica la scadenza in [24-11-2032](date)
+    - cambia la scadenza in [27/7/2074](date) alle [7:15](time)
+    - cambia la scadenza in [14/3/2053](date) per le [3:23](time)
+    - modifica la deadline di [Cognata](tag) alle [10:19](time) del giorno [13-1-2030](date)
+    - aggiorna la deadline di [Bollette](tag) alle [6:5](time) del giorno [4-6-2054](date)
+    - modifica la scadenza dell'attività [Insegnamento](tag) in [category] alle [21:39](time)
+    - aggiorna la scadenza dell'attività [Automobile](tag) in [category] alle [9:11](time)
+    - modifica la scadenza dell'attività [Aereo](tag) in [category] alle [16:23](time)
+    - cambia la scadenza dell'attività [Zucchine](tag) in [category] il [8/3/2029](date)
+    - cambia la scadenza dell'attività [Telefono fisso](tag) in [category] il [8/3/2029](date) 
+    - cambia la deadline dell'attività [Avena](tag) al [19-12-2063](date) alle [21:39](time)
+    - cambia la deadline dell'attività [Balcone](tag) al [12-2-2040](date) alle [17:3](time)
+    - vorrei aggiornare la scadenza dell'attività [Tavola](tag) in [Famiglia](category) al giorno [4-4-2027](date) alle ore [1:49](time)
+    - vorrei cambiare la scadenza dell'attività [Visione Artificiale](tag) in [Dicembre](category) al giorno [26-6-2027](date) alle ore [2:18](time)
+    - cambia la scadenza in [21/5/2030](date) alle [17:55](time) dell'attività [Latte](tag) in [Supermercato](category)
+    - cambia la scadenza in [26/1/2072](date) alle [9:32](time) dell'attività [Mela](tag) in [Scuola di musica](category)
+- intent: modify_user
+  examples: |
+    - vorrei modificare il nome dell'utente [Pietro](user)
+    - cambia il nome dell'utente [Pietro](user)
+    - rinomina l' utente [Gabriel](user)
+    - cambia il nome utente [Vito](user)
+    - rinomina l' utente [Alfonso](user)
+    - vorrei modificare il nome utente [Thomas](user)
+    - cambia il nome utente [Antonino](user)
+    - rinomina l' utente [Michele](user)
+    - rinomina l' utente [Andrea](user) in [Gianmarco](user_new)
+    - rinomina l' utente [Alessio](user) in [Jacopo](user_new)
+    - modifica il nome di [Gianmarco](user) con il nuovo nome [Massimiliano](user_new)
+    - cambia il nome utente [Christian](user) con il nome utente [Michele](user_new)
+    - cambia il nome di [Giuseppe](user) in [Matteo](user_new)
+    - vorrei modificare il nome utente [Damiano](user)
+    - rinomina l' utente [Umberto](user) in [Nicolo](user_new)
+    - rinomina l' utente [Gioele](user) in [Antonio](user_new)
+    - modifica il nome di [Rosario](user) con il nuovo nome [Marco](user_new)
+    - cambia il nome utente [Gabriel](user) con il nome utente [Mario](user_new)
+    - cambia il nome di [Mattia](user) in [Dario](user_new)
+    - rinomina l' utente [Dario](user) in [Luigi](user_new)
+    - rinomina l' utente [Gennaro](user) in [ALfredo](user_new)
+    - modifica il nome di [Nicholas](user) con il nuovo nome [Bice](user_new)
+    - cambia il nome utente [Daniel](user) con il nome utente [Pierpaolo](user_new)
+    - cambia il nome di [Marco](user) in [Sara](user_new)
+
+
+- intent: bot_challenge
+  examples: |
+    - Chi sei?
+    - Sei un bot?
+    - Sei un umano?
+    - Sto parlando con un bot?
+    - Sto parlando con un umano?
+

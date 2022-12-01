@@ -1,7 +1,0 @@
-<launch>
-        <node pkg="pepper" type="voice_detection.py" name="voice_detection" output="screen"/>
-        <node pkg="pepper" type="asr.py" name="asr" output="screen"/>
-</launch>
-
-
-

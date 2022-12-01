@@ -1,0 +1,4 @@
+<launch>
+        <node pkg="pepper_nodes" type="voice_detection.py" name="voice_detection" output="screen"/>
+</launch>
+

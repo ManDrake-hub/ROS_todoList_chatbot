@@ -1,0 +1,4 @@
+<launch>
+        <node pkg="pepper_nodes" type="asr.py" name="asr" output="screen"/>
+</launch>
+

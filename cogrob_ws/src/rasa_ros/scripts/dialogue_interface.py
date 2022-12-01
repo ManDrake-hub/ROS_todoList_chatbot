@@ -15,7 +15,9 @@ class TerminalInterface:
     - get_text(self): return a string read from the terminal
     - set_text(self, text): prints the text on the terminal
     '''
-
+    def __init__(self) -> None:
+        self.has_changed = False
+        
     def callback(self, data):
         self.message = data
         self.has_changed = True

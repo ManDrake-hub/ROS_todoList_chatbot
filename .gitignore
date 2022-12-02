@@ -1,2 +1,7 @@
 # Models precompiled #
-/models/*
+chatbot/models/*
+
+# Catkin Build Folders #
+cogrob_ws/build
+cogrob_ws/devel
+cogrob_ws/logs

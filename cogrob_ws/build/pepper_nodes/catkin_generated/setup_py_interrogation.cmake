@@ -1,0 +1,7 @@
+set(pepper_nodes_SETUP_PY_SETUP_MODULE "distutils.core")
+set(pepper_nodes_SETUP_PY_VERSION "0.0.0")
+set(pepper_nodes_SETUP_PY_SCRIPTS "")
+set(pepper_nodes_SETUP_PY_PACKAGES "libs")
+set(pepper_nodes_SETUP_PY_PACKAGE_DIRS "src/libs")
+set(pepper_nodes_SETUP_PY_MODULES "")
+set(pepper_nodes_SETUP_PY_MODULE_DIRS "")

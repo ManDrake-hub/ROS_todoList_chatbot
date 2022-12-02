@@ -16,17 +16,17 @@ class TerminalInterface:
     - set_text(self, text): prints the text on the terminal
     '''
     def __init__(self) -> None:
-        self.has_changed = False
+        self.changed = False
         
     def callback(self, data):
         self.message = data
-        self.has_changed = True
+        self.changed = True
 
     def has_changed(self):
-        return self.has_changed
+        return self.changed
 
     def get_text(self):
-        self.has_changed = False
+        self.changed = False
         return self.message
 
 def main():
@@ -36,15 +36,19 @@ def main():
 
     terminal = TerminalInterface()
     rospy.Subscriber("voice_txt", String, terminal.callback)
-
+    gerry = False
     while not rospy.is_shutdown():
+        if gerry == False:
+            print("IN:")
+            gerry = True
         if terminal.has_changed():
             message = terminal.get_text()
             if message == 'exit': 
                 break
             try:
                 bot_answer = dialogue_service(message)
-                terminal.set_text(bot_answer.answer)
+                #terminal.set_text(bot_answer.answer)
+                print(bot_answer.answer)
             except rospy.ServiceException as e:
                 print("Service call failed: %s"%e)
 

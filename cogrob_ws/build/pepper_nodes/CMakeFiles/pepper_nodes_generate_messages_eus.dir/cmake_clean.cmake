@@ -2,9 +2,7 @@ file(REMOVE_RECURSE
   "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/share/roseus/ros/pepper_nodes/manifest.l"
   "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/share/roseus/ros/pepper_nodes/srv/ExecuteJS.l"
   "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/share/roseus/ros/pepper_nodes/srv/LoadUrl.l"
-  "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/share/roseus/ros/pepper_nodes/srv/Rest.l"
   "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/share/roseus/ros/pepper_nodes/srv/Text2Speech.l"
-  "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/share/roseus/ros/pepper_nodes/srv/WakeUp.l"
   "CMakeFiles/pepper_nodes_generate_messages_eus"
 )
 

@@ -136,9 +136,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/pepper_nodes/srv" TYPE FILE FILES
     "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/ExecuteJS.srv"
     "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/LoadUrl.srv"
-    "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/Rest.srv"
     "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/Text2Speech.srv"
-    "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/WakeUp.srv"
     )
 endif()
 

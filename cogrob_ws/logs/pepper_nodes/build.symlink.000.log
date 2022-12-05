@@ -1,7 +1,5 @@
 Symlinking /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/share/roseus/ros/pepper_nodes/manifest.l
 Symlinking /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/share/roseus/ros/pepper_nodes/srv/ExecuteJS.l
-Symlinking /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/share/roseus/ros/pepper_nodes/srv/WakeUp.l
-Symlinking /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/share/roseus/ros/pepper_nodes/srv/Rest.l
 Symlinking /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/share/roseus/ros/pepper_nodes/srv/Text2Speech.l
 Symlinking /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/share/roseus/ros/pepper_nodes/srv/LoadUrl.l
 Symlinking /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/share/pepper_nodes/cmake/pepper_nodesConfig-version.cmake
@@ -9,205 +7,31 @@ Symlinking /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatb
 Symlinking /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/share/pepper_nodes/cmake/pepper_nodesConfig.cmake
 Symlinking /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/share/pepper_nodes/cmake/pepper_nodes-msg-extras.cmake
 Symlinking /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/share/gennodejs/ros/pepper_nodes/_index.js
-Symlinking /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/share/gennodejs/ros/pepper_nodes/srv/WakeUp.js
 Symlinking /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/share/gennodejs/ros/pepper_nodes/srv/Text2Speech.js
 Symlinking /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/share/gennodejs/ros/pepper_nodes/srv/LoadUrl.js
 Symlinking /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/share/gennodejs/ros/pepper_nodes/srv/_index.js
-Symlinking /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/share/gennodejs/ros/pepper_nodes/srv/Rest.js
 Symlinking /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/share/gennodejs/ros/pepper_nodes/srv/ExecuteJS.js
-Symlinking /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/share/common-lisp/ros/pepper_nodes/srv/_package_Rest.lisp
 Symlinking /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/share/common-lisp/ros/pepper_nodes/srv/pepper_nodes-srv.asd
 Symlinking /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/share/common-lisp/ros/pepper_nodes/srv/LoadUrl.lisp
 Symlinking /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/share/common-lisp/ros/pepper_nodes/srv/_package_ExecuteJS.lisp
-Symlinking /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/share/common-lisp/ros/pepper_nodes/srv/WakeUp.lisp
 Symlinking /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/share/common-lisp/ros/pepper_nodes/srv/_package_Text2Speech.lisp
-Symlinking /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/share/common-lisp/ros/pepper_nodes/srv/_package_WakeUp.lisp
 Symlinking /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/share/common-lisp/ros/pepper_nodes/srv/ExecuteJS.lisp
 Symlinking /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/share/common-lisp/ros/pepper_nodes/srv/_package_LoadUrl.lisp
-Symlinking /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/share/common-lisp/ros/pepper_nodes/srv/Rest.lisp
 Symlinking /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/share/common-lisp/ros/pepper_nodes/srv/_package.lisp
 Symlinking /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/share/common-lisp/ros/pepper_nodes/srv/Text2Speech.lisp
-Symlinking /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/include/pepper_nodes/RestRequest.h
 Symlinking /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/include/pepper_nodes/Text2SpeechRequest.h
 Symlinking /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/include/pepper_nodes/LoadUrlRequest.h
 Symlinking /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/include/pepper_nodes/Text2Speech.h
-Symlinking /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/include/pepper_nodes/RestResponse.h
 Symlinking /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/include/pepper_nodes/LoadUrl.h
 Symlinking /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/include/pepper_nodes/ExecuteJSRequest.h
-Symlinking /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/include/pepper_nodes/WakeUpRequest.h
 Symlinking /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/include/pepper_nodes/LoadUrlResponse.h
 Symlinking /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/include/pepper_nodes/ExecuteJSResponse.h
 Symlinking /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/include/pepper_nodes/ExecuteJS.h
-Symlinking /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/include/pepper_nodes/WakeUp.h
 Symlinking /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/include/pepper_nodes/Text2SpeechResponse.h
-Symlinking /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/include/pepper_nodes/WakeUpResponse.h
-Symlinking /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/include/pepper_nodes/Rest.h
 Symlinking /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/lib/python3/dist-packages/pepper_nodes/__init__.py
 Symlinking /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/lib/python3/dist-packages/pepper_nodes/srv/_ExecuteJS.py
 Symlinking /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/lib/python3/dist-packages/pepper_nodes/srv/_LoadUrl.py
-Symlinking /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/lib/python3/dist-packages/pepper_nodes/srv/_WakeUp.py
-Symlinking /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/lib/python3/dist-packages/pepper_nodes/srv/_Rest.py
 Symlinking /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/lib/python3/dist-packages/pepper_nodes/srv/__init__.py
 Symlinking /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/lib/python3/dist-packages/pepper_nodes/srv/_Text2Speech.py
 Symlinking /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/lib/python3/dist-packages/libs/__init__.py
 Symlinking /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/lib/pkgconfig/pepper_nodes.pc
-Cleaning: (/home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/cmake.lock, /home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/./cmake.lock)
-Cleaning: (/home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/share/roseus/ros/pepper_nodes/manifest.l, /home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/share/roseus/ros/pepper_nodes/manifest.l)
-Cleaning: (/home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/share/roseus/ros/pepper_nodes/srv/ExecuteJS.l, /home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/share/roseus/ros/pepper_nodes/srv/ExecuteJS.l)
-Cleaning: (/home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/share/roseus/ros/pepper_nodes/srv/WakeUp.l, /home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/share/roseus/ros/pepper_nodes/srv/WakeUp.l)
-Cleaning: (/home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/share/roseus/ros/pepper_nodes/srv/Rest.l, /home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/share/roseus/ros/pepper_nodes/srv/Rest.l)
-Cleaning: (/home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/share/roseus/ros/pepper_nodes/srv/Text2Speech.l, /home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/share/roseus/ros/pepper_nodes/srv/Text2Speech.l)
-Cleaning: (/home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/share/roseus/ros/pepper_nodes/srv/LoadUrl.l, /home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/share/roseus/ros/pepper_nodes/srv/LoadUrl.l)
-Cleaning: (/home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/share/pepper_nodes/cmake/pepper_nodesConfig-version.cmake, /home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/share/pepper_nodes/cmake/pepper_nodesConfig-version.cmake)
-Cleaning: (/home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/share/pepper_nodes/cmake/pepper_nodes-msg-paths.cmake, /home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/share/pepper_nodes/cmake/pepper_nodes-msg-paths.cmake)
-Cleaning: (/home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/share/pepper_nodes/cmake/pepper_nodesConfig.cmake, /home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/share/pepper_nodes/cmake/pepper_nodesConfig.cmake)
-Cleaning: (/home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/share/pepper_nodes/cmake/pepper_nodes-msg-extras.cmake, /home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/share/pepper_nodes/cmake/pepper_nodes-msg-extras.cmake)
-Cleaning: (/home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/share/gennodejs/ros/pepper_nodes/_index.js, /home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/share/gennodejs/ros/pepper_nodes/_index.js)
-Cleaning: (/home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/share/gennodejs/ros/pepper_nodes/srv/WakeUp.js, /home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/share/gennodejs/ros/pepper_nodes/srv/WakeUp.js)
-Cleaning: (/home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/share/gennodejs/ros/pepper_nodes/srv/Text2Speech.js, /home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/share/gennodejs/ros/pepper_nodes/srv/Text2Speech.js)
-Cleaning: (/home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/share/gennodejs/ros/pepper_nodes/srv/LoadUrl.js, /home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/share/gennodejs/ros/pepper_nodes/srv/LoadUrl.js)
-Cleaning: (/home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/share/gennodejs/ros/pepper_nodes/srv/_index.js, /home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/share/gennodejs/ros/pepper_nodes/srv/_index.js)
-Cleaning: (/home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/share/gennodejs/ros/pepper_nodes/srv/Rest.js, /home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/share/gennodejs/ros/pepper_nodes/srv/Rest.js)
-Cleaning: (/home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/share/gennodejs/ros/pepper_nodes/srv/ExecuteJS.js, /home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/share/gennodejs/ros/pepper_nodes/srv/ExecuteJS.js)
-Cleaning: (/home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/share/common-lisp/ros/pepper_nodes/srv/_package_Rest.lisp, /home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/share/common-lisp/ros/pepper_nodes/srv/_package_Rest.lisp)
-Cleaning: (/home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/share/common-lisp/ros/pepper_nodes/srv/pepper_nodes-srv.asd, /home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/share/common-lisp/ros/pepper_nodes/srv/pepper_nodes-srv.asd)
-Cleaning: (/home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/share/common-lisp/ros/pepper_nodes/srv/LoadUrl.lisp, /home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/share/common-lisp/ros/pepper_nodes/srv/LoadUrl.lisp)
-Cleaning: (/home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/share/common-lisp/ros/pepper_nodes/srv/_package_ExecuteJS.lisp, /home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/share/common-lisp/ros/pepper_nodes/srv/_package_ExecuteJS.lisp)
-Cleaning: (/home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/share/common-lisp/ros/pepper_nodes/srv/WakeUp.lisp, /home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/share/common-lisp/ros/pepper_nodes/srv/WakeUp.lisp)
-Cleaning: (/home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/share/common-lisp/ros/pepper_nodes/srv/_package_Text2Speech.lisp, /home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/share/common-lisp/ros/pepper_nodes/srv/_package_Text2Speech.lisp)
-Cleaning: (/home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/share/common-lisp/ros/pepper_nodes/srv/_package_WakeUp.lisp, /home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/share/common-lisp/ros/pepper_nodes/srv/_package_WakeUp.lisp)
-Cleaning: (/home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/share/common-lisp/ros/pepper_nodes/srv/ExecuteJS.lisp, /home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/share/common-lisp/ros/pepper_nodes/srv/ExecuteJS.lisp)
-Cleaning: (/home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/share/common-lisp/ros/pepper_nodes/srv/_package_LoadUrl.lisp, /home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/share/common-lisp/ros/pepper_nodes/srv/_package_LoadUrl.lisp)
-Cleaning: (/home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/share/common-lisp/ros/pepper_nodes/srv/Rest.lisp, /home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/share/common-lisp/ros/pepper_nodes/srv/Rest.lisp)
-Cleaning: (/home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/share/common-lisp/ros/pepper_nodes/srv/_package.lisp, /home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/share/common-lisp/ros/pepper_nodes/srv/_package.lisp)
-Cleaning: (/home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/share/common-lisp/ros/pepper_nodes/srv/Text2Speech.lisp, /home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/share/common-lisp/ros/pepper_nodes/srv/Text2Speech.lisp)
-Cleaning: (/home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/include/pepper_nodes/RestRequest.h, /home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/include/pepper_nodes/RestRequest.h)
-Cleaning: (/home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/include/pepper_nodes/Text2SpeechRequest.h, /home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/include/pepper_nodes/Text2SpeechRequest.h)
-Cleaning: (/home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/include/pepper_nodes/LoadUrlRequest.h, /home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/include/pepper_nodes/LoadUrlRequest.h)
-Cleaning: (/home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/include/pepper_nodes/Text2Speech.h, /home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/include/pepper_nodes/Text2Speech.h)
-Cleaning: (/home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/include/pepper_nodes/RestResponse.h, /home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/include/pepper_nodes/RestResponse.h)
-Cleaning: (/home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/include/pepper_nodes/LoadUrl.h, /home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/include/pepper_nodes/LoadUrl.h)
-Cleaning: (/home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/include/pepper_nodes/ExecuteJSRequest.h, /home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/include/pepper_nodes/ExecuteJSRequest.h)
-Cleaning: (/home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/include/pepper_nodes/WakeUpRequest.h, /home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/include/pepper_nodes/WakeUpRequest.h)
-Cleaning: (/home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/include/pepper_nodes/LoadUrlResponse.h, /home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/include/pepper_nodes/LoadUrlResponse.h)
-Cleaning: (/home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/include/pepper_nodes/ExecuteJSResponse.h, /home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/include/pepper_nodes/ExecuteJSResponse.h)
-Cleaning: (/home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/include/pepper_nodes/ExecuteJS.h, /home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/include/pepper_nodes/ExecuteJS.h)
-Cleaning: (/home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/include/pepper_nodes/WakeUp.h, /home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/include/pepper_nodes/WakeUp.h)
-Cleaning: (/home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/include/pepper_nodes/Text2SpeechResponse.h, /home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/include/pepper_nodes/Text2SpeechResponse.h)
-Cleaning: (/home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/include/pepper_nodes/WakeUpResponse.h, /home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/include/pepper_nodes/WakeUpResponse.h)
-Cleaning: (/home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/include/pepper_nodes/Rest.h, /home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/include/pepper_nodes/Rest.h)
-Cleaning: (/home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/lib/python3/dist-packages/pepper_nodes/__init__.py, /home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/lib/python3/dist-packages/pepper_nodes/__init__.py)
-Cleaning: (/home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/lib/python3/dist-packages/pepper_nodes/srv/_ExecuteJS.py, /home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/lib/python3/dist-packages/pepper_nodes/srv/_ExecuteJS.py)
-Cleaning: (/home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/lib/python3/dist-packages/pepper_nodes/srv/_LoadUrl.py, /home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/lib/python3/dist-packages/pepper_nodes/srv/_LoadUrl.py)
-Cleaning: (/home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/lib/python3/dist-packages/pepper_nodes/srv/_WakeUp.py, /home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/lib/python3/dist-packages/pepper_nodes/srv/_WakeUp.py)
-Cleaning: (/home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/lib/python3/dist-packages/pepper_nodes/srv/_Rest.py, /home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/lib/python3/dist-packages/pepper_nodes/srv/_Rest.py)
-Cleaning: (/home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/lib/python3/dist-packages/pepper_nodes/srv/__init__.py, /home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/lib/python3/dist-packages/pepper_nodes/srv/__init__.py)
-Cleaning: (/home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/lib/python3/dist-packages/pepper_nodes/srv/_Text2Speech.py, /home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/lib/python3/dist-packages/pepper_nodes/srv/_Text2Speech.py)
-Cleaning: (/home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/lib/python3/dist-packages/libs/__init__.py, /home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/lib/python3/dist-packages/libs/__init__.py)
-Cleaning: (/home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/lib/pkgconfig/pepper_nodes.pc, /home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/lib/pkgconfig/pepper_nodes.pc)
-Unlinking: /home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/share/roseus/ros/pepper_nodes/manifest.l
-Already unlinked: {}
-Unlinking: /home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/share/roseus/ros/pepper_nodes/srv/ExecuteJS.l
-Already unlinked: {}
-Unlinking: /home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/share/roseus/ros/pepper_nodes/srv/WakeUp.l
-Already unlinked: {}
-Unlinking: /home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/share/roseus/ros/pepper_nodes/srv/Rest.l
-Already unlinked: {}
-Unlinking: /home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/share/roseus/ros/pepper_nodes/srv/Text2Speech.l
-Already unlinked: {}
-Unlinking: /home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/share/roseus/ros/pepper_nodes/srv/LoadUrl.l
-Already unlinked: {}
-Unlinking: /home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/share/pepper_nodes/cmake/pepper_nodesConfig-version.cmake
-Already unlinked: {}
-Unlinking: /home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/share/pepper_nodes/cmake/pepper_nodes-msg-paths.cmake
-Already unlinked: {}
-Unlinking: /home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/share/pepper_nodes/cmake/pepper_nodesConfig.cmake
-Already unlinked: {}
-Unlinking: /home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/share/pepper_nodes/cmake/pepper_nodes-msg-extras.cmake
-Already unlinked: {}
-Unlinking: /home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/share/gennodejs/ros/pepper_nodes/_index.js
-Already unlinked: {}
-Unlinking: /home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/share/gennodejs/ros/pepper_nodes/srv/WakeUp.js
-Already unlinked: {}
-Unlinking: /home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/share/gennodejs/ros/pepper_nodes/srv/Text2Speech.js
-Already unlinked: {}
-Unlinking: /home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/share/gennodejs/ros/pepper_nodes/srv/LoadUrl.js
-Already unlinked: {}
-Unlinking: /home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/share/gennodejs/ros/pepper_nodes/srv/_index.js
-Already unlinked: {}
-Unlinking: /home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/share/gennodejs/ros/pepper_nodes/srv/Rest.js
-Already unlinked: {}
-Unlinking: /home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/share/gennodejs/ros/pepper_nodes/srv/ExecuteJS.js
-Already unlinked: {}
-Unlinking: /home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/share/common-lisp/ros/pepper_nodes/srv/_package_Rest.lisp
-Already unlinked: {}
-Unlinking: /home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/share/common-lisp/ros/pepper_nodes/srv/pepper_nodes-srv.asd
-Already unlinked: {}
-Unlinking: /home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/share/common-lisp/ros/pepper_nodes/srv/LoadUrl.lisp
-Already unlinked: {}
-Unlinking: /home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/share/common-lisp/ros/pepper_nodes/srv/_package_ExecuteJS.lisp
-Already unlinked: {}
-Unlinking: /home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/share/common-lisp/ros/pepper_nodes/srv/WakeUp.lisp
-Already unlinked: {}
-Unlinking: /home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/share/common-lisp/ros/pepper_nodes/srv/_package_Text2Speech.lisp
-Already unlinked: {}
-Unlinking: /home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/share/common-lisp/ros/pepper_nodes/srv/_package_WakeUp.lisp
-Already unlinked: {}
-Unlinking: /home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/share/common-lisp/ros/pepper_nodes/srv/ExecuteJS.lisp
-Already unlinked: {}
-Unlinking: /home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/share/common-lisp/ros/pepper_nodes/srv/_package_LoadUrl.lisp
-Already unlinked: {}
-Unlinking: /home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/share/common-lisp/ros/pepper_nodes/srv/Rest.lisp
-Already unlinked: {}
-Unlinking: /home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/share/common-lisp/ros/pepper_nodes/srv/_package.lisp
-Already unlinked: {}
-Unlinking: /home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/share/common-lisp/ros/pepper_nodes/srv/Text2Speech.lisp
-Already unlinked: {}
-Unlinking: /home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/include/pepper_nodes/RestRequest.h
-Already unlinked: {}
-Unlinking: /home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/include/pepper_nodes/Text2SpeechRequest.h
-Already unlinked: {}
-Unlinking: /home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/include/pepper_nodes/LoadUrlRequest.h
-Already unlinked: {}
-Unlinking: /home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/include/pepper_nodes/Text2Speech.h
-Already unlinked: {}
-Unlinking: /home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/include/pepper_nodes/RestResponse.h
-Already unlinked: {}
-Unlinking: /home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/include/pepper_nodes/LoadUrl.h
-Already unlinked: {}
-Unlinking: /home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/include/pepper_nodes/ExecuteJSRequest.h
-Already unlinked: {}
-Unlinking: /home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/include/pepper_nodes/WakeUpRequest.h
-Already unlinked: {}
-Unlinking: /home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/include/pepper_nodes/LoadUrlResponse.h
-Already unlinked: {}
-Unlinking: /home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/include/pepper_nodes/ExecuteJSResponse.h
-Already unlinked: {}
-Unlinking: /home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/include/pepper_nodes/ExecuteJS.h
-Already unlinked: {}
-Unlinking: /home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/include/pepper_nodes/WakeUp.h
-Already unlinked: {}
-Unlinking: /home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/include/pepper_nodes/Text2SpeechResponse.h
-Already unlinked: {}
-Unlinking: /home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/include/pepper_nodes/WakeUpResponse.h
-Already unlinked: {}
-Unlinking: /home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/include/pepper_nodes/Rest.h
-Already unlinked: {}
-Unlinking: /home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/lib/python3/dist-packages/pepper_nodes/__init__.py
-Already unlinked: {}
-Unlinking: /home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/lib/python3/dist-packages/pepper_nodes/srv/_ExecuteJS.py
-Already unlinked: {}
-Unlinking: /home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/lib/python3/dist-packages/pepper_nodes/srv/_LoadUrl.py
-Already unlinked: {}
-Unlinking: /home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/lib/python3/dist-packages/pepper_nodes/srv/_WakeUp.py
-Already unlinked: {}
-Unlinking: /home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/lib/python3/dist-packages/pepper_nodes/srv/_Rest.py
-Already unlinked: {}
-Unlinking: /home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/lib/python3/dist-packages/pepper_nodes/srv/__init__.py
-Already unlinked: {}
-Unlinking: /home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/lib/python3/dist-packages/pepper_nodes/srv/_Text2Speech.py
-Already unlinked: {}
-Unlinking: /home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/lib/python3/dist-packages/libs/__init__.py
-Already unlinked: {}
-Unlinking: /home/francesca/Scrivania/Intercorso/SECONDA PARTE/ROS_todoList_chatbot/cogrob_ws/devel/lib/pkgconfig/pepper_nodes.pc
-Already unlinked: {}

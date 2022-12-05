@@ -55,9 +55,7 @@ include CMakeFiles/pepper_nodes_generate_messages_lisp.dir/progress.make
 
 CMakeFiles/pepper_nodes_generate_messages_lisp: /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/share/common-lisp/ros/pepper_nodes/srv/ExecuteJS.lisp
 CMakeFiles/pepper_nodes_generate_messages_lisp: /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/share/common-lisp/ros/pepper_nodes/srv/LoadUrl.lisp
-CMakeFiles/pepper_nodes_generate_messages_lisp: /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/share/common-lisp/ros/pepper_nodes/srv/Rest.lisp
 CMakeFiles/pepper_nodes_generate_messages_lisp: /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/share/common-lisp/ros/pepper_nodes/srv/Text2Speech.lisp
-CMakeFiles/pepper_nodes_generate_messages_lisp: /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/share/common-lisp/ros/pepper_nodes/srv/WakeUp.lisp
 
 
 /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/share/common-lisp/ros/pepper_nodes/srv/ExecuteJS.lisp: /opt/ros/noetic/lib/genlisp/gen_lisp.py
@@ -70,27 +68,15 @@ CMakeFiles/pepper_nodes_generate_messages_lisp: /home/francesca/Scrivania/Interc
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/build/pepper_nodes/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Lisp code from pepper_nodes/LoadUrl.srv"
 	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/LoadUrl.srv -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p pepper_nodes -o /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/share/common-lisp/ros/pepper_nodes/srv
 
-/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/share/common-lisp/ros/pepper_nodes/srv/Rest.lisp: /opt/ros/noetic/lib/genlisp/gen_lisp.py
-/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/share/common-lisp/ros/pepper_nodes/srv/Rest.lisp: /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/Rest.srv
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/build/pepper_nodes/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Lisp code from pepper_nodes/Rest.srv"
-	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/Rest.srv -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p pepper_nodes -o /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/share/common-lisp/ros/pepper_nodes/srv
-
 /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/share/common-lisp/ros/pepper_nodes/srv/Text2Speech.lisp: /opt/ros/noetic/lib/genlisp/gen_lisp.py
 /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/share/common-lisp/ros/pepper_nodes/srv/Text2Speech.lisp: /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/Text2Speech.srv
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/build/pepper_nodes/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating Lisp code from pepper_nodes/Text2Speech.srv"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/build/pepper_nodes/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Lisp code from pepper_nodes/Text2Speech.srv"
 	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/Text2Speech.srv -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p pepper_nodes -o /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/share/common-lisp/ros/pepper_nodes/srv
-
-/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/share/common-lisp/ros/pepper_nodes/srv/WakeUp.lisp: /opt/ros/noetic/lib/genlisp/gen_lisp.py
-/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/share/common-lisp/ros/pepper_nodes/srv/WakeUp.lisp: /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/WakeUp.srv
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/build/pepper_nodes/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating Lisp code from pepper_nodes/WakeUp.srv"
-	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/WakeUp.srv -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p pepper_nodes -o /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/share/common-lisp/ros/pepper_nodes/srv
 
 pepper_nodes_generate_messages_lisp: CMakeFiles/pepper_nodes_generate_messages_lisp
 pepper_nodes_generate_messages_lisp: /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/share/common-lisp/ros/pepper_nodes/srv/ExecuteJS.lisp
 pepper_nodes_generate_messages_lisp: /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/share/common-lisp/ros/pepper_nodes/srv/LoadUrl.lisp
-pepper_nodes_generate_messages_lisp: /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/share/common-lisp/ros/pepper_nodes/srv/Rest.lisp
 pepper_nodes_generate_messages_lisp: /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/share/common-lisp/ros/pepper_nodes/srv/Text2Speech.lisp
-pepper_nodes_generate_messages_lisp: /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/share/common-lisp/ros/pepper_nodes/srv/WakeUp.lisp
 pepper_nodes_generate_messages_lisp: CMakeFiles/pepper_nodes_generate_messages_lisp.dir/build.make
 
 .PHONY : pepper_nodes_generate_messages_lisp

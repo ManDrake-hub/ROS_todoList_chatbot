@@ -19,7 +19,7 @@ class TerminalInterface:
         self.changed = False
         
     def callback(self, data):
-        self.message = data
+        self.message = data.data
         self.changed = True
 
     def has_changed(self):

@@ -35,7 +35,7 @@ def main():
     rospy.wait_for_service('dialogue_server')
     dialogue_service = rospy.ServiceProxy('dialogue_server', Dialogue)
     terminal = TerminalInterface()
-    rospy.Subscriber("voice_txt", String, terminal.callback)
+    rospy.Subscriber('result_ID', String, terminal.callback)
     gerry = False
     while not rospy.is_shutdown():
         if gerry == False:

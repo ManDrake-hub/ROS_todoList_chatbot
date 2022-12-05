@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 from tensorflow.python.ops.gen_logging_ops import Print
 import rospy
-from std_msgs.msg import Int16MultiArray
+import message_filters
+from std_msgs.msg import Int16MultiArray, String
 import numpy as np
 import pickle
 import os
@@ -23,13 +24,7 @@ y = []
 
 TH = 0.75
 
-
-def listener():
-    rospy.init_node('reidentification_node', anonymous=True)
-
-    while not rospy.is_shutdown():
-        data = rospy.Subscriber("voice_data",Int16MultiArray,data)
-
+def callback(data, txt):
         audio_data = np.array(data.data)
 
         # to float32
@@ -51,15 +46,31 @@ def listener():
             id_label = dist2id(cos_dist, y, TH, mode='avg')
         
         if len(X) == 0 or id_label is None:
+            rospy.Publisher('result_ID', String, 'no')
+            
+            #QUESTO DEVE ESSERE MANDATO AL TEXT2SPEECH PER PARLARE E POI DEVE ESSERE FATTO LO SPEECH2TEXT DELLA RISPOSTA
+            c = input("Voce non conosciuta. Vuoi inserire un nuovo campione?")
+            if c.lower() == 'si':
 
-
-            c = input("Voce non conosciuta. Vuoi inserire un nuovo campione? (S/N):")
-            if c.lower() == 's':
+                #QUESTO DEVE ESSERE MANDATO AL TEXT2SPEECH PER PARLARE E POI DEVE ESSERE FATTO LO SPEECH2TEXT DELLA RISPOST       
                 name = input("Inserisci il nome dello speaker:").lower()
+
+
                 X.append(ukn[0])
                 y.append(name)
+            else:
+                #TEXT2SPEECH ( Va bene, ciao)
+                print("ciao")
+
         else:
-            print("Ha parlato:", id_label)
+            rospy.Publisher('result_ID', String, )
+            #print("Ha parlato:", id_label)
         
 if __name__ == '__main__':
-    listener()
+    rospy.init_node('reidentification_node', anonymous=True)
+
+    while not rospy.is_shutdown():
+        data = message_filters.Subscriber("voice_data",Int16MultiArray,data)
+        txt = message_filters.Subscriber("voice_txt", String, txt)
+        ts = message_filters.TimeSynchronizer([data,txt], 10)
+        ts.registerCallback(callback)

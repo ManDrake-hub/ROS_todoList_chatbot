@@ -37,4 +37,13 @@ print("Calibration finished")
 print("Recording...")
 stop_listening = r.listen_in_background(m, callback)
 
+#ID_distance
+#SI
+#publisher su s2t(frase)
+#publisher su chatbot (id)
+
+#NO
+#publisher su chatbot(None)
+#chatbot legge none, chiedo, t2s
+
 rospy.spin()

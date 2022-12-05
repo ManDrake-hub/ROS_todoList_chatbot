@@ -31,7 +31,7 @@ class Text2SpeechNode:
             self.session.reconnect()
             self.tts = self.session.get_service("ALTextToSpeech")
             self.tts.say(msg)
-        return "ACK"
+        #return "ACK"
     '''
     Starts the node and create the tts service
     '''

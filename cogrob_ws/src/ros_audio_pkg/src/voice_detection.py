@@ -20,6 +20,9 @@ def callback(recognizer, audio):
 # Initialize a Recognizer
 r = sr.Recognizer()
 
+#import sounddevice as sd
+#sd.query_devices()
+
 # Audio source
 m = sr.Microphone(device_index=None,
                     sample_rate=16000,

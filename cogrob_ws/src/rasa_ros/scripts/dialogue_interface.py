@@ -3,7 +3,8 @@
 import rospy
 import warnings
 warnings.filterwarnings("ignore")
-from rasa_ros.srv import Dialogue, DialogueResponse
+from rasa_ros.srv import Dialogue
+from pepper_nodes.srv import Text2Speech
 from std_msgs.msg import String
 
 
@@ -33,7 +34,6 @@ def main():
     rospy.init_node('writing')
     rospy.wait_for_service('dialogue_server')
     dialogue_service = rospy.ServiceProxy('dialogue_server', Dialogue)
-
     terminal = TerminalInterface()
     rospy.Subscriber("voice_txt", String, terminal.callback)
     gerry = False
@@ -48,7 +48,8 @@ def main():
             try:
                 bot_answer = dialogue_service(message)
                 #terminal.set_text(bot_answer.answer)
-                print(bot_answer.answer)
+                rospy.Publisher("bot_answer", String, queue_size=10)
+                print("bot answer: %s"%bot_answer.answer)
             except rospy.ServiceException as e:
                 print("Service call failed: %s"%e)
 

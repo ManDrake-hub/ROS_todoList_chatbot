@@ -4,6 +4,7 @@ from pepper_nodes.srv import Text2Speech
 from optparse import OptionParser
 import rospy
 from std_msgs.msg import String
+import time
 
 '''
 This class implements a ROS node able to call the Text to speech service of the robot
@@ -36,11 +37,11 @@ class Text2SpeechNode:
     '''
     def start(self):
         rospy.init_node("text2speech_node")
-        rospy.Service('tts', Text2Speech, self.say)
+        rospy.Subscriber("bot_answer", String, self.say)
+        #rospy.Service('tts', Text2Speech, self.say)
         rospy.spin()
 
 if __name__ == "__main__":
-    import time
     time.sleep(3)
     parser = OptionParser()
     parser.add_option("--ip", dest="ip", default="10.0.1.207")

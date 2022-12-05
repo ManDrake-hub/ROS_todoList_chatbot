@@ -37,8 +37,9 @@ class Text2SpeechNode:
     '''
     def start(self):
         rospy.init_node("text2speech_node")
-        rospy.Subscriber("bot_answer", String, self.say)
         #rospy.Service('tts', Text2Speech, self.say)
+        ## ----- MODIFIED: eliminate service Text2Speech -----
+        rospy.Subscriber("bot_answer", String, self.say)
         rospy.spin()
 
 if __name__ == "__main__":

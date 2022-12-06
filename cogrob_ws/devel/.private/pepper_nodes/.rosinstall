@@ -1,2 +1,2 @@
 - setup-file:
-    local-name: /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/setup.sh
+    local-name: /home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/setup.sh

@@ -43,28 +43,28 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/rasa_ros
+CMAKE_SOURCE_DIR = /home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/rasa_ros
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/build/rasa_ros
+CMAKE_BINARY_DIR = /home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/build/rasa_ros
 
 # Utility rule file for rasa_ros_generate_messages_cpp.
 
 # Include the progress variables for this target.
 include CMakeFiles/rasa_ros_generate_messages_cpp.dir/progress.make
 
-CMakeFiles/rasa_ros_generate_messages_cpp: /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/rasa_ros/include/rasa_ros/Dialogue.h
+CMakeFiles/rasa_ros_generate_messages_cpp: /home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/devel/.private/rasa_ros/include/rasa_ros/Dialogue.h
 
 
-/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/rasa_ros/include/rasa_ros/Dialogue.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
-/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/rasa_ros/include/rasa_ros/Dialogue.h: /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/rasa_ros/srv/Dialogue.srv
-/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/rasa_ros/include/rasa_ros/Dialogue.h: /opt/ros/noetic/share/gencpp/msg.h.template
-/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/rasa_ros/include/rasa_ros/Dialogue.h: /opt/ros/noetic/share/gencpp/srv.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/build/rasa_ros/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C++ code from rasa_ros/Dialogue.srv"
-	cd /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/rasa_ros && /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/build/rasa_ros/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/rasa_ros/srv/Dialogue.srv -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p rasa_ros -o /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/rasa_ros/include/rasa_ros -e /opt/ros/noetic/share/gencpp/cmake/..
+/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/devel/.private/rasa_ros/include/rasa_ros/Dialogue.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
+/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/devel/.private/rasa_ros/include/rasa_ros/Dialogue.h: /home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/rasa_ros/srv/Dialogue.srv
+/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/devel/.private/rasa_ros/include/rasa_ros/Dialogue.h: /opt/ros/noetic/share/gencpp/msg.h.template
+/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/devel/.private/rasa_ros/include/rasa_ros/Dialogue.h: /opt/ros/noetic/share/gencpp/srv.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/build/rasa_ros/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C++ code from rasa_ros/Dialogue.srv"
+	cd /home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/rasa_ros && /home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/build/rasa_ros/catkin_generated/env_cached.sh /home/luigi/miniconda3/envs/CR/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/rasa_ros/srv/Dialogue.srv -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p rasa_ros -o /home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/devel/.private/rasa_ros/include/rasa_ros -e /opt/ros/noetic/share/gencpp/cmake/..
 
 rasa_ros_generate_messages_cpp: CMakeFiles/rasa_ros_generate_messages_cpp
-rasa_ros_generate_messages_cpp: /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/rasa_ros/include/rasa_ros/Dialogue.h
+rasa_ros_generate_messages_cpp: /home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/devel/.private/rasa_ros/include/rasa_ros/Dialogue.h
 rasa_ros_generate_messages_cpp: CMakeFiles/rasa_ros_generate_messages_cpp.dir/build.make
 
 .PHONY : rasa_ros_generate_messages_cpp
@@ -79,6 +79,6 @@ CMakeFiles/rasa_ros_generate_messages_cpp.dir/clean:
 .PHONY : CMakeFiles/rasa_ros_generate_messages_cpp.dir/clean
 
 CMakeFiles/rasa_ros_generate_messages_cpp.dir/depend:
-	cd /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/build/rasa_ros && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/rasa_ros /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/rasa_ros /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/build/rasa_ros /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/build/rasa_ros /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/build/rasa_ros/CMakeFiles/rasa_ros_generate_messages_cpp.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/build/rasa_ros && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/rasa_ros /home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/rasa_ros /home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/build/rasa_ros /home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/build/rasa_ros /home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/build/rasa_ros/CMakeFiles/rasa_ros_generate_messages_cpp.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/rasa_ros_generate_messages_cpp.dir/depend
 

@@ -2,7 +2,7 @@
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/install")
+  set(CMAKE_INSTALL_PREFIX "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -39,7 +39,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/build/catkin_tools_prebuild/gtest/googletest/cmake_install.cmake")
+  include("/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/build/catkin_tools_prebuild/gtest/googletest/cmake_install.cmake")
 
 endif()
 

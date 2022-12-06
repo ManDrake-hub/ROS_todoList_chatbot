@@ -24,7 +24,7 @@ r = sr.Recognizer()
 #sd.query_devices()
 
 # Audio source
-m = sr.Microphone(device_index=None,
+m = sr.Microphone(device_index=6,
                     sample_rate=16000,
                     chunk_size=1024)
 

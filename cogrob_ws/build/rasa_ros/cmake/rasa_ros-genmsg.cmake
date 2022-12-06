@@ -17,9 +17,9 @@ add_custom_target(rasa_ros_generate_messages ALL)
 
 
 
-get_filename_component(_filename "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/rasa_ros/srv/Dialogue.srv" NAME_WE)
+get_filename_component(_filename "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/rasa_ros/srv/Dialogue.srv" NAME_WE)
 add_custom_target(_rasa_ros_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "rasa_ros" "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/rasa_ros/srv/Dialogue.srv" ""
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "rasa_ros" "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/rasa_ros/srv/Dialogue.srv" ""
 )
 
 #
@@ -31,7 +31,7 @@ add_custom_target(_rasa_ros_generate_messages_check_deps_${_filename}
 
 ### Generating Services
 _generate_srv_cpp(rasa_ros
-  "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/rasa_ros/srv/Dialogue.srv"
+  "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/rasa_ros/srv/Dialogue.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/rasa_ros
@@ -49,7 +49,7 @@ add_custom_target(rasa_ros_generate_messages_cpp
 add_dependencies(rasa_ros_generate_messages rasa_ros_generate_messages_cpp)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/rasa_ros/srv/Dialogue.srv" NAME_WE)
+get_filename_component(_filename "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/rasa_ros/srv/Dialogue.srv" NAME_WE)
 add_dependencies(rasa_ros_generate_messages_cpp _rasa_ros_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -64,7 +64,7 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS rasa_ros_generate_messages_cpp)
 
 ### Generating Services
 _generate_srv_eus(rasa_ros
-  "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/rasa_ros/srv/Dialogue.srv"
+  "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/rasa_ros/srv/Dialogue.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/rasa_ros
@@ -82,7 +82,7 @@ add_custom_target(rasa_ros_generate_messages_eus
 add_dependencies(rasa_ros_generate_messages rasa_ros_generate_messages_eus)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/rasa_ros/srv/Dialogue.srv" NAME_WE)
+get_filename_component(_filename "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/rasa_ros/srv/Dialogue.srv" NAME_WE)
 add_dependencies(rasa_ros_generate_messages_eus _rasa_ros_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -97,7 +97,7 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS rasa_ros_generate_messages_eus)
 
 ### Generating Services
 _generate_srv_lisp(rasa_ros
-  "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/rasa_ros/srv/Dialogue.srv"
+  "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/rasa_ros/srv/Dialogue.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/rasa_ros
@@ -115,7 +115,7 @@ add_custom_target(rasa_ros_generate_messages_lisp
 add_dependencies(rasa_ros_generate_messages rasa_ros_generate_messages_lisp)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/rasa_ros/srv/Dialogue.srv" NAME_WE)
+get_filename_component(_filename "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/rasa_ros/srv/Dialogue.srv" NAME_WE)
 add_dependencies(rasa_ros_generate_messages_lisp _rasa_ros_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -130,7 +130,7 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS rasa_ros_generate_messages_lisp)
 
 ### Generating Services
 _generate_srv_nodejs(rasa_ros
-  "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/rasa_ros/srv/Dialogue.srv"
+  "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/rasa_ros/srv/Dialogue.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/rasa_ros
@@ -148,7 +148,7 @@ add_custom_target(rasa_ros_generate_messages_nodejs
 add_dependencies(rasa_ros_generate_messages rasa_ros_generate_messages_nodejs)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/rasa_ros/srv/Dialogue.srv" NAME_WE)
+get_filename_component(_filename "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/rasa_ros/srv/Dialogue.srv" NAME_WE)
 add_dependencies(rasa_ros_generate_messages_nodejs _rasa_ros_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -163,7 +163,7 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS rasa_ros_generate_messages_nodejs)
 
 ### Generating Services
 _generate_srv_py(rasa_ros
-  "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/rasa_ros/srv/Dialogue.srv"
+  "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/rasa_ros/srv/Dialogue.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/rasa_ros
@@ -181,7 +181,7 @@ add_custom_target(rasa_ros_generate_messages_py
 add_dependencies(rasa_ros_generate_messages rasa_ros_generate_messages_py)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/rasa_ros/srv/Dialogue.srv" NAME_WE)
+get_filename_component(_filename "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/rasa_ros/srv/Dialogue.srv" NAME_WE)
 add_dependencies(rasa_ros_generate_messages_py _rasa_ros_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -238,7 +238,7 @@ if(TARGET std_msgs_generate_messages_nodejs)
 endif()
 
 if(genpy_INSTALL_DIR AND EXISTS ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/rasa_ros)
-  install(CODE "execute_process(COMMAND \"/usr/bin/python3\" -m compileall \"${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/rasa_ros\")")
+  install(CODE "execute_process(COMMAND \"/home/luigi/miniconda3/envs/CR/bin/python3\" -m compileall \"${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/rasa_ros\")")
   # install generated code
   install(
     DIRECTORY ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/rasa_ros

@@ -46,4 +46,4 @@ stop_listening = r.listen_in_background(m, callback)
 #publisher su chatbot(None)
 #chatbot legge none, chiedo, t2s
 
-rospy.spin()
+#rospy.spin()

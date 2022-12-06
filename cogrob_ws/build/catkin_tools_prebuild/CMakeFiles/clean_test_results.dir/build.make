@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/build/catkin_tools_prebuild
+CMAKE_SOURCE_DIR = /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/build/catkin_tools_prebuild
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/build/catkin_tools_prebuild
+CMAKE_BINARY_DIR = /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/build/catkin_tools_prebuild
 
 # Utility rule file for clean_test_results.
 
@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/build/ca
 include CMakeFiles/clean_test_results.dir/progress.make
 
 CMakeFiles/clean_test_results:
-	/home/luigi/miniconda3/envs/CR/bin/python3 /opt/ros/noetic/share/catkin/cmake/test/remove_test_results.py /home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/build/catkin_tools_prebuild/test_results
+	/usr/bin/python3 /opt/ros/noetic/share/catkin/cmake/test/remove_test_results.py /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/build/catkin_tools_prebuild/test_results
 
 clean_test_results: CMakeFiles/clean_test_results
 clean_test_results: CMakeFiles/clean_test_results.dir/build.make
@@ -71,6 +71,6 @@ CMakeFiles/clean_test_results.dir/clean:
 .PHONY : CMakeFiles/clean_test_results.dir/clean
 
 CMakeFiles/clean_test_results.dir/depend:
-	cd /home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/build/catkin_tools_prebuild && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/build/catkin_tools_prebuild /home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/build/catkin_tools_prebuild /home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/build/catkin_tools_prebuild /home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/build/catkin_tools_prebuild /home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/build/catkin_tools_prebuild/CMakeFiles/clean_test_results.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/build/catkin_tools_prebuild && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/build/catkin_tools_prebuild /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/build/catkin_tools_prebuild /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/build/catkin_tools_prebuild /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/build/catkin_tools_prebuild /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/build/catkin_tools_prebuild/CMakeFiles/clean_test_results.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/clean_test_results.dir/depend
 

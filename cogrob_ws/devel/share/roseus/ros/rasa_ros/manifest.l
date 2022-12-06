@@ -1,1 +1,1 @@
-/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/devel/.private/rasa_ros/share/roseus/ros/rasa_ros/manifest.l
+/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/rasa_ros/share/roseus/ros/rasa_ros/manifest.l

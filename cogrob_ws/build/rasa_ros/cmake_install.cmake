@@ -1,8 +1,8 @@
-# Install script for directory: /home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/rasa_ros
+# Install script for directory: /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/rasa_ros
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/install")
+  set(CMAKE_INSTALL_PREFIX "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -49,139 +49,139 @@ endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/install/_setup_util.py")
+   "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/install/_setup_util.py")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/install" TYPE PROGRAM FILES "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/build/rasa_ros/catkin_generated/installspace/_setup_util.py")
+file(INSTALL DESTINATION "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/install" TYPE PROGRAM FILES "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/build/rasa_ros/catkin_generated/installspace/_setup_util.py")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/install/env.sh")
+   "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/install/env.sh")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/install" TYPE PROGRAM FILES "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/build/rasa_ros/catkin_generated/installspace/env.sh")
+file(INSTALL DESTINATION "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/install" TYPE PROGRAM FILES "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/build/rasa_ros/catkin_generated/installspace/env.sh")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/install/setup.bash;/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/install/local_setup.bash")
+   "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/install/setup.bash;/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/install/local_setup.bash")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/install" TYPE FILE FILES
-    "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/build/rasa_ros/catkin_generated/installspace/setup.bash"
-    "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/build/rasa_ros/catkin_generated/installspace/local_setup.bash"
+file(INSTALL DESTINATION "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/install" TYPE FILE FILES
+    "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/build/rasa_ros/catkin_generated/installspace/setup.bash"
+    "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/build/rasa_ros/catkin_generated/installspace/local_setup.bash"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/install/setup.sh;/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/install/local_setup.sh")
+   "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/install/setup.sh;/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/install/local_setup.sh")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/install" TYPE FILE FILES
-    "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/build/rasa_ros/catkin_generated/installspace/setup.sh"
-    "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/build/rasa_ros/catkin_generated/installspace/local_setup.sh"
+file(INSTALL DESTINATION "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/install" TYPE FILE FILES
+    "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/build/rasa_ros/catkin_generated/installspace/setup.sh"
+    "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/build/rasa_ros/catkin_generated/installspace/local_setup.sh"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/install/setup.zsh;/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/install/local_setup.zsh")
+   "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/install/setup.zsh;/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/install/local_setup.zsh")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/install" TYPE FILE FILES
-    "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/build/rasa_ros/catkin_generated/installspace/setup.zsh"
-    "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/build/rasa_ros/catkin_generated/installspace/local_setup.zsh"
+file(INSTALL DESTINATION "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/install" TYPE FILE FILES
+    "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/build/rasa_ros/catkin_generated/installspace/setup.zsh"
+    "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/build/rasa_ros/catkin_generated/installspace/local_setup.zsh"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/install/.rosinstall")
+   "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/install/.rosinstall")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/install" TYPE FILE FILES "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/build/rasa_ros/catkin_generated/installspace/.rosinstall")
+file(INSTALL DESTINATION "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/install" TYPE FILE FILES "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/build/rasa_ros/catkin_generated/installspace/.rosinstall")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/rasa_ros/srv" TYPE FILE FILES "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/rasa_ros/srv/Dialogue.srv")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/rasa_ros/srv" TYPE FILE FILES "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/rasa_ros/srv/Dialogue.srv")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/rasa_ros/cmake" TYPE FILE FILES "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/build/rasa_ros/catkin_generated/installspace/rasa_ros-msg-paths.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/rasa_ros/cmake" TYPE FILE FILES "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/build/rasa_ros/catkin_generated/installspace/rasa_ros-msg-paths.cmake")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/devel/.private/rasa_ros/include/rasa_ros")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/rasa_ros/include/rasa_ros")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/roseus/ros" TYPE DIRECTORY FILES "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/devel/.private/rasa_ros/share/roseus/ros/rasa_ros")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/roseus/ros" TYPE DIRECTORY FILES "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/rasa_ros/share/roseus/ros/rasa_ros")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/common-lisp/ros" TYPE DIRECTORY FILES "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/devel/.private/rasa_ros/share/common-lisp/ros/rasa_ros")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/common-lisp/ros" TYPE DIRECTORY FILES "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/rasa_ros/share/common-lisp/ros/rasa_ros")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gennodejs/ros" TYPE DIRECTORY FILES "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/devel/.private/rasa_ros/share/gennodejs/ros/rasa_ros")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gennodejs/ros" TYPE DIRECTORY FILES "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/rasa_ros/share/gennodejs/ros/rasa_ros")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  execute_process(COMMAND "/home/luigi/miniconda3/envs/CR/bin/python3" -m compileall "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/devel/.private/rasa_ros/lib/python3/dist-packages/rasa_ros")
+  execute_process(COMMAND "/usr/bin/python3" -m compileall "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/rasa_ros/lib/python3/dist-packages/rasa_ros")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python3/dist-packages" TYPE DIRECTORY FILES "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/devel/.private/rasa_ros/lib/python3/dist-packages/rasa_ros")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python3/dist-packages" TYPE DIRECTORY FILES "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/rasa_ros/lib/python3/dist-packages/rasa_ros")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/build/rasa_ros/catkin_generated/installspace/rasa_ros.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/build/rasa_ros/catkin_generated/installspace/rasa_ros.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/rasa_ros/cmake" TYPE FILE FILES "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/build/rasa_ros/catkin_generated/installspace/rasa_ros-msg-extras.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/rasa_ros/cmake" TYPE FILE FILES "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/build/rasa_ros/catkin_generated/installspace/rasa_ros-msg-extras.cmake")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/rasa_ros/cmake" TYPE FILE FILES
-    "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/build/rasa_ros/catkin_generated/installspace/rasa_rosConfig.cmake"
-    "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/build/rasa_ros/catkin_generated/installspace/rasa_rosConfig-version.cmake"
+    "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/build/rasa_ros/catkin_generated/installspace/rasa_rosConfig.cmake"
+    "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/build/rasa_ros/catkin_generated/installspace/rasa_rosConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/rasa_ros" TYPE FILE FILES "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/rasa_ros/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/rasa_ros" TYPE FILE FILES "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/rasa_ros/package.xml")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/build/rasa_ros/gtest/cmake_install.cmake")
+  include("/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/build/rasa_ros/gtest/cmake_install.cmake")
 
 endif()
 
@@ -193,5 +193,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/build/rasa_ros/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/build/rasa_ros/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

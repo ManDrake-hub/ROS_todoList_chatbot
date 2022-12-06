@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes
+CMAKE_SOURCE_DIR = /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/build/pepper_nodes
+CMAKE_BINARY_DIR = /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/build/pepper_nodes
 
 # Utility rule file for geometry_msgs_generate_messages_lisp.
 
@@ -67,6 +67,6 @@ CMakeFiles/geometry_msgs_generate_messages_lisp.dir/clean:
 .PHONY : CMakeFiles/geometry_msgs_generate_messages_lisp.dir/clean
 
 CMakeFiles/geometry_msgs_generate_messages_lisp.dir/depend:
-	cd /home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/build/pepper_nodes && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes /home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes /home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/build/pepper_nodes /home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/build/pepper_nodes /home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/build/pepper_nodes/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/build/pepper_nodes && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/build/pepper_nodes /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/build/pepper_nodes /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/build/pepper_nodes/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/geometry_msgs_generate_messages_lisp.dir/depend
 

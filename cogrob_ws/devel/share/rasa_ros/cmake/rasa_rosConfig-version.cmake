@@ -1,1 +1,1 @@
-/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/devel/.private/rasa_ros/share/rasa_ros/cmake/rasa_rosConfig-version.cmake
+/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/rasa_ros/share/rasa_ros/cmake/rasa_rosConfig-version.cmake

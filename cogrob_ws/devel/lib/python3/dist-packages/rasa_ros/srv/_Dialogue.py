@@ -1,1 +1,1 @@
-/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/devel/.private/rasa_ros/lib/python3/dist-packages/rasa_ros/srv/_Dialogue.py
+/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/rasa_ros/lib/python3/dist-packages/rasa_ros/srv/_Dialogue.py

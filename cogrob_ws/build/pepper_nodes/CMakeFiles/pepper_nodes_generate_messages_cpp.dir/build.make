@@ -43,64 +43,64 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes
+CMAKE_SOURCE_DIR = /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/build/pepper_nodes
+CMAKE_BINARY_DIR = /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/build/pepper_nodes
 
 # Utility rule file for pepper_nodes_generate_messages_cpp.
 
 # Include the progress variables for this target.
 include CMakeFiles/pepper_nodes_generate_messages_cpp.dir/progress.make
 
-CMakeFiles/pepper_nodes_generate_messages_cpp: /home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/include/pepper_nodes/ExecuteJS.h
-CMakeFiles/pepper_nodes_generate_messages_cpp: /home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/include/pepper_nodes/LoadUrl.h
-CMakeFiles/pepper_nodes_generate_messages_cpp: /home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/include/pepper_nodes/Rest.h
-CMakeFiles/pepper_nodes_generate_messages_cpp: /home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/include/pepper_nodes/Text2Speech.h
-CMakeFiles/pepper_nodes_generate_messages_cpp: /home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/include/pepper_nodes/WakeUp.h
+CMakeFiles/pepper_nodes_generate_messages_cpp: /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/include/pepper_nodes/ExecuteJS.h
+CMakeFiles/pepper_nodes_generate_messages_cpp: /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/include/pepper_nodes/LoadUrl.h
+CMakeFiles/pepper_nodes_generate_messages_cpp: /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/include/pepper_nodes/Rest.h
+CMakeFiles/pepper_nodes_generate_messages_cpp: /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/include/pepper_nodes/Text2Speech.h
+CMakeFiles/pepper_nodes_generate_messages_cpp: /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/include/pepper_nodes/WakeUp.h
 
 
-/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/include/pepper_nodes/ExecuteJS.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
-/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/include/pepper_nodes/ExecuteJS.h: /home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/ExecuteJS.srv
-/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/include/pepper_nodes/ExecuteJS.h: /opt/ros/noetic/share/gencpp/msg.h.template
-/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/include/pepper_nodes/ExecuteJS.h: /opt/ros/noetic/share/gencpp/srv.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/build/pepper_nodes/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C++ code from pepper_nodes/ExecuteJS.srv"
-	cd /home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes && /home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/build/pepper_nodes/catkin_generated/env_cached.sh /home/luigi/miniconda3/envs/CR/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/ExecuteJS.srv -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p pepper_nodes -o /home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/include/pepper_nodes -e /opt/ros/noetic/share/gencpp/cmake/..
+/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/include/pepper_nodes/ExecuteJS.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
+/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/include/pepper_nodes/ExecuteJS.h: /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/ExecuteJS.srv
+/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/include/pepper_nodes/ExecuteJS.h: /opt/ros/noetic/share/gencpp/msg.h.template
+/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/include/pepper_nodes/ExecuteJS.h: /opt/ros/noetic/share/gencpp/srv.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/build/pepper_nodes/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C++ code from pepper_nodes/ExecuteJS.srv"
+	cd /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes && /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/build/pepper_nodes/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/ExecuteJS.srv -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p pepper_nodes -o /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/include/pepper_nodes -e /opt/ros/noetic/share/gencpp/cmake/..
 
-/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/include/pepper_nodes/LoadUrl.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
-/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/include/pepper_nodes/LoadUrl.h: /home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/LoadUrl.srv
-/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/include/pepper_nodes/LoadUrl.h: /opt/ros/noetic/share/gencpp/msg.h.template
-/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/include/pepper_nodes/LoadUrl.h: /opt/ros/noetic/share/gencpp/srv.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/build/pepper_nodes/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating C++ code from pepper_nodes/LoadUrl.srv"
-	cd /home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes && /home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/build/pepper_nodes/catkin_generated/env_cached.sh /home/luigi/miniconda3/envs/CR/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/LoadUrl.srv -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p pepper_nodes -o /home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/include/pepper_nodes -e /opt/ros/noetic/share/gencpp/cmake/..
+/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/include/pepper_nodes/LoadUrl.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
+/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/include/pepper_nodes/LoadUrl.h: /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/LoadUrl.srv
+/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/include/pepper_nodes/LoadUrl.h: /opt/ros/noetic/share/gencpp/msg.h.template
+/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/include/pepper_nodes/LoadUrl.h: /opt/ros/noetic/share/gencpp/srv.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/build/pepper_nodes/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating C++ code from pepper_nodes/LoadUrl.srv"
+	cd /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes && /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/build/pepper_nodes/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/LoadUrl.srv -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p pepper_nodes -o /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/include/pepper_nodes -e /opt/ros/noetic/share/gencpp/cmake/..
 
-/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/include/pepper_nodes/Rest.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
-/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/include/pepper_nodes/Rest.h: /home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/Rest.srv
-/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/include/pepper_nodes/Rest.h: /opt/ros/noetic/share/gencpp/msg.h.template
-/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/include/pepper_nodes/Rest.h: /opt/ros/noetic/share/gencpp/srv.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/build/pepper_nodes/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating C++ code from pepper_nodes/Rest.srv"
-	cd /home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes && /home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/build/pepper_nodes/catkin_generated/env_cached.sh /home/luigi/miniconda3/envs/CR/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/Rest.srv -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p pepper_nodes -o /home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/include/pepper_nodes -e /opt/ros/noetic/share/gencpp/cmake/..
+/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/include/pepper_nodes/Rest.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
+/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/include/pepper_nodes/Rest.h: /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/Rest.srv
+/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/include/pepper_nodes/Rest.h: /opt/ros/noetic/share/gencpp/msg.h.template
+/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/include/pepper_nodes/Rest.h: /opt/ros/noetic/share/gencpp/srv.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/build/pepper_nodes/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating C++ code from pepper_nodes/Rest.srv"
+	cd /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes && /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/build/pepper_nodes/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/Rest.srv -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p pepper_nodes -o /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/include/pepper_nodes -e /opt/ros/noetic/share/gencpp/cmake/..
 
-/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/include/pepper_nodes/Text2Speech.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
-/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/include/pepper_nodes/Text2Speech.h: /home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/Text2Speech.srv
-/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/include/pepper_nodes/Text2Speech.h: /opt/ros/noetic/share/gencpp/msg.h.template
-/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/include/pepper_nodes/Text2Speech.h: /opt/ros/noetic/share/gencpp/srv.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/build/pepper_nodes/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating C++ code from pepper_nodes/Text2Speech.srv"
-	cd /home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes && /home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/build/pepper_nodes/catkin_generated/env_cached.sh /home/luigi/miniconda3/envs/CR/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/Text2Speech.srv -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p pepper_nodes -o /home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/include/pepper_nodes -e /opt/ros/noetic/share/gencpp/cmake/..
+/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/include/pepper_nodes/Text2Speech.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
+/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/include/pepper_nodes/Text2Speech.h: /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/Text2Speech.srv
+/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/include/pepper_nodes/Text2Speech.h: /opt/ros/noetic/share/gencpp/msg.h.template
+/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/include/pepper_nodes/Text2Speech.h: /opt/ros/noetic/share/gencpp/srv.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/build/pepper_nodes/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating C++ code from pepper_nodes/Text2Speech.srv"
+	cd /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes && /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/build/pepper_nodes/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/Text2Speech.srv -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p pepper_nodes -o /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/include/pepper_nodes -e /opt/ros/noetic/share/gencpp/cmake/..
 
-/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/include/pepper_nodes/WakeUp.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
-/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/include/pepper_nodes/WakeUp.h: /home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/WakeUp.srv
-/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/include/pepper_nodes/WakeUp.h: /opt/ros/noetic/share/gencpp/msg.h.template
-/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/include/pepper_nodes/WakeUp.h: /opt/ros/noetic/share/gencpp/srv.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/build/pepper_nodes/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating C++ code from pepper_nodes/WakeUp.srv"
-	cd /home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes && /home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/build/pepper_nodes/catkin_generated/env_cached.sh /home/luigi/miniconda3/envs/CR/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/WakeUp.srv -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p pepper_nodes -o /home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/include/pepper_nodes -e /opt/ros/noetic/share/gencpp/cmake/..
+/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/include/pepper_nodes/WakeUp.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
+/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/include/pepper_nodes/WakeUp.h: /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/WakeUp.srv
+/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/include/pepper_nodes/WakeUp.h: /opt/ros/noetic/share/gencpp/msg.h.template
+/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/include/pepper_nodes/WakeUp.h: /opt/ros/noetic/share/gencpp/srv.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/build/pepper_nodes/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating C++ code from pepper_nodes/WakeUp.srv"
+	cd /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes && /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/build/pepper_nodes/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/WakeUp.srv -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p pepper_nodes -o /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/include/pepper_nodes -e /opt/ros/noetic/share/gencpp/cmake/..
 
 pepper_nodes_generate_messages_cpp: CMakeFiles/pepper_nodes_generate_messages_cpp
-pepper_nodes_generate_messages_cpp: /home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/include/pepper_nodes/ExecuteJS.h
-pepper_nodes_generate_messages_cpp: /home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/include/pepper_nodes/LoadUrl.h
-pepper_nodes_generate_messages_cpp: /home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/include/pepper_nodes/Rest.h
-pepper_nodes_generate_messages_cpp: /home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/include/pepper_nodes/Text2Speech.h
-pepper_nodes_generate_messages_cpp: /home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/include/pepper_nodes/WakeUp.h
+pepper_nodes_generate_messages_cpp: /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/include/pepper_nodes/ExecuteJS.h
+pepper_nodes_generate_messages_cpp: /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/include/pepper_nodes/LoadUrl.h
+pepper_nodes_generate_messages_cpp: /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/include/pepper_nodes/Rest.h
+pepper_nodes_generate_messages_cpp: /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/include/pepper_nodes/Text2Speech.h
+pepper_nodes_generate_messages_cpp: /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/include/pepper_nodes/WakeUp.h
 pepper_nodes_generate_messages_cpp: CMakeFiles/pepper_nodes_generate_messages_cpp.dir/build.make
 
 .PHONY : pepper_nodes_generate_messages_cpp
@@ -115,6 +115,6 @@ CMakeFiles/pepper_nodes_generate_messages_cpp.dir/clean:
 .PHONY : CMakeFiles/pepper_nodes_generate_messages_cpp.dir/clean
 
 CMakeFiles/pepper_nodes_generate_messages_cpp.dir/depend:
-	cd /home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/build/pepper_nodes && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes /home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes /home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/build/pepper_nodes /home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/build/pepper_nodes /home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/build/pepper_nodes/CMakeFiles/pepper_nodes_generate_messages_cpp.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/build/pepper_nodes && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/build/pepper_nodes /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/build/pepper_nodes /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/build/pepper_nodes/CMakeFiles/pepper_nodes_generate_messages_cpp.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/pepper_nodes_generate_messages_cpp.dir/depend
 

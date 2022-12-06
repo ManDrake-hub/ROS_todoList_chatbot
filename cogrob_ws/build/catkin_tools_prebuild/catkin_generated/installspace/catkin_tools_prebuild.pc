@@ -1,4 +1,4 @@
-prefix=/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/install
+prefix=/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/install
 
 Name: catkin_tools_prebuild
 Description: Description of catkin_tools_prebuild

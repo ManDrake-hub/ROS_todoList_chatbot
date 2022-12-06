@@ -1,4 +1,4 @@
-#!/home/luigi/miniconda3/envs/CR/bin/python3
+#!/usr/bin/python3
 # -*- coding: utf-8 -*-
 
 # Software License Agreement (BSD License)
@@ -268,7 +268,7 @@ if __name__ == '__main__':
 
         if not args.local:
             # environment at generation time
-            CMAKE_PREFIX_PATH = r'/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/devel;/opt/ros/noetic'.split(';')
+            CMAKE_PREFIX_PATH = r'/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel;/opt/ros/noetic'.split(';')
         else:
             # don't consider any other prefix path than this one
             CMAKE_PREFIX_PATH = []

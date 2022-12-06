@@ -43,33 +43,33 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/rasa_ros
+CMAKE_SOURCE_DIR = /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/rasa_ros
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/build/rasa_ros
+CMAKE_BINARY_DIR = /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/build/rasa_ros
 
 # Utility rule file for rasa_ros_generate_messages_py.
 
 # Include the progress variables for this target.
 include CMakeFiles/rasa_ros_generate_messages_py.dir/progress.make
 
-CMakeFiles/rasa_ros_generate_messages_py: /home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/devel/.private/rasa_ros/lib/python3/dist-packages/rasa_ros/srv/_Dialogue.py
-CMakeFiles/rasa_ros_generate_messages_py: /home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/devel/.private/rasa_ros/lib/python3/dist-packages/rasa_ros/srv/__init__.py
+CMakeFiles/rasa_ros_generate_messages_py: /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/rasa_ros/lib/python3/dist-packages/rasa_ros/srv/_Dialogue.py
+CMakeFiles/rasa_ros_generate_messages_py: /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/rasa_ros/lib/python3/dist-packages/rasa_ros/srv/__init__.py
 
 
-/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/devel/.private/rasa_ros/lib/python3/dist-packages/rasa_ros/srv/_Dialogue.py: /opt/ros/noetic/lib/genpy/gensrv_py.py
-/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/devel/.private/rasa_ros/lib/python3/dist-packages/rasa_ros/srv/_Dialogue.py: /home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/rasa_ros/srv/Dialogue.srv
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/build/rasa_ros/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Python code from SRV rasa_ros/Dialogue"
-	catkin_generated/env_cached.sh /home/luigi/miniconda3/envs/CR/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/gensrv_py.py /home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/rasa_ros/srv/Dialogue.srv -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p rasa_ros -o /home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/devel/.private/rasa_ros/lib/python3/dist-packages/rasa_ros/srv
+/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/rasa_ros/lib/python3/dist-packages/rasa_ros/srv/_Dialogue.py: /opt/ros/noetic/lib/genpy/gensrv_py.py
+/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/rasa_ros/lib/python3/dist-packages/rasa_ros/srv/_Dialogue.py: /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/rasa_ros/srv/Dialogue.srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/build/rasa_ros/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Python code from SRV rasa_ros/Dialogue"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/gensrv_py.py /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/rasa_ros/srv/Dialogue.srv -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p rasa_ros -o /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/rasa_ros/lib/python3/dist-packages/rasa_ros/srv
 
-/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/devel/.private/rasa_ros/lib/python3/dist-packages/rasa_ros/srv/__init__.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
-/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/devel/.private/rasa_ros/lib/python3/dist-packages/rasa_ros/srv/__init__.py: /home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/devel/.private/rasa_ros/lib/python3/dist-packages/rasa_ros/srv/_Dialogue.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/build/rasa_ros/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Python srv __init__.py for rasa_ros"
-	catkin_generated/env_cached.sh /home/luigi/miniconda3/envs/CR/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/devel/.private/rasa_ros/lib/python3/dist-packages/rasa_ros/srv --initpy
+/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/rasa_ros/lib/python3/dist-packages/rasa_ros/srv/__init__.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
+/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/rasa_ros/lib/python3/dist-packages/rasa_ros/srv/__init__.py: /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/rasa_ros/lib/python3/dist-packages/rasa_ros/srv/_Dialogue.py
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/build/rasa_ros/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Python srv __init__.py for rasa_ros"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/rasa_ros/lib/python3/dist-packages/rasa_ros/srv --initpy
 
 rasa_ros_generate_messages_py: CMakeFiles/rasa_ros_generate_messages_py
-rasa_ros_generate_messages_py: /home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/devel/.private/rasa_ros/lib/python3/dist-packages/rasa_ros/srv/_Dialogue.py
-rasa_ros_generate_messages_py: /home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/devel/.private/rasa_ros/lib/python3/dist-packages/rasa_ros/srv/__init__.py
+rasa_ros_generate_messages_py: /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/rasa_ros/lib/python3/dist-packages/rasa_ros/srv/_Dialogue.py
+rasa_ros_generate_messages_py: /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/rasa_ros/lib/python3/dist-packages/rasa_ros/srv/__init__.py
 rasa_ros_generate_messages_py: CMakeFiles/rasa_ros_generate_messages_py.dir/build.make
 
 .PHONY : rasa_ros_generate_messages_py
@@ -84,6 +84,6 @@ CMakeFiles/rasa_ros_generate_messages_py.dir/clean:
 .PHONY : CMakeFiles/rasa_ros_generate_messages_py.dir/clean
 
 CMakeFiles/rasa_ros_generate_messages_py.dir/depend:
-	cd /home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/build/rasa_ros && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/rasa_ros /home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/rasa_ros /home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/build/rasa_ros /home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/build/rasa_ros /home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/build/rasa_ros/CMakeFiles/rasa_ros_generate_messages_py.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/build/rasa_ros && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/rasa_ros /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/rasa_ros /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/build/rasa_ros /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/build/rasa_ros /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/build/rasa_ros/CMakeFiles/rasa_ros_generate_messages_py.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/rasa_ros_generate_messages_py.dir/depend
 

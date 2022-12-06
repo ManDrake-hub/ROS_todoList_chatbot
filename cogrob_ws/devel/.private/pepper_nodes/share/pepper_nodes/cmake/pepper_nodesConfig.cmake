@@ -67,14 +67,14 @@ set(pepper_nodes_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("TRUE" STREQUAL "TRUE")
-  set(pepper_nodes_SOURCE_PREFIX /home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes)
-  set(pepper_nodes_DEVEL_PREFIX /home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes)
+  set(pepper_nodes_SOURCE_PREFIX /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes)
+  set(pepper_nodes_DEVEL_PREFIX /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes)
   set(pepper_nodes_INSTALL_PREFIX "")
   set(pepper_nodes_PREFIX ${pepper_nodes_DEVEL_PREFIX})
 else()
   set(pepper_nodes_SOURCE_PREFIX "")
   set(pepper_nodes_DEVEL_PREFIX "")
-  set(pepper_nodes_INSTALL_PREFIX /home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/install)
+  set(pepper_nodes_INSTALL_PREFIX /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/install)
   set(pepper_nodes_PREFIX ${pepper_nodes_INSTALL_PREFIX})
 endif()
 
@@ -91,9 +91,9 @@ endif()
 # flag project as catkin-based to distinguish if a find_package()-ed project is a catkin project
 set(pepper_nodes_FOUND_CATKIN_PROJECT TRUE)
 
-if(NOT "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/include " STREQUAL " ")
+if(NOT "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/include " STREQUAL " ")
   set(pepper_nodes_INCLUDE_DIRS "")
-  set(_include_dirs "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/include")
+  set(_include_dirs "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/include")
   if(NOT " " STREQUAL " ")
     set(_report "Check the issue tracker '' and consider creating a ticket if the problem has not been reported yet.")
   elseif(NOT " " STREQUAL " ")
@@ -110,7 +110,7 @@ if(NOT "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepp
         message(FATAL_ERROR "Project 'pepper_nodes' specifies '${idir}' as an include dir, which is not found.  It does not exist in '${include}'.  ${_report}")
       endif()
     else()
-      message(FATAL_ERROR "Project 'pepper_nodes' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/${idir}'.  ${_report}")
+      message(FATAL_ERROR "Project 'pepper_nodes' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/${idir}'.  ${_report}")
     endif()
     _list_append_unique(pepper_nodes_INCLUDE_DIRS ${include})
   endforeach()
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/lib;/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/devel/lib;/opt/ros/noetic/lib)
+    foreach(path /home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/lib;/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/lib;/opt/ros/noetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

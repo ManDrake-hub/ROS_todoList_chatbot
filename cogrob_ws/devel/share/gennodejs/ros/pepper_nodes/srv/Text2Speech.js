@@ -1,1 +1,1 @@
-/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/share/gennodejs/ros/pepper_nodes/srv/Text2Speech.js
+/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/share/gennodejs/ros/pepper_nodes/srv/Text2Speech.js

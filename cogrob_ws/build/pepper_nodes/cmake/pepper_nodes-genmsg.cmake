@@ -17,29 +17,29 @@ add_custom_target(pepper_nodes_generate_messages ALL)
 
 
 
-get_filename_component(_filename "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/ExecuteJS.srv" NAME_WE)
+get_filename_component(_filename "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/ExecuteJS.srv" NAME_WE)
 add_custom_target(_pepper_nodes_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "pepper_nodes" "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/ExecuteJS.srv" ""
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "pepper_nodes" "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/ExecuteJS.srv" ""
 )
 
-get_filename_component(_filename "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/LoadUrl.srv" NAME_WE)
+get_filename_component(_filename "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/LoadUrl.srv" NAME_WE)
 add_custom_target(_pepper_nodes_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "pepper_nodes" "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/LoadUrl.srv" ""
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "pepper_nodes" "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/LoadUrl.srv" ""
 )
 
-get_filename_component(_filename "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/Rest.srv" NAME_WE)
+get_filename_component(_filename "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/Rest.srv" NAME_WE)
 add_custom_target(_pepper_nodes_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "pepper_nodes" "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/Rest.srv" ""
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "pepper_nodes" "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/Rest.srv" ""
 )
 
-get_filename_component(_filename "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/Text2Speech.srv" NAME_WE)
+get_filename_component(_filename "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/Text2Speech.srv" NAME_WE)
 add_custom_target(_pepper_nodes_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "pepper_nodes" "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/Text2Speech.srv" ""
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "pepper_nodes" "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/Text2Speech.srv" ""
 )
 
-get_filename_component(_filename "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/WakeUp.srv" NAME_WE)
+get_filename_component(_filename "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/WakeUp.srv" NAME_WE)
 add_custom_target(_pepper_nodes_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "pepper_nodes" "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/WakeUp.srv" ""
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "pepper_nodes" "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/WakeUp.srv" ""
 )
 
 #
@@ -51,31 +51,31 @@ add_custom_target(_pepper_nodes_generate_messages_check_deps_${_filename}
 
 ### Generating Services
 _generate_srv_cpp(pepper_nodes
-  "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/ExecuteJS.srv"
+  "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/ExecuteJS.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/pepper_nodes
 )
 _generate_srv_cpp(pepper_nodes
-  "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/LoadUrl.srv"
+  "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/LoadUrl.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/pepper_nodes
 )
 _generate_srv_cpp(pepper_nodes
-  "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/Rest.srv"
+  "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/Rest.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/pepper_nodes
 )
 _generate_srv_cpp(pepper_nodes
-  "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/Text2Speech.srv"
+  "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/Text2Speech.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/pepper_nodes
 )
 _generate_srv_cpp(pepper_nodes
-  "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/WakeUp.srv"
+  "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/WakeUp.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/pepper_nodes
@@ -93,15 +93,15 @@ add_custom_target(pepper_nodes_generate_messages_cpp
 add_dependencies(pepper_nodes_generate_messages pepper_nodes_generate_messages_cpp)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/ExecuteJS.srv" NAME_WE)
+get_filename_component(_filename "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/ExecuteJS.srv" NAME_WE)
 add_dependencies(pepper_nodes_generate_messages_cpp _pepper_nodes_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/LoadUrl.srv" NAME_WE)
+get_filename_component(_filename "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/LoadUrl.srv" NAME_WE)
 add_dependencies(pepper_nodes_generate_messages_cpp _pepper_nodes_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/Rest.srv" NAME_WE)
+get_filename_component(_filename "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/Rest.srv" NAME_WE)
 add_dependencies(pepper_nodes_generate_messages_cpp _pepper_nodes_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/Text2Speech.srv" NAME_WE)
+get_filename_component(_filename "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/Text2Speech.srv" NAME_WE)
 add_dependencies(pepper_nodes_generate_messages_cpp _pepper_nodes_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/WakeUp.srv" NAME_WE)
+get_filename_component(_filename "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/WakeUp.srv" NAME_WE)
 add_dependencies(pepper_nodes_generate_messages_cpp _pepper_nodes_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -116,31 +116,31 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS pepper_nodes_generate_messages_cpp)
 
 ### Generating Services
 _generate_srv_eus(pepper_nodes
-  "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/ExecuteJS.srv"
+  "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/ExecuteJS.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/pepper_nodes
 )
 _generate_srv_eus(pepper_nodes
-  "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/LoadUrl.srv"
+  "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/LoadUrl.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/pepper_nodes
 )
 _generate_srv_eus(pepper_nodes
-  "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/Rest.srv"
+  "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/Rest.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/pepper_nodes
 )
 _generate_srv_eus(pepper_nodes
-  "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/Text2Speech.srv"
+  "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/Text2Speech.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/pepper_nodes
 )
 _generate_srv_eus(pepper_nodes
-  "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/WakeUp.srv"
+  "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/WakeUp.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/pepper_nodes
@@ -158,15 +158,15 @@ add_custom_target(pepper_nodes_generate_messages_eus
 add_dependencies(pepper_nodes_generate_messages pepper_nodes_generate_messages_eus)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/ExecuteJS.srv" NAME_WE)
+get_filename_component(_filename "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/ExecuteJS.srv" NAME_WE)
 add_dependencies(pepper_nodes_generate_messages_eus _pepper_nodes_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/LoadUrl.srv" NAME_WE)
+get_filename_component(_filename "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/LoadUrl.srv" NAME_WE)
 add_dependencies(pepper_nodes_generate_messages_eus _pepper_nodes_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/Rest.srv" NAME_WE)
+get_filename_component(_filename "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/Rest.srv" NAME_WE)
 add_dependencies(pepper_nodes_generate_messages_eus _pepper_nodes_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/Text2Speech.srv" NAME_WE)
+get_filename_component(_filename "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/Text2Speech.srv" NAME_WE)
 add_dependencies(pepper_nodes_generate_messages_eus _pepper_nodes_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/WakeUp.srv" NAME_WE)
+get_filename_component(_filename "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/WakeUp.srv" NAME_WE)
 add_dependencies(pepper_nodes_generate_messages_eus _pepper_nodes_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -181,31 +181,31 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS pepper_nodes_generate_messages_eus)
 
 ### Generating Services
 _generate_srv_lisp(pepper_nodes
-  "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/ExecuteJS.srv"
+  "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/ExecuteJS.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/pepper_nodes
 )
 _generate_srv_lisp(pepper_nodes
-  "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/LoadUrl.srv"
+  "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/LoadUrl.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/pepper_nodes
 )
 _generate_srv_lisp(pepper_nodes
-  "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/Rest.srv"
+  "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/Rest.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/pepper_nodes
 )
 _generate_srv_lisp(pepper_nodes
-  "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/Text2Speech.srv"
+  "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/Text2Speech.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/pepper_nodes
 )
 _generate_srv_lisp(pepper_nodes
-  "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/WakeUp.srv"
+  "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/WakeUp.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/pepper_nodes
@@ -223,15 +223,15 @@ add_custom_target(pepper_nodes_generate_messages_lisp
 add_dependencies(pepper_nodes_generate_messages pepper_nodes_generate_messages_lisp)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/ExecuteJS.srv" NAME_WE)
+get_filename_component(_filename "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/ExecuteJS.srv" NAME_WE)
 add_dependencies(pepper_nodes_generate_messages_lisp _pepper_nodes_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/LoadUrl.srv" NAME_WE)
+get_filename_component(_filename "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/LoadUrl.srv" NAME_WE)
 add_dependencies(pepper_nodes_generate_messages_lisp _pepper_nodes_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/Rest.srv" NAME_WE)
+get_filename_component(_filename "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/Rest.srv" NAME_WE)
 add_dependencies(pepper_nodes_generate_messages_lisp _pepper_nodes_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/Text2Speech.srv" NAME_WE)
+get_filename_component(_filename "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/Text2Speech.srv" NAME_WE)
 add_dependencies(pepper_nodes_generate_messages_lisp _pepper_nodes_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/WakeUp.srv" NAME_WE)
+get_filename_component(_filename "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/WakeUp.srv" NAME_WE)
 add_dependencies(pepper_nodes_generate_messages_lisp _pepper_nodes_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -246,31 +246,31 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS pepper_nodes_generate_messages_lisp
 
 ### Generating Services
 _generate_srv_nodejs(pepper_nodes
-  "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/ExecuteJS.srv"
+  "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/ExecuteJS.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/pepper_nodes
 )
 _generate_srv_nodejs(pepper_nodes
-  "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/LoadUrl.srv"
+  "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/LoadUrl.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/pepper_nodes
 )
 _generate_srv_nodejs(pepper_nodes
-  "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/Rest.srv"
+  "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/Rest.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/pepper_nodes
 )
 _generate_srv_nodejs(pepper_nodes
-  "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/Text2Speech.srv"
+  "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/Text2Speech.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/pepper_nodes
 )
 _generate_srv_nodejs(pepper_nodes
-  "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/WakeUp.srv"
+  "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/WakeUp.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/pepper_nodes
@@ -288,15 +288,15 @@ add_custom_target(pepper_nodes_generate_messages_nodejs
 add_dependencies(pepper_nodes_generate_messages pepper_nodes_generate_messages_nodejs)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/ExecuteJS.srv" NAME_WE)
+get_filename_component(_filename "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/ExecuteJS.srv" NAME_WE)
 add_dependencies(pepper_nodes_generate_messages_nodejs _pepper_nodes_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/LoadUrl.srv" NAME_WE)
+get_filename_component(_filename "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/LoadUrl.srv" NAME_WE)
 add_dependencies(pepper_nodes_generate_messages_nodejs _pepper_nodes_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/Rest.srv" NAME_WE)
+get_filename_component(_filename "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/Rest.srv" NAME_WE)
 add_dependencies(pepper_nodes_generate_messages_nodejs _pepper_nodes_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/Text2Speech.srv" NAME_WE)
+get_filename_component(_filename "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/Text2Speech.srv" NAME_WE)
 add_dependencies(pepper_nodes_generate_messages_nodejs _pepper_nodes_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/WakeUp.srv" NAME_WE)
+get_filename_component(_filename "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/WakeUp.srv" NAME_WE)
 add_dependencies(pepper_nodes_generate_messages_nodejs _pepper_nodes_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -311,31 +311,31 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS pepper_nodes_generate_messages_node
 
 ### Generating Services
 _generate_srv_py(pepper_nodes
-  "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/ExecuteJS.srv"
+  "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/ExecuteJS.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/pepper_nodes
 )
 _generate_srv_py(pepper_nodes
-  "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/LoadUrl.srv"
+  "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/LoadUrl.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/pepper_nodes
 )
 _generate_srv_py(pepper_nodes
-  "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/Rest.srv"
+  "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/Rest.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/pepper_nodes
 )
 _generate_srv_py(pepper_nodes
-  "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/Text2Speech.srv"
+  "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/Text2Speech.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/pepper_nodes
 )
 _generate_srv_py(pepper_nodes
-  "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/WakeUp.srv"
+  "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/WakeUp.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/pepper_nodes
@@ -353,15 +353,15 @@ add_custom_target(pepper_nodes_generate_messages_py
 add_dependencies(pepper_nodes_generate_messages pepper_nodes_generate_messages_py)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/ExecuteJS.srv" NAME_WE)
+get_filename_component(_filename "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/ExecuteJS.srv" NAME_WE)
 add_dependencies(pepper_nodes_generate_messages_py _pepper_nodes_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/LoadUrl.srv" NAME_WE)
+get_filename_component(_filename "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/LoadUrl.srv" NAME_WE)
 add_dependencies(pepper_nodes_generate_messages_py _pepper_nodes_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/Rest.srv" NAME_WE)
+get_filename_component(_filename "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/Rest.srv" NAME_WE)
 add_dependencies(pepper_nodes_generate_messages_py _pepper_nodes_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/Text2Speech.srv" NAME_WE)
+get_filename_component(_filename "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/Text2Speech.srv" NAME_WE)
 add_dependencies(pepper_nodes_generate_messages_py _pepper_nodes_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/WakeUp.srv" NAME_WE)
+get_filename_component(_filename "/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/srv/WakeUp.srv" NAME_WE)
 add_dependencies(pepper_nodes_generate_messages_py _pepper_nodes_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -418,7 +418,7 @@ if(TARGET std_msgs_generate_messages_nodejs)
 endif()
 
 if(genpy_INSTALL_DIR AND EXISTS ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/pepper_nodes)
-  install(CODE "execute_process(COMMAND \"/home/luigi/miniconda3/envs/CR/bin/python3\" -m compileall \"${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/pepper_nodes\")")
+  install(CODE "execute_process(COMMAND \"/usr/bin/python3\" -m compileall \"${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/pepper_nodes\")")
   # install generated code
   install(
     DIRECTORY ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/pepper_nodes

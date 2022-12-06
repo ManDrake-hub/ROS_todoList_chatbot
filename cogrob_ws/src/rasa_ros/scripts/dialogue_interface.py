@@ -35,6 +35,7 @@ def main():
     rospy.wait_for_service('dialogue_server')
     dialogue_service = rospy.ServiceProxy('dialogue_server', Dialogue)
     terminal = TerminalInterface()
+    pub = rospy.Publisher("bot_answer", String, queue_size=10)
     rospy.Subscriber("voice_txt", String, terminal.callback)
     gerry = False
     while not rospy.is_shutdown():
@@ -48,7 +49,7 @@ def main():
             try:
                 bot_answer = dialogue_service(message)
                 #terminal.set_text(bot_answer.answer)
-                rospy.Publisher("bot_answer", String, queue_size=10)
+                pub.publish(bot_answer)
                 print("bot answer: %s"%bot_answer.answer)
             except rospy.ServiceException as e:
                 print("Service call failed: %s"%e)

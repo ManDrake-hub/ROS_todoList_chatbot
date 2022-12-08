@@ -3,10 +3,9 @@ from utils import Session
 from pepper_nodes.srv import Text2Speech
 from optparse import OptionParser
 import rospy
-from std_msgs.msg import String, Bool
+from std_msgs.msg import String
 import time
 import qi
-
 '''
 This class implements a ROS node able to call the Text to speech service of the robot
 '''
@@ -29,10 +28,10 @@ class Text2SpeechNode:
     def say(self, msg):
         print("inizio il say ")
         try:
-            #MODIFICAAAAAAA METTI .DATA 
-            self.tts.say(msg)
+            self.tts.say(msg.data)
         except Exception as e:
             print(e)
+            print("mi riconnetto")
             self.session.reconnect()
             self.tts = self.session.get_service("ALTextToSpeech")
             self.tts.say(msg.data)
@@ -41,21 +40,23 @@ class Text2SpeechNode:
     Starts the node and create the tts service
     '''
     def start(self):
+        print("sono in start ")
         rospy.init_node("text2speech_node")
-        self.say("ciao giovanni")
-        
-        ## DA DECOMMENTARE
-        #rospy.Subscriber("bot_answer", String, self.say)
+        rospy.Subscriber("bot_answer", String, self.say)
         rospy.spin()
+    
 
 if __name__ == "__main__":
+    print("Avvio nodo t2s")
     time.sleep(3)
     parser = OptionParser()
     parser.add_option("--ip", dest="ip", default="10.0.1.207")
     parser.add_option("--port", dest="port", default=9559)
     (options, args) = parser.parse_args()
+    print("inizio il try")
     try:
         ttsnode = Text2SpeechNode(options.ip, int(options.port))
+        print("text2speech created ")
         ttsnode.start()
     except rospy.ROSInterruptException:
         pass

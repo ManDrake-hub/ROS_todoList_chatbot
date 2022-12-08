@@ -60,7 +60,7 @@ if __name__ == "__main__":
     #sd.query_devices()
 
     # Audio source
-    m = sr.Microphone(device_index=6,
+    m = sr.Microphone(device_index=None,
                         sample_rate=16000,
                         chunk_size=1024)
 

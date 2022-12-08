@@ -1,1 +1,0 @@
-/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/pepper_nodes/share/pepper_nodes/cmake/pepper_nodesConfig-version.cmake

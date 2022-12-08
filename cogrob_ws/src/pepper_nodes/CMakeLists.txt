@@ -59,7 +59,9 @@ add_service_files(
   FILES
   ExecuteJS.srv
   LoadUrl.srv
+  Rest.srv
   Text2Speech.srv
+  WakeUp.srv
 )
 
 ## Generate actions in the 'action' folder

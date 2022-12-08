@@ -1,1 +1,0 @@
-/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/devel/.private/catkin_tools_prebuild/_setup_util.py

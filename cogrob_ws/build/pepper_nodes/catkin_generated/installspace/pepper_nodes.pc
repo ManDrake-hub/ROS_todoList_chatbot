@@ -1,8 +1,0 @@
-prefix=/home/francesca/Scrivania/Intercorso/SECONDA_PARTE/ROS_todoList_chatbot/cogrob_ws/install
-
-Name: pepper_nodes
-Description: Description of pepper_nodes
-Version: 0.0.0
-Cflags: -I${prefix}/include
-Libs: -L${prefix}/lib 
-Requires: message_runtime

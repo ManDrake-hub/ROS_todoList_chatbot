@@ -6,5 +6,5 @@
   
   <node pkg="pepper_nodes" type="wakeup_node.py" name="wakeup_node" required="true" args="--ip=$(arg nao_ip) --port=$(arg nao_port)" output="screen" />
   <node pkg="pepper_nodes" type="text2speech_node.py" name="text2speech" required="true" args="--ip=$(arg nao_ip) --port=$(arg nao_port)" output="screen" />
- 
+  <node pkg="pepper_nodes" type="tablet_node.py" name="tablet_node" required="true" args="--ip=$(arg nao_ip) --port=$(arg nao_port)" output="screen" />
 </launch>

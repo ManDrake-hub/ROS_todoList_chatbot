@@ -3,7 +3,7 @@
 from utils import Session
 from optparse import OptionParser
 import rospy
-from pepper_nodes.srv import ExecuteJS, LoadUrl
+from pepper_nodes.srv import ExecuteJS, LoadUrl, LoadUrlRequest
 
 '''
 This class implements a ROS node used to controll the Pepper tablet
@@ -23,7 +23,9 @@ class TabletNode:
     '''
     It receives a LoadUrl message and displays the web page associated with the url on the tablet.
     '''
-    def load_url(self, msg):
+    def load_url(self, url):
+        msg = LoadUrlRequest()
+        msg.url = url
         try:
             self.tablet_proxy.showWebview(msg.url)
         except:
@@ -63,5 +65,7 @@ if __name__ == "__main__":
     try:
         node = TabletNode(options.ip, int(options.port))
         node.start()
+        url = r"https://www.diem.unisa.it/"
+        node.load_url(url)
     except rospy.ROSInterruptException:
         pass

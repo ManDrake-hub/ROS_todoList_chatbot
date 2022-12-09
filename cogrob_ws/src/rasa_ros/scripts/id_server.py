@@ -29,6 +29,7 @@ TH = 0.75
 
 def handle_service(req):
     audio = req.audio
+    id_label = None
     input_text = req.input_text
     response = IDResponse()
     audio_data = np.array(audio.data)
@@ -47,7 +48,10 @@ def handle_service(req):
 
             # Matching
             id_label = dist2id(cos_dist, Y, TH, mode='avg')
-            print("id_label: %s"%id_label)
+        print("id_label: %s"%id_label)
+        if id_label is None:
+            response.answer.data = ""
+        else:
             response.answer.data = id_label
     else: 
         print("salvo veramente")

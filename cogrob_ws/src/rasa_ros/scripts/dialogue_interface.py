@@ -35,13 +35,18 @@ class TerminalInterface:
                     vuoto.data = " "
                     id_answer = id_service(self.data, vuoto)
                     print("risposta: %s"%id_answer)
-                    if id_answer.answer.data == '':
+                    if id_answer.answer.data == "":
                         print("Come ti chiami?")
                         pub.publish("Come ti chiami?")
                         self.AIN = True
                     else:
                         print("Nome salvato")
                         self.Name.data = id_answer.answer.data
+                        phrase = "io sono "+ self.Name.data
+                        bot_answer = dialogue_service(phrase)
+                        print("bot answer: %s"%bot_answer.answer)
+                        pub.publish(bot_answer.answer)
+
                 except rospy.ServiceException as e:
                     print("Service call failed: %s"%e)
             else:
@@ -59,8 +64,14 @@ class TerminalInterface:
         else:
             print("no distanza")
             self.AIN = False
-            self.Name.data = self.txt
+            list = self.txt.split(" ")
+            real_name = list[len(list)-1]
+            phrase = "io sono "+ real_name
+            self.Name.data = real_name
             id_service(self.data, self.Name)
+            bot_answer = dialogue_service(phrase)
+            print("bot answer: %s"%bot_answer.answer)
+            pub.publish(bot_answer.answer)
         
 
     #    self.changed = True

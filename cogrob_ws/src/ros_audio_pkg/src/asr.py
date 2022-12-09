@@ -25,7 +25,7 @@ def callback(audio):
         print("Google Speech Recognition pensa tu abbia detto: " + spoken_text)
         msg = SAT()
         msg.audio = audio
-        msg.text = spoken_text
+        msg.text.data = spoken_text
         pub.publish(msg)
     except sr.UnknownValueError:
         print("Google Speech Recognition non riesce a capire da questo file audio")

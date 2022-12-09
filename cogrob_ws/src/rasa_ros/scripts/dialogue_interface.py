@@ -25,7 +25,7 @@ class TerminalInterface:
 
     def callback(self, data):
         print("parte callback")
-        self.txt = data.text
+        self.txt = data.text.data
         self.data = data.audio
         if self.AIN == False:
             if self.Name.data == None:
@@ -77,8 +77,11 @@ if __name__ == '__main__':
     rospy.wait_for_service('dialogue_server')
     rospy.wait_for_service('id_server')
     print("IN:")
-    dialogue_service = rospy.ServiceProxy('dialogue_server', Dialogue)
-    id_service = rospy.ServiceProxy('id_server', ID)
+    try:
+        dialogue_service = rospy.ServiceProxy('dialogue_server', Dialogue)
+        id_service = rospy.ServiceProxy('id_server', ID)
+    except rospy.ServiceException as e:
+        print("Service call failed: %s"%e)
     terminal = TerminalInterface()
     pub = rospy.Publisher("bot_answer", String, queue_size=10)
     rospy.Subscriber("voice_txt_data", SAT, terminal.callback)

@@ -1,2 +1,2 @@
 std_msgs/Int16MultiArray audio
-string text
+std_msgs/String text

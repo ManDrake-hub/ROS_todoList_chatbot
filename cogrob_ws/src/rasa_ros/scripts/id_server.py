@@ -39,7 +39,7 @@ def handle_service(req):
     # Prediction
     ukn = model.predict(np.expand_dims(ukn, 0))
     print("input_text: %s"%input_text)   
-    if input_text == " ":
+    if input_text.data == " ":
         if len(X) > 0:
             # Distance between the sample and the support set
             emb_voice = np.repeat(ukn, len(X), 0)
@@ -47,11 +47,15 @@ def handle_service(req):
 
             # Matching
             id_label = dist2id(cos_dist, Y, TH, mode='avg')
-        response.answer = id_label
+            print("id_label: %s"%id_label)
+            response.answer.data = id_label
     else: 
         print("salvo veramente")
+        print("sono Y")
+        for i in range(len(Y)):
+            print(Y[i])
         X.append(ukn[0])
-        Y.append(input_text)
+        Y.append(input_text.data)
     return response
 
 if __name__ == '__main__':

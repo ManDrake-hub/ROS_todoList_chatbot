@@ -21,6 +21,7 @@ class Text2SpeechNode:
         self.session = Session(ip, port)
         self.tts = self.session.get_service("ALTextToSpeech")
         self.tts.setLanguage("Italian")
+        self.tts.setVolume(0.4)
      
     '''
     Rececives a Text2Speech message and call the ALTextToSpeech service.
@@ -29,8 +30,7 @@ class Text2SpeechNode:
     def say(self, msg):
         print("inizio il say ")
         try:
-            #MODIFICAAAAAAA METTI .DATA 
-            self.tts.say(msg)
+            self.tts.say(msg.data)
         except Exception as e:
             print(e)
             self.session.reconnect()
@@ -42,10 +42,7 @@ class Text2SpeechNode:
     '''
     def start(self):
         rospy.init_node("text2speech_node")
-        self.say("ciao giovanni")
-        
-        ## DA DECOMMENTARE
-        #rospy.Subscriber("bot_answer", String, self.say)
+        rospy.Subscriber("bot_answer", String, self.say)
         rospy.spin()
 
 if __name__ == "__main__":

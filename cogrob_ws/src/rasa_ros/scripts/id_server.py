@@ -38,8 +38,7 @@ def handle_service(req):
     # Processing
     ukn = get_mfcc(audio_data, RATE)
     # Prediction
-    ukn = model.predict(np.expand_dims(ukn, 0))
-    print("input_text: %s"%input_text)   
+    ukn = model.predict(np.expand_dims(ukn, 0))  
     if input_text.data == " ":
         if len(X) > 0:
             # Distance between the sample and the support set
@@ -48,14 +47,11 @@ def handle_service(req):
 
             # Matching
             id_label = dist2id(cos_dist, Y, TH, mode='avg')
-        print("id_label: %s"%id_label)
         if id_label is None:
             response.answer.data = ""
         else:
             response.answer.data = id_label
     else: 
-        print("salvo veramente")
-        print("sono Y")
         for i in range(len(Y)):
             print(Y[i])
         X.append(ukn[0])

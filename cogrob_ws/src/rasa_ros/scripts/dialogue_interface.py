@@ -24,17 +24,14 @@ class TerminalInterface:
         self.Name.data = None
 
     def callback(self, data):
-        print("parte callback")
         self.txt = data.text.data
         self.data = data.audio
         if self.AIN == False:
             if self.Name.data == None:
                 try:
-                    print("parte il try")
                     vuoto = String()
                     vuoto.data = " "
                     id_answer = id_service(self.data, vuoto)
-                    print("risposta: %s"%id_answer)
                     if id_answer.answer.data == "":
                         print("Come ti chiami?")
                         pub.publish("Come ti chiami?")
@@ -52,17 +49,14 @@ class TerminalInterface:
             else:
                 try:
                     id_answer = id_service(self.data, self.Name)
-                    print("salvo")
                     bot_answer = dialogue_service(self.txt)
                     pub.publish(bot_answer.answer)
                     print("bot answer: %s"%bot_answer.answer)
                 except rospy.ServiceException as e:
                     print("Service call failed: %s"%e)
             if self.txt == "Arrivederci":
-                print("ho chiuso")
                 self.Name.data = None
         else:
-            print("no distanza")
             self.AIN = False
             list = self.txt.split(" ")
             real_name = list[len(list)-1]

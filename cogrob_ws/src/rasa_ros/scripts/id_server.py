@@ -18,12 +18,22 @@ warnings.filterwarnings("ignore")
 REF_PATH = os.path.dirname(os.path.abspath(__file__))
 RATE = 16000
 
+
+def save_object(output_path, d):
+    with open(output_path, 'wb') as f:
+        pickle.dump(d, f)
+    
+def load_object(input_path):
+    with open(input_path, 'rb') as f:
+        return pickle.load(f)
+
 # Load model
 model = get_deep_speaker(os.path.join(REF_PATH,'deep_speaker.h5'))
 
 n_embs = 0
-X = []
-Y = []
+
+X = load_object("audio.pkl")
+Y = load_object("name.pkl")
 
 TH = 0.75
 
@@ -56,6 +66,8 @@ def handle_service(req):
             print(Y[i])
         X.append(ukn[0])
         Y.append(input_text.data)
+        save_object("audio.pkl", X)
+        save_object("name.pkl", Y)
     return response
 
 if __name__ == '__main__':

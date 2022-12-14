@@ -28,9 +28,12 @@ class Text2SpeechNode:
     The robot will play the text of the message
     '''
     def say(self, msg):
+        pub.publish(True)
         print("inizio il say ")
         try:
             self.tts.say(msg.data)
+            rospy.sleep(len(msg.data)*0.12)
+            pub.publish(False)
         except Exception as e:
             print(e)
             self.session.reconnect()
@@ -51,6 +54,7 @@ if __name__ == "__main__":
     parser.add_option("--ip", dest="ip", default="10.0.1.207")
     parser.add_option("--port", dest="port", default=9559)
     (options, args) = parser.parse_args()
+    pub = rospy.Publisher('pepper_say', Bool, queue_size=10)
     try:
         ttsnode = Text2SpeechNode(options.ip, int(options.port))
         ttsnode.start()

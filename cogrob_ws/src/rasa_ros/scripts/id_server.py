@@ -32,8 +32,12 @@ model = get_deep_speaker(os.path.join(REF_PATH,'deep_speaker.h5'))
 
 n_embs = 0
 
-X = load_object("audio.pkl")
-Y = load_object("name.pkl")
+try:
+    X = load_object("/home/francesca/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/rasa_ros/scripts/audio.pkl")
+    Y = load_object("/home/francesca/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/rasa_ros/scripts/name.pkl")
+except:
+    X = []
+    Y = []
 
 TH = 0.75
 
@@ -62,12 +66,10 @@ def handle_service(req):
         else:
             response.answer.data = id_label
     else: 
-        for i in range(len(Y)):
-            print(Y[i])
         X.append(ukn[0])
         Y.append(input_text.data)
-        save_object("audio.pkl", X)
-        save_object("name.pkl", Y)
+        save_object("/home/francesca/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/rasa_ros/scripts/audio.pkl", X)
+        save_object("/home/francesca/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/rasa_ros/scripts/name.pkl", Y)
     return response
 
 if __name__ == '__main__':

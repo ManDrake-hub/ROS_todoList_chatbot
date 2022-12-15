@@ -37,7 +37,6 @@ class TerminalInterface:
                         pub.publish("Come ti chiami?")
                         self.AIN = True
                     else:
-                        print("Nome salvato")
                         self.Name.data = id_answer.answer.data
                         phrase = "io sono "+ self.Name.data
                         bot_answer = dialogue_service(phrase)

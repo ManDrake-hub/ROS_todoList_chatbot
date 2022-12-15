@@ -3,9 +3,13 @@ import rospy
 from std_msgs.msg import Int16MultiArray, String
 import numpy as np
 from ros_audio_pkg.msg import SAT
+import whisper
+import soundfile as sf
 
 from speech_recognition import AudioData
 import speech_recognition as sr
+
+#model = whisper.load_model("tiny")
 
 # Initialize a Recognizer
 r = sr.Recognizer()
@@ -22,6 +26,8 @@ def callback(audio):
 
     try:
         spoken_text= r.recognize_google(audio_data, language='it-IT')
+        #sf.write("audio.wav", data, 16000, 'PCM_24')
+        #spoken_text = model.transcribe("audio.wav")["text"]
         print("Google Speech Recognition pensa tu abbia detto: " + spoken_text)
         msg = SAT()
         msg.audio = audio

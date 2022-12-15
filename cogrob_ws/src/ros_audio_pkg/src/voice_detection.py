@@ -18,7 +18,9 @@ class Microphone:
         pub.publish(data_to_send)
 
     def callback_2(self, value):
-        if value == False:
+        print("value")
+        print(value.data)
+        if value.data == False:
             self.stop_listening = r.listen_in_background(m, self.callback)
         else:
             self.stop_listening()

@@ -29,10 +29,10 @@ class Text2SpeechNode:
     '''
     def say(self, msg):
         pub.publish(True)
-        print("inizio il say ")
         try:
             self.tts.say(msg.data)
-            rospy.sleep(len(msg.data)*0.12)
+            time.sleep(len(msg.data)*0.012)
+            print(len(msg.data))
             pub.publish(False)
         except Exception as e:
             print(e)

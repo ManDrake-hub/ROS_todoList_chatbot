@@ -1,6 +1,6 @@
 <launch>
         <node pkg="ros_audio_pkg" type="asr.py" name="asr" output="screen"/>
-        <node pkg="ros_audio_pkg" type="voice_detection.py" name="voice_detection_node_2" output="screen" />
+        <node pkg="ros_audio_pkg" type="voice_detection.py" name="voice_detection_node" output="screen" />
 </launch>
 
 

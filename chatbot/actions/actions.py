@@ -50,7 +50,7 @@ class ActionCreateUser(Action):
         user = get_user(tracker)
 
         if ToDo.is_user_available(user):
-            dispatcher.utter_message(text=f"Todo-list di {user} già esistente")
+            #dispatcher.utter_message(text=f"Todo-list di {user} già esistente")
             return []
 
         ToDo.create_user(user)
@@ -68,7 +68,7 @@ class ActionSetUser(Action):
         user = get_user(tracker)
 
         if not ToDo.is_user_available(user):
-            dispatcher.utter_message(text=f"Todo-list di {user} non esistente")
+            #dispatcher.utter_message(text=f"Todo-list di {user} non esistente")
             return []
 
         ActionWrapper.todo = ToDo.load(user)
@@ -87,11 +87,11 @@ class ActionRenameUser(Action):
         user_new = get_user_new(tracker)
 
         if not ToDo.is_user_available(user):
-            dispatcher.utter_message(text=f"Todo-list di {user} non esistente")
+            #dispatcher.utter_message(text=f"Todo-list di {user} non esistente")
             return []
 
         if ToDo.is_user_available(user_new):
-            dispatcher.utter_message(text=f"Todo-list di {user_new} già esistente")
+            #dispatcher.utter_message(text=f"Todo-list di {user_new} già esistente")
             return []
 
         ActionWrapper.todo.store(user_new)
@@ -122,7 +122,7 @@ class ActionRemoveUser(Action):
         user = get_user(tracker)
 
         if not ActionWrapper.todo.is_user_available(user):
-            dispatcher.utter_message(text=f"Todo-list di {user} non esistente")
+            #dispatcher.utter_message(text=f"Todo-list di {user} non esistente")
             return []
 
         if ActionWrapper.todo.get_loaded_user() == user:

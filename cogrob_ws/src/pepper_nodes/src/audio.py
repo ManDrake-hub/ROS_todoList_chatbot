@@ -17,22 +17,28 @@ class AlertNode:
         self.port = port
         self.session = Session(ip, port)
         self.audio_proxy = self.session.get_service("ALAudioPlayer")
+        self.audio_proxy.setVolume
     
     
     def alert(self):
         try:
             print("try")
-            import os
-            print(os.path.isfile("/home/francesca/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/ringtone_1_46486.wav"))
-            print(self.audio_proxy.getInstalledSoundSetsList())
-            self.audio_proxy.playWebStream("https://www.youtube.com/watch?v=WfhLLBKdD5w&ab_channel=Melamarcia5535",0.2,0)
-            #fileID = self.audio_proxy.loadFile("/home/francesca/Scrivania/1.wav")
-            #self.audio_proxy.play(fileID)
+            #import os
+            #print(os.path.isfile("/home/francesca/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/ringtone_1_46486.wav"))
+            #print(self.audio_proxy.getInstalledSoundSetsList())
+            #self.audio_proxy.playWebStream("https://www.youtube.com/watch?v=WfhLLBKdD5w&ab_channel=Melamarcia5535",0.2,0)
+            fileID = self.audio_proxy.loadFile("/home/nao/1.mp3")
+            self.audio_proxy.setVolume(fileID, 0.5)
+            self.audio_proxy.play(fileID)
+            #fileID = self.audio_proxy.playFile("/home/nao/1.mp3")
+            
         except Exception as e:
             print(e)
             self.session.reconnect()
             self.audio_proxy = self.session.get_service("ALAudioPlayer")
-            self.audio_proxy.playWebStream("https://www.youtube.com/watch?v=WfhLLBKdD5w&ab_channel=Melamarcia5535",0.2,0)
+            fileID = self.audio_proxy.loadFile("/home/nao/1.mp3")
+            self.audio_proxy.setVolume(fileID, 0.5)
+            self.audio_proxy.play(fileID)
         return "ACK"
     
     '''

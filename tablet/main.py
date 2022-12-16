@@ -8,39 +8,32 @@ app = Flask(__name__)
 socketio = SocketIO(app)
 
 style = """<style>
-    body {
-    padding-left: 11em;
-    font-family: Georgia, "Times New Roman",
-          Times, serif;
-    color: purple;
-    background-color: #d8da3d }
-    ul.navbar {
-      list-style-type: none;
-      padding: 0;
-      margin: 0;
-      position: absolute;
-      top: 2em;
-      left: 1em;
-      width: 9em }
-    h1 {
-      font-family: Helvetica, Geneva, Arial,
-            SunSans-Regular, sans-serif }
-    ul.navbar li {
-      background: white;
-      margin: 0.5em 0;
-      padding: 0.3em;
-      border-right: 1em solid black }
-    ul.navbar a {
-      text-decoration: none }
-    a:link {
-      color: blue }
-    a:visited {
-      color: purple }
-    address {
-      margin-top: 1em;
-      padding-top: 1em;
-      border-top: thin dotted }
-  </style>"""
+table, th, td {
+  border: 1px solid;
+  color : #8be9fd;
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+  border-radius: 25px;
+}
+th{
+  color : #8be9fd;
+  font-weight: bold;
+}
+td{
+  color: #f8f8f2;
+  border-color: #ff79c6;
+}
+h1{
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+  color: #50fa7b;
+  font-weight: bold;
+  text-align: right;
+}
+
+</style>"""
 
 def execute():
     x = """this is imam<br/>

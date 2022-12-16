@@ -7,7 +7,8 @@ import random
 app = Flask(__name__)
 socketio = SocketIO(app)
 
-style = """<style>
+style = """
+<style>
 table, th, td {
   border: 1px solid;
   color : #8be9fd;
@@ -30,7 +31,7 @@ h1{
   padding: 10px;
   color: #50fa7b;
   font-weight: bold;
-  text-align: right;
+  text-align: center;
 }
 
 </style>"""
@@ -45,12 +46,32 @@ def execute():
     z = str(random.random())
     result = [x,y,z]
     return style+"""
-    <head>
-	<title></title>
-</head>
-<body>
-    <h3>This is a parameter from app</h3>
-    """ + str(result) +"""
+      <head>
+  	<h1>TO DO LIST</h1>
+  </head>
+
+<body style="background-color:rgb(40, 42, 54);">
+
+  
+  <table>
+  	<!--Entità tabella-->
+    <tr>
+    	<!--Header delle colonne-->
+      <th>Nome</th>
+      <th>Scadenza</th>
+    </tr>
+    <tr>
+    	<!--Contenuto prima riga-->
+      <td>Alfreds Futterkiste</td>
+      <td>Maria Anders</td>
+    </tr>
+    <tr>
+   	<!--Contenuto seconda riga-->
+      <td>Centro comercial Moctezuma</td>
+      <td>Francisco Chang</td>
+    </tr>
+  </table>
+  </p>""" + str(result) +"""
 </body>"""
 
 

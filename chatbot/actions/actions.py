@@ -54,7 +54,7 @@ class ActionCreateUser(Action):
             return []
 
         ToDo.create_user(user)
-        dispatcher.utter_message(text=f"Creata una todo-list per {user}")
+        dispatcher.utter_message(text=f"Ho creato la tua todo-list {user}")
         return []
 
 class ActionSetUser(Action):
@@ -72,7 +72,7 @@ class ActionSetUser(Action):
             return []
 
         ActionWrapper.todo = ToDo.load(user)
-        dispatcher.utter_message(text=f"Caricata la todo-list di {user}")
+        dispatcher.utter_message(text=f"Ho caricato la tua todo-list {user}")
         return []
 
 class ActionRenameUser(Action):
@@ -97,7 +97,7 @@ class ActionRenameUser(Action):
         ActionWrapper.todo.store(user_new)
         ActionWrapper.todo.remove_user(user)
         ActionWrapper.todo = ToDo.load(user_new)
-        dispatcher.utter_message(text=f"Modificata e caricata la todo-list di {user_new}")
+        dispatcher.utter_message(text=f"{user_new} ho modificato e caricato la tua todo-list")
         return []
 
 class ActionGetUser(Action):
@@ -127,10 +127,10 @@ class ActionRemoveUser(Action):
 
         if ActionWrapper.todo.get_loaded_user() == user:
             ActionWrapper.todo = ToDo.load()
-            dispatcher.utter_message(text=f"Caricata la todo-list di default")
+            dispatcher.utter_message(text=f"todo-list di default caricata")
 
         ActionWrapper.todo.remove_user(user)
-        dispatcher.utter_message(text=f"Cancellata la todo-list di {user}")
+        dispatcher.utter_message(text=f"todo-list di {user} cancellata")
         return []
 
 class ActionAddTask(ActionWrapper):

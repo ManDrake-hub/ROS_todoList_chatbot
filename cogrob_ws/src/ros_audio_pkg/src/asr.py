@@ -3,7 +3,7 @@ import rospy
 from std_msgs.msg import Int16MultiArray, String
 import numpy as np
 from ros_audio_pkg.msg import SAT
-import whisper
+#import whisper
 import soundfile as sf
 
 from speech_recognition import AudioData

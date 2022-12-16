@@ -68,8 +68,8 @@ def handle_service(req):
     else: 
         X.append(ukn[0])
         Y.append(input_text.data)
-        save_object("/home/francesca/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/rasa_ros/scripts/audio.pkl", X)
-        save_object("/home/francesca/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/rasa_ros/scripts/name.pkl", Y)
+        save_object("/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/rasa_ros/scripts/audio.pkl", X)
+        save_object("/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/rasa_ros/scripts/name.pkl", Y)
     return response
 
 if __name__ == '__main__':

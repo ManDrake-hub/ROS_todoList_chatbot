@@ -53,7 +53,7 @@ class TerminalInterface:
                     print("bot answer: %s"%bot_answer.answer)
                 except rospy.ServiceException as e:
                     print("Service call failed: %s"%e)
-            if self.txt == "Arrivederci":
+            if self.txt in intent_goodbye:
                 self.Name.data = None
         else:
             self.AIN = False
@@ -89,6 +89,7 @@ if __name__ == '__main__':
     terminal = TerminalInterface()
     pub = rospy.Publisher("bot_answer", String, queue_size=10)
     rospy.Subscriber("voice_txt_data", SAT, terminal.callback)
+    intent_goodbye = ["arrivederci","addio","ci sentiamo","a risentirci","ci vediamo","buona giornata","ci sentiamo in giro"]
     rospy.spin()
     #txt_sub = message_filters.Subscriber("/voice_txt", String)
     #data_sub = message_filters.Subscriber("voice_data", Int16MultiArray)

@@ -22,14 +22,17 @@ class AlertNode:
     def alert(self):
         try:
             print("try")
-            fileID = self.audio_proxy.loadFile("/home/francesca/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/ringtone-1-46486.wav")
-            self.audio_proxy.play(fileID)
+            import os
+            print(os.path.isfile("/home/francesca/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/ringtone_1_46486.wav"))
+            print(self.audio_proxy.getInstalledSoundSetsList())
+            self.audio_proxy.playWebStream("https://www.youtube.com/watch?v=WfhLLBKdD5w&ab_channel=Melamarcia5535",0.2,0)
+            #fileID = self.audio_proxy.loadFile("/home/francesca/Scrivania/1.wav")
+            #self.audio_proxy.play(fileID)
         except Exception as e:
             print(e)
             self.session.reconnect()
             self.audio_proxy = self.session.get_service("ALAudioPlayer")
-            fileID = self.audio_proxy.loadFile("/home/francesca/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/ringtone-1-46486.wav")
-            self.audio_proxy.play(fileID)
+            self.audio_proxy.playWebStream("https://www.youtube.com/watch?v=WfhLLBKdD5w&ab_channel=Melamarcia5535",0.2,0)
         return "ACK"
     
     '''
@@ -39,7 +42,6 @@ class AlertNode:
         rospy.init_node("audio_node")
 
 if __name__ == "__main__":
-    time.sleep(3)
     parser = OptionParser()
     parser.add_option("--ip", dest="ip", default="10.0.1.230")
     parser.add_option("--port", dest="port", default=9559)

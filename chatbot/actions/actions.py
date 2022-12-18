@@ -54,7 +54,7 @@ class ActionCreateUser(Action):
             return []
 
         ToDo.create_user(user)
-        dispatcher.utter_message(text=f"Ho creato la tua todo-list {user}")
+        #dispatcher.utter_message(text=f"Ciao {user}, ho creato la tua todo-list")
         return []
 
 class ActionSetUser(Action):
@@ -72,7 +72,7 @@ class ActionSetUser(Action):
             return []
 
         ActionWrapper.todo = ToDo.load(user)
-        dispatcher.utter_message(text=f"Ho caricato la tua todo-list {user}")
+        dispatcher.utter_message(text=f"Ciao {user}, ho caricato la tua todo-list")
         return []
 
 class ActionRenameUser(Action):
@@ -392,11 +392,11 @@ class ActionModifyDeadline(ActionWrapper):
 
         tag = get_tag(tracker)
         category = get_category(tracker)
-
+        minutes = 5
         try:
             deadline_new = get_deadline(tracker)
-            
-            ActionWrapper.todo.modify_task(category, tag, deadline_new=deadline_new)
+            alert = deadline_new - timedelta(minutes=minutes)
+            ActionWrapper.todo.modify_task(category, tag, deadline_new=deadline_new,alarm_new=alert)
         except ExceptionRasa as e:
             dispatcher.utter_message(text=str(e))
             return []

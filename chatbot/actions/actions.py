@@ -393,10 +393,11 @@ class ActionModifyDeadline(ActionWrapper):
         tag = get_tag(tracker)
         category = get_category(tracker)
         minutes = 5
+
         try:
             deadline_new = get_deadline(tracker)
-            alert = deadline_new - timedelta(minutes=minutes)
-            ActionWrapper.todo.modify_task(category, tag, deadline_new=deadline_new,alarm_new=alert)
+            alert = deadline_new-timedelta(minutes=minutes)
+            ActionWrapper.todo.modify_task(category, tag, deadline_new=deadline_new, alarm_new=alert)
         except ExceptionRasa as e:
             dispatcher.utter_message(text=str(e))
             return []

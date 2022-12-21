@@ -61,6 +61,7 @@ class TerminalInterface:
             real_name = list[len(list)-1]
             phrase = "io sono "+ real_name
             self.Name.data = real_name
+            pub1.publish(real_name)
             id_service(self.data, self.Name)
             bot_answer = dialogue_service(phrase)
             print("bot answer: %s"%bot_answer.answer)
@@ -88,6 +89,7 @@ if __name__ == '__main__':
         print("Service call failed: %s"%e)
     terminal = TerminalInterface()
     pub = rospy.Publisher("bot_answer", String, queue_size=10)
+    pub1 = rospy.Publisher("actual_user", String, queue_size=10)
     rospy.Subscriber("voice_txt_data", SAT, terminal.callback)
     intent_goodbye = ["arrivederci","addio","ci sentiamo","a risentirci","ci vediamo","buona giornata","ci sentiamo in giro"]
     rospy.spin()

@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 from utils import Session
 from optparse import OptionParser
 import rospy
@@ -29,7 +28,6 @@ class TabletNode:
         msg = LoadUrlRequest()
         msg.url = url
         try:
-            print("tria")
             self.tablet_proxy.showWebview(msg.url)
         except:
             self.tablet_proxy = self.session.get_service("ALTabletService")

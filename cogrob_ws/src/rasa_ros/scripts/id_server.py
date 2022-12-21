@@ -33,8 +33,8 @@ model = get_deep_speaker(os.path.join(REF_PATH,'deep_speaker.h5'))
 n_embs = 0
 
 try:
-    X = load_object("/home/francesca/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/rasa_ros/scripts/audio.pkl")
-    Y = load_object("/home/francesca/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/rasa_ros/scripts/name.pkl")
+    X = load_object("/home/luigi/ROS_todoList_chatbot/cogrob_ws/src/rasa_ros/scripts/audio.pkl")
+    Y = load_object("/home/luigi/ROS_todoList_chatbot/cogrob_ws/src/rasa_ros/scripts/name.pkl")
 except:
     X = []
     Y = []
@@ -68,8 +68,8 @@ def handle_service(req):
     else: 
         X.append(ukn[0])
         Y.append(input_text.data)
-        save_object("/home/francesca/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/rasa_ros/scripts/audio.pkl", X)
-        save_object("/home/francesca/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/rasa_ros/scripts/name.pkl", Y)
+        save_object("/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/rasa_ros/scripts/audio.pkl", X)
+        save_object("/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/rasa_ros/scripts/name.pkl", Y)
     return response
 
 if __name__ == '__main__':

@@ -54,7 +54,7 @@ class ActionCreateUser(Action):
             return []
 
         ToDo.create_user(user)
-        #dispatcher.utter_message(text=f"Ho creato la tua todo-list {user}")
+        dispatcher.utter_message(text=f"Ho creato la tua todo-list {user}")
         return []
 
 class ActionSetUser(Action):
@@ -72,7 +72,7 @@ class ActionSetUser(Action):
             return []
 
         ActionWrapper.todo = ToDo.load(user)
-        dispatcher.utter_message(text=f"Ciao, {user}. Ho caricato la tua todo-list ")
+        dispatcher.utter_message(text=f"Ho caricato la tua todo-list {user}")
         return []
 
 class ActionRenameUser(Action):

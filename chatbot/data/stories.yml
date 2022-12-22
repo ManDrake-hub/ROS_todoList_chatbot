@@ -30,3 +30,714 @@ stories:
   - action: action_reset
   - intent: view
   - action: action_read_tasks
+
+- story: insert_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: identification
+    entities:
+    - user: Luigi
+  - slot_was_set:
+    - user: Luigi
+  - action: user_form
+  - active_loop: user_form
+  - slot_was_set:
+    - user: Luigi
+  - slot_was_set:
+    - user: Luigi
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_create_user
+  - action: action_set_user
+  - action: action_reset
+  - intent: insert
+  - action: id_task_form
+  - active_loop: id_task_form
+  - slot_was_set:
+    - requested_slot: tag
+  - slot_was_set:
+    - tag: progetto
+  - slot_was_set:
+    - tag: progetto
+  - slot_was_set:
+    - requested_slot: category
+  - slot_was_set:
+    - category: lavoro
+  - slot_was_set:
+    - category: lavoro
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: request_deadline
+  - active_loop: request_deadline
+  - slot_was_set:
+    - requested_slot: logical_deadline
+  - slot_was_set:
+    - logical_deadline: false
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_add_task
+  - action: action_reset
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: insert_2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: insert
+  - action: id_task_form
+  - active_loop: id_task_form
+  - slot_was_set:
+    - requested_slot: tag
+  - slot_was_set:
+    - tag: partita
+  - slot_was_set:
+    - tag: partita
+  - slot_was_set:
+    - requested_slot: category
+  - slot_was_set:
+    - category: sport
+  - slot_was_set:
+    - category: sport
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: request_deadline
+  - active_loop: request_deadline
+  - slot_was_set:
+    - requested_slot: logical_deadline
+  - intent: affirm
+  - action: deadline_form
+  - active_loop: deadline_form
+  - slot_was_set:
+    - requested_slot: date
+  - slot_was_set:
+    - date: 21/07/2024
+  - slot_was_set:
+    - date: 21/07/2024
+  - slot_was_set:
+    - requested_slot: time
+  - slot_was_set:
+    - time: 12:45
+  - slot_was_set:
+    - time: 12:45
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: request_alert
+  - active_loop: request_alert
+  - slot_was_set:
+    - requested_slot: logical_alert
+  - slot_was_set:
+    - logical_alert: false
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_add_task
+  - action: action_reset
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: insert_3
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: insert
+  - action: id_task_form
+  - active_loop: id_task_form
+  - slot_was_set:
+    - requested_slot: tag
+  - slot_was_set:
+    - tag: teatro
+  - slot_was_set:
+    - tag: teatro
+  - slot_was_set:
+    - requested_slot: category
+  - slot_was_set:
+    - category: svago
+  - slot_was_set:
+    - category: svago
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: request_deadline
+  - active_loop: request_deadline
+  - slot_was_set:
+    - requested_slot: logical_deadline
+  - intent: affirm
+  - action: deadline_form
+  - active_loop: deadline_form
+  - slot_was_set:
+    - requested_slot: date
+  - slot_was_set:
+    - date: 21/08/2023
+  - slot_was_set:
+    - date: 21/08/2023
+  - slot_was_set:
+    - requested_slot: time
+  - slot_was_set:
+    - time: 11:54
+  - slot_was_set:
+    - time: 11:54
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: request_alert
+  - active_loop: request_alert
+  - slot_was_set:
+    - requested_slot: logical_alert
+  - slot_was_set:
+    - logical_alert: true
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_add_task
+  - action: action_reset
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: insert
+    entities:
+    - tag: riunione
+  - slot_was_set:
+    - tag: riunione
+  - action: id_task_form
+  - active_loop: id_task_form
+  - slot_was_set:
+    - tag: riunione
+  - slot_was_set:
+    - tag: riunione
+  - slot_was_set:
+    - requested_slot: category
+  - slot_was_set:
+    - category: personale
+  - slot_was_set:
+    - category: personale
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: request_deadline
+  - active_loop: request_deadline
+  - slot_was_set:
+    - requested_slot: logical_deadline
+  - slot_was_set:
+    - logical_deadline: false
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_add_task
+  - action: action_reset
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: identification
+    entities:
+    - user: Luigi
+  - slot_was_set:
+    - user: Luigi
+  - action: user_form
+  - active_loop: user_form
+  - slot_was_set:
+    - user: Luigi
+  - slot_was_set:
+    - user: Luigi
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_create_user
+  - action: action_set_user
+  - action: action_reset
+  - intent: insert
+    entities:
+    - tag: pranzo
+  - slot_was_set:
+    - tag: pranzo
+  - action: id_task_form
+  - active_loop: id_task_form
+  - slot_was_set:
+    - tag: pranzo
+  - slot_was_set:
+    - tag: pranzo
+  - slot_was_set:
+    - requested_slot: category
+  - slot_was_set:
+    - category: famiglia
+  - slot_was_set:
+    - category: famiglia
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: request_deadline
+  - active_loop: request_deadline
+  - slot_was_set:
+    - requested_slot: logical_deadline
+  - intent: affirm
+  - action: deadline_form
+  - active_loop: deadline_form
+  - slot_was_set:
+    - requested_slot: date
+  - slot_was_set:
+    - date: 24/12/2022
+  - slot_was_set:
+    - date: 24/12/2022
+  - slot_was_set:
+    - requested_slot: time
+  - slot_was_set:
+    - time: 21:35
+  - slot_was_set:
+    - time: 21:35
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: request_alert
+  - active_loop: request_alert
+  - slot_was_set:
+    - requested_slot: logical_alert
+  - slot_was_set:
+    - logical_alert: false
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_add_task
+  - action: action_reset
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: insert
+    entities:
+    - tag: pulizia
+  - slot_was_set:
+    - tag: pulizia
+  - action: id_task_form
+  - active_loop: id_task_form
+  - slot_was_set:
+    - tag: pulizia
+  - slot_was_set:
+    - tag: pulizia
+  - slot_was_set:
+    - requested_slot: category
+  - slot_was_set:
+    - category: casa
+  - slot_was_set:
+    - category: casa
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: request_deadline
+  - active_loop: request_deadline
+  - slot_was_set:
+    - requested_slot: logical_deadline
+  - intent: affirm
+  - action: deadline_form
+  - active_loop: deadline_form
+  - slot_was_set:
+    - requested_slot: date
+  - slot_was_set:
+    - date: 03/05/2025
+  - slot_was_set:
+    - date: 03/05/2025
+  - slot_was_set:
+    - requested_slot: time
+  - slot_was_set:
+    - time: 23:54
+  - slot_was_set:
+    - time: 23:54
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: request_alert
+  - active_loop: request_alert
+  - slot_was_set:
+    - requested_slot: logical_alert
+  - slot_was_set:
+    - logical_alert: true
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_add_task
+  - action: action_reset
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: insert
+    entities:
+    - tag: chitarra
+    - category: musica
+  - slot_was_set:
+    - tag: chitarra
+  - slot_was_set:
+    - category: musica
+  - action: id_task_form
+  - active_loop: id_task_form
+  - slot_was_set:
+    - tag: chitarra
+  - slot_was_set:
+    - category: musica
+  - slot_was_set:
+    - tag: chitarra
+  - slot_was_set:
+    - category: musica
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: request_deadline
+  - active_loop: request_deadline
+  - slot_was_set:
+    - requested_slot: logical_deadline
+  - slot_was_set:
+    - logical_deadline: false
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_add_task
+  - action: action_reset
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: insert
+    entities:
+    - category: svago
+    - tag: tennis
+  - slot_was_set:
+    - tag: tennis
+  - slot_was_set:
+    - category: svago
+  - action: id_task_form
+  - active_loop: id_task_form
+  - slot_was_set:
+    - tag: tennis
+  - slot_was_set:
+    - category: svago
+  - slot_was_set:
+    - tag: tennis
+  - slot_was_set:
+    - category: svago
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: request_deadline
+  - active_loop: request_deadline
+  - slot_was_set:
+    - requested_slot: logical_deadline
+  - intent: affirm
+  - action: deadline_form
+  - active_loop: deadline_form
+  - slot_was_set:
+    - requested_slot: date
+  - slot_was_set:
+    - date: 23/05/2024
+  - slot_was_set:
+    - date: 23/05/2024
+  - slot_was_set:
+    - requested_slot: time
+  - slot_was_set:
+    - time: 21:35
+  - slot_was_set:
+    - time: 21:35
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: request_alert
+  - active_loop: request_alert
+  - slot_was_set:
+    - requested_slot: logical_alert
+  - slot_was_set:
+    - logical_alert: false
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_add_task
+  - action: action_reset
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: insert
+    entities:
+    - tag: regalo
+    - category: festa
+  - slot_was_set:
+    - tag: regalo
+  - slot_was_set:
+    - category: festa
+  - action: id_task_form
+  - active_loop: id_task_form
+  - slot_was_set:
+    - tag: regalo
+  - slot_was_set:
+    - category: festa
+  - slot_was_set:
+    - tag: regalo
+  - slot_was_set:
+    - category: festa
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: request_deadline
+  - active_loop: request_deadline
+  - slot_was_set:
+    - requested_slot: logical_deadline
+  - intent: affirm
+  - action: deadline_form
+  - active_loop: deadline_form
+  - slot_was_set:
+    - requested_slot: date
+  - slot_was_set:
+    - date: 23/08/2024
+  - slot_was_set:
+    - date: 23/08/2024
+  - slot_was_set:
+    - requested_slot: time
+  - slot_was_set:
+    - time: 23:45
+  - slot_was_set:
+    - time: 23:45
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: request_alert
+  - active_loop: request_alert
+  - slot_was_set:
+    - requested_slot: logical_alert
+  - slot_was_set:
+    - logical_alert: true
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_add_task
+  - action: action_reset
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: modify_task
+  - action: id_task_form
+  - active_loop: id_task_form
+  - slot_was_set:
+    - requested_slot: tag
+  - slot_was_set:
+    - tag: regalo
+  - slot_was_set:
+    - tag: regalo
+  - slot_was_set:
+    - requested_slot: category
+  - slot_was_set:
+    - category: festa
+  - slot_was_set:
+    - category: festa
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: modify_tag_form
+  - active_loop: modify_tag_form
+  - slot_was_set:
+    - requested_slot: tag_new
+  - slot_was_set:
+    - tag_new: compleanno
+  - slot_was_set:
+    - tag_new: compleanno
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_modify_task_name
+  - action: action_reset
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: modify_task
+    entities:
+    - tag: pranzo
+  - slot_was_set:
+    - tag: pranzo
+  - action: id_task_form
+  - active_loop: id_task_form
+  - slot_was_set:
+    - tag: pranzo
+  - slot_was_set:
+    - tag: pranzo
+  - slot_was_set:
+    - requested_slot: category
+  - slot_was_set:
+    - category: famiglia
+  - slot_was_set:
+    - category: famiglia
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: modify_tag_form
+  - active_loop: modify_tag_form
+  - slot_was_set:
+    - requested_slot: tag_new
+  - slot_was_set:
+    - tag_new: cena
+  - slot_was_set:
+    - tag_new: cena
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_modify_task_name
+  - action: action_reset
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: modify_task
+    entities:
+    - tag: cena
+    - category: famiglia
+  - slot_was_set:
+    - tag: cena
+  - slot_was_set:
+    - category: famiglia
+  - action: id_task_form
+  - active_loop: id_task_form
+  - slot_was_set:
+    - tag: cena
+  - slot_was_set:
+    - category: famiglia
+  - slot_was_set:
+    - tag: cena
+  - slot_was_set:
+    - category: famiglia
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: modify_tag_form
+  - active_loop: modify_tag_form
+  - slot_was_set:
+    - requested_slot: tag_new
+  - slot_was_set:
+    - tag_new: colazione
+  - slot_was_set:
+    - tag_new: colazione
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_modify_task_name
+  - action: action_reset
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: remove
+  - action: id_task_form
+  - active_loop: id_task_form
+  - slot_was_set:
+    - requested_slot: tag
+  - slot_was_set:
+    - tag: colazione
+  - slot_was_set:
+    - tag: colazione
+  - slot_was_set:
+    - requested_slot: category
+  - slot_was_set:
+    - category: famiglia
+  - slot_was_set:
+    - category: famiglia
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_remove_task
+  - action: action_reset
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: remove
+    entities:
+    - tag: progetto
+  - slot_was_set:
+    - tag: progetto
+  - action: id_task_form
+  - active_loop: id_task_form
+  - slot_was_set:
+    - tag: progetto
+  - slot_was_set:
+    - tag: progetto
+  - slot_was_set:
+    - requested_slot: category
+  - slot_was_set:
+    - category: lavoro
+  - slot_was_set:
+    - category: lavoro
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_remove_task
+  - action: action_reset
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: remove
+    entities:
+    - tag: partita
+    - category: sport
+  - slot_was_set:
+    - tag: partita
+  - slot_was_set:
+    - category: sport
+  - action: id_task_form
+  - active_loop: id_task_form
+  - slot_was_set:
+    - tag: partita
+  - slot_was_set:
+    - category: sport
+  - slot_was_set:
+    - tag: partita
+  - slot_was_set:
+    - category: sport
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_remove_task
+  - action: action_reset
+  - intent: goodbye
+  - action: utter_goodbye
+

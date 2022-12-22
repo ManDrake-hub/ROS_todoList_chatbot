@@ -17,12 +17,14 @@ def callback(value):
     global actual_user
     actual_user = value.data
 
+def read_user():
+    with open("../rasa_ros/scripts/name.txt","r") as f:
+        return f.read()
+
 def get_todo_data():
-    global current_user
     todo_path = f"../../../chatbot/todo_{current_user}.pickle"
     todo: ToDo = CustomUnpickler(open(todo_path, "rb")).load()
-    user = todo.get_loaded_user()
-    print(user)
+    user=read_user()
     if user != "" and user != current_user:
         todo_path = f"../../../chatbot/todo_{user}.pickle"
         todo: ToDo = CustomUnpickler(open(todo_path, "rb")).load()

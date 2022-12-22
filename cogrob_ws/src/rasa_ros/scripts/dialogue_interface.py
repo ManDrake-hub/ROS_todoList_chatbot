@@ -27,7 +27,7 @@ class TerminalInterface:
         self.txt = data.text.data
         self.data = data.audio
         if self.AIN == False:
-            if self.Name.data == None:
+            if self.Name.data is None:
                 try:
                     vuoto = String()
                     vuoto.data = " "
@@ -66,7 +66,9 @@ class TerminalInterface:
             bot_answer = dialogue_service(phrase)
             print("bot answer: %s"%bot_answer.answer)
             pub.publish(bot_answer.answer)
-        
+        if self.Name.data is not None:
+            with open("name.txt","w") as f:
+                f.write(self.Name.data)
 
     #    self.changed = True
 #

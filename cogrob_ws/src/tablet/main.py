@@ -7,21 +7,58 @@ from actions.ToDo import CustomUnpickler, ToDo
 import datetime
 import rospy
 from std_msgs.msg import String
+from optparse import OptionParser
+from utils import Session
 
-
+flag = False
 app = Flask(__name__)
 socketio = SocketIO(app)
+
+class AlertNode:
+    
+    '''
+    The costructor creates a session to Pepper and inizializes the services
+    '''
+    def __init__(self, ip, port):
+        self.ip = ip
+        self.port = port
+        self.session = Session(ip, port)
+        self.audio_proxy = self.session.get_service("ALAudioPlayer")
+    
+    def alert(self):
+        try:
+            print("try")
+            #import os
+            #print(os.path.isfile("/home/francesca/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/ringtone_1_46486.wav"))
+            #print(self.audio_proxy.getInstalledSoundSetsList())
+            #self.audio_proxy.playWebStream("https://www.youtube.com/watch?v=WfhLLBKdD5w&ab_channel=Melamarcia5535",0.2,0)
+            fileID = self.audio_proxy.loadFile("/home/nao/1.mp3")
+            self.audio_proxy.setVolume(fileID, 0.5)
+            self.audio_proxy.play(fileID)
+            #fileID = self.audio_proxy.playFile("/home/nao/1.mp3")
+        except Exception as e:
+            print(e)
+            self.session.reconnect()
+            self.audio_proxy = self.session.get_service("ALAudioPlayer")
+            fileID = self.audio_proxy.loadFile("/home/nao/1.mp3")
+            self.audio_proxy.setVolume(fileID, 0.5)
+            self.audio_proxy.play(fileID)
+        return "ACK"
+    
 
 def callback(value):
     global actual_user
     actual_user = value.data
 
-def read_user():
+def read_user()-> str:
     with open("../../../../../.ros/name.txt","r") as f:
         return f.read()
 
 def get_todo_data():
-    user=read_user()
+    try:
+        user=read_user().trim()
+    except:
+        user = "default"
     todo_path = f"../../../chatbot/todo_{user}.pickle"
     todo: ToDo = CustomUnpickler(open(todo_path, "rb")).load()
     tab_data = []
@@ -99,10 +136,15 @@ body_closure = """</body>"""
 
 def execute():
     global actual_user
+    global flag
     data = get_todo_data()
     rows = get_rows_from_data(data)
     rows_alert = get_rows_from_data(check_alerts("../../../chatbot/"))
-
+    if rows_alert and not flag:
+        flag = True
+        node_audio.alert()
+    if not rows_alert:
+        flag = False
     table_tasks = f"""
             <table>
             <tr>
@@ -140,6 +182,11 @@ running_job = scheduler.add_job(home, 'interval', seconds=4, max_instances=1)
 scheduler.start()
 
 if __name__ == '__main__':
+    parser = OptionParser()
+    parser.add_option("--ip", dest="ip", default="10.0.1.230")
+    parser.add_option("--port", dest="port", default=9559)
+    (options, args) = parser.parse_args()
+    node_audio = AlertNode(options.ip, int(options.port))
     #rospy.init_node("tablet")
     #rospy.Subscriber("actual_user", String, callback)
     socketio.run(app, host='0.0.0.0')

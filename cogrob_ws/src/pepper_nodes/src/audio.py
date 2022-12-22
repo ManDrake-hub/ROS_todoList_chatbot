@@ -46,7 +46,7 @@ class AlertNode:
     '''
     def start(self):
         rospy.init_node("audio_node")
-
+        
 if __name__ == "__main__":
     parser = OptionParser()
     parser.add_option("--ip", dest="ip", default="10.0.1.230")

@@ -1,0 +1,5 @@
+face_nodes
+/home/francesca/Scrivania/ROS_todoList_chatbot/cogrob_ws/devel/.private/face_nodes/cmake.lock /home/francesca/Scrivania/ROS_todoList_chatbot/cogrob_ws/devel/./cmake.lock
+/home/francesca/Scrivania/ROS_todoList_chatbot/cogrob_ws/devel/.private/face_nodes/share/face_nodes/cmake/face_nodesConfig.cmake /home/francesca/Scrivania/ROS_todoList_chatbot/cogrob_ws/devel/share/face_nodes/cmake/face_nodesConfig.cmake
+/home/francesca/Scrivania/ROS_todoList_chatbot/cogrob_ws/devel/.private/face_nodes/share/face_nodes/cmake/face_nodesConfig-version.cmake /home/francesca/Scrivania/ROS_todoList_chatbot/cogrob_ws/devel/share/face_nodes/cmake/face_nodesConfig-version.cmake
+/home/francesca/Scrivania/ROS_todoList_chatbot/cogrob_ws/devel/.private/face_nodes/lib/pkgconfig/face_nodes.pc /home/francesca/Scrivania/ROS_todoList_chatbot/cogrob_ws/devel/lib/pkgconfig/face_nodes.pc

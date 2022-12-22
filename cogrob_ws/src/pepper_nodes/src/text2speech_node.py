@@ -21,7 +21,7 @@ class Text2SpeechNode:
         self.session = Session(ip, port)
         self.tts = self.session.get_service("ALTextToSpeech")
         self.tts.setLanguage("Italian")
-        self.tts.setVolume(0.4)
+        self.tts.setVolume(0.5)
      
     '''
     Rececives a Text2Speech message and call the ALTextToSpeech service.
@@ -38,6 +38,7 @@ class Text2SpeechNode:
             self.session.reconnect()
             self.tts = self.session.get_service("ALTextToSpeech")
             self.tts.say(msg.data)
+            pub.publish(False)
         return "ACK"
     '''
     Starts the node and create the tts service

@@ -55,7 +55,6 @@ def handle_service(req):
     ukn = model.predict(np.expand_dims(ukn, 0))  
     if input_text.data == " ":
         print(f"lenX{len(X)}")
-        print(os.getcwd())
         if len(X) > 0:
             # Distance between the sample and the support set
             emb_voice = np.repeat(ukn, len(X), 0)

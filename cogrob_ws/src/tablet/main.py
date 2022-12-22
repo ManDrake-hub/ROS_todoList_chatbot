@@ -11,24 +11,19 @@ from std_msgs.msg import String
 
 app = Flask(__name__)
 socketio = SocketIO(app)
-current_user = "default"
 
 def callback(value):
     global actual_user
     actual_user = value.data
 
 def read_user():
-    with open("../rasa_ros/scripts/name.txt","r") as f:
+    with open("../../../../../.ros/name.txt","r") as f:
         return f.read()
 
 def get_todo_data():
-    todo_path = f"../../../chatbot/todo_{current_user}.pickle"
-    todo: ToDo = CustomUnpickler(open(todo_path, "rb")).load()
     user=read_user()
-    if user != "" and user != current_user:
-        todo_path = f"../../../chatbot/todo_{user}.pickle"
-        todo: ToDo = CustomUnpickler(open(todo_path, "rb")).load()
-        current_user = user
+    todo_path = f"../../../chatbot/todo_{user}.pickle"
+    todo: ToDo = CustomUnpickler(open(todo_path, "rb")).load()
     tab_data = []
     if todo._todo:
         for c in todo.get_categories():

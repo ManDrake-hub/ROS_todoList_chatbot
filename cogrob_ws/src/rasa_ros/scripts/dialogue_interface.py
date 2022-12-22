@@ -8,7 +8,7 @@ from pepper_nodes.srv import Text2Speech
 from rasa_ros.msg import SAT
 from std_msgs.msg import String, Int16MultiArray
 import message_filters
-
+import os
 class TerminalInterface:
     '''
     Class implementing a terminal i/o interface. 
@@ -24,7 +24,7 @@ class TerminalInterface:
         self.Name.data = None
 
     def callback(self, data):
-        self.txt = data.text.data
+        self.txt:str = data.text.data
         self.data = data.audio
         if self.AIN == False:
             if self.Name.data is None:
@@ -53,7 +53,7 @@ class TerminalInterface:
                     print("bot answer: %s"%bot_answer.answer)
                 except rospy.ServiceException as e:
                     print("Service call failed: %s"%e)
-            if self.txt in intent_goodbye:
+            if self.txt.lower() in intent_goodbye:
                 self.Name.data = None
         else:
             self.AIN = False
@@ -67,8 +67,11 @@ class TerminalInterface:
             print("bot answer: %s"%bot_answer.answer)
             pub.publish(bot_answer.answer)
         if self.Name.data is not None:
-            with open("name.txt","w") as f:
+            with open("./name.txt","w") as f:
                 f.write(self.Name.data)
+        else:
+            with open("./name.txt","w") as f:
+                f.write("default")
 
     #    self.changed = True
 #
@@ -92,6 +95,8 @@ if __name__ == '__main__':
     terminal = TerminalInterface()
     pub = rospy.Publisher("bot_answer", String, queue_size=10)
     pub1 = rospy.Publisher("actual_user", String, queue_size=10)
+    with open("./name.txt","w") as f:
+        f.write("default")
     rospy.Subscriber("voice_txt_data", SAT, terminal.callback)
     intent_goodbye = ["arrivederci","addio","ci sentiamo","a risentirci","ci vediamo","buona giornata","ci sentiamo in giro"]
     rospy.spin()

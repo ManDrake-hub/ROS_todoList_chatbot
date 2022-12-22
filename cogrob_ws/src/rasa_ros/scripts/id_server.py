@@ -33,8 +33,8 @@ model = get_deep_speaker(os.path.join(REF_PATH,'deep_speaker.h5'))
 n_embs = 0
 
 try:
-    X = load_object("/home/luigi/ROS_todoList_chatbot/cogrob_ws/src/rasa_ros/scripts/audio.pkl")
-    Y = load_object("/home/luigi/ROS_todoList_chatbot/cogrob_ws/src/rasa_ros/scripts/name.pkl")
+    X = load_object("/home/luigi/Scrivania/PROGETTO_CR/ROS_todoList_chatbot/cogrob_ws/src/rasa_ros/scripts/audio.pkl")
+    Y = load_object("/home/luigi/Scrivania/PROGETTO_CR/ROS_todoList_chatbot/cogrob_ws/src/rasa_ros/scripts/name.pkl")
 except:
     X = []
     Y = []
@@ -54,13 +54,15 @@ def handle_service(req):
     # Prediction
     ukn = model.predict(np.expand_dims(ukn, 0))  
     if input_text.data == " ":
+        print(f"lunghezza X {len(X)}")
         if len(X) > 0:
             # Distance between the sample and the support set
             emb_voice = np.repeat(ukn, len(X), 0)
             cos_dist = batch_cosine_similarity(np.array(X), emb_voice)
-
+            print(f"lunghezza Y {len(Y)}")
             # Matching
             id_label = dist2id(cos_dist, Y, TH, mode='avg')
+            print(f"id_label {id_label}")
         if id_label is None:
             response.answer.data = ""
         else:
@@ -68,8 +70,8 @@ def handle_service(req):
     else: 
         X.append(ukn[0])
         Y.append(input_text.data)
-        save_object("/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/rasa_ros/scripts/audio.pkl", X)
-        save_object("/home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/rasa_ros/scripts/name.pkl", Y)
+        save_object("/home/luigi/Scrivania/PROGETTO_CR/ROS_todoList_chatbot/cogrob_ws/src/rasa_ros/scripts/audio.pkl", X)
+        save_object("/home/luigi/Scrivania/PROGETTO_CR/ROS_todoList_chatbot/cogrob_ws/src/rasa_ros/scripts/name.pkl", Y)
     return response
 
 if __name__ == '__main__':

@@ -31,7 +31,7 @@ class Text2SpeechNode:
         pub.publish(True)
         try:
             self.tts.say(msg.data)
-            time.sleep(len(msg.data)*0.012)
+            #time.sleep(len(msg.data)*0.012)
             pub.publish(False)
         except Exception as e:
             print(e)

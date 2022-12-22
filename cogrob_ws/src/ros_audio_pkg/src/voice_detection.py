@@ -7,24 +7,29 @@ import time
 import speech_recognition as sr
 
 
-class Microphone:
-    def __init__(self):
-        self.stop_listening = r.listen_in_background(m, self.callback)
-    # this is called from the background thread
-    def callback(self, recognizer, audio):
+#class Microphone:
+#    def __init__(self):
+#        self.stop_listening = r.listen_in_background(m, self.callback)
+#    # this is called from the background thread
+#    def callback(self, recognizer, audio):
+#        data = np.frombuffer(audio.get_raw_data(), dtype=np.int16)
+#        data_to_send = Int16MultiArray()
+#        data_to_send.data = data
+#        pub.publish(data_to_send)
+#
+#    #def callback_2(self, value):
+#    #    print("value")
+#    #    print(value.data)
+#    #    if value.data == False:
+#    #        self.stop_listening = r.listen_in_background(m, self.callback)
+#    #    else:
+#    #        self.stop_listening()
+    
+def callback(recognizer, audio):
         data = np.frombuffer(audio.get_raw_data(), dtype=np.int16)
         data_to_send = Int16MultiArray()
         data_to_send.data = data
         pub.publish(data_to_send)
-
-    def callback_2(self, value):
-        print("value")
-        print(value.data)
-        if value.data == False:
-            self.stop_listening = r.listen_in_background(m, self.callback)
-        else:
-            self.stop_listening()
-
 if __name__ == "__main__":
     pub = rospy.Publisher('mic_data', Int16MultiArray, queue_size=10)
     rospy.init_node('voice_detection_node', anonymous=True)
@@ -49,8 +54,9 @@ if __name__ == "__main__":
     # start listening in the background
     # `stop_listening` is now a function that, when called, stops background listening
     print("Recording...")
-    mic = Microphone()
-    rospy.Subscriber('pepper_say', Bool, mic.callback_2)
+    #mic = Microphone()
+    stop_listening = r.listen_in_background(m, callback)
+    #rospy.Subscriber('pepper_say', Bool, mic.callback_2)
 
 
-rospy.spin()
+    rospy.spin()

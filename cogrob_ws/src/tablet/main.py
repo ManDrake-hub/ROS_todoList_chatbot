@@ -32,16 +32,16 @@ class AlertNode:
             #print(os.path.isfile("/home/francesca/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/ringtone_1_46486.wav"))
             #print(self.audio_proxy.getInstalledSoundSetsList())
             #self.audio_proxy.playWebStream("https://www.youtube.com/watch?v=WfhLLBKdD5w&ab_channel=Melamarcia5535",0.2,0)
-            fileID = self.audio_proxy.loadFile("/home/nao/1.mp3")
-            self.audio_proxy.setVolume(fileID, 0.5)
+            fileID = self.audio_proxy.loadFile("/home/nao/1.wav")
+            self.audio_proxy.setVolume(fileID, 1)
             self.audio_proxy.play(fileID)
             #fileID = self.audio_proxy.playFile("/home/nao/1.mp3")
         except Exception as e:
             print(e)
             self.session.reconnect()
             self.audio_proxy = self.session.get_service("ALAudioPlayer")
-            fileID = self.audio_proxy.loadFile("/home/nao/1.mp3")
-            self.audio_proxy.setVolume(fileID, 0.5)
+            fileID = self.audio_proxy.loadFile("/home/nao/1.wav")
+            self.audio_proxy.setVolume(fileID, 1)
             self.audio_proxy.play(fileID)
         return "ACK"
     
@@ -56,8 +56,10 @@ def read_user()-> str:
 
 def get_todo_data():
     try:
-        user=read_user().trim()
-    except:
+        user=read_user()
+        print(f"utente{user}")
+    except Exception as e:
+        print(e)
         user = "default"
     todo_path = f"../../../chatbot/todo_{user}.pickle"
     todo: ToDo = CustomUnpickler(open(todo_path, "rb")).load()
@@ -140,6 +142,9 @@ def execute():
     data = get_todo_data()
     rows = get_rows_from_data(data)
     rows_alert = get_rows_from_data(check_alerts("../../../chatbot/"))
+
+    #rows_alert = [("", )]
+
     if rows_alert and not flag:
         flag = True
         node_audio.alert()

@@ -28,11 +28,11 @@ class Text2SpeechNode:
     The robot will play the text of the message
     '''
     def say(self, msg):
-        #pub.publish(True)
+        pub.publish(True)
         try:
             self.tts.say(msg.data)
             #time.sleep(len(msg.data)*0.012)
-            #pub.publish(False)
+            pub.publish(False)
         except Exception as e:
             print(e)
             self.session.reconnect()

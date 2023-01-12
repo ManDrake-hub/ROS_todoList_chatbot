@@ -4,6 +4,7 @@ from flask_socketio import SocketIO
 from apscheduler.schedulers.background import BackgroundScheduler
 import os
 from actions.ToDo import CustomUnpickler, ToDo
+from std_msgs.msg import Int16MultiArray, Bool
 import datetime
 import rospy
 from std_msgs.msg import String
@@ -52,7 +53,7 @@ def callback(value):
 
 def read_user()-> str:
     with open("../../../../../.ros/name.txt","r") as f:
-        return f.read()
+        return f.read().split("\n")[0]
 
 def get_todo_data():
     try:
@@ -62,7 +63,11 @@ def get_todo_data():
         print(e)
         user = "default"
     todo_path = f"../../../chatbot/todo_{user}.pickle"
-    todo: ToDo = CustomUnpickler(open(todo_path, "rb")).load()
+    try:
+        todo: ToDo = CustomUnpickler(open(todo_path, "rb")).load()
+    except Exception as e:
+        todo_path = f"../../../chatbot/todo_default.pickle"
+        todo: ToDo = CustomUnpickler(open(todo_path, "rb")).load()
     tab_data = []
     if todo._todo:
         for c in todo.get_categories():
@@ -144,7 +149,7 @@ def execute():
     rows_alert = get_rows_from_data(check_alerts("../../../chatbot/"))
 
     #rows_alert = [("", )]
-
+#TO-DO: Vedere alert 
     if rows_alert and not flag:
         flag = True
         node_audio.alert()
@@ -181,6 +186,11 @@ def execute():
 def home():
     with app.app_context():
         return render_template('index.html', x=execute())
+def callback_2(value):
+    actual_alerts = check_alerts
+    if value.data == False and len(actual_alerts)>0:
+        print("CI SONOOOOOOO")
+        node_audio.alert()
 
 scheduler = BackgroundScheduler()
 running_job = scheduler.add_job(home, 'interval', seconds=4, max_instances=1)
@@ -188,10 +198,10 @@ scheduler.start()
 
 if __name__ == '__main__':
     parser = OptionParser()
-    parser.add_option("--ip", dest="ip", default="10.0.1.230")
+    parser.add_option("--ip", dest="ip", default="10.0.1.207")
     parser.add_option("--port", dest="port", default=9559)
     (options, args) = parser.parse_args()
     node_audio = AlertNode(options.ip, int(options.port))
-    #rospy.init_node("tablet")
-    #rospy.Subscriber("actual_user", String, callback)
+    rospy.init_node("tablet")
+    rospy.Subscriber('pepper_say', Bool, callback_2)
     socketio.run(app, host='0.0.0.0')

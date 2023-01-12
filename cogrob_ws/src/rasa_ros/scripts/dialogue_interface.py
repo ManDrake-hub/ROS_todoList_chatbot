@@ -9,112 +9,131 @@ from rasa_ros.msg import SAT
 from std_msgs.msg import String, Int16MultiArray
 import message_filters
 import os
+
+"""
+Idea: Andiamo ad inserire il face recog nell'id server:
+    1) Passiamo in aggiunta del soliti valori dell'audio, anche l'immagine della face
+    2) Nell'id server utilizziamo le stesse tecniche per il riconoscimento della voce, ma sulla faccia
+"""
+
 class TerminalInterface:
-    '''
-    Class implementing a terminal i/o interface. 
+    intent_goodbye = ["arrivederci", "addio", "ci sentiamo", "a risentirci", 
+                      "ci vediamo", "buona giornata", "ci sentiamo in giro"]
 
-    Methods
-    - get_text(self): return a string read from the terminal
-    - set_text(self, text): prints the text on the terminal
-    '''
-    def __init__(self) -> None:
-        self.changed = False
-        self.AIN = False
-        self.Name = String()
-        self.Name.data = None
+    def __init__(self, id_service, dialogue_service) -> None:
+        self.id_service = id_service
+        self.dialogue_service = dialogue_service
 
-    def callback(self, data):
-        self.txt:str = data.text.data
-        self.data = data.audio
-        if self.AIN == False:
-            if self.Name.data is None:
-                try:
-                    vuoto = String()
-                    vuoto.data = " "
-                    id_answer = id_service(self.data, vuoto)
-                    if id_answer.answer.data == "":
-                        print("Come ti chiami?")
-                        pub.publish("Come ti chiami?")
-                        self.AIN = True
-                    else:
-                        self.Name.data = id_answer.answer.data
-                        phrase = "io sono "+ self.Name.data
-                        bot_answer = dialogue_service(phrase)
-                        print("bot answer: %s"%bot_answer.answer)
-                        pub.publish(bot_answer.answer)
+        self.text2speech = rospy.Publisher("bot_answer", String, queue_size=10)
 
-                except rospy.ServiceException as e:
-                    print("Service call failed: %s"%e)
-            else:
-                try:
-                    id_answer = id_service(self.data, self.Name)
-                    bot_answer = dialogue_service(self.txt)
-                    pub.publish(bot_answer.answer)
-                    print("bot answer: %s"%bot_answer.answer)
-                except rospy.ServiceException as e:
-                    print("Service call failed: %s"%e)
-            if self.txt.lower() in intent_goodbye:
-                self.Name.data = None
+        self.waiting_name = False
+        self.name = String(data=None)
+        self.save_to_file()
+
+    def request_recognition(self, audio) -> None:
+        """Sends an empty string to the id_service to request a recognition"""
+        return self.id_service(audio, String(data="")).answer
+
+    def add_relationship(self, audio) -> None:
+        return self.id_service(audio, self.name)
+
+    def say(self, phrase: String) -> None:
+        self.text2speech.publish(phrase)
+
+    def save_to_file(self)-> None:
+        if self.name.data is not None:
+            with open("./name.txt", "w") as f:
+                f.write(self.name.data)
         else:
-            self.AIN = False
-            list = self.txt.split(" ")
-            real_name = list[len(list)-1]
-            phrase = "io sono "+ real_name
-            self.Name.data = real_name
-            pub1.publish(real_name)
-            id_service(self.data, self.Name)
-            bot_answer = dialogue_service(phrase)
-            print("bot answer: %s"%bot_answer.answer)
-            pub.publish(bot_answer.answer)
-        if self.Name.data is not None:
-            with open("name.txt","w") as f:
-                f.write(self.Name.data)
-        else:
-            with open("name.txt","w") as f:
+            with open("./name.txt", "w") as f:
                 f.write("default")
 
-    #    self.changed = True
-#
-    #def has_changed(self):
-    #    return self.changed
-#
-    #def get_text(self):
-    #    self.changed = False
-    #    return self.message
+    def update_rasa_todo_list(self) -> None:
+        phrase = "io sono "+ self.name.data
+        bot_answer = self.dialogue_service(phrase)
+        self.say(bot_answer)
+        self.save_to_file()
+        print("bot answer: %s"%bot_answer.answer)
+
+    def write_to_rasa(self, phrase: String) -> String:
+        return self.dialogue_service(phrase).answer
+
+    def write_to_rasa_and_answer_aloud(self, phrase: String) -> None:
+        bot_answer = self.write_to_rasa(phrase)
+        print("bot answer: %s"%bot_answer)
+        self.say(bot_answer)
+
+    def is_intent_goodbye(self, phrase: String) -> String:
+        return phrase.data.lower() in TerminalInterface.intent_goodbye
+
+    def get_name_from_phrase(self, phrase: String) -> String:
+        return String(data=phrase.data.split(" ")[-1])
+
+    def callback(self, data):
+        phrase: String = data.text
+        audio = data.audio
+
+        if not self.name.data is None:
+            # If we have already loaded a name
+            try:
+                # Add new relationship
+                self.add_relationship(audio)
+
+                # Send to rasa and answer aloud
+                self.write_to_rasa_and_answer_aloud(phrase)
+            except rospy.ServiceException as e:
+                print("Service call failed: %s"%e)
+            finally:
+                # If intent was goodbye, clear the loaded name for the next person
+                if self.is_intent_goodbye(phrase):
+                    self.name.data = None
+                return
+
+        if not self.waiting_name:
+            # If we are not waiting for the response of the user and if we haven't already loaded a name
+            try:
+                # Ask the id_service for recognition
+                id_answer: String = self.request_recognition(audio)
+
+                if id_answer.data == "":
+                    # If the id_service coudln't recognize the person
+                    print("Couldn't recognize the person")
+                    
+                    # Ask the person for their name
+                    self.text2speech.publish(String(data="Come ti chiami?"))
+                    # Next time, wait for name
+                    self.waiting_name = True
+                else:
+                    # If the id_service recognized the person
+                    self.name = id_answer
+            except rospy.ServiceException as e:
+                print("Service call failed: %s"%e)
+        else:
+            # If was waiting for name
+            self.waiting_name = False
+            # Extract the name from the phrase
+            real_name = self.get_name_from_phrase(phrase)
+            # Save said name
+            self.name = real_name
+            # Add the new relationship to the dataset
+            self.add_relationship(audio)
+
+            # Update the rasa's todo list
+            self.update_rasa_todo_list()
 
 if __name__ == '__main__':
     rospy.init_node('writing')
     rospy.wait_for_service('dialogue_server')
     rospy.wait_for_service('id_server')
     print("IN:")
+
     try:
         dialogue_service = rospy.ServiceProxy('dialogue_server', Dialogue)
         id_service = rospy.ServiceProxy('id_server', ID)
     except rospy.ServiceException as e:
         print("Service call failed: %s"%e)
-    terminal = TerminalInterface()
-    pub = rospy.Publisher("bot_answer", String, queue_size=10)
-    pub1 = rospy.Publisher("actual_user", String, queue_size=10)
-    with open("./name.txt","w") as f:
-        f.write("default")
-    rospy.Subscriber("voice_txt_data", SAT, terminal.callback)
-    intent_goodbye = ["arrivederci","addio","ci sentiamo","a risentirci","ci vediamo","buona giornata","ci sentiamo in giro"]
-    rospy.spin()
-    #txt_sub = message_filters.Subscriber("/voice_txt", String)
-    #data_sub = message_filters.Subscriber("voice_data", Int16MultiArray)
-    #ts = message_filters.TimeSynchronizer([data_sub, txt_sub], 10)
-    #ts.registerCallback(terminal.callback)
 
-    #gerry = False
-    #while not rospy.is_shutdown():
-    #    if gerry == False:
-    #        print("IN:")
-    #        gerry = True
-    #    if terminal.has_changed():
-    #        message = terminal.get_text()
-    #        if message == 'exit': 
-    #            break
-    #        try:
-    #            print("bot answer: %s"%bot_answer.answer)
-    #        except rospy.ServiceException as e:
-    #            print("Service call failed: %s"%e)
+    terminal = TerminalInterface(id_service, dialogue_service)
+
+    rospy.Subscriber("voice_txt_data", SAT, terminal.callback)
+    rospy.spin()

@@ -5,6 +5,7 @@ from actions.Task import Task
 from actions.ToDo import ToDo
 from actions.ActionsException import ExceptionNoCategories, ExceptionDateTimeBeforeNow, ExceptionDateTimeFormatInvalid
 from dateutil.parser import parse
+import re
 
 
 def get_user(tracker: Tracker) -> Any:
@@ -134,12 +135,34 @@ Casi testati in cui funziona:
 - [23:59](time)
 - [20:7](time)
 """
+def next_weekday(d, weekday):
+    days_ahead = weekday - d.weekday()
+    if days_ahead <= 0: # Target day already happened this week
+        days_ahead += 7
+    return d + datetime.timedelta(days_ahead)
+
 def convert_deadline_to_datetime(date: str, time: str) -> datetime.datetime:
-    if date == "" or date is None:
+    weekdays = ["lunedì", "martedì", "mercoledì", "giovedì", "venerdì", "sabato", "domenica"]
+    offsets = ["oggi", "domani", "dopodomani"]
+    if re.search('[a-zA-Z]', date) is not None and re.search('[0-9]', date) is None:
+        date = date.lower()
+        if any([x in date for x in weekdays]):
+            date = next_weekday(datetime.datetime.today(), weekday=[x in date for x in weekdays].index(True))
+        elif any([x in date for x in offsets]):
+            date = datetime.datetime.today() + datetime.timedelta(days=[x in date for x in offsets].index(True))
+        else:
+            raise Exception("Could not parse date")
+    elif re.search('[0-9]', date) is not None and len(re.findall(r'\d+', date)) == 1:
+        months = ["gennaio", "febbraio", "marzo", "aprile", "maggio", "giugno", "luglio", "agosto", "settembre", "ottobre", "novembre", "dicembre"]
+        date = datetime.datetime(year=datetime.date.today().year, 
+                            month=([x in date for x in months].index(True) + 1) if (re.search('[a-zA-Z]', date) is not None) else datetime.datetime.today().month, 
+                            day=int(re.findall(r'\d+', date)[0]))
+
+    if date == "" or date is None or type(date) is datetime.datetime:
         dt = parse(time)
         if dt < datetime.datetime.now():
-            return parse(time, default=datetime.datetime.now() + datetime.timedelta(days=1))
-        return dt
+            return parse(time, default=((datetime.datetime.now() + datetime.timedelta(days=1)) if type(date) is not datetime.datetime else date))
+        return dt # ?
     return parse(date + " " + time, dayfirst=True)
 
 def is_datetime_before_now(dt: datetime.datetime) -> bool:

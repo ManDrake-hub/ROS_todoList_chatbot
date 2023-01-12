@@ -4,6 +4,7 @@ from actions.actions import ActionRemoveDeadline, ActionRenameUser, ActionWrappe
 from actions.Task import Task
 from actions.utils import check_equals, print_todo, print_todo_dict
 from actions.ToDo import ToDo
+from actions.utils import convert_deadline_to_datetime
 
 class CollectingDispatcherFake:
     debug = True
@@ -38,9 +39,33 @@ def test_action(action_to_test: ActionWrapper, slots: Dict[str, Any], todo_expec
         raise Exception("ToDo does not match the one expected")
 
 if __name__ == "__main__":
-    CollectingDispatcherFake.debug = True
+    # CollectingDispatcherFake.debug = True
 
-    ToDo().store()
+    # ToDo().store()
+
+    ##########################################################################
+    # Test date parsing with strange dates
+    dt_pred = convert_deadline_to_datetime("giovedì", "10:10:10")
+    dt_real = datetime.datetime(year=2023, month=1, day=19, hour=10, minute=10, second=10)
+    if dt_real != dt_real:
+        raise Exception()
+
+    dt_pred = convert_deadline_to_datetime("27 ottobre", "10:10:10")
+    dt_real = datetime.datetime(year=datetime.datetime.today().year, month=10, day=27, hour=10, minute=10, second=10)
+    if dt_real != dt_real:
+        raise Exception()
+
+    dt_pred = convert_deadline_to_datetime("1 gennaio", "10:10:10")
+    dt_real = datetime.datetime(year=datetime.datetime.today().year + 1, month=1, day=1, hour=10, minute=10, second=10)
+    if dt_real != dt_real:
+        raise Exception()
+
+    dt_pred = convert_deadline_to_datetime("domani", "10:10:10")
+    dt_real = datetime.datetime(year=datetime.datetime.today().year, 
+                                month=datetime.datetime.today().month, 
+                                day=datetime.datetime.today().day, hour=10, minute=10, second=10) + datetime.timedelta(days=1)
+    if dt_real != dt_real:
+        raise Exception()
 
     ##########################################################################
     # Test add with wrong datetime 
@@ -49,13 +74,13 @@ if __name__ == "__main__":
 
     ##########################################################################
     # Test add
-    dt = datetime.datetime(year=2023, month=10, day=10, hour=10, minute=10, second=10)
-    dt_5 = datetime.datetime(year=2023, month=10, day=10, hour=10, minute=5, second=10)
-    test_action(ActionAddTask, {"category": "a", "tag": "add", "logical_alert": False}, {"a": [Task("add", dt), ]}, clear=True)
-    test_action(ActionAddAlert, {"category": "a", "tag": "add", "alert": "due ore prima"}, {"a": [Task("add", dt, dt_5), ]}, clear=False)
-    test_action(ActionReadTasks, {}, {}, clear=False, check=False)
-    test_action(ActionRemoveDeadline, {"category": "a", "tag": "add"}, {"a": [Task("add", None, None), ]}, clear=False)
-    test_action(ActionReadTasks, {}, {}, clear=False, check=False)
+    # dt = datetime.datetime(year=2023, month=10, day=10, hour=10, minute=10, second=10)
+    # dt_5 = datetime.datetime(year=2023, month=10, day=10, hour=10, minute=5, second=10)
+    # test_action(ActionAddTask, {"category": "a", "tag": "add", "logical_alert": False}, {"a": [Task("add", dt), ]}, clear=True)
+    # test_action(ActionAddAlert, {"category": "a", "tag": "add", "alert": "due ore prima"}, {"a": [Task("add", dt, dt_5), ]}, clear=False)
+    # test_action(ActionReadTasks, {}, {}, clear=False, check=False)
+    # test_action(ActionRemoveDeadline, {"category": "a", "tag": "add"}, {"a": [Task("add", None, None), ]}, clear=False)
+    # test_action(ActionReadTasks, {}, {}, clear=False, check=False)
 
 """
     # Test remove

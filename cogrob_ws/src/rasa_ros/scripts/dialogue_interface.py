@@ -67,10 +67,10 @@ class TerminalInterface:
             print("bot answer: %s"%bot_answer.answer)
             pub.publish(bot_answer.answer)
         if self.Name.data is not None:
-            with open("./name.txt","w") as f:
+            with open("name.txt","w") as f:
                 f.write(self.Name.data)
         else:
-            with open("./name.txt","w") as f:
+            with open("name.txt","w") as f:
                 f.write("default")
 
     #    self.changed = True

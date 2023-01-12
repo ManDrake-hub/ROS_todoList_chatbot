@@ -33,8 +33,8 @@ model = get_deep_speaker(os.path.join(REF_PATH,'deep_speaker.h5'))
 n_embs = 0
 
 try:
-    X = load_object("./audio.pkl")
-    Y = load_object("./name.pkl")
+    X = load_object("audio.pkl")
+    Y = load_object("name.pkl")
 except:
     X = []
     Y = []
@@ -68,8 +68,8 @@ def handle_service(req):
     else: 
         X.append(ukn[0])
         Y.append(input_text.data)
-        save_object("./audio.pkl", X)
-        save_object("./name.pkl", Y)
+        save_object("audio.pkl", X)
+        save_object("name.pkl", Y)
     return response
 
 if __name__ == '__main__':

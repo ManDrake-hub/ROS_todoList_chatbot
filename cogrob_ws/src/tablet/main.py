@@ -14,37 +14,6 @@ from utils import Session
 flag = False
 app = Flask(__name__)
 socketio = SocketIO(app)
-
-class AlertNode:
-    
-    '''
-    The costructor creates a session to Pepper and inizializes the services
-    '''
-    def __init__(self, ip, port):
-        self.ip = ip
-        self.port = port
-        self.session = Session(ip, port)
-        self.audio_proxy = self.session.get_service("ALAudioPlayer")
-    
-    def alert(self):
-        try:
-            print("try")
-            #import os
-            #print(os.path.isfile("/home/francesca/Scrivania/ROS_todoList_chatbot/cogrob_ws/src/pepper_nodes/ringtone_1_46486.wav"))
-            #print(self.audio_proxy.getInstalledSoundSetsList())
-            #self.audio_proxy.playWebStream("https://www.youtube.com/watch?v=WfhLLBKdD5w&ab_channel=Melamarcia5535",0.2,0)
-            fileID = self.audio_proxy.loadFile("/home/nao/1.wav")
-            self.audio_proxy.setVolume(fileID, 1)
-            self.audio_proxy.play(fileID)
-            #fileID = self.audio_proxy.playFile("/home/nao/1.mp3")
-        except Exception as e:
-            print(e)
-            self.session.reconnect()
-            self.audio_proxy = self.session.get_service("ALAudioPlayer")
-            fileID = self.audio_proxy.loadFile("/home/nao/1.wav")
-            self.audio_proxy.setVolume(fileID, 1)
-            self.audio_proxy.play(fileID)
-        return "ACK"
     
 
 def callback(value):
@@ -143,18 +112,10 @@ body_closure = """</body>"""
 
 def execute():
     global actual_user
-    global flag
     data = get_todo_data()
     rows = get_rows_from_data(data)
     rows_alert = get_rows_from_data(check_alerts("../../../chatbot/"))
 
-    #rows_alert = [("", )]
-#TO-DO: Vedere alert 
-    if rows_alert and not flag:
-        flag = True
-    #    node_audio.alert()
-    if not rows_alert:
-        flag = False
     table_tasks = f"""
             <table>
             <tr>
@@ -181,16 +142,10 @@ def execute():
             """ if rows_alert else ""
     return style + body + table_tasks + table_alarms + body_closure
 
-
 @app.route('/')
 def home():
     with app.app_context():
         return render_template('index.html', x=execute())
-def callback_2(value):
-    actual_alerts = check_alerts
-    if value.data == False and len(actual_alerts)>0:
-        print("CI SONOOOOOOO")
-        node_audio.alert()
 
 scheduler = BackgroundScheduler()
 running_job = scheduler.add_job(home, 'interval', seconds=4, max_instances=1)
@@ -201,7 +156,4 @@ if __name__ == '__main__':
     parser.add_option("--ip", dest="ip", default="10.0.1.207")
     parser.add_option("--port", dest="port", default=9559)
     (options, args) = parser.parse_args()
-    node_audio = AlertNode(options.ip, int(options.port))
-    rospy.init_node("tablet")
-    rospy.Subscriber('pepper_say', Bool, callback_2)
     socketio.run(app, host='0.0.0.0')

@@ -5,6 +5,7 @@ from optparse import OptionParser
 from sensor_msgs.msg import Image
 import numpy as np
 import rospy
+import cv2
 
 
 TOP_CAMERA = 0

@@ -152,7 +152,7 @@ def execute():
 #TO-DO: Vedere alert 
     if rows_alert and not flag:
         flag = True
-        node_audio.alert()
+    #    node_audio.alert()
     if not rows_alert:
         flag = False
     table_tasks = f"""

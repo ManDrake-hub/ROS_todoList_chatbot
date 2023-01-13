@@ -109,6 +109,7 @@ class Nodo(object):
         rospy.spin()
 
 
+
 if __name__ == '__main__':
     rospy.init_node("camera_show_node", anonymous=True)
     my_node = Nodo()

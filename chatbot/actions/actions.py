@@ -1,7 +1,7 @@
 import os
 from datetime import datetime
 from datetime import timedelta
-from typing import Any, Sequence, Text, Dict, List
+from typing import Any, Sequence, Text, Dict, List, Union
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.events import AllSlotsReset, SlotSet
@@ -11,12 +11,12 @@ from actions.utils import get_user_new, get_category, get_deadline, get_tag, get
 from actions.Task import Task
 
 class ActionWrapper(Action):
-    todo = ToDo.load()
+    todo: ToDo = None
 
     def name(self) -> Text:
         return "None"
 
-class ActionSet(Action):
+class ActionSet(ActionWrapper):
     def name(self) -> Text:
         return "action_reset"
 
@@ -29,7 +29,7 @@ class ActionSet(Action):
         return [SlotSet(x["slot"], tracker.get_latest_entity_values(entity_type=x["entity"], entity_role=x["role"]) if
                                    tracker.get_latest_entity_values(entity_type=x["entity"], entity_role=x["role"]) else []) for x in entity_slot_names]
 
-class ActionReset(Action):
+class ActionReset(ActionWrapper):
     def name(self) -> Text:
         return "action_reset"
 
@@ -39,7 +39,7 @@ class ActionReset(Action):
 
         return [AllSlotsReset()]
 
-class ActionCreateUser(Action):
+class ActionCreateUser(ActionWrapper):
     def name(self) -> Text:
         return "action_create_user"
 
@@ -57,7 +57,7 @@ class ActionCreateUser(Action):
         dispatcher.utter_message(text=f"Ho creato la tua todo-list {user}")
         return []
 
-class ActionSetUser(Action):
+class ActionSetUser(ActionWrapper):
     def name(self) -> Text:
         return "action_set_user"
 
@@ -75,7 +75,7 @@ class ActionSetUser(Action):
         dispatcher.utter_message(text=f"Ho caricato la tua todo-list {user}")
         return []
 
-class ActionRenameUser(Action):
+class ActionRenameUser(ActionWrapper):
     def name(self) -> Text:
         return "action_rename_user"
 
@@ -100,7 +100,7 @@ class ActionRenameUser(Action):
         dispatcher.utter_message(text=f"{user_new} ho modificato e caricato la tua todo-list")
         return []
 
-class ActionGetUser(Action):
+class ActionGetUser(ActionWrapper):
     def name(self) -> Text:
         return "action_get_user"
 
@@ -111,7 +111,7 @@ class ActionGetUser(Action):
         dispatcher.utter_message(text=f"L'utente attuale è {ToDo.get_loaded_user()}")
         return []
 
-class ActionRemoveUser(Action):
+class ActionRemoveUser(ActionWrapper):
     def name(self) -> Text:
         return "action_remove_user"
 
@@ -146,7 +146,7 @@ class ActionAddTask(ActionWrapper):
         category = get_category(tracker)
         logical_alert = get_logical_alert(tracker)
 
-        try:            
+        try:
             deadline = get_deadline(tracker)
             
             ActionWrapper.todo.add_task(category, tag, deadline)

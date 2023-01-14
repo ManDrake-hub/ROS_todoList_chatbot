@@ -39,9 +39,18 @@ def test_action(action_to_test: ActionWrapper, slots: Dict[str, Any], todo_expec
         raise Exception("ToDo does not match the one expected")
 
 if __name__ == "__main__":
-    # CollectingDispatcherFake.debug = True
+    CollectingDispatcherFake.debug = True
 
-    # ToDo().store()
+    ToDo.create_user("test")
+
+    todo = ToDo.load("test")
+
+    todo.add_task("test", "insert", datetime.datetime(year=2024, month=10, day=10, hour=10, minute=10, second=10))
+    todo.add_task("test", "insert2", datetime.datetime(year=2024, month=10, day=10, hour=10, minute=10, second=10))
+    todo.add_task("test2", "insert", datetime.datetime(year=2024, month=10, day=10, hour=10, minute=10, second=10))
+    print(todo.get_tasks(), todo.get_tasks()["test"][0])
+
+    todo.store("test")
 
     ##########################################################################
     # Test date parsing with strange dates

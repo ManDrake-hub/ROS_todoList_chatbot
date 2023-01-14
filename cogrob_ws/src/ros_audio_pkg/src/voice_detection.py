@@ -8,55 +8,50 @@ import speech_recognition as sr
 
 
 class Microphone:
-    def __init__(self):
+    def __init__(self, r: sr.Recognizer, m: sr.Microphone, output_topic="mic_data", disable_topic="pepper_say"):
+        """
+        Initializes the microphone and starts listening on a background thread.
+        The audio data will be published on the output_topic.
+
+        The background thread can be stopped/started by sending a boolean to the topic disable_topic.
+        """
+        self.pub = rospy.Publisher(output_topic, Int16MultiArray, queue_size=10)
         self.stop_listening = r.listen_in_background(m, self.callback)
-    # this is called from the background thread
-    def callback(self, recognizer, audio):
+        rospy.Subscriber(disable_topic, Bool, mic.callback_audio_disable)
+
+    def callback_audio_publish(self, recognizer, audio):
+        """Get the raw data from the audio stream and publishes it on "mic_data" """
         data = np.frombuffer(audio.get_raw_data(), dtype=np.int16)
         data_to_send = Int16MultiArray()
         data_to_send.data = data
-        pub.publish(data_to_send)
+        self.pub.publish(data_to_send)
 
-    def callback_2(self, value):
-        print("value")
-        print(value.data)
-        if value.data == False:
+    def callback_audio_disable(self, value):
+        """Get the bool from the topic and if True, stop listening in the background"""
+        if not value.data:
             self.stop_listening = r.listen_in_background(m, self.callback)
         else:
             self.stop_listening()
-    
-def callback(recognizer, audio):
-        data = np.frombuffer(audio.get_raw_data(), dtype=np.int16)
-        data_to_send = Int16MultiArray()
-        data_to_send.data = data
-        pub.publish(data_to_send)
+
+
 if __name__ == "__main__":
-    pub = rospy.Publisher('mic_data', Int16MultiArray, queue_size=10)
     rospy.init_node('voice_detection_node', anonymous=True)
+
     # Initialize a Recognizer
     r = sr.Recognizer()
 
-    #import sounddevice as sd
-    #sd.query_devices()
-
-    # Audio source
+    # Init Audio source
     m = sr.Microphone(device_index=None,
                         sample_rate=16000,
                         chunk_size=1024)
 
-    # Calibration within the environment
-    # we only need to calibrate once, before we start listening
+    # Calibration levels to adjust for the environment
     print("Calibrating...")
     with m as source:
-        r.adjust_for_ambient_noise(source,duration=3)  
+        r.adjust_for_ambient_noise(source, duration=3)  
     print("Calibration finished")
 
-    # start listening in the background
-    # `stop_listening` is now a function that, when called, stops background listening
+    # Start listening in the background
     print("Recording...")
-    mic = Microphone()
-    #stop_listening = r.listen_in_background(m, callback)
-    rospy.Subscriber('pepper_say', Bool, mic.callback_2)
-
-
+    mic = Microphone(r, m, input_topic="mic_data", disable_topic="pepper_say")
     rospy.spin()

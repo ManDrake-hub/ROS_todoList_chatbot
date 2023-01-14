@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+from rasa_ros.srv import Face_image, Face_imageResponse
 from cv_bridge import CvBridge
 from utils import Session
 from optparse import OptionParser
@@ -24,6 +25,25 @@ MODE_RGB = 0
 MODE_DEPTH = 1
 MODE_RGBD = 2
 
+class Node:
+    def __init__(self):
+        self.bridge = CvBridge()
+        self.fps = 30
+    
+        
+    
+    def handle_service(self,req):
+        msg = Image()
+        rate = rospy.Rate(self.fps)
+        cap = cv2.VideoCapture(0)
+        print("ho aperto e preso l'immagine")
+        # Capture frame-by-frame
+        ret, frame = cap.read()
+        if frame is not None:
+            msg = self.bridge.cv2_to_imgmsg(frame)
+            msg.header.stamp = rospy.Time.now()
+        rate.sleep()
+        return msg
 '''
 This class configures a ROS node able to read the video stream from the robot's camera
 '''
@@ -33,7 +53,7 @@ class ImageInputNode:
     The costructor creates a session to Pepper and inizializes the services. Then opens a video stream with the Pepper camera.
     The video stream is then published on a specific topic. Camera parameters can be configured using the above variables
     '''
-    def __init__(self, ip, port, resolution=RES_480P, rgb_camera=TOP_CAMERA, fps=20):
+    def __init__(self, ip, port, resolution=RES_480P, rgb_camera=TOP_CAMERA, fps=30):
         self.session = Session(ip, port)
         self.fps = fps
 
@@ -51,7 +71,6 @@ class ImageInputNode:
         self.rgb_sub = self.camera.subscribeCamera("RGB Stream", rgb_camera, resolution, COLORSPACE_RGB, self.fps) #https://bit.ly/3BEFZIr
         if not self.rgb_sub:
             raise Exception("Camera is not initialized properly")
-        self.image_publisher = rospy.Publisher('in_rgb', Image, queue_size=1)
         self.bridge = CvBridge()
     
     '''
@@ -82,16 +101,14 @@ class ImageInputNode:
     '''
     Starts the node and opens the video stream
     '''
-    def start(self):
-        rospy.init_node("image_input_node")
+    def handle_service(self, req):
         rate = rospy.Rate(self.fps)
-        while not rospy.is_shutdown():
-            frame = self.get_color_frame()
-            if frame is not None:
-                msg = self.bridge.cv2_to_imgmsg(frame)
-                msg.header.stamp = rospy.Time.now()
-                self.image_publisher.publish(msg)
-            rate.sleep()
+        frame = self.get_color_frame()
+        if frame is not None:
+            msg = self.bridge.cv2_to_imgmsg(frame)
+            msg.header.stamp = rospy.Time.now()
+        rate.sleep()
+        return msg
 
 if __name__ == "__main__":
     parser = OptionParser()
@@ -99,7 +116,15 @@ if __name__ == "__main__":
     parser.add_option("--port", dest="port", default=9559)
     (options, args) = parser.parse_args()
     try:
-        image_input = ImageInputNode(options.ip, int(options.port))
-        image_input.start()
+        rospy.init_node("image_input_node")
+        image_input = Node()
+        s = rospy.Service('image_server',
+                        Face_image, image_input.handle_service)
+        rospy.logdebug('Face server READY.')
+        rospy.spin()
+        #image_input = ImageInputNode(options.ip, int(options.port))
+        #image_input.start()
     except rospy.ROSInterruptException:
         pass
+
+    

@@ -27,7 +27,7 @@ class TerminalInterface:
         self.text2speech = rospy.Publisher("bot_answer", String, queue_size=10)
 
         self.waiting_name = False
-        self.name = String(data=None)
+        self.name = String(data="")
         self.save_to_file()
 
     def request_recognition(self, audio) -> None:
@@ -41,7 +41,7 @@ class TerminalInterface:
         self.text2speech.publish(phrase)
 
     def save_to_file(self)-> None:
-        if self.name.data is not None:
+        if self.name.data != "":
             with open("./name.txt", "w") as f:
                 f.write(self.name.data)
         else:
@@ -51,17 +51,18 @@ class TerminalInterface:
     def update_rasa_todo_list(self) -> None:
         phrase = "io sono "+ self.name.data
         bot_answer = self.dialogue_service(phrase)
-        self.say(bot_answer)
+        self.say(bot_answer.answer)
         self.save_to_file()
         print("bot answer: %s"%bot_answer.answer)
 
-    def write_to_rasa(self, phrase: String) -> String:
-        return self.dialogue_service(phrase).answer
+    #def write_to_rasa(self, phrase: String) -> String:
+    #    return self.dialogue_service(phrase)
 
     def write_to_rasa_and_answer_aloud(self, phrase: String) -> None:
-        bot_answer = self.write_to_rasa(phrase)
-        print("bot answer: %s"%bot_answer)
-        self.say(bot_answer)
+        bot_answer = self.dialogue_service(phrase.data)
+        self.say(bot_answer.answer)
+        print("bot answer: %s"%bot_answer.answer)
+        
 
     def is_intent_goodbye(self, phrase: String) -> String:
         return phrase.data.lower() in TerminalInterface.intent_goodbye
@@ -73,7 +74,7 @@ class TerminalInterface:
         phrase: String = data.text
         audio = data.audio
 
-        if not self.name.data is None:
+        if self.name.data != "":
             # If we have already loaded a name
             try:
                 # Add new relationship
@@ -86,7 +87,7 @@ class TerminalInterface:
             finally:
                 # If intent was goodbye, clear the loaded name for the next person
                 if self.is_intent_goodbye(phrase):
-                    self.name.data = None
+                    self.name.data = ""
                 return
 
         if not self.waiting_name:
@@ -101,11 +102,14 @@ class TerminalInterface:
                     
                     # Ask the person for their name
                     self.text2speech.publish(String(data="Come ti chiami?"))
+                    print("Come ti chiami?")
                     # Next time, wait for name
                     self.waiting_name = True
                 else:
                     # If the id_service recognized the person
                     self.name = id_answer
+                    self.write_to_rasa_and_answer_aloud(phrase)
+                    self.update_rasa_todo_list()
             except rospy.ServiceException as e:
                 print("Service call failed: %s"%e)
         else:

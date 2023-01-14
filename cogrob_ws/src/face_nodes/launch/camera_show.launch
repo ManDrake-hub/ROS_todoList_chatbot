@@ -1,3 +1,0 @@
-<launch>
-  <node pkg="face_nodes" type="camera_show_node.py" name="camera_show_node" output="screen" />
-</launch>

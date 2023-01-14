@@ -34,7 +34,7 @@ class InteractionManager:
         self.text2speech = rospy.Publisher(output_topic, String, queue_size=10)
 
         self.waiting_name = False
-        self.name = String(data=None)
+        self.name = String(data="")
         self.save_to_file()
 
     def request_recognition(self, audio: Any) -> None:
@@ -54,7 +54,7 @@ class InteractionManager:
 
     def save_to_file(self)-> None:
         """Write the loaded name to a file name.txt"""
-        if self.name.data is not None:
+        if self.name.data != "":
             with open("./name.txt", "w") as f:
                 f.write(self.name.data)
         else:
@@ -65,7 +65,7 @@ class InteractionManager:
         """Write to rasa to change selected todo list"""
         phrase = "io sono "+ self.name.data
         bot_answer = self.dialogue_service(phrase)
-        self.say(bot_answer)
+        self.say(bot_answer.answer)
         self.save_to_file()
         print("bot answer: %s"%bot_answer.answer)
 
@@ -91,7 +91,7 @@ class InteractionManager:
         phrase: String = data.text
         audio = data.audio
 
-        if not self.name.data is None:
+        if self.name.data != "":
             # If we have already loaded a name
             try:
                 # Add new relationship
@@ -104,7 +104,7 @@ class InteractionManager:
             finally:
                 # If intent was goodbye, clear the loaded name for the next person
                 if self.is_intent_goodbye(phrase):
-                    self.name.data = None
+                    self.name.data = ""
                 return
 
         if not self.waiting_name:
@@ -119,11 +119,14 @@ class InteractionManager:
                     
                     # Ask the person for their name
                     self.text2speech.publish(String(data="Come ti chiami?"))
+                    print("Come ti chiami?")
                     # Next time, wait for name
                     self.waiting_name = True
                 else:
                     # If the id_service recognized the person
                     self.name = id_answer
+                    self.write_to_rasa_and_answer_aloud(phrase)
+                    self.update_rasa_todo_list()
             except rospy.ServiceException as e:
                 print("Service call failed: %s"%e)
         else:

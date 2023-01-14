@@ -13,6 +13,7 @@ find_package(catkin REQUIRED COMPONENTS
   rospy
   roscpp
   std_msgs
+  sensor_msgs
 )
 
 ## System dependencies are found with CMake's conventions
@@ -59,6 +60,7 @@ find_package(catkin REQUIRED COMPONENTS
    FILES
    Dialogue.srv
    ID.srv
+   Face_image.srv
  )
 
 ## Generate actions in the 'action' folder
@@ -72,6 +74,7 @@ find_package(catkin REQUIRED COMPONENTS
 generate_messages(
   DEPENDENCIES
    std_msgs
+   sensor_msgs
 )
 
 ################################################

@@ -122,6 +122,7 @@ if __name__ == "__main__":
                         Face_image, image_input.handle_service)
         rospy.logdebug('Face server READY.')
         rospy.spin()
+        #TO DO: TEST VIDEO PEPPER
         #image_input = ImageInputNode(options.ip, int(options.port))
         #image_input.start()
     except rospy.ROSInterruptException:

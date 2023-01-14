@@ -60,7 +60,6 @@ find_package(catkin REQUIRED COMPONENTS
    FILES
    Dialogue.srv
    ID.srv
-   Face.srv
    Face_image.srv
  )
 

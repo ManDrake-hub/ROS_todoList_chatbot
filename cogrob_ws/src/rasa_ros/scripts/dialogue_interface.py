@@ -50,6 +50,7 @@ class InteractionManager:
 
     def say(self, phrase: String) -> None:
         """Use text 2 speech service to say a phrase aloud"""
+        print(f"{phrase.data}")
         self.text2speech.publish(phrase)
 
     def save_to_file(self)-> None:
@@ -76,7 +77,6 @@ class InteractionManager:
     def write_to_rasa_and_answer_aloud(self, phrase: String) -> None:
         """Write to rasa and say aloud its answer"""
         bot_answer = self.write_to_rasa(phrase.data)
-        print(f"Bot: {str(bot_answer.answer.data)}")
         self.say(bot_answer)
 
     def is_intent_goodbye(self, phrase: String) -> String:

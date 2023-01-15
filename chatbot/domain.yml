@@ -1,13 +1,16 @@
 version: '2.0'
-
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
 intents:
-- greet
 - goodbye
-- affirm
+- identification
+- greet
 - deny
-- inform
-- activate_alert
 - insert
+- inform
+- affirm
+- activate_alert
 - insert_deadline
 - remove
 - deactivate_alert
@@ -20,23 +23,20 @@ intents:
 - modify_alert
 - modify_deadline
 - modify_user
-- identification
 - bot_challenge
-
 entities:
 - alert
+- category
+- category_new
 - date
+- logical_alert
+- logical_category
+- logical_deadline
+- tag
+- tag_new
 - time
 - user
 - user_new
-- tag
-- tag_new
-- category
-- category_new
-- logical_deadline
-- logical_alert
-- logical_category
-
 slots:
   tag:
     type: text
@@ -74,72 +74,6 @@ slots:
   logical_category:
     type: bool
     influence_conversation: false
-
-forms:
-  id_task_form:
-    required_slots:
-      tag:
-      - type: from_entity
-        entity: tag
-      category:
-      - type: from_entity
-        entity: category
-  request_deadline:
-    required_slots:
-      logical_deadline:
-      - type: from_intent
-        intent: deny
-        value: False
-  deadline_form:
-    required_slots:
-      date:
-      - type: from_entity
-        entity: date
-      time:
-      - type: from_entity
-        entity: time
-  request_alert:
-    required_slots:
-      logical_alert:
-      - type: from_intent
-        intent: deny
-        value: False
-      - type: from_intent
-        intent: affirm
-        value: True
-  user_form:
-    required_slots:
-      user:
-      - type: from_entity
-        entity: user
-  alert_form:
-    required_slots:
-      alert:
-      - type: from_entity
-        entity: alert
-  modify_user_form:
-    required_slots:
-      user_new:
-      - type: from_entity
-        entity: user_new
-  modify_tag_form:
-    required_slots:
-      tag_new:
-      - type: from_entity
-        entity: tag_new
-  request_category:
-    required_slots:
-      logical_category:
-      - type: from_intent
-        intent: deny
-        value: False
-  modify_category_form:
-    required_slots:
-      category_new:
-      - type: from_entity
-        entity: category_new
-  
-
 responses:
   utter_greet:
   - text: Hey
@@ -186,39 +120,96 @@ responses:
   utter_ask_logical_category:
   - text: Vuoi modificare la categoria?
   utter_default:
-  - text: Scusami non ho capito. Puoi ripetere?  
+  - text: Scusami non ho capito. Puoi ripetere?
   utter_please_rephrase:
-  - text: Scusami non ho capito. Puoi ripetere? 
+  - text: Scusami non ho capito. Puoi ripetere?
   utter_iamabot:
   - text: Ciao, io sono Pepper, e ho il compito di gestire la tua ToDo List.
   - text: Sono un bot, realizzato da un team di sviluppatori del DIEM
   - text: Sono super Pepper, un robot interplanetario e oggi sono su questo pianeta per occuparmi della tua ToDo List
-  
 actions:
-- action_set_user
 - action_add_alert
 - action_add_task
 - action_create_user
+- action_modify_alert
+- action_modify_deadline
+- action_modify_task_name
+- action_move_task
 - action_read_tasks
 - action_remove_alert
 - action_remove_category
+- action_remove_deadline
 - action_remove_task
 - action_remove_user
-- action_remove_deadline
 - action_rename_user
-- action_modify_alert
-- action_modify_task_name
-- action_modify_deadline
-- action_move_task
 - action_reset
+- action_set_user
+- utter_default
 - utter_goodbye
 - utter_greet
 - utter_iamabot
-- utter_default
-- utter_please_rephrase
 - utter_op_modify_category_request
-
-session_config:
-  session_expiration_time: 60
-  carry_over_slots_to_new_session: true
-
+- utter_please_rephrase
+forms:
+  id_task_form:
+    required_slots:
+      tag:
+      - type: from_entity
+        entity: tag
+      category:
+      - type: from_entity
+        entity: category
+  request_deadline:
+    required_slots:
+      logical_deadline:
+      - type: from_intent
+        intent: deny
+        value: false
+  deadline_form:
+    required_slots:
+      date:
+      - type: from_entity
+        entity: date
+      time:
+      - type: from_entity
+        entity: time
+  request_alert:
+    required_slots:
+      logical_alert:
+      - type: from_intent
+        intent: deny
+        value: false
+      - type: from_intent
+        intent: affirm
+        value: true
+  user_form:
+    required_slots:
+      user:
+      - type: from_entity
+        entity: user
+  alert_form:
+    required_slots:
+      alert:
+      - type: from_entity
+        entity: alert
+  modify_user_form:
+    required_slots:
+      user_new:
+      - type: from_entity
+        entity: user_new
+  modify_tag_form:
+    required_slots:
+      tag_new:
+      - type: from_entity
+        entity: tag_new
+  request_category:
+    required_slots:
+      logical_category:
+      - type: from_intent
+        intent: deny
+        value: false
+  modify_category_form:
+    required_slots:
+      category_new:
+      - type: from_entity
+        entity: category_new

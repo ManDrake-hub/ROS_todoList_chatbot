@@ -10,6 +10,7 @@ def handle_wrapper(audio_recognizer: AudioRecognizer, face_recognizer: FaceRecog
         audio = req.audio
         input_text = req.input_text
         response = IDResponse()
+        response.answer.data = ""
         
         if input_text.data == "":
             id_label = audio_recognizer.recognize(audio.data)

@@ -456,7 +456,6 @@ class ActionRemoveAlert(ActionWrapper):
         dispatcher.utter_message(text=f"Il task \"{tag}\" non verrà più notificato")
         return []
 
-# TODO: We have to remove this method cause, at the moment, the contest specifies that the chatbot cannot implement this function
 class ActionModifyAlert(ActionWrapper):
     """Add an alert to a task and notify it to the user"""
     def name(self) -> Text:

@@ -75,7 +75,6 @@ class FaceRecognizer:
         # Load dataset
         self.x = load_object("./face.pkl") if os.path.exists("./face.pkl") else []
         self.y = load_object("./face_name.pkl") if os.path.exists("./face_name.pkl") else []
-        print(f"Loaded {len(self.x)} samples")
         # Connect to image service proxy
         self.image_service = rospy.ServiceProxy('image_server', Face_image)
 
@@ -100,31 +99,30 @@ class FaceRecognizer:
 
         # Find all the faces and face encodings in the current frame of video
         face_locations = face_recognition.face_locations(rgb_small_frame)
-        print("face locations", face_locations)
         return face_recognition.face_encodings(rgb_small_frame, face_locations)
 
     def recognize(self) -> str:
-        name = ""
         if len(self.x) == 0:
-            return name
+            return ""
 
-        # TODO: sistema sto schifo
+        # Capture an image
         image = self.get_image()
+        # Get list of face embeddings in image
         face_encoding = self.get_embeddings(image)
+        # If no face embeddings have been found, return ""
         if len(face_encoding) == 0:
-            return name
+            return ""
+        # Get the first face embedding found
         face_encoding = face_encoding[0]
         
         # See if the face is a match for the known face(s)
         matches = face_recognition.compare_faces(self.x, face_encoding)
-        print("matches", matches)
 
         # Use the known face with the smallest distance to the new face
         face_distances = face_recognition.face_distance(self.x, face_encoding)
-        print("face distances", face_distances)
         best_match_index = np.argmin(face_distances)
         if matches[best_match_index]:
             name = self.y[best_match_index]
         if name is None:
-            name = ""
+            return ""
         return name

@@ -14,10 +14,12 @@ def handle_wrapper(audio_recognizer: AudioRecognizer, face_recognizer: FaceRecog
         response.answer.data = ""
 
         if input_text.data == "":
+            print("Using audio recognition")
             id_label = audio_recognizer.recognize(audio.data)
-
             if id_label == "":
+                print("Using face recognizion fallback")
                 id_label = face_recognizer.recognize()
+            print(f"Persona riconosciuta: {id_label}")
             response.answer.data = id_label
         else:
             audio_recognizer.add_sample(audio_recognizer.get_embeddings(audio.data)[0], input_text.data)

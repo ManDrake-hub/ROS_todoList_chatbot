@@ -117,7 +117,6 @@ class InteractionManager:
                 if id_answer.data == "":
                     # If the id_service coudln't recognize the person                    
                     # Ask the person for their name
-                    print("Come ti chiami di sicurezza")
                     self.say(String(data="Come ti chiami?"))
                     # Next time, wait for name
                     self.waiting_name = True

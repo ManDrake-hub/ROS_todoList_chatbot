@@ -19,7 +19,9 @@ def handle_wrapper(audio_recognizer: AudioRecognizer, face_recognizer: FaceRecog
             response.answer.data = id_label
         else:
             audio_recognizer.add_sample(audio_recognizer.get_embeddings(audio.data)[0], input_text.data)
-            face_recognizer.add_sample(face_recognizer.get_embeddings(face_recognizer.get_image())[0], input_text.data)
+            face_embeddings = face_recognizer.get_embeddings(face_recognizer.get_image())
+            if len(face_embeddings) > 0:
+                face_recognizer.add_sample(face_recognizer.get_embeddings(face_recognizer.get_image())[0], input_text.data)
         return response
     return handle_service
 

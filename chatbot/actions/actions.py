@@ -156,7 +156,7 @@ class ActionAddTask(ActionWrapper):
             dispatcher.utter_message(text=str(e))
             return []
 
-        dispatcher.utter_message(text=f'Aggiunta la {ActionWrapper.todo.get_task(category=category, tag=tag)}')
+        dispatcher.utter_message(text=f'Aggiunta la {ActionWrapper.todo.get_task(category=category, tag=tag)} nella categoria "{category}"')
         return []
 
 class ActionRemoveTask(ActionWrapper):

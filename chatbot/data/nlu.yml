@@ -15,6 +15,7 @@ nlu:
     - salute
 - intent: goodbye
   examples: |
+    - alla prossima
     - arrivederci
     - ci sentiamo
     - buona giornata
@@ -40,7 +41,6 @@ nlu:
     - attività [Insegnamento](tag)
     - attività [Rana](tag)
     - attività [Ambulanza](tag)
-    - attività [Insegnamento](tag)
     - nuovo titolo [Pronipote](tag_new)
     - nuovo titolo [Telefono fisso](tag_new)
     - nuovo titolo [Jet Ski](tag_new)
@@ -73,7 +73,6 @@ nlu:
     - [4 dicembre 1989](date)
     - categoria [Maggio](category)
     - categoria [Esami fuoricorso](category)
-    - categoria [Maggio](category)
     - categoria [Machine Learning](category)
     - categoria [Stipendi](category)
     - categoria [Famiglia](category)
@@ -99,8 +98,7 @@ nlu:
     - nuovo nome [Alessio](user_new)
     - nuovo nome [Fabio](user_new)
     - nuovo nome [Emanuele](user_new)
-
-#Identification
+    - categoria [parete](category)
 - intent: identification
   examples: |
     - sono io
@@ -130,11 +128,10 @@ nlu:
     - aggiungi l'utente [Rosario](user)
     - aggiungi l'utente [Ciro](user)
     - aggiungi l'utente [Vincenzo](user)
-
-#Insert
+    - io sono [Gerri](user)
 - intent: insert
   examples: |
-    - inserisci un'attività 
+    - inserisci un'attività
     - vorrei aggiungere un'attività
     - aggiungi un'attività
     - inserisci l'attività [Koala](tag)
@@ -159,6 +156,7 @@ nlu:
     - aggiungi l'attività [Alunno](tag) nella categoria [Banco](category)
     - vorrei aggiungere l'attività [Bisnonna](tag) in [Febbraio](category)
     - vorrei aggiungere l'attività [Sport](tag) nella categoria [Cartolibreria](category)
+    - aggiungi l'attività [Televisione](tag)
 - intent: insert_deadline
   examples: |
     - inserisci una deadline
@@ -219,11 +217,9 @@ nlu:
     - attiva l'avviso all'attività [Aereo](tag) in [Dicembre](category)
     - inserisci un avviso all'attività [Calcio](tag) nella categoria [Sport](category)
     - aggiungi un avviso all'attività [Tennis](tag) nella categoria [Mobili](category)
-    
-#Remove 
 - intent: remove
   examples: |
-    - rimuovi un'attività 
+    - rimuovi un'attività
     - cancella un'attività
     - elimina un'attività
     - vorrei cancellare un'attività
@@ -293,11 +289,9 @@ nlu:
     - rimuovi l'utente [Carmelo](user)
     - rimuovi l'utente [Nicholas](user)
     - cancella l'utente [Gabriele](user)
-    - cancella l'utente [Gianluca](user)
     - elimina l'utente [Fabrizio](user)
     - elimina l'utente [Alfonso](user)
     - rimuovi l'utente [Umberto](user)
-    - rimuovi l'utente [Carmelo](user)
     - cancella l'utente [Vittorio](user)
     - cancella l'utente [Diego](user)
     - elimina l'utente [Massimiliano](user)
@@ -305,7 +299,6 @@ nlu:
     - rimuovi l'utente [Nicolo](user)
     - rimuovi l'utente [Mauro](user)
     - cancella l'utente [Salvatore](user)
-    - cancella l'utente [Marcello](user)
     - elimina l'utente [Omar](user)
     - elimina l'utente [Samuel](user)
 - intent: deactivate_alert
@@ -364,8 +357,6 @@ nlu:
     - cancella la deadline [20/10/2066](date) alle [9:25](time) in [Esami primo anno](category) per l'attività [Mela](tag)
     - in [Scuola di musica](category) per l'attività [Cereali](tag) elimina la deadline [27/7/2074](date) alle [15:17](time)
     - in [Musica](category) per l'attività [Chitarra](tag) cancella la deadline [22/09/2030](date) alle [14:29](time)
-
-#View
 - intent: view
   examples: |
     - visualizza
@@ -376,13 +367,8 @@ nlu:
     - fammi vedere le attività
     - visualizza le attività
     - mostrami le attività
-    - voglio visualizzare le attività 
-    - mostrami le attività
-    - fammi vedere le attività
+    - voglio visualizzare le attività
     - vorrei visualizzare le attività
-    - voglio vedere le attività
-
-#Modify
 - intent: modify_task
   examples: |
     - voglio modificare un'attività
@@ -408,7 +394,7 @@ nlu:
     - muovi un'attività
     - voglio muovere un'attività
     - voglio spostare un'attività
-    - sposta un'attività in un'altra categoria 
+    - sposta un'attività in un'altra categoria
     - voglio muovere l'attività [Istituto superiore](tag) in [Maggio](category) nella nuova categoria [Esame di latino](category_new)
     - voglio spostare l'attività [Mango](tag) in [Progetto](category)
     - voglio muovere l'attività [Balena](tag) in [Giugno](category)
@@ -440,7 +426,7 @@ nlu:
     - aggiorna la scadenza dell'attività [Automobile](tag) in [category] alle [9:11](time)
     - modifica la scadenza dell'attività [Aereo](tag) in [category] alle [16:23](time)
     - cambia la scadenza dell'attività [Zucchine](tag) in [category] il [8/3/2029](date)
-    - cambia la scadenza dell'attività [Telefono fisso](tag) in [category] il [8/3/2029](date) 
+    - cambia la scadenza dell'attività [Telefono fisso](tag) in [category] il [8/3/2029](date)
     - cambia la deadline dell'attività [Avena](tag) al [19-12-2063](date) alle [21:39](time)
     - cambia la deadline dell'attività [Balcone](tag) al [12-2-2040](date) alle [17:3](time)
     - vorrei aggiornare la scadenza dell'attività [Tavola](tag) in [Famiglia](category) al giorno [4-4-2027](date) alle ore [1:49](time)
@@ -474,8 +460,6 @@ nlu:
     - cambia il nome utente [Daniel](user) con il nome utente [Pierpaolo](user_new)
     - cambia il nome di [Marco](user) in [Sara](user_new)
     - voglio modificare un'utente
-
-
 - intent: bot_challenge
   examples: |
     - Chi sei?
@@ -483,4 +467,3 @@ nlu:
     - Sei un umano?
     - Sto parlando con un bot?
     - Sto parlando con un umano?
-

@@ -50,7 +50,7 @@ class InteractionManager:
 
     def say(self, phrase: String) -> None:
         """Use text 2 speech service to say a phrase aloud"""
-        print(f"{phrase.data}")
+        print("bot answer: %s"%phrase)
         self.text2speech.publish(phrase)
 
     def save_to_file(self)-> None:

@@ -9,6 +9,7 @@ from rasa_ros.msg import SAT
 from std_msgs.msg import String, Int16MultiArray
 import message_filters
 import os
+from typing import Any
 
 """
 Idea: Andiamo ad inserire il face recog nell'id server:
@@ -16,31 +17,43 @@ Idea: Andiamo ad inserire il face recog nell'id server:
     2) Nell'id server utilizziamo le stesse tecniche per il riconoscimento della voce, ma sulla faccia
 """
 
-class TerminalInterface:
+class InteractionManager:
     intent_goodbye = ["arrivederci", "addio", "ci sentiamo", "a risentirci", 
                       "ci vediamo", "buona giornata", "ci sentiamo in giro"]
 
-    def __init__(self, id_service, dialogue_service) -> None:
-        self.id_service = id_service
-        self.dialogue_service = dialogue_service
+    def __init__(self, input_topic="voice_txt_data", output_topic="bot_answer") -> None:
+        """
+        Initialize an interface between pepper and rasa
+        """
+        rospy.wait_for_service('dialogue_server')
+        self.dialogue_service = rospy.ServiceProxy('dialogue_server', Dialogue)
+        rospy.wait_for_service('id_server')
+        self.id_service = rospy.ServiceProxy('id_server', ID)
 
-        self.text2speech = rospy.Publisher("bot_answer", String, queue_size=10)
+        rospy.Subscriber(input_topic, SAT, self.callback)
+        self.text2speech = rospy.Publisher(output_topic, String, queue_size=10)
 
         self.waiting_name = False
         self.name = String(data="")
         self.save_to_file()
 
-    def request_recognition(self, audio) -> None:
+    def request_recognition(self, audio: Any) -> None:
         """Sends an empty string to the id_service to request a recognition"""
         return self.id_service(audio, String(data="")).answer
 
-    def add_relationship(self, audio) -> None:
+    def add_relationship(self, audio: Any) -> None:
+        """
+        Send the audio to the id_service with the loaded name to add the new
+        relationship to the dataset.
+        """
         return self.id_service(audio, self.name)
 
     def say(self, phrase: String) -> None:
+        """Use text 2 speech service to say a phrase aloud"""
         self.text2speech.publish(phrase)
 
     def save_to_file(self)-> None:
+        """Write the loaded name to a file name.txt"""
         if self.name.data != "":
             with open("./name.txt", "w") as f:
                 f.write(self.name.data)
@@ -49,25 +62,29 @@ class TerminalInterface:
                 f.write("default")
 
     def update_rasa_todo_list(self) -> None:
+        """Write to rasa to change selected todo list"""
         phrase = "io sono "+ self.name.data
         bot_answer = self.dialogue_service(phrase)
         self.say(bot_answer.answer)
         self.save_to_file()
         print("bot answer: %s"%bot_answer.answer)
 
-    #def write_to_rasa(self, phrase: String) -> String:
-    #    return self.dialogue_service(phrase)
+    def write_to_rasa(self, phrase: String) -> String:
+        """Write to rasa"""
+        return self.dialogue_service(phrase).answer
 
     def write_to_rasa_and_answer_aloud(self, phrase: String) -> None:
-        bot_answer = self.dialogue_service(phrase.data)
-        self.say(bot_answer.answer)
-        print("bot answer: %s"%bot_answer.answer)
-        
+        """Write to rasa and say aloud its answer"""
+        bot_answer = self.write_to_rasa(phrase)
+        print("bot answer: %s"%bot_answer)
+        self.say(bot_answer)
 
     def is_intent_goodbye(self, phrase: String) -> String:
-        return phrase.data.lower() in TerminalInterface.intent_goodbye
+        """Check if the phrase has the intent to close the conversation"""
+        return phrase.data.lower() in InteractionManager.intent_goodbye
 
     def get_name_from_phrase(self, phrase: String) -> String:
+        """Extract the name from the provided phrase"""
         return String(data=phrase.data.split(" ")[-1])
 
     def callback(self, data):
@@ -125,19 +142,11 @@ class TerminalInterface:
             # Update the rasa's todo list
             self.update_rasa_todo_list()
 
+
 if __name__ == '__main__':
     rospy.init_node('writing')
-    rospy.wait_for_service('dialogue_server')
-    rospy.wait_for_service('id_server')
+
+    terminal = InteractionManager(input_topic="voice_txt_data", output_topic="bot_answer")
+
     print("IN:")
-
-    try:
-        dialogue_service = rospy.ServiceProxy('dialogue_server', Dialogue)
-        id_service = rospy.ServiceProxy('id_server', ID)
-    except rospy.ServiceException as e:
-        print("Service call failed: %s"%e)
-
-    terminal = TerminalInterface(id_service, dialogue_service)
-
-    rospy.Subscriber("voice_txt_data", SAT, terminal.callback)
     rospy.spin()

@@ -6,7 +6,7 @@ from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.events import AllSlotsReset, SlotSet
 from actions.ToDo import ToDo
-from actions.ActionsException import ExceptionRasa, ExceptionMissingDeadline
+from actions.ActionsException import ExceptionRasa, ExceptionMissingDeadline, ExceptionMissingAlarm, ExceptionAlertExists
 from actions.utils import get_user_new, get_category, get_deadline, get_tag, get_tag_new, get_alert, get_category_new, get_user, get_logical_alert
 from actions.Task import Task
 
@@ -54,7 +54,7 @@ class ActionCreateUser(ActionWrapper):
             return []
 
         ToDo.create_user(user)
-        dispatcher.utter_message(text=f"Ho creato la tua todo-list {user}")
+        #dispatcher.utter_message(text=f"Ho creato la tua todo-list {user}")
         return []
 
 class ActionSetUser(ActionWrapper):
@@ -72,7 +72,7 @@ class ActionSetUser(ActionWrapper):
             return []
 
         ActionWrapper.todo = ToDo.load(user)
-        dispatcher.utter_message(text=f"Ho caricato la tua todo-list {user}")
+        dispatcher.utter_message(text=f"Ciao {user}, ho caricato la tua todo-list")
         return []
 
 class ActionRenameUser(ActionWrapper):
@@ -97,7 +97,7 @@ class ActionRenameUser(ActionWrapper):
         ActionWrapper.todo.store(user_new)
         ActionWrapper.todo.remove_user(user)
         ActionWrapper.todo = ToDo.load(user_new)
-        dispatcher.utter_message(text=f"{user_new} ho modificato e caricato la tua todo-list")
+        dispatcher.utter_message(text=f"Ciao {user_new}, ho modificato e caricato la tua todo-list")
         return []
 
 class ActionGetUser(ActionWrapper):
@@ -125,12 +125,10 @@ class ActionRemoveUser(ActionWrapper):
             #dispatcher.utter_message(text=f"Todo-list di {user} non esistente")
             return []
 
-        if ActionWrapper.todo.get_loaded_user() == user:
-            ActionWrapper.todo = ToDo.load()
-            dispatcher.utter_message(text=f"todo-list di default caricata")
-
         ActionWrapper.todo.remove_user(user)
         dispatcher.utter_message(text=f"todo-list di {user} cancellata")
+        if ActionWrapper.todo.get_loaded_user() == user:
+            ActionWrapper.todo = None
         return []
 
 class ActionAddTask(ActionWrapper):
@@ -156,7 +154,7 @@ class ActionAddTask(ActionWrapper):
             dispatcher.utter_message(text=str(e))
             return []
 
-        dispatcher.utter_message(text=f'Aggiunta la {ActionWrapper.todo.get_task(category=category, tag=tag)} nella categoria "{category}"')
+        dispatcher.utter_message(text=f'Aggiunta la task con tag "{tag}" nella categoria "{category}"')
         return []
 
 class ActionRemoveTask(ActionWrapper):
@@ -194,6 +192,10 @@ class ActionRemoveDeadline(ActionWrapper):
 
         try:
             t = ActionWrapper.todo.get_task(category=category, tag=tag)
+
+            if t.deadline is None:
+                raise ExceptionMissingDeadline()
+
             t.remove_deadline()
             t.remove_alarm()
 
@@ -202,7 +204,7 @@ class ActionRemoveDeadline(ActionWrapper):
             return []
 
         dispatcher.utter_message(text=f"Deadline ed allarme per {t} rimossi")
-        return []
+        return [] 
 
 class ActionRemoveCategory(ActionWrapper):
     """Remove a task from the todo-list and notify that to the user"""
@@ -260,11 +262,17 @@ class ActionReadTasks(ActionWrapper):
             dispatcher.utter_message(text=str(e))
             return []
 
+        # for category in tasks:
+        #     message = f"Per la categoria \"{category}\" sono presenti i seguenti task:"
+        #     for task in tasks[category]:
+        #         message += f"\n - {task}"
+        #     dispatcher.utter_message(text=(message+"\n"))
+        n_tasks = 0
         for category in tasks:
-            message = f"Per la categoria \"{category}\" sono presenti i seguenti task:"
             for task in tasks[category]:
-                message += f"\n - {task}"
-            dispatcher.utter_message(text=(message+"\n"))
+                n_tasks+=1
+        n_category = len(tasks)
+        dispatcher.utter_message(text=f"Hai {n_category} categorie e {n_tasks} task totali")
         return[]
 
 class ActionReadCategories(ActionWrapper):
@@ -396,7 +404,9 @@ class ActionModifyDeadline(ActionWrapper):
 
         try:
             deadline_new = get_deadline(tracker)
-            alert = deadline_new-timedelta(minutes=minutes)
+            alert = None
+            if ActionWrapper.todo.get_task(category,tag).alarm is not None:
+                alert = deadline_new-timedelta(minutes=minutes)
             ActionWrapper.todo.modify_task(category, tag, deadline_new=deadline_new, alarm_new=alert)
         except ExceptionRasa as e:
             dispatcher.utter_message(text=str(e))
@@ -405,7 +415,6 @@ class ActionModifyDeadline(ActionWrapper):
         dispatcher.utter_message(text=f"Deadline del task \"{tag}\" cambiata in \"{str(deadline_new)}\"")
         return []
 
-#TODO : check the presence od "deadline" cause the contest specifies that it should not necessarily be set.
 class ActionAddAlert(ActionWrapper):
     """Add an alert to a task and notify it to the user"""
     def name(self) -> Text:
@@ -420,19 +429,21 @@ class ActionAddAlert(ActionWrapper):
         category = get_category(tracker)
         try:
             deadline = ActionWrapper.todo.get_task(category, tag).deadline
+            alarm_old = ActionWrapper.todo.get_task(category, tag).alarm
+
+            if alarm_old is not None:
+                raise ExceptionAlertExists(category, tag)
 
             if deadline is None:
                 raise ExceptionMissingDeadline()
 
-            alert = deadline - timedelta(minutes=minutes)
+            alarm = deadline - timedelta(minutes=minutes)
 
-            ActionWrapper.todo.modify_task(category, tag, alarm_new=alert)
+            ActionWrapper.todo.modify_task(category, tag, alarm_new=alarm)
         except ExceptionRasa as e:
             dispatcher.utter_message(text=str(e))
             return []
 
-        # ActionWrapper.todo[tag]["alert"].append(datetime.timedelta(delta.to_datetime()).replace(microsecond=0))
-        # dispatcher.utter_message(text=f"Il task \"{tag}\" sarà notificato {datetime.timedelta(delta.to_datetime()).replace(microsecond=0)} prima della sua deadline")
         dispatcher.utter_message(text=f"Il task \"{tag}\" sarà notificato {str(minutes)} minuti prima della sua deadline")
         return []
 
@@ -449,6 +460,9 @@ class ActionRemoveAlert(ActionWrapper):
         category = get_category(tracker)
 
         try:
+            alarm = ActionWrapper.todo.get_task(category, tag).alarm
+            if alarm is None:
+                raise ExceptionMissingAlarm()
             ActionWrapper.todo.remove_task_alarm(category, tag)
         except ExceptionRasa as e:
             dispatcher.utter_message(text=str(e))
@@ -457,7 +471,6 @@ class ActionRemoveAlert(ActionWrapper):
         dispatcher.utter_message(text=f"Il task \"{tag}\" non verrà più notificato")
         return []
 
-# TODO: We have to remove this method cause, at the moment, the contest specifies that the chatbot cannot implement this function
 class ActionModifyAlert(ActionWrapper):
     """Add an alert to a task and notify it to the user"""
     def name(self) -> Text:

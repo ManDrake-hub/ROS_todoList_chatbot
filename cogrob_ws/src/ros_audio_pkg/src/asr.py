@@ -25,7 +25,7 @@ class Transcriber:
     # This is called from the background thread
     def callback(self, audio):
         # Read the audio's data
-        data = np.array(audio.data,dtype=np.int16)
+        data = np.array(audio.data, dtype=np.int16)
         audio_data = AudioData(data.tobytes(), 16000, 2)
 
         try:
@@ -48,5 +48,5 @@ if __name__ == '__main__':
     # Initialize a Recognizer
     r = sr.Recognizer()
     # Start transcription
-    t = Transcriber(input_topic="mic_data", output_topic="voice_txt_data")
+    t = Transcriber(r,input_topic="mic_data", output_topic="voice_txt_data")
     rospy.spin()

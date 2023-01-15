@@ -9,6 +9,5 @@ gnome-terminal --tab -e "bash -c 'cd cogrob_ws; source devel/setup.bash; roslaun
 gnome-terminal --tab -e "bash -c 'cd cogrob_ws; source devel/setup.bash; roslaunch pepper_nodes face_cv.launch; exec bash'"
 gnome-terminal --tab -e "bash -c 'cd cogrob_ws/src/tablet; python3 main.py; exec bash'"
 
-gnome-terminal -e "bash -c 'curl parrot.live; exec bash'"
 
 

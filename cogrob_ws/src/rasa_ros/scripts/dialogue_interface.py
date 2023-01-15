@@ -25,10 +25,10 @@ class InteractionManager:
         """
         Initialize an interface between pepper and rasa
         """
-        rospy.wait_for_service('dialogue_server')
         self.dialogue_service = rospy.ServiceProxy('dialogue_server', Dialogue)
-        rospy.wait_for_service('id_server')
+        rospy.wait_for_service('dialogue_server')
         self.id_service = rospy.ServiceProxy('id_server', ID)
+        rospy.wait_for_service('id_server')
 
         rospy.Subscriber(input_topic, SAT, self.callback)
         self.text2speech = rospy.Publisher(output_topic, String, queue_size=10)
@@ -108,8 +108,10 @@ class InteractionManager:
                 return
 
         if not self.waiting_name:
+            print("Not waiting for a name")
             # If we are not waiting for the response of the user and if we haven't already loaded a name
             try:
+                print("Asking")
                 # Ask the id_service for recognition
                 id_answer: String = self.request_recognition(audio)
 
@@ -123,6 +125,7 @@ class InteractionManager:
                     # Next time, wait for name
                     self.waiting_name = True
                 else:
+                    print(f"Recognized {id_answer}")
                     # If the id_service recognized the person
                     self.name = id_answer
                     self.write_to_rasa_and_answer_aloud(phrase)

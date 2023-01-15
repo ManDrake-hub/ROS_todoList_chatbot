@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 from rasa_ros.srv import ID, IDResponse
-from rasa_ros.srv import Face, FaceResponse, Face_image
+from rasa_ros.srv import Face_image
 from tensorflow.python.ops.gen_logging_ops import Print
 import rospy
 from std_msgs.msg import Int16MultiArray, String
@@ -31,19 +31,19 @@ def load_object(input_path):
 class AudioRecognizer:
     def __init__(self, threshold: float=0.75, audio_rate: int=16000) -> None:
         # Load dataset
-        self.x = load_object("audio.pkl") if os.path.exists("audio.pkl") else []
-        self.y = load_object("name.pkl") if os.path.exists("name.pkl") else []
+        self.x = load_object("./audio.pkl") if os.path.exists("./audio.pkl") else []
+        self.y = load_object("./name.pkl") if os.path.exists("./name.pkl") else []
         # Load the audio model
-        self.model = get_deep_speaker(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'deep_speaker.h5'))
+        self.model = get_deep_speaker(os.path.join(os.path.dirname(os.path.abspath(__file__)), './deep_speaker.h5'))
         self.audio_rate = audio_rate
         # set recognition threshold
         self.threshold = threshold
 
     def add_sample(self, x, y) -> None:
         self.x.append(x)
-        save_object("audio.pkl", self.x)
+        save_object("./audio.pkl", self.x)
         self.y.append(y)
-        save_object("name.pkl", self.y)
+        save_object("./name.pkl", self.y)
 
     def get_embeddings(self, audio):
         """Get audio embeddings"""
@@ -63,23 +63,27 @@ class AudioRecognizer:
             emb_voice = np.repeat(ukn, len(self.x), 0)
             cos_dist = batch_cosine_similarity(np.array(self.x), emb_voice)
             # Matching
-            return dist2id(cos_dist, self.y, self.threshold, mode='avg')
+            name = dist2id(cos_dist, self.y, self.threshold, mode='avg')
+            if name is None:
+                name = ""
+            return name
         return ""
 
 class FaceRecognizer:
     def __init__(self) -> None:
         self.br = CvBridge()
         # Load dataset
-        self.x = load_object("face.pkl") if os.path.exists("face.pkl") else []
-        self.y = load_object("face_name.pkl") if os.path.exists("face_name.pkl") else []
+        self.x = load_object("./face.pkl") if os.path.exists("./face.pkl") else []
+        self.y = load_object("./face_name.pkl") if os.path.exists("./face_name.pkl") else []
+        print(f"Loaded {len(self.x)} samples")
         # Connect to image service proxy
         self.image_service = rospy.ServiceProxy('image_server', Face_image)
 
     def add_sample(self, x, y) -> None:
         self.x.append(x)
-        save_object("face.pkl", self.x)
+        save_object("./face.pkl", self.x)
         self.y.append(y)
-        save_object("face_name.pkl", self.y)
+        save_object("./face_name.pkl", self.y)
 
     def get_image(self):
         """Capture an image from image service and convert it to cv2"""
@@ -96,6 +100,7 @@ class FaceRecognizer:
 
         # Find all the faces and face encodings in the current frame of video
         face_locations = face_recognition.face_locations(rgb_small_frame)
+        print(face_locations)
         return face_recognition.face_encodings(rgb_small_frame, face_locations)
 
     def recognize(self) -> str:
@@ -108,10 +113,14 @@ class FaceRecognizer:
 
         # See if the face is a match for the known face(s)
         matches = face_recognition.compare_faces(self.x, face_encoding)
+        print("matches", matches)
 
         # Use the known face with the smallest distance to the new face
         face_distances = face_recognition.face_distance(self.x, face_encoding)
+        print("face distances", face_distances)
         best_match_index = np.argmin(face_distances)
         if matches[best_match_index]:
             name = self.y[best_match_index]
+        if name is None:
+            name = ""
         return name

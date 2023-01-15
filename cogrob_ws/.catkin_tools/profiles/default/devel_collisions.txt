@@ -6,4 +6,4 @@
 /home/luigi/Scrivania/ROS_todoList_chatbot/cogrob_ws/devel/./cmake.lock 5
 /home/luigi/ROS_todoList_chatbot/cogrob_ws/devel/./cmake.lock 14
 /home/francesca/Scrivania/ROS_todoList_chatbot/cogrob_ws/devel/./cmake.lock 123
-/home/gio/CR/ROS_todoList_chatbot/cogrob_ws/devel/./cmake.lock 3
+/home/luigi/Scrivania/PROGETTO_CR/ROS_todoList_chatbot/cogrob_ws/devel/./cmake.lock 3

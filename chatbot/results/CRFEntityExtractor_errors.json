@@ -1,0 +1,739 @@
+[
+  {
+    "text": "domani",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "domani",
+        "entity": "date"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "dopodomani",
+    "entities": [
+      {
+        "start": 0,
+        "end": 10,
+        "value": "dopodomani",
+        "entity": "date"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "15 gennaio 2023",
+    "entities": [
+      {
+        "start": 0,
+        "end": 15,
+        "value": "15 gennaio 2023",
+        "entity": "date"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "date",
+        "start": 11,
+        "end": 15,
+        "confidence_entity": 0.4117897253602075,
+        "value": "2023",
+        "extractor": "CRFEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "9 febbraio 1890",
+    "entities": [
+      {
+        "start": 0,
+        "end": 15,
+        "value": "9 febbraio 1890",
+        "entity": "date"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "26 marzo 2004",
+    "entities": [
+      {
+        "start": 0,
+        "end": 13,
+        "value": "26 marzo 2004",
+        "entity": "date"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "category_new",
+        "start": 3,
+        "end": 13,
+        "confidence_entity": 0.5327032931424377,
+        "value": "marzo 2004",
+        "extractor": "CRFEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "5 aprile 2010",
+    "entities": [
+      {
+        "start": 0,
+        "end": 13,
+        "value": "5 aprile 2010",
+        "entity": "date"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "date",
+        "start": 9,
+        "end": 13,
+        "confidence_entity": 0.4108165804139471,
+        "value": "2010",
+        "extractor": "CRFEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "19 maggio 2015",
+    "entities": [
+      {
+        "start": 0,
+        "end": 14,
+        "value": "19 maggio 2015",
+        "entity": "date"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "date",
+        "start": 10,
+        "end": 14,
+        "confidence_entity": 0.40837844833489656,
+        "value": "2015",
+        "extractor": "CRFEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "21 giugno 2030",
+    "entities": [
+      {
+        "start": 0,
+        "end": 14,
+        "value": "21 giugno 2030",
+        "entity": "date"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "date",
+        "start": 10,
+        "end": 14,
+        "confidence_entity": 0.5033701484895761,
+        "value": "2030",
+        "extractor": "CRFEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "10 luglio 1796",
+    "entities": [
+      {
+        "start": 0,
+        "end": 14,
+        "value": "10 luglio 1796",
+        "entity": "date"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "7 agosto 1289",
+    "entities": [
+      {
+        "start": 0,
+        "end": 13,
+        "value": "7 agosto 1289",
+        "entity": "date"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "15 settembre 2000",
+    "entities": [
+      {
+        "start": 0,
+        "end": 17,
+        "value": "15 settembre 2000",
+        "entity": "date"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "date",
+        "start": 13,
+        "end": 17,
+        "confidence_entity": 0.41587330551145213,
+        "value": "2000",
+        "extractor": "CRFEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "20 ottobre 2003",
+    "entities": [
+      {
+        "start": 0,
+        "end": 15,
+        "value": "20 ottobre 2003",
+        "entity": "date"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "date",
+        "start": 11,
+        "end": 15,
+        "confidence_entity": 0.4073795920785708,
+        "value": "2003",
+        "extractor": "CRFEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "2 novembre 2009",
+    "entities": [
+      {
+        "start": 0,
+        "end": 15,
+        "value": "2 novembre 2009",
+        "entity": "date"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "date",
+        "start": 11,
+        "end": 15,
+        "confidence_entity": 0.4071717838476342,
+        "value": "2009",
+        "extractor": "CRFEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "4 dicembre 1989",
+    "entities": [
+      {
+        "start": 0,
+        "end": 15,
+        "value": "4 dicembre 1989",
+        "entity": "date"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "rimuovi l'attività Drago in Esame di latino",
+    "entities": [
+      {
+        "start": 19,
+        "end": 24,
+        "value": "Drago",
+        "entity": "tag"
+      },
+      {
+        "start": 28,
+        "end": 43,
+        "value": "Esame di latino",
+        "entity": "category"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "tag",
+        "start": 19,
+        "end": 24,
+        "confidence_entity": 0.992349290623678,
+        "value": "Drago",
+        "extractor": "CRFEntityExtractor"
+      },
+      {
+        "entity": "category_new",
+        "start": 28,
+        "end": 43,
+        "confidence_entity": 0.5070723021284492,
+        "value": "Esame di latino",
+        "extractor": "CRFEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "voglio muovere l'attività Cavolo in Supermercato nella nuova categoria Operazione",
+    "entities": [
+      {
+        "start": 26,
+        "end": 32,
+        "value": "Cavolo",
+        "entity": "tag"
+      },
+      {
+        "start": 36,
+        "end": 48,
+        "value": "Supermercato",
+        "entity": "category"
+      },
+      {
+        "start": 71,
+        "end": 81,
+        "value": "Operazione",
+        "entity": "category_new"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "tag",
+        "start": 26,
+        "end": 32,
+        "confidence_entity": 0.9937534262874047,
+        "value": "Cavolo",
+        "extractor": "CRFEntityExtractor"
+      },
+      {
+        "entity": "category",
+        "start": 36,
+        "end": 48,
+        "confidence_entity": 0.9633961369454667,
+        "value": "Supermercato",
+        "extractor": "CRFEntityExtractor"
+      },
+      {
+        "entity": "category",
+        "start": 71,
+        "end": 81,
+        "confidence_entity": 0.8156692501846562,
+        "value": "Operazione",
+        "extractor": "CRFEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "voglio spostare l'attività Telefono fisso in Dicembre in Lingue",
+    "entities": [
+      {
+        "start": 27,
+        "end": 41,
+        "value": "Telefono fisso",
+        "entity": "tag"
+      },
+      {
+        "start": 45,
+        "end": 53,
+        "value": "Dicembre",
+        "entity": "category"
+      },
+      {
+        "start": 57,
+        "end": 63,
+        "value": "Lingue",
+        "entity": "category_new"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "tag",
+        "start": 27,
+        "end": 41,
+        "confidence_entity": 0.9444729831214941,
+        "value": "Telefono fisso",
+        "extractor": "CRFEntityExtractor"
+      },
+      {
+        "entity": "category",
+        "start": 45,
+        "end": 53,
+        "confidence_entity": 0.974155839059985,
+        "value": "Dicembre",
+        "extractor": "CRFEntityExtractor"
+      },
+      {
+        "entity": "category",
+        "start": 57,
+        "end": 63,
+        "confidence_entity": 0.592352005663175,
+        "value": "Lingue",
+        "extractor": "CRFEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "voglio muovere l'attività Autostrada in Borsone palestra nella categoria Viaggi",
+    "entities": [
+      {
+        "start": 26,
+        "end": 36,
+        "value": "Autostrada",
+        "entity": "tag"
+      },
+      {
+        "start": 40,
+        "end": 56,
+        "value": "Borsone palestra",
+        "entity": "category"
+      },
+      {
+        "start": 73,
+        "end": 79,
+        "value": "Viaggi",
+        "entity": "category_new"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "tag",
+        "start": 26,
+        "end": 36,
+        "confidence_entity": 0.9923356992124678,
+        "value": "Autostrada",
+        "extractor": "CRFEntityExtractor"
+      },
+      {
+        "entity": "category",
+        "start": 40,
+        "end": 56,
+        "confidence_entity": 0.8462250810389743,
+        "value": "Borsone palestra",
+        "extractor": "CRFEntityExtractor"
+      },
+      {
+        "entity": "category",
+        "start": 73,
+        "end": 79,
+        "confidence_entity": 0.5337806815544411,
+        "value": "Viaggi",
+        "extractor": "CRFEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "muovi l'attività Criceto in Impegni in Borsone palestra",
+    "entities": [
+      {
+        "start": 17,
+        "end": 24,
+        "value": "Criceto",
+        "entity": "tag"
+      },
+      {
+        "start": 28,
+        "end": 35,
+        "value": "Impegni",
+        "entity": "category"
+      },
+      {
+        "start": 39,
+        "end": 55,
+        "value": "Borsone palestra",
+        "entity": "category_new"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "tag",
+        "start": 17,
+        "end": 24,
+        "confidence_entity": 0.9914410913195622,
+        "value": "Criceto",
+        "extractor": "CRFEntityExtractor"
+      },
+      {
+        "entity": "category",
+        "start": 28,
+        "end": 35,
+        "confidence_entity": 0.6903334892806234,
+        "value": "Impegni",
+        "extractor": "CRFEntityExtractor"
+      },
+      {
+        "entity": "category",
+        "start": 39,
+        "end": 55,
+        "confidence_entity": 0.8135303281759428,
+        "value": "Borsone palestra",
+        "extractor": "CRFEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "voglio muovere l'attività Cognata in Studio nella nuova categoria Giugno",
+    "entities": [
+      {
+        "start": 26,
+        "end": 33,
+        "value": "Cognata",
+        "entity": "tag"
+      },
+      {
+        "start": 37,
+        "end": 43,
+        "value": "Studio",
+        "entity": "category"
+      },
+      {
+        "start": 66,
+        "end": 72,
+        "value": "Giugno",
+        "entity": "category_new"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "tag",
+        "start": 26,
+        "end": 33,
+        "confidence_entity": 0.9997975772602061,
+        "value": "Cognata",
+        "extractor": "CRFEntityExtractor"
+      },
+      {
+        "entity": "category",
+        "start": 37,
+        "end": 43,
+        "confidence_entity": 0.9659966134810295,
+        "value": "Studio",
+        "extractor": "CRFEntityExtractor"
+      },
+      {
+        "entity": "category",
+        "start": 66,
+        "end": 72,
+        "confidence_entity": 0.765735830122695,
+        "value": "Giugno",
+        "extractor": "CRFEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "voglio spostare l'attività Asilo in Febbraio in Scuola di musica",
+    "entities": [
+      {
+        "start": 27,
+        "end": 32,
+        "value": "Asilo",
+        "entity": "tag"
+      },
+      {
+        "start": 36,
+        "end": 44,
+        "value": "Febbraio",
+        "entity": "category"
+      },
+      {
+        "start": 48,
+        "end": 64,
+        "value": "Scuola di musica",
+        "entity": "category_new"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "tag",
+        "start": 27,
+        "end": 32,
+        "confidence_entity": 0.9942760822233914,
+        "value": "Asilo",
+        "extractor": "CRFEntityExtractor"
+      },
+      {
+        "entity": "category",
+        "start": 36,
+        "end": 44,
+        "confidence_entity": 0.9841572991320885,
+        "value": "Febbraio",
+        "extractor": "CRFEntityExtractor"
+      },
+      {
+        "entity": "category",
+        "start": 48,
+        "end": 64,
+        "confidence_entity": 0.7465448783379192,
+        "value": "Scuola di musica",
+        "extractor": "CRFEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "voglio muovere l'attività Funivia in Dottoresse nella categoria Famiglia",
+    "entities": [
+      {
+        "start": 26,
+        "end": 33,
+        "value": "Funivia",
+        "entity": "tag"
+      },
+      {
+        "start": 37,
+        "end": 47,
+        "value": "Dottoresse",
+        "entity": "category"
+      },
+      {
+        "start": 64,
+        "end": 72,
+        "value": "Famiglia",
+        "entity": "category_new"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "tag",
+        "start": 26,
+        "end": 33,
+        "confidence_entity": 0.9902530093070957,
+        "value": "Funivia",
+        "extractor": "CRFEntityExtractor"
+      },
+      {
+        "entity": "category",
+        "start": 37,
+        "end": 47,
+        "confidence_entity": 0.9373145710757252,
+        "value": "Dottoresse",
+        "extractor": "CRFEntityExtractor"
+      },
+      {
+        "entity": "category",
+        "start": 64,
+        "end": 72,
+        "confidence_entity": 0.8114183896874848,
+        "value": "Famiglia",
+        "extractor": "CRFEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "voglio muovere l'attività Sorella in Cartolibreria nella nuova categoria Maestro",
+    "entities": [
+      {
+        "start": 26,
+        "end": 33,
+        "value": "Sorella",
+        "entity": "tag"
+      },
+      {
+        "start": 37,
+        "end": 50,
+        "value": "Cartolibreria",
+        "entity": "category"
+      },
+      {
+        "start": 73,
+        "end": 80,
+        "value": "Maestro",
+        "entity": "category_new"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "tag",
+        "start": 26,
+        "end": 33,
+        "confidence_entity": 0.9884100060679897,
+        "value": "Sorella",
+        "extractor": "CRFEntityExtractor"
+      },
+      {
+        "entity": "category",
+        "start": 37,
+        "end": 50,
+        "confidence_entity": 0.901717447631206,
+        "value": "Cartolibreria",
+        "extractor": "CRFEntityExtractor"
+      },
+      {
+        "entity": "category",
+        "start": 73,
+        "end": 80,
+        "confidence_entity": 0.6232368941349703,
+        "value": "Maestro",
+        "extractor": "CRFEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "cambia il nome utente Christian con il nome utente Michele",
+    "entities": [
+      {
+        "start": 22,
+        "end": 31,
+        "value": "Christian",
+        "entity": "user"
+      },
+      {
+        "start": 51,
+        "end": 58,
+        "value": "Michele",
+        "entity": "user_new"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "user",
+        "start": 22,
+        "end": 31,
+        "confidence_entity": 0.947129775957793,
+        "value": "Christian",
+        "extractor": "CRFEntityExtractor"
+      },
+      {
+        "entity": "user",
+        "start": 51,
+        "end": 58,
+        "confidence_entity": 0.5731513771201299,
+        "value": "Michele",
+        "extractor": "CRFEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "cambia il nome utente Gabriel con il nome utente Mario",
+    "entities": [
+      {
+        "start": 22,
+        "end": 29,
+        "value": "Gabriel",
+        "entity": "user"
+      },
+      {
+        "start": 49,
+        "end": 54,
+        "value": "Mario",
+        "entity": "user_new"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "user",
+        "start": 22,
+        "end": 29,
+        "confidence_entity": 0.9685645091054543,
+        "value": "Gabriel",
+        "extractor": "CRFEntityExtractor"
+      },
+      {
+        "entity": "user",
+        "start": 49,
+        "end": 54,
+        "confidence_entity": 0.596215206249614,
+        "value": "Mario",
+        "extractor": "CRFEntityExtractor"
+      }
+    ]
+  }
+]

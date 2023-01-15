@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 from rasa_ros.srv import ID, IDResponse
-from rasa_ros.srv import Face, FaceResponse, Face_image
+from rasa_ros.srv import Face_image
 from tensorflow.python.ops.gen_logging_ops import Print
 import rospy
 from std_msgs.msg import Int16MultiArray, String

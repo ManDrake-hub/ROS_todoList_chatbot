@@ -117,7 +117,7 @@ class InteractionManager:
                 if id_answer.data == "":
                     # If the id_service coudln't recognize the person                    
                     # Ask the person for their name
-                    self.text2speech.publish(String(data="Come ti chiami?"))
+                    self.say(String(data="Come ti chiami?"))
                     # Next time, wait for name
                     self.waiting_name = True
                 else:

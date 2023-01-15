@@ -75,7 +75,7 @@ class InteractionManager:
 
     def write_to_rasa_and_answer_aloud(self, phrase: String) -> None:
         """Write to rasa and say aloud its answer"""
-        bot_answer = self.write_to_rasa(phrase)
+        bot_answer = self.write_to_rasa(phrase.data)
         print("bot answer: %s"%bot_answer)
         self.say(bot_answer)
 

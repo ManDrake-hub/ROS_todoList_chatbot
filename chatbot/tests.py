@@ -2,7 +2,7 @@ import datetime
 from typing import Dict, List, Any
 from actions.actions import ActionRemoveDeadline, ActionRenameUser, ActionWrapper, ActionAddTask, ActionRemoveTask, ActionMoveTask, ActionCreateUser, ActionSetUser, ActionRemoveUser, ActionGetUser, ActionReadTasks, ActionAddAlert
 from actions.Task import Task
-from actions.utils import check_equals, print_todo, print_todo_dict
+from actions.utils_test import check_equals, print_todo, print_todo_dict
 from actions.ToDo import ToDo
 from actions.utils import convert_deadline_to_datetime
 
@@ -73,6 +73,11 @@ if __name__ == "__main__":
     dt_real = datetime.datetime(year=datetime.datetime.today().year, 
                                 month=datetime.datetime.today().month, 
                                 day=datetime.datetime.today().day, hour=10, minute=10, second=10) + datetime.timedelta(days=1)
+    if dt_real != dt_real:
+        raise Exception()
+
+    dt_pred = convert_deadline_to_datetime("27 ottobre 2024", "10:10:10")
+    dt_real = datetime.datetime(year=2024, month=10, day=27, hour=10, minute=10, second=10)
     if dt_real != dt_real:
         raise Exception()
 

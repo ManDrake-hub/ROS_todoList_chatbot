@@ -1,3 +1,4 @@
+import pathlib
 from style import STYLE
 from dateutil import parser
 import json
@@ -64,7 +65,9 @@ def get_page():
     Get an html page that contains a table for all atsks associated with a user and,
     if needed, a table containing tasks with triggered alarms.
     """
-    user = read_user(path="../../../../../.ros/name.txt")
+    folder = pathlib.Path(__file__).parent.parent.resolve()
+
+    user = read_user(path=folder+"/rasa_ros/scripts/name.txt")
     rows = get_rows_from_data(get_todo_data(user, folder_json="../../../chatbot/"))
     rows_alert = get_rows_from_data(check_alerts(folder_json="../../../chatbot/", alert_length=15))
 

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-
+import pathlib
 import rospy
 import warnings
 warnings.filterwarnings("ignore")
@@ -54,11 +54,12 @@ class InteractionManager:
 
     def save_to_file(self)-> None:
         """Write the loaded name to a file name.txt"""
+        folder = pathlib.Path(__file__).parent.resolve()
         if self.name.data != "":
-            with open("./name.txt", "w") as f:
+            with open(folder+"/name.txt", "w") as f:
                 f.write(self.name.data)
         else:
-            with open("./name.txt", "w") as f:
+            with open(folder+"/name.txt", "w") as f:
                 f.write("")
 
     def update_rasa_todo_list(self) -> None:
@@ -67,7 +68,6 @@ class InteractionManager:
         bot_answer = self.dialogue_service(phrase)
         self.say(bot_answer.answer)
         self.save_to_file()
-        print("bot answer: %s"%bot_answer.answer)
 
     def write_to_rasa(self, phrase: String) -> String:
         """Write to rasa"""
@@ -76,7 +76,6 @@ class InteractionManager:
     def write_to_rasa_and_answer_aloud(self, phrase: String) -> None:
         """Write to rasa and say aloud its answer"""
         bot_answer = self.write_to_rasa(phrase.data)
-        print("bot answer: %s"%bot_answer)
         self.say(bot_answer)
 
     def is_intent_goodbye(self, phrase: String) -> String:
@@ -109,24 +108,18 @@ class InteractionManager:
                 return
 
         if not self.waiting_name:
-            print("Not waiting for a name")
             # If we are not waiting for the response of the user and if we haven't already loaded a name
             try:
-                print("Asking")
                 # Ask the id_service for recognition
                 id_answer: String = self.request_recognition(audio)
 
                 if id_answer.data == "":
-                    # If the id_service coudln't recognize the person
-                    print("Couldn't recognize the person")
-                    
+                    # If the id_service coudln't recognize the person                    
                     # Ask the person for their name
                     self.text2speech.publish(String(data="Come ti chiami?"))
-                    print("Come ti chiami?")
                     # Next time, wait for name
                     self.waiting_name = True
                 else:
-                    print(f"Recognized {id_answer}")
                     # If the id_service recognized the person
                     self.name = id_answer
                     self.write_to_rasa_and_answer_aloud(phrase)

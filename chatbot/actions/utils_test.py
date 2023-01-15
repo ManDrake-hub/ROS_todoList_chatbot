@@ -6,6 +6,7 @@ from actions.ToDo import ToDo
 from actions.ActionsException import ExceptionNoCategories, ExceptionDateTimeBeforeNow, ExceptionDateTimeFormatInvalid
 from dateutil.parser import parse
 import re
+from actions.actions import ActionWrapper
 
 
 def print_todo(todo: ToDo):
@@ -62,3 +63,34 @@ def check_equals(real: ToDo, expected: Dict[str, List[Task]]):
             if not any([check_equals_task(real_task, expected_task) for expected_task in expected[k]]):
                 return False
     return True
+
+class CollectingDispatcherFake:
+    debug = True
+
+    @staticmethod
+    def set_debug(debug):
+        CollectingDispatcherFake.debug = debug
+
+    @staticmethod
+    def utter_message(text=""):
+        if CollectingDispatcherFake.debug:
+            print("Dispatched: ", f"'{text}'")
+
+class TrackerFake:
+    def __init__(self, slots: Dict) -> None:
+        self._slots = slots
+
+    def get_slot(self, slot: str):
+        return self._slots[slot]
+
+def test_action(todo: ToDo, action_to_test: ActionWrapper, slots: Dict[str, Any], todo_expected: Dict[str, List[Task]], clear_todo_before_running: bool=True, check=True):
+    ActionWrapper.todo = todo
+    if clear_todo_before_running:
+        todo.clear_all()
+    tracker_fake = TrackerFake(slots)
+    action_to_test().run(CollectingDispatcherFake, tracker_fake, None)
+
+    if check and not check_equals(todo, todo_expected):
+        print_todo(todo)
+        print_todo_dict(todo_expected)
+        raise Exception("ToDo does not match the one expected")

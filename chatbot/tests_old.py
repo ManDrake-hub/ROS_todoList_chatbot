@@ -6,37 +6,6 @@ from actions.utils_test import check_equals, print_todo, print_todo_dict
 from actions.ToDo import ToDo
 from actions.utils import convert_deadline_to_datetime
 
-class CollectingDispatcherFake:
-    debug = True
-
-    @staticmethod
-    def set_debug(debug):
-        CollectingDispatcherFake.debug = debug
-
-    @staticmethod
-    def utter_message(text=""):
-        if CollectingDispatcherFake.debug:
-            print("Dispatched: ", f"'{text}'")
-
-class TrackerFake:
-    def __init__(self, slots: Dict) -> None:
-        self._slots = slots
-
-    def get_slot(self, slot: str):
-        return self._slots[slot]
-
-def test_action(action_to_test: ActionWrapper, slots: Dict[str, Any], todo_expected: Dict[str, List[Task]], clear: bool=True, check=True):
-    todo: ToDo = ActionWrapper.todo
-
-    if clear:
-        todo.clear_all()
-    tracker_fake = TrackerFake(slots)
-    action_to_test().run(CollectingDispatcherFake, tracker_fake, None)
-
-    if check and not check_equals(ActionWrapper.todo, todo_expected):
-        print_todo(todo)
-        print_todo_dict(todo_expected)
-        raise Exception("ToDo does not match the one expected")
 
 if __name__ == "__main__":
     CollectingDispatcherFake.debug = True

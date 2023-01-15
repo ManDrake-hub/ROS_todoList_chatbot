@@ -26,15 +26,11 @@ nlu:
     - sì sì
     - ok
     - certo
-    - va bene
-    - corretto
-    - certamente
-    - va benissimo
-    - sicuro
 - intent: deny
   examples: |
     - no
     - no no
+    - n
     - non va bene
 - intent: inform
   examples: |

@@ -5,19 +5,16 @@ rules:
   steps:
   - intent: greet
   - action: utter_greet
-  - action: action_reset
 
 - rule: Say goodbye anytime the user says goodbye
   steps:
   - intent: goodbye
   - action: utter_goodbye
-  - action: action_reset
 
 - rule: Say 'I am a bot' anytime the user challenges
   steps:
   - intent: bot_challenge
   - action: utter_iamabot
-  - action: action_reset
 
 #Identification
 - rule: Change or create ToDo list if user indentifies

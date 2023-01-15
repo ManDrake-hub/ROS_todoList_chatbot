@@ -93,14 +93,14 @@ class FaceRecognizer:
     def get_embeddings(self, image):
         """Get face embeddings from cv2 image"""
         # Resize frame of video to 1/4 size for faster face recognition processing
-        small_frame = cv2.resize(image, (0, 0), fx=0.25, fy=0.25)
+        small_frame = cv2.resize(image, (0, 0), fx=1, fy=1)
 
         # Convert the image from BGR color (which OpenCV uses) to RGB color (which face_recognition uses)
         rgb_small_frame = small_frame[:, :, ::-1]
 
         # Find all the faces and face encodings in the current frame of video
         face_locations = face_recognition.face_locations(rgb_small_frame)
-        print(face_locations)
+        print("face locations", face_locations)
         return face_recognition.face_encodings(rgb_small_frame, face_locations)
 
     def recognize(self) -> str:
@@ -108,9 +108,13 @@ class FaceRecognizer:
         if len(self.x) == 0:
             return name
 
+        # TODO: sistema sto schifo
         image = self.get_image()
-        face_encoding = self.get_embeddings(image)[0]
-
+        face_encoding = self.get_embeddings(image)
+        if len(face_encoding) == 0:
+            return name
+        face_encoding = face_encoding[0]
+        
         # See if the face is a match for the known face(s)
         matches = face_recognition.compare_faces(self.x, face_encoding)
         print("matches", matches)

@@ -4,6 +4,7 @@ import rospy
 import warnings
 warnings.filterwarnings("ignore")
 from utils import AudioRecognizer, FaceRecognizer
+import cv2
 
 def handle_wrapper(audio_recognizer: AudioRecognizer, face_recognizer: FaceRecognizer):
     def handle_service(req):
@@ -15,8 +16,7 @@ def handle_wrapper(audio_recognizer: AudioRecognizer, face_recognizer: FaceRecog
 
         if input_text.data == "":
             print("recognize with audio")
-            # id_label = audio_recognizer.recognize(audio.data)
-            id_label = ""
+            id_label = audio_recognizer.recognize(audio.data)
             print("recognize with audio done")
 
             if id_label == "":
@@ -26,9 +26,17 @@ def handle_wrapper(audio_recognizer: AudioRecognizer, face_recognizer: FaceRecog
             print(f'id lable {id_label}')
             response.answer.data = id_label
         else:
+            print("sto aggiungendo audio embeddings")
             audio_recognizer.add_sample(audio_recognizer.get_embeddings(audio.data)[0], input_text.data)
-            face_embeddings = face_recognizer.get_embeddings(face_recognizer.get_image())
+            print("sto aggiungendo face embeddings")
+            image = face_recognizer.get_image()
+            print(image.shape)
+            # cv2.imshow("", image)
+            # cv2.waitKey(0)
+            face_embeddings = face_recognizer.get_embeddings(image)
+            print(face_embeddings)
             if len(face_embeddings) > 0:
+                print("aggiungo merdeeeeee")
                 face_recognizer.add_sample(face_embeddings[0], input_text.data)
         return response
     print("handler has been given")

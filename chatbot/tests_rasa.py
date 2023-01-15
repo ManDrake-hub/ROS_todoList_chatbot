@@ -55,4 +55,5 @@ if __name__ == "__main__":
                                {"a": [Task("remove", base_datetime), ]}, clear_todo_before_running=True)
     test_action(todo, ActionRemoveTask, {"category": "a", "tag": "remove"}, {"a": []}, clear_todo_before_running=False)
 
+
     print("Every test passed successfully!")

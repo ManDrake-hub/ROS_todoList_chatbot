@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-
+import pathlib
 import rospy
 import warnings
 warnings.filterwarnings("ignore")
@@ -54,11 +54,12 @@ class InteractionManager:
 
     def save_to_file(self)-> None:
         """Write the loaded name to a file name.txt"""
+        folder = pathlib.Path(__file__).parent.resolve()
         if self.name.data != "":
-            with open("./name.txt", "w") as f:
+            with open(folder+"/name.txt", "w") as f:
                 f.write(self.name.data)
         else:
-            with open("./name.txt", "w") as f:
+            with open(folder+"/name.txt", "w") as f:
                 f.write("")
 
     def update_rasa_todo_list(self) -> None:

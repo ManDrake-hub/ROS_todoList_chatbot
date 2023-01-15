@@ -64,7 +64,7 @@ def get_page():
     Get an html page that contains a table for all atsks associated with a user and,
     if needed, a table containing tasks with triggered alarms.
     """
-    user = read_user(path="./name.txt")
+    user = read_user(path="../../../../../.ros/name.txt")
     rows = get_rows_from_data(get_todo_data(user, folder_json="../../../chatbot/"))
     rows_alert = get_rows_from_data(check_alerts(folder_json="../../../chatbot/", alert_length=15))
 

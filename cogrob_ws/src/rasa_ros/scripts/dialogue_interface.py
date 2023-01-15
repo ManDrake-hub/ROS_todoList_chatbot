@@ -59,7 +59,7 @@ class InteractionManager:
                 f.write(self.name.data)
         else:
             with open("./name.txt", "w") as f:
-                f.write("default")
+                f.write("")
 
     def update_rasa_todo_list(self) -> None:
         """Write to rasa to change selected todo list"""
@@ -105,6 +105,7 @@ class InteractionManager:
                 # If intent was goodbye, clear the loaded name for the next person
                 if self.is_intent_goodbye(phrase):
                     self.name.data = ""
+                    self.save_to_file()
                 return
 
         if not self.waiting_name:

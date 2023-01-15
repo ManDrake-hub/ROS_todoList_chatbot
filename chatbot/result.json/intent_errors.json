@@ -1,0 +1,18 @@
+[
+  {
+    "text": "incorretto",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.37811837370211865
+    }
+  },
+  {
+    "text": "non va bene",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.4198726631741844
+    }
+  }
+]

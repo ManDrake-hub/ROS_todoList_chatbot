@@ -4,7 +4,6 @@ nlu:
   examples: |
     - hey
     - ciao
-    - ue
     - buon giorno
     - buona sera
     - buon pomeriggio
@@ -17,17 +16,14 @@ nlu:
 - intent: goodbye
   examples: |
     - arrivederci
-    - addio
     - ci sentiamo
-    - a risentirci
-    - ci vediamo
     - buona giornata
-    - ci sentiamo in giro
 - intent: affirm
   examples: |
     - si
     - sì
-    - s
+    - si si
+    - sì sì
     - ok
     - certo
     - va bene
@@ -38,13 +34,8 @@ nlu:
 - intent: deny
   examples: |
     - no
-    - n
-    - mai
-    - incorretto
+    - no no
     - non va bene
-    - non penso
-    - non credo
-    - non proprio
 
 - intent: inform
   examples: |
@@ -70,6 +61,21 @@ nlu:
     - ore [7:7](time)
     - ora [23:59](time)
     - ora [20:7](time)
+    - [oggi](date)
+    - [domani](date)
+    - [dopodomani](date)
+    - [15 gennaio 2023](date)
+    - [9 febbraio 1890](date)
+    - [26 marzo 2004](date)
+    - [5 aprile 2010](date)
+    - [19 maggio 2015](date)
+    - [21 giugno 2030](date)
+    - [10 luglio 1796](date)
+    - [7 agosto 1289](date)
+    - [15 settembre 2000](date)
+    - [20 ottobre 2003](date)
+    - [2 novembre 2009](date)
+    - [4 dicembre 1989](date)
     - categoria [Maggio](category)
     - categoria [Esami fuoricorso](category)
     - categoria [Maggio](category)

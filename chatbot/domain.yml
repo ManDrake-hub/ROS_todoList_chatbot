@@ -142,63 +142,57 @@ forms:
 
 responses:
   utter_greet:
-  - text: Hey!
+  - text: Hey
   - text: Salve
-  - text: Hey, come posso esserti di aiuto?
-  - text: Ciao, posso aiutarti in qualche modo?
-  - text: Ciao, cosa posso fare per te?
+  - text: Ciao
+  - text: Ciao, come posso esserti di aiuto?
+  - text: Salve, posso aiutarti in qualche modo?
+  - text: Hey, cosa posso fare per te?
   utter_goodbye:
   - text: Ciao
-  - text: Ci sentiamo ciao
   - text: A presto
-  - text: A risentirci
   - text: Arrivederci
-  - text: È stato un piacere aiutarti
+  - text: Alla prossima
   utter_op_modify_category_request:
   - text: Vuoi modificare la categoria?
   utter_ask_tag:
   - text: Inserisci il titolo dell' attività
   - text: Qual è il titolo dell' attività?
-  - text: Mi dici il titolo dell'attività?
-  - text: Puoi dirmi il titolo?
+  - text: Come vuoi che chiami l'attività?
   utter_ask_tag_new:
-  - text: Inserisci il nuovo titolo dell' attività
   - text: Qual è il nuovo titolo dell' attività?
   - text: Mi dici il nuovo titolo dell'attività?
-  - text: Puoi dirmi il nuovo titolo?
+  - text: Come devo chiamare l' attività?
   utter_ask_date:
-  - text: Inserisci la data di scadenza
+  - text: Dimmi la data di scadenza
   - text: Qual è la data di scadenza?
   utter_ask_time:
-  - text: Inserisci il tempo limite
-  - text: Qual è il tempo limite?
+  - text: A che ora dovrà scadere l'attività?
+  - text: A che ora imposto la scadenza?
   utter_ask_category:
-  - text: Inserisci la categoria dell'attività
-  - text: Qual è la categoria?
+  - text: Dimmi la categoria dell'attività
+  - text: Qual è la categoria dell' attività?
   utter_ask_category_new:
-  - text: Inserisci il nuovo gruppo dell'attività
-  - text: Qual è il nuovo gruppo?
-  utter_ask_alert:
-  - text: Quanto tempo prima vuoi ricevere un avviso?
-  - text: Quanto prima devo inviarti l'avviso?
+  - text: Quale sarà la nuova categoria?
+  - text: Qual è il nuovo categoria?
   utter_ask_user:
-  - text: Inserisci il nome utente
+  - text: Qual è il nome utente?
   utter_ask_user_new:
-  - text: Inserisci il nuovo nome dell'utente
+  - text: Quale dovrà essere il nuovo nome dell'utente?
   utter_ask_logical_deadline:
-  - text: Vuoi inserire una deadline?
+  - text: Vuoi impostare una deadline?
   utter_ask_logical_alert:
-  - text: Vuoi inserire un alert?
+  - text: Vuoi aggiungere anche un alert?
   utter_ask_logical_category:
   - text: Vuoi modificare la categoria?
   utter_default:
-  - text: Scusami non ho capito. Puoi ripetere per favore?  
+  - text: Scusami non ho capito. Puoi ripetere?  
   utter_please_rephrase:
-  - text: Scusami non ho capito. Puoi ripetere per favore? 
+  - text: Scusami non ho capito. Puoi ripetere? 
   utter_iamabot:
-  - text: Io sono un bot, realizzato con Rasa per la gestione di una ToDoList.
-  - text: Sono un bot, realizzato da un team di sviluppatori con Rasa
-  - text: Stai parlando con un bot, che si occupa di gestire una ToDoList
+  - text: Ciao, io sono Pepper, e ho il compito di gestire la tua ToDo List.
+  - text: Sono un bot, realizzato da un team di sviluppatori del DIEM
+  - text: Sono super Pepper, un robot interplanetario e oggi sono su questo pianeta per occuparmi della tua ToDo List
   
 actions:
 - action_set_user

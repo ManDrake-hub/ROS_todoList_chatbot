@@ -54,7 +54,7 @@ class InteractionManager:
 
     def save_to_file(self)-> None:
         """Write the loaded name to a file name.txt"""
-        folder = pathlib.Path(__file__).parent.resolve()
+        folder = str(pathlib.Path(__file__).parent.resolve())
         if self.name.data != "":
             with open(folder+"/name.txt", "w") as f:
                 f.write(self.name.data)

@@ -65,7 +65,7 @@ def get_page():
     Get an html page that contains a table for all atsks associated with a user and,
     if needed, a table containing tasks with triggered alarms.
     """
-    folder = pathlib.Path(__file__).parent.parent.resolve()
+    folder = str(pathlib.Path(__file__).parent.parent.resolve())
 
     user = read_user(path=folder+"/rasa_ros/scripts/name.txt")
     rows = get_rows_from_data(get_todo_data(user, folder_json="../../../chatbot/"))

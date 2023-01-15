@@ -36,7 +36,6 @@ nlu:
     - no
     - no no
     - non va bene
-
 - intent: inform
   examples: |
     - attività [Balena](tag)

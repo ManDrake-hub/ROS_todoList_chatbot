@@ -53,7 +53,7 @@ def check_alerts(folder_json="../../../chatbot/", alert_length: int=15):
     for user in users:
         data = get_todo_data(user, folder_json=folder_json)
         for d in data:
-            if d[-1] is "":
+            if d[-1] == "":
                 continue
             if d[-1] is not None and datetime.datetime.now() >= parser.parse(d[-1], dayfirst=True) and datetime.datetime.now() <= parser.parse(d[-1], dayfirst=True) + datetime.timedelta(seconds=alert_length):
                 todo_data_with_alerts.append((user, *d))

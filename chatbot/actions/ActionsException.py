@@ -24,6 +24,14 @@ class ExceptionMissingDeadline(ExceptionRasa):
     def __init__(self) -> None:
         super().__init__(f"Deadline non specificata")
 
+class ExceptionMissingAlarm(ExceptionRasa):
+    def __init__(self) -> None:
+        super().__init__(f"Alarm non attivo")
+
+class ExceptionAlertExists(ExceptionRasa):
+    def __init__(self, category, tag) -> None:
+        super().__init__(f"Alert per la task \"{tag}\" nella categoria \"{category}\" già esistente")
+
 ##########################################################################
 # Category exceptions                                                    #
 ##########################################################################
@@ -33,7 +41,7 @@ class ExceptionMissingCategory(ExceptionRasa):
 
 class ExceptionNoCategories(ExceptionRasa):
     def __init__(self) -> None:
-        super().__init__(f"Nessuna categoria trovata")
+        super().__init__(f"ToDo-list vuota")
 
 ##########################################################################
 # Date and time Exceptions                                               #

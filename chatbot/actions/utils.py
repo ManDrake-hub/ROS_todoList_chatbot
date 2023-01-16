@@ -78,15 +78,13 @@ def list_of_numbers(text: str) -> List:
 def has_element(text: str, l: List) -> Tuple[bool, int]:
     _has_element = any([x in text for x in l])
     if _has_element:
-        return _has_element, [x in text for x in l].index(True)
+        return _has_element, [i for i, x in enumerate(l) if x in text][-1]# [x in text for x in l].index(True)
     return _has_element, 0
 
 def is_datetime_before_now(dt: datetime.datetime) -> bool:
     return dt < datetime.datetime.now()
 
 def convert_deadline_to_datetime(date: str, time: str) -> datetime.datetime:
-    # TODO: domani viene trovato anche nel caso del dopodomani
-    print(date, time)
     date = date.lower()
     weekdays = ["lunedì", "martedì", "mercoledì", "giovedì", "venerdì", "sabato", "domenica"]
     months = ["gennaio", "febbraio", "marzo", "aprile", "maggio", "giugno", "luglio", "agosto", "settembre", "ottobre", "novembre", "dicembre"]
@@ -102,7 +100,6 @@ def convert_deadline_to_datetime(date: str, time: str) -> datetime.datetime:
         if has_weekdays:
             date = next_weekday(datetime.datetime.today(), weekday=weekdays_index)
         elif has_offsets:
-            print("has offsets", offsets_index)
             date = datetime.datetime.today() + datetime.timedelta(days=offsets_index)
         else:
             raise Exception("Could not parse date")
@@ -117,7 +114,6 @@ def convert_deadline_to_datetime(date: str, time: str) -> datetime.datetime:
         date = datetime.datetime(year=int(list_of_numbers(date)[-1]),
                                 month=months_index+1 if (has_letters(date)) else datetime.datetime.today().month, 
                                 day=int(list_of_numbers(date)[0]))
-    print(date)
     if type(date) is datetime.datetime:
         return parse(time, default=date, dayfirst=True)
 

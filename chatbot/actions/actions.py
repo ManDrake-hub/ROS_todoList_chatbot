@@ -191,19 +191,12 @@ class ActionRemoveDeadline(ActionWrapper):
         category = get_category(tracker)
 
         try:
-            t = ActionWrapper.todo.get_task(category=category, tag=tag)
-
-            if t.deadline is None:
-                raise ExceptionMissingDeadline()
-
-            t.remove_deadline()
-            t.remove_alarm()
-
+            ActionWrapper.todo.remove_deadline(category, tag)
         except ExceptionRasa as e:
             dispatcher.utter_message(text=str(e))
             return []
 
-        dispatcher.utter_message(text=f"Deadline ed allarme per {t} rimossi")
+        dispatcher.utter_message(text=f"Deadline ed allarme per attività \"{tag}\" rimossi")
         return [] 
 
 class ActionRemoveCategory(ActionWrapper):
@@ -262,11 +255,6 @@ class ActionReadTasks(ActionWrapper):
             dispatcher.utter_message(text=str(e))
             return []
 
-        # for category in tasks:
-        #     message = f"Per la categoria \"{category}\" sono presenti i seguenti task:"
-        #     for task in tasks[category]:
-        #         message += f"\n - {task}"
-        #     dispatcher.utter_message(text=(message+"\n"))
         n_tasks = 0
         for category in tasks:
             for task in tasks[category]:

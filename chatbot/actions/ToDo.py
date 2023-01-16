@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Dict, List
 from actions.Task import Task
-from actions.ActionsException import ExceptionMissingCategory, ExceptionMissingTask, ExceptionNoCategories, ExceptionNoTasks, ExceptionTaskExists
+from actions.ActionsException import ExceptionMissingCategory, ExceptionMissingTask, ExceptionNoCategories, ExceptionNoTasks, ExceptionTaskExists, ExceptionMissingDeadline
 import os
 import datetime
 import json
@@ -31,7 +31,8 @@ class ToDo:
 
     @staticmethod
     def load(user: str) -> ToDo:
-        _todo = json.load(open(f"./todo_{user}.json", "r"))
+        with open(f"./todo_{user}.json", "r") as f:
+            _todo = json.load(f)
         for cat in _todo:
             _todo[cat] = [Task.decode(x) for x in _todo[cat]]
         todo = ToDo()
@@ -84,6 +85,10 @@ class ToDo:
                 return
         raise ExceptionNoTasks()
 
+    def _check_no_deadline(self, category, tag):
+        if self.get_task(category=category, tag=tag).deadline is None:
+            raise ExceptionMissingDeadline()
+
     ##########################################################################
     # Tasks                                                                  #
     ##########################################################################
@@ -97,6 +102,13 @@ class ToDo:
             self._todo[category].append(Task(tag, deadline, alarm))
         else:
             self._todo[category] = [Task(tag, deadline, alarm)]
+        self.store(self.get_loaded_user())
+
+    def remove_deadline(self, category: str, tag: str):
+        self._check_no_deadline(category, tag)
+        t = self.get_task(category=category, tag=tag)
+        t.remove_deadline()
+        t.remove_alarm()
         self.store(self.get_loaded_user())
 
     def remove_task(self, category: str, tag: str) -> None:
@@ -155,9 +167,11 @@ class ToDo:
     def remove_category(self, category) -> None:
         self._check_category(category)
         self._todo.pop(category)
+        self.store(self.get_loaded_user())
 
     ##########################################################################
     # Utils                                                                  #
     ##########################################################################
     def clear_all(self) -> None:
         self._todo: Dict[str, List[Task]] = {}
+        self.store(self.get_loaded_user())

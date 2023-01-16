@@ -7,7 +7,18 @@ from actions.ActionsException import ExceptionNoCategories, ExceptionDateTimeBef
 from dateutil.parser import parse
 import re
 from actions.actions import ActionWrapper
+import requests
 
+
+def ask_rasa(input_text: str) -> str:
+    # Get answer        
+    get_answer_url = 'http://localhost:5002/webhooks/rest/webhook'
+    message = {
+        "sender": 'bot',
+        "message": input_text
+    }
+    r = requests.post(get_answer_url, json=message)
+    return r.json()[0]["text"]
 
 def print_todo(todo: ToDo):
     try:
@@ -83,7 +94,7 @@ class TrackerFake:
     def get_slot(self, slot: str):
         return self._slots[slot]
 
-def test_action(todo: ToDo, action_to_test: ActionWrapper, slots: Dict[str, Any], todo_expected: Dict[str, List[Task]], clear_todo_before_running: bool=True, check=True):
+def test_action(todo: ToDo, action_to_test: ActionWrapper, slots: Dict[str, Any], todo_expected: Dict[str, List[Task]], clear_todo_before_running: bool=False, check=True):
     ActionWrapper.todo = todo
     if clear_todo_before_running:
         todo.clear_all()

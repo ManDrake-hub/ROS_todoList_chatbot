@@ -50,11 +50,12 @@ class InteractionManager:
 
     def say(self, phrase: String) -> None:
         """Use text 2 speech service to say a phrase aloud"""
+        print("bot answer: %s"%phrase)
         self.text2speech.publish(phrase)
 
     def save_to_file(self)-> None:
         """Write the loaded name to a file name.txt"""
-        folder = pathlib.Path(__file__).parent.resolve()
+        folder = str(pathlib.Path(__file__).parent.resolve())
         if self.name.data != "":
             with open(folder+"/name.txt", "w") as f:
                 f.write(self.name.data)
@@ -116,7 +117,7 @@ class InteractionManager:
                 if id_answer.data == "":
                     # If the id_service coudln't recognize the person                    
                     # Ask the person for their name
-                    self.text2speech.publish(String(data="Come ti chiami?"))
+                    self.say(String(data="Come ti chiami?"))
                     # Next time, wait for name
                     self.waiting_name = True
                 else:

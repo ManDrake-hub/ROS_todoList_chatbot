@@ -32,7 +32,7 @@ def load_object(input_path):
 class AudioRecognizer:
     def __init__(self, threshold: float=0.75, audio_rate: int=16000) -> None:
         # Load dataset
-        self.folder = pathlib.Path(__file__).parent.parent.resolve()
+        self.folder = str(pathlib.Path(__file__).parent.parent.resolve())
         self.x = load_object(self.folder+"/audio.pkl") if os.path.exists(self.folder+"/audio.pkl") else []
         self.y = load_object(self.folder+"/name.pkl") if os.path.exists(self.folder+"/name.pkl") else []
         # Load the audio model
@@ -75,7 +75,7 @@ class FaceRecognizer:
     def __init__(self) -> None:
         self.br = CvBridge()
         # Load dataset
-        self.folder = pathlib.Path(__file__).parent.parent.resolve()
+        self.folder = str(pathlib.Path(__file__).parent.parent.resolve())
         self.x = load_object(self.folder+"/face.pkl") if os.path.exists(self.folder+"/face.pkl") else []
         self.y = load_object(self.folder+"/face_name.pkl") if os.path.exists(self.folder+"/face_name.pkl") else []
         # Connect to image service proxy

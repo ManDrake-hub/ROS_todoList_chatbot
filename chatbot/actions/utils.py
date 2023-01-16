@@ -85,6 +85,8 @@ def is_datetime_before_now(dt: datetime.datetime) -> bool:
     return dt < datetime.datetime.now()
 
 def convert_deadline_to_datetime(date: str, time: str) -> datetime.datetime:
+    # TODO: domani viene trovato anche nel caso del dopodomani
+    print(date, time)
     date = date.lower()
     weekdays = ["lunedì", "martedì", "mercoledì", "giovedì", "venerdì", "sabato", "domenica"]
     months = ["gennaio", "febbraio", "marzo", "aprile", "maggio", "giugno", "luglio", "agosto", "settembre", "ottobre", "novembre", "dicembre"]
@@ -100,6 +102,7 @@ def convert_deadline_to_datetime(date: str, time: str) -> datetime.datetime:
         if has_weekdays:
             date = next_weekday(datetime.datetime.today(), weekday=weekdays_index)
         elif has_offsets:
+            print("has offsets", offsets_index)
             date = datetime.datetime.today() + datetime.timedelta(days=offsets_index)
         else:
             raise Exception("Could not parse date")
@@ -114,7 +117,7 @@ def convert_deadline_to_datetime(date: str, time: str) -> datetime.datetime:
         date = datetime.datetime(year=int(list_of_numbers(date)[-1]),
                                 month=months_index+1 if (has_letters(date)) else datetime.datetime.today().month, 
                                 day=int(list_of_numbers(date)[0]))
-
+    print(date)
     if type(date) is datetime.datetime:
         return parse(time, default=date, dayfirst=True)
 

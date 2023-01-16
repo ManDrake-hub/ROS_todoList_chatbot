@@ -19,6 +19,9 @@ class Text2SpeechNode:
         self.ip = ip
         self.port = port
         self.session = Session(ip, port)
+        self.tts = self.session.get_service("ALTextToSpeech")
+        self.tts.setLanguage("Italian")
+        self.tts.setVolume(0.5)
      
     '''
     Rececives a Text2Speech message and call the ALTextToSpeech service.
@@ -27,10 +30,14 @@ class Text2SpeechNode:
     def say(self, msg):
         pub.publish(True)
         try:
+            self.tts.say(msg.data)
+            #time.sleep(len(msg.data)*0.012)
             pub.publish(False)
         except Exception as e:
             print(e)
             self.session.reconnect()
+            self.tts = self.session.get_service("ALTextToSpeech")
+            self.tts.say(msg.data)
             pub.publish(False)
         return "ACK"
     '''

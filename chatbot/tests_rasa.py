@@ -74,6 +74,7 @@ if __name__ == "__main__":
     answer = ask_rasa("si")
     todo = ToDo.load("test")
     task = todo.get_task("scrivania", "tastiera")
+    print(task.deadline)
     tomorrow = datetime.datetime.now() + datetime.timedelta(days=2)
     assert (task.deadline.year == tomorrow.year and task.deadline.month == tomorrow.month and task.deadline.day == tomorrow.day)
     assert (task.deadline.hour == 23 and task.deadline.minute == 0)

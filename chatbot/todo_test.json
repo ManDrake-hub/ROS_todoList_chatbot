@@ -1,5 +1,11 @@
 {
-    "isolato": [
-        "{\"tag\": \"casa\", \"deadline\": null, \"alarm\": null}"
+    "spesa": [
+        "{\"tag\": \"fagioli\", \"deadline\": null, \"alarm\": null}"
+    ],
+    "palestra": [
+        "{\"tag\": \"saltare\", \"deadline\": \"2023-01-17 23:00:20.185617\", \"alarm\": null}"
+    ],
+    "scrivania": [
+        "{\"tag\": \"tastiera\", \"deadline\": \"2023-01-17 23:00:20.763026\", \"alarm\": \"2023-01-17 22:55:20.763026\"}"
     ]
 }

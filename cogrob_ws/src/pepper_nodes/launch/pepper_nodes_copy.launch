@@ -1,0 +1,3 @@
+<launch>
+  <node pkg="pepper_nodes" type="text2speech_node.py" name="text2speech_node" output="screen" />
+</launch>

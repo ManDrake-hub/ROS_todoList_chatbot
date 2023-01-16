@@ -18,19 +18,20 @@ class Text2SpeechNode:
     def __init__(self, ip, port):
         self.ip = ip
         self.port = port
-        self.session = Session(ip, port)
+        # self.session = Session(ip, port)
      
     '''
     Rececives a Text2Speech message and call the ALTextToSpeech service.
     The robot will play the text of the message
     '''
     def say(self, msg):
-        pub.publish(True)
+        while True:
+            pub.publish(True)
         try:
             pub.publish(False)
         except Exception as e:
             print(e)
-            self.session.reconnect()
+            # self.session.reconnect()
             pub.publish(False)
         return "ACK"
     '''

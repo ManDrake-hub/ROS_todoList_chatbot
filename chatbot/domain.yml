@@ -92,11 +92,11 @@ responses:
   utter_ask_tag:
   - text: Inserisci il titolo dell' attività
   - text: Qual è il titolo dell' attività?
-  - text: Come vuoi che chiami l'attività?
+  - text: Dimmi il nome dell'attività?
   utter_ask_tag_new:
   - text: Qual è il nuovo titolo dell' attività?
   - text: Mi dici il nuovo titolo dell'attività?
-  - text: Come devo chiamare l' attività?
+  - text: Come devo impostare il nuovo titolo dell' attività?
   utter_ask_date:
   - text: Dimmi la data di scadenza
   - text: Qual è la data di scadenza?
@@ -107,12 +107,12 @@ responses:
   - text: Dimmi la categoria dell'attività
   - text: Qual è la categoria dell' attività?
   utter_ask_category_new:
-  - text: Quale sarà la nuova categoria?
-  - text: Qual è il nuovo categoria?
+  - text: Quale sarà il nuovo gruppo?
+  - text: Qual è il nuovo gruppo?
   utter_ask_user:
   - text: Qual è il nome utente?
   utter_ask_user_new:
-  - text: Quale dovrà essere il nuovo nome dell'utente?
+  - text: Quale sarà il nuovo nome dell'utente?
   utter_ask_logical_deadline:
   - text: Vuoi impostare una deadline?
   utter_ask_logical_alert:

@@ -1,6 +1,6 @@
 #! bin/bash
 
-#gnome-terminal --tab -e "bash -c 'cd cogrob_ws; source devel/setup.bash; roslaunch pepper_nodes pepper_nodes.launch; exec bash'"
+gnome-terminal --tab -e "bash -c 'cd cogrob_ws; source devel/setup.bash; roslaunch pepper_nodes pepper_nodes.launch; exec bash'"
 gnome-terminal --tab -e "bash -c 'cd cogrob_ws; source devel/setup.bash; roslaunch rasa_ros dialogue.launch; exec bash'"
 sleep 3
 gnome-terminal --tab -e "bash -c 'cd cogrob_ws; source devel/setup.bash; roslaunch rasa_ros id_server.launch; exec bash'"

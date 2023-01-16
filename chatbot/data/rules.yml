@@ -101,6 +101,7 @@ rules:
 - rule: remove_user
   steps:
   - intent: remove_user
+  - action: user_form
   - action: action_remove_user
   - action: action_reset
 

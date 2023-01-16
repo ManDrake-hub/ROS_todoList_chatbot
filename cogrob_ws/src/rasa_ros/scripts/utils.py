@@ -124,8 +124,10 @@ class FaceRecognizer:
         # Use the known face with the smallest distance to the new face
         face_distances = face_recognition.face_distance(self.x, face_encoding)
         best_match_index = np.argmin(face_distances)
+        name = ""
         if matches[best_match_index]:
             name = self.y[best_match_index]
+        
         if name is None:
             return ""
         return name

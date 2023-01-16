@@ -31,7 +31,7 @@ class Microphone:
     def callback_audio_disable(self, value):
         """Get the bool from the topic and if True, stop listening in the background"""
         if not value.data:
-            self.stop_listening = self.r.listen_in_background(self.m, self.callback)
+            self.stop_listening = self.r.listen_in_background(self.m, self.callback_audio_publish)
         else:
             self.stop_listening()
 

@@ -4,9 +4,9 @@
   <param name="nao_ip" type="string" value="$(arg nao_ip)"/>
   <param name="nao_port" type="string" value="$(arg nao_port)"/>
   
-  <node pkg="pepper_nodes" type="audio.py" name="audio_node" required="true" args="--ip=$(arg nao_ip) --port=$(arg nao_port)" output="screen" />
-  <node pkg="pepper_nodes" type="image_input_node.py" name="face_detection_node" required="true" args="--ip=$(arg nao_ip) --port=$(arg nao_port)" output="screen" />
+
+
   <node pkg="pepper_nodes" type="tablet_node.py" name="tablet" required="true" args="--ip=$(arg nao_ip) --port=$(arg nao_port)" output="screen" />
   <node pkg="pepper_nodes" type="text2speech_node.py" name="text2speech_node" required="true" args="--ip=$(arg nao_ip) --port=$(arg nao_port)" output="screen" />
-
+  <node pkg="pepper_nodes" type="face_detection.py" name="follow_node" required="true" args="--ip=$(arg nao_ip) --port=$(arg nao_port)" output="screen" />
 </launch>

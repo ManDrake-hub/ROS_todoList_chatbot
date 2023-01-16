@@ -18,30 +18,29 @@ class AlertNode:
     def __init__(self, ip, port):
         self.ip = ip
         self.port = port
-        #self.session = Session(ip, port)
-        #self.audio_proxy = self.session.get_service("ALAudioPlayer")
+        self.session = Session(ip, port)
+        self.audio_proxy = self.session.get_service("ALAudioPlayer")
         self.talking = False
         self.last_alerts = []
     
     def alert(self):
-        print("sto girando", self.talking)
+        # TODO: fix path
+        # TODO: remove face_nodes =>s images
         alerts = check_alerts(folder_json="/home/francesca/Scrivania/ROS_todoList_chatbot/chatbot/", alert_length=15)
-        print(len(alerts))
         if len(alerts) == 0 or self.last_alerts == alerts or self.talking:
             return
         self.last_alerts = alerts
-        print("sto allertando")
-        #try:
-        #    #fileID = self.audio_proxy.loadFile("/home/nao/alert.mp3")
-        #    #self.audio_proxy.setVolume(fileID, 1)
-        #    #self.audio_proxy.play(fileID)
-        #except Exception as e:
-        #    #self.session.reconnect()
-        #    #self.audio_proxy = self.session.get_service("ALAudioPlayer")
-        #    #fileID = self.audio_proxy.loadFile("/home/nao/alert.mp3")
-        #    #self.audio_proxy.setVolume(fileID, 1)
-        #    #self.audio_proxy.play(fileID)
-        #return "ACK"
+        try:
+            fileID = self.audio_proxy.loadFile("/home/nao/alert.mp3")
+            self.audio_proxy.setVolume(fileID, 1)
+            self.audio_proxy.play(fileID)
+        except Exception as e:
+            self.session.reconnect()
+            self.audio_proxy = self.session.get_service("ALAudioPlayer")
+            fileID = self.audio_proxy.loadFile("/home/nao/alert.mp3")
+            self.audio_proxy.setVolume(fileID, 1)
+            self.audio_proxy.play(fileID)
+        return "ACK"
 
     def callback_talking(self, value):
         self.talking = value.data

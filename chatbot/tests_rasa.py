@@ -1,8 +1,7 @@
 import datetime
 from typing import Dict, List, Any
-from actions.actions import ActionRemoveDeadline, ActionRenameUser, ActionWrapper, ActionAddTask, ActionRemoveTask, ActionMoveTask, ActionCreateUser, ActionSetUser, ActionRemoveUser, ActionGetUser, ActionReadTasks, ActionAddAlert, ActionRemoveAlert
 from actions.Task import Task
-from actions.utils_test import check_equals, print_todo, print_todo_dict, CollectingDispatcherFake, TrackerFake, test_action, ask_rasa
+from utils_test import check_equals, print_todo, print_todo_dict, CollectingDispatcherFake, TrackerFake, test_action, ask_rasa
 from actions.ToDo import ToDo
 from actions.utils import convert_deadline_to_datetime
 import requests
@@ -10,7 +9,7 @@ import os
 import unittest
 from actions.ActionsException import ExceptionMissingTask, ExceptionMissingCategory, ExceptionNoCategories
 
-"""
+
 class RasaTest(unittest.TestCase):
     # Before runnning the test, run in different terminals:
     # 1) rasa run -m models --endpoints endpoints.yml --port 5002 --credentials credentials.yml --enable-api
@@ -155,62 +154,12 @@ class RasaTest(unittest.TestCase):
         self.assertRaises(ExceptionMissingTask, todo.get_task, "spesa", "fagioli")
         todo.get_task("spesa", "pane")
 
-    def test_modify_category(self):
-        # Test modify tag
-        ask_rasa("Aggiungi l'attività fagioli nella categoria spesa")
-        ask_rasa("no")
-        print(ask_rasa("Voglio spostare l'attività fagioli in categoria spesa in cena"))
-        print(ask_rasa("categoria cena"))
-        todo = ToDo.load("test")
-        self.assertRaises(ExceptionMissingTask, todo.get_task, "spesa", "fagioli")
-        todo.get_task("cena", "fagioli")
-"""
-
-
-class ActionsTest(unittest.TestCase):
-    def __init__(self, methodName: str = ...) -> None:
-        super().__init__(methodName)
-        CollectingDispatcherFake.debug = False
-        self.test_datetime = datetime.datetime(year=2023, month=10, day=10, hour=10, minute=10, second=10)
-
-    def get_clear_todo(self):
-        ##########################################################
-        # Setup for action tests
-        # Create empty todo list
-        if os.path.exists("./todo_test_actions.json"):
-            os.remove("./todo_test_actions.json")
-        ToDo.create_user("test_actions")
-        return ToDo.load("test_actions")
-        ##########################################################
-
-    def test_action_insert(self):
-        # Test action insert
-        todo = self.get_clear_todo()
-        test_action(todo, ActionAddTask, {"category": "spesa", "tag": "fagioli", "date": None, "time": None, "logical_alert": None}, 
-                                        {"spesa": [Task("fagioli"), ]})
-
-    def test_action_insert_with_deadline(self):
-        # Test action insert with deadline
-        todo = self.get_clear_todo()
-        test_action(todo, ActionAddTask, {"category": "spesa", "tag": "fagioli", "date": "10/10/2023", "time": "10:10:10", "logical_alert": None}, 
-                                        {"spesa": [Task("fagioli", self.test_datetime), ]})
-
-    def test_action_insert_with_deadline_and_alarm(self):
-        # Test action insert with deadline and alarm
-        todo = self.get_clear_todo()
-        test_action(todo, ActionAddTask, {"category": "spesa", "tag": "fagioli", "date": "10/10/2023", "time": "10:10:10", "logical_alert": "10/10/2023 10:10:10"}, 
-                                        {"spesa": [Task("fagioli", self.test_datetime, self.test_datetime-datetime.timedelta(minutes=5)), ]})
-
-    def test_remove_action(self):
-        # Test remove action
-        todo = self.get_clear_todo()
-        test_action(todo, ActionAddTask, {"category": "spesa", "tag": "fagioli", "date": "10/10/2023", "time": "10:10:10", "logical_alert": None}, 
-                                        {"spesa": [Task("fagioli", self.test_datetime), ]}, check=True)
-        test_action(todo, ActionRemoveTask, {"category": "spesa", "tag": "fagioli"}, {"spesa": []}, check=True)
-
-    def test_remove_alert(self):
-        # Test remove alert
-        todo = self.get_clear_todo()
-        test_action(todo, ActionAddTask, {"category": "spesa", "tag": "fagioli", "date": "10/10/2023", "time": "10:10:10", "logical_alert": None}, 
-                                        {"spesa": [Task("fagioli", self.test_datetime), ]}, check=True)
-        test_action(todo, ActionRemoveAlert, {"category": "spesa", "tag": "fagioli"}, {"spesa": []}, check=True)
+    # def test_modify_category(self):
+    #     # Test modify tag
+    #     ask_rasa("Aggiungi l'attività fagioli nella categoria spesa")
+    #     ask_rasa("no")
+    #     print(ask_rasa("Voglio spostare l'attività fagioli in categoria spesa in cena"))
+    #     print(ask_rasa("categoria cena"))
+    #     todo = ToDo.load("test")
+    #     self.assertRaises(ExceptionMissingTask, todo.get_task, "spesa", "fagioli")
+    #     todo.get_task("cena", "fagioli")

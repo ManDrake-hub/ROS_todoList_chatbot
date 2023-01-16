@@ -135,9 +135,7 @@ class ToDo:
                                 None)
 
     def move_task(self, category: str, tag: str, category_new: str) -> None:
-        self._check_category(category_new)
         self._check_task(category, tag)
-
         task_old = self.get_task(category, tag)
         self.remove_task(category, tag)
         self.add_task(category_new, tag, task_old.deadline, task_old.alarm)

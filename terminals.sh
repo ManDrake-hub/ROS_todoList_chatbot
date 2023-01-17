@@ -1,7 +1,7 @@
 #! bin/bash
 gnome-terminal --tab -e "bash -c 'cd cogrob_ws/src/tablet; python3 main.py; exec bash'"
 sleep 3
-#gnome-terminal --tab -e "bash -c 'cd cogrob_ws; source devel/setup.bash; roslaunch pepper_nodes pepper_nodes.launch; exec bash'"
+gnome-terminal --tab -e "bash -c 'cd cogrob_ws; source devel/setup.bash; roslaunch pepper_nodes pepper_nodes.launch; exec bash'"
 sleep 3
 gnome-terminal --tab -e "bash -c 'cd cogrob_ws; source devel/setup.bash; roslaunch rasa_ros dialogue.launch; exec bash'"
 sleep 3
@@ -10,7 +10,7 @@ gnome-terminal --tab -e "bash -c 'cd cogrob_ws; source devel/setup.bash; roslaun
 #PROVVISORIO AL POSTO DEL PRIMO COMMENTATO
 gnome-terminal --tab -e "bash -c 'cd cogrob_ws; source devel/setup.bash; roslaunch pepper_nodes face_cv.launch; exec bash'"
 gnome-terminal --tab -e "bash -c 'cd cogrob_ws; source devel/setup.bash; roslaunch pepper_nodes audio.launch; exec bash'"
-gnome-terminal --tab -e "bash -c 'cd cogrob_ws; source devel/setup.bash; roslaunch pepper_nodes pepper_nodes_copy.launch; exec bash'"
+#gnome-terminal --tab -e "bash -c 'cd cogrob_ws; source devel/setup.bash; roslaunch pepper_nodes pepper_nodes_copy.launch; exec bash'"
 
 
 

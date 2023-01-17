@@ -94,7 +94,6 @@ class FaceRecognizer:
 
     def get_embeddings(self, image):
         """Get face embeddings from cv2 image"""
-        # Resize frame of video to 1/4 size for faster face recognition processing
         small_frame = cv2.resize(image, (0, 0), fx=1, fy=1)
 
         # Convert the image from BGR color (which OpenCV uses) to RGB color (which face_recognition uses)

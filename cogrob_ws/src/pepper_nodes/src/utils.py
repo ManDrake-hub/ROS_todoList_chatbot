@@ -1,6 +1,12 @@
 #!/usr/bin/python3
 import qi
 import sys
+import pathlib
+from dateutil import parser
+import json
+import os
+import datetime
+from typing import List, Tuple
 
 '''
 This class creates a qi session using the ip and port parameters provided as input to costructor
@@ -49,21 +55,6 @@ class Session:
     def get_service(self, service_name: str):
         return self.session.service(service_name)
 
-import pathlib
-from dateutil import parser
-import json
-import os
-import datetime
-from typing import List, Tuple
-
-def get_body(user):
-    return f"""
-            <head><h1>TODO list di {user}</h1></head>
-            <body style="background-color:rgb(40, 42, 54);">
-            """
-def get_body_closure():
-    return """</body>"""
-
 def read_user(path="../../../../../.ros/name.txt")-> str:
     """Read user name from given file path"""
     with open(path, "r") as f:
@@ -86,13 +77,6 @@ def get_todo_data(user, folder_json="../../../chatbot/") -> List[Tuple[str, str,
             todo_data.append((cat, task["tag"], task["deadline"] if task["deadline"] is not None else "", 
                                 task["alarm"] if task["alarm"] is not None else ""))
     return todo_data
-
-def get_rows_from_data(data: List[Tuple[str, str, str, str]]):
-    """Creates html table's rows from a given list of tuples filled as ("category", "tag", "deadline", "alarm")."""
-    rows = []
-    for d in data:
-        rows.append("<tr>" + " ".join(["<td>" + str(x) + "</td>" for x in d[:-1]]) + "</tr>")
-    return "\n".join(rows)
 
 def check_alerts(folder_json="../../../chatbot/", alert_length: int=15):
     """

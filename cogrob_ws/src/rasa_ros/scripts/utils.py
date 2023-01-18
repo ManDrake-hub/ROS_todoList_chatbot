@@ -42,6 +42,9 @@ class AudioRecognizer:
         self.threshold = threshold
 
     def add_sample(self, x, y) -> None:
+        """
+        Add samples to database.
+        """
         self.x.append(x)
         save_object(self.folder+"/audio.pkl", self.x)
         self.y.append(y)
@@ -82,6 +85,9 @@ class FaceRecognizer:
         self.image_service = rospy.ServiceProxy('image_server', Face_image)
 
     def add_sample(self, x, y) -> None:
+        """
+        Add samples to database.
+        """
         self.x.append(x)
         save_object(self.folder+"/face.pkl", self.x)
         self.y.append(y)

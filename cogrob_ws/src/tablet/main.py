@@ -16,6 +16,7 @@ def home():
         return render_template('index.html', x=get_page())
 
 
+# Schedule the update of the webpage
 scheduler = BackgroundScheduler()
 running_job = scheduler.add_job(home, 'interval', seconds=2, max_instances=1)
 scheduler.start()

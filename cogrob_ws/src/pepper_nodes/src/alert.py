@@ -8,6 +8,7 @@ from optparse import OptionParser
 from utils import Session
 from apscheduler.schedulers.background import BackgroundScheduler
 from utils import check_alerts
+import pathlib
 
 
 class AlertNode:
@@ -24,9 +25,12 @@ class AlertNode:
         self.last_alerts = []
     
     def alert(self):
-        # TODO: fix path
-        # TODO: remove face_nodes =>s images
-        alerts = check_alerts(folder_json="/home/francesca/Scrivania/ROS_todoList_chatbot/chatbot/", alert_length=15)
+        """
+        Plays a sound if any alarm is pending without interrupting the conversation.
+        """
+        folder = str(pathlib.Path(__file__).parent.parent.parent.parent.parent.resolve()) + "/chatbot"
+
+        alerts = check_alerts(folder_json=folder, alert_length=15)
         if len(alerts) == 0 or self.last_alerts == alerts or self.talking:
             return
         self.last_alerts = alerts
@@ -43,7 +47,11 @@ class AlertNode:
         return "ACK"
 
     def callback_talking(self, value):
+        """
+        Records changes on the topic to keep track of the operation of the Text-to-Speech node.
+        """
         self.talking = value.data
+
 
 if __name__ == '__main__':
     parser = OptionParser()

@@ -13,6 +13,7 @@ import unittest
 from actions.ActionsException import ExceptionMissingTask, ExceptionMissingCategory, ExceptionNoCategories
 
 
+# To run the tests: python -m unittest discover
 class ActionsTest(unittest.TestCase):
     def __init__(self, methodName: str = ...) -> None:
         super().__init__(methodName)

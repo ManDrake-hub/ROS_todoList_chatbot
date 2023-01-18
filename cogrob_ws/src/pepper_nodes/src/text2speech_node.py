@@ -20,6 +20,7 @@ class Text2SpeechNode:
         self.port = port
         self.session = Session(ip, port)
         self.tts = self.session.get_service("ALTextToSpeech")
+        # self.tts = self.session.get_service("ALAnimatedSpeech")
         self.tts.setLanguage("Italian")
         self.tts.setVolume(0.5)
     
@@ -31,13 +32,17 @@ class Text2SpeechNode:
         pub.publish(True)
         try:
             self.tts.say(msg.data)
+            configuration = {"bodyLanguageMode":"contextual"}
+            # self.tts.say(msg.data, configuration)
             #time.sleep(len(msg.data)*0.012)
             pub.publish(False)
         except Exception as e:
             print(e)
             self.session.reconnect()
             self.tts = self.session.get_service("ALTextToSpeech")
+            configuration = {"bodyLanguageMode":"contextual"}
             self.tts.say(msg.data)
+            # self.tts.say(msg.data, configuration)
             pub.publish(False)
         return "ACK"
     '''

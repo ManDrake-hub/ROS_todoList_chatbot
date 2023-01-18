@@ -32,7 +32,7 @@ class Text2SpeechNode:
         pub.publish(True)
         try:
             self.tts.say(msg.data)
-            configuration = {"bodyLanguageMode":"contextual"}
+            # configuration = {"bodyLanguageMode":"contextual"}
             # self.tts.say(msg.data, configuration)
             #time.sleep(len(msg.data)*0.012)
             pub.publish(False)
@@ -40,7 +40,8 @@ class Text2SpeechNode:
             print(e)
             self.session.reconnect()
             self.tts = self.session.get_service("ALTextToSpeech")
-            configuration = {"bodyLanguageMode":"contextual"}
+            # self.tts = self.session.get_service("ALAnimatedSpeech")
+            # configuration = {"bodyLanguageMode":"contextual"}
             self.tts.say(msg.data)
             # self.tts.say(msg.data, configuration)
             pub.publish(False)

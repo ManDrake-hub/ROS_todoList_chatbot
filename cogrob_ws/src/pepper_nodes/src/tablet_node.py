@@ -73,7 +73,7 @@ if __name__ == "__main__":
     try:
         node = TabletNode(options.ip, int(options.port))
         node.start()
-        url = r"http://10.0.1.247:5000"
+        url = r"http://172.19.210.63:5000"
         node.load_url(url)
         #node.alert(10)
         rospy.spin()

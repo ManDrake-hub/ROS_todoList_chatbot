@@ -1,16 +1,5 @@
 {
-    "esami secondo anno": [
-        "{\"tag\": \"cognitive robotics\", \"deadline\": null, \"alarm\": null}"
-    ],
-    "casa": [
-        "{\"tag\": \"poltrona\", \"deadline\": \"2023-01-15 17:30:52\", \"alarm\": \"2023-01-15 17:25:52\"}",
-        "{\"tag\": \"sedia\", \"deadline\": \"2023-01-15 18:30:52\", \"alarm\": \"2023-01-15 17:25:52\"}"
-    ],
-    "ufficio": [],
-    "scrivania": [
-        "{\"tag\": \"computer\", \"deadline\": \"2023-01-18 11:50:21.258591\", \"alarm\": \"2023-01-18 11:45:21.258591\"}"
-    ],
-    "esami": [
-        "{\"tag\": \"progetto\", \"deadline\": \"2023-01-18 11:20:40.087654\", \"alarm\": null}"
+    "esame": [
+        "{\"tag\": \"progetto\", \"deadline\": null, \"alarm\": null}"
     ]
 }

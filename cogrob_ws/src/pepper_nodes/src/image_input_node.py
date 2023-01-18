@@ -127,12 +127,12 @@ if __name__ == "__main__":
         rospy.logdebug('Face server READY.')
         rospy.spin()
 
-        #TO DO: TEST VIDEO PEPPER
-        image_input = ImageInputNode(options.ip, int(options.port))
-        s = rospy.Service('image_server',
-                        Face_image, image_input.handle_service)
-        rospy.logdebug('Face server READY.')
-        rospy.spin()
+        #NOT WORK ON 230 BECAUSE THE WEBCAM IS BLURRED
+        #image_input = ImageInputNode(options.ip, int(options.port))
+        #s = rospy.Service('image_server',
+        #                Face_image, image_input.handle_service)
+        #rospy.logdebug('Face server READY.')
+        #rospy.spin()
     except rospy.ROSInterruptException:
         pass
 

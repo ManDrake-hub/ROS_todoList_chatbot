@@ -1,8 +1,9 @@
 from dateutil import parser
 import json
+import datetime
 
 class Task:
-    def __init__(self, tag, deadline=None, alarm=None) -> None:
+    def __init__(self, tag, deadline: datetime.datetime=None, alarm: datetime.datetime=None) -> None:
         self.tag = tag
         self.deadline = deadline
         self.alarm = alarm

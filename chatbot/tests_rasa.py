@@ -10,6 +10,7 @@ import unittest
 from actions.ActionsException import ExceptionMissingTask, ExceptionMissingCategory, ExceptionNoCategories
 
 
+# To run the tests: python -m unittest discover
 class RasaTest(unittest.TestCase):
     # Before runnning the test, run in different terminals:
     # 1) rasa run -m models --endpoints endpoints.yml --port 5002 --credentials credentials.yml --enable-api
@@ -153,13 +154,3 @@ class RasaTest(unittest.TestCase):
         todo = ToDo.load("test")
         self.assertRaises(ExceptionMissingTask, todo.get_task, "spesa", "fagioli")
         todo.get_task("spesa", "pane")
-
-    # def test_modify_category(self):
-    #     # Test modify tag
-    #     ask_rasa("Aggiungi l'attività fagioli nella categoria spesa")
-    #     ask_rasa("no")
-    #     print(ask_rasa("Voglio spostare l'attività fagioli in categoria spesa in cena"))
-    #     print(ask_rasa("categoria cena"))
-    #     todo = ToDo.load("test")
-    #     self.assertRaises(ExceptionMissingTask, todo.get_task, "spesa", "fagioli")
-    #     todo.get_task("cena", "fagioli")

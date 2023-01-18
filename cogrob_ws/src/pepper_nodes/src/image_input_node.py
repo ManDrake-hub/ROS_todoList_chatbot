@@ -25,12 +25,13 @@ MODE_RGB = 0
 MODE_DEPTH = 1
 MODE_RGBD = 2
 
-class Node:
+class LocalNode:
+    """
+    This class configures a ROS node able to read the video stream from the local camera
+    """
     def __init__(self):
         self.bridge = CvBridge()
         self.fps = 30
-    
-        
     
     def handle_service(self,req):
         msg = Image()
@@ -44,6 +45,7 @@ class Node:
             msg.header.stamp = rospy.Time.now()
         rate.sleep()
         return msg
+
 '''
 This class configures a ROS node able to read the video stream from the robot's camera
 '''
@@ -68,7 +70,7 @@ class ImageInputNode:
         else:
             self.width, self.height = None, None
         self.camera = self.session.get_service("ALVideoDevice")
-        self.rgb_sub = self.camera.subscribeCamera("RGB Stream", rgb_camera, resolution, COLORSPACE_RGB, self.fps) #https://bit.ly/3BEFZIr
+        self.rgb_sub = self.camera.subscribeCamera("RGB Stream", rgb_camera, resolution, COLORSPACE_RGB, self.fps)
         if not self.rgb_sub:
             raise Exception("Camera is not initialized properly")
         self.bridge = CvBridge()
@@ -117,7 +119,7 @@ if __name__ == "__main__":
     (options, args) = parser.parse_args()
     try:
         rospy.init_node("image_input_node")
-        image_input = Node()
+        image_input = LocalNode()
         s = rospy.Service('image_server',
                         Face_image, image_input.handle_service)
         rospy.logdebug('Face server READY.')

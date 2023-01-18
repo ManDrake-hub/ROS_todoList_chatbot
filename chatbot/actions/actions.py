@@ -30,6 +30,9 @@ class ActionSet(ActionWrapper):
                                    tracker.get_latest_entity_values(entity_type=x["entity"], entity_role=x["role"]) else []) for x in entity_slot_names]
 
 class ActionReset(ActionWrapper):
+    """
+    Reset all slots.
+    """
     def name(self) -> Text:
         return "action_reset"
 
@@ -40,6 +43,12 @@ class ActionReset(ActionWrapper):
         return [AllSlotsReset()]
 
 class ActionCreateUser(ActionWrapper):
+    """
+    Create a todo for a user.
+    
+    Slots needed: user.
+    """
+
     def name(self) -> Text:
         return "action_create_user"
 
@@ -50,14 +59,18 @@ class ActionCreateUser(ActionWrapper):
         user = get_user(tracker)
 
         if ToDo.is_user_available(user):
-            #dispatcher.utter_message(text=f"Todo-list di {user} già esistente")
             return []
 
         ToDo.create_user(user)
-        #dispatcher.utter_message(text=f"Ho creato la tua todo-list {user}")
         return []
 
 class ActionSetUser(ActionWrapper):
+    """
+    Set the current loaded user.
+    
+    Slots needed: user.
+    """
+
     def name(self) -> Text:
         return "action_set_user"
 
@@ -68,7 +81,6 @@ class ActionSetUser(ActionWrapper):
         user = get_user(tracker)
 
         if not ToDo.is_user_available(user):
-            #dispatcher.utter_message(text=f"Todo-list di {user} non esistente")
             return []
 
         ActionWrapper.todo = ToDo.load(user)
@@ -76,6 +88,12 @@ class ActionSetUser(ActionWrapper):
         return []
 
 class ActionRenameUser(ActionWrapper):
+    """
+    Rename the user to a new name.
+    
+    Slots needed: user, user_new.
+    """
+
     def name(self) -> Text:
         return "action_rename_user"
 
@@ -87,11 +105,9 @@ class ActionRenameUser(ActionWrapper):
         user_new = get_user_new(tracker)
 
         if not ToDo.is_user_available(user):
-            #dispatcher.utter_message(text=f"Todo-list di {user} non esistente")
             return []
 
         if ToDo.is_user_available(user_new):
-            #dispatcher.utter_message(text=f"Todo-list di {user_new} già esistente")
             return []
 
         ActionWrapper.todo.store(user_new)
@@ -101,6 +117,12 @@ class ActionRenameUser(ActionWrapper):
         return []
 
 class ActionGetUser(ActionWrapper):
+    """
+    Get the user currently loaded.
+
+    No Slots needed.
+    """
+
     def name(self) -> Text:
         return "action_get_user"
 
@@ -112,6 +134,12 @@ class ActionGetUser(ActionWrapper):
         return []
 
 class ActionRemoveUser(ActionWrapper):
+    """
+    Remove a user from the list of todos.
+    
+    Slots needed: user.
+    """
+
     def name(self) -> Text:
         return "action_remove_user"
 
@@ -122,7 +150,6 @@ class ActionRemoveUser(ActionWrapper):
         user = get_user(tracker)
 
         if not ActionWrapper.todo.is_user_available(user):
-            #dispatcher.utter_message(text=f"Todo-list di {user} non esistente")
             return []
 
         ActionWrapper.todo.remove_user(user)
@@ -132,7 +159,11 @@ class ActionRemoveUser(ActionWrapper):
         return []
 
 class ActionAddTask(ActionWrapper):
-    """Add a task to the todo-list and shows the task's informations to the user """
+    """
+    Add a task to the todo-list and shows the task's informations to the user
+    
+    Slots needed: tag, category, logical_alert.
+    """
     def name(self) -> Text:
         return "action_add_task"
 
@@ -158,7 +189,11 @@ class ActionAddTask(ActionWrapper):
         return []
 
 class ActionRemoveTask(ActionWrapper):
-    """Remove a task from the todo-list and notify that to the user"""
+    """
+    Remove a task from the todo-list and notify that to the user
+    
+    Slots needed: tag, category.
+    """
     def name(self) -> Text:
         return "action_remove_task"
 
@@ -179,7 +214,11 @@ class ActionRemoveTask(ActionWrapper):
         return []
 
 class ActionRemoveDeadline(ActionWrapper):
-    """Remove a task from the todo-list and notify that to the user"""
+    """
+    Remove a task from the todo-list and notify that to the user
+    
+    Slots needed: tag, category.
+    """
     def name(self) -> Text:
         return "action_remove_deadline"
 
@@ -200,7 +239,11 @@ class ActionRemoveDeadline(ActionWrapper):
         return [] 
 
 class ActionRemoveCategory(ActionWrapper):
-    """Remove a task from the todo-list and notify that to the user"""
+    """
+    Remove a task from the todo-list and notify that to the user
+    
+    Slots needed: category.
+    """
     def name(self) -> Text:
         return "action_remove_category"
 
@@ -220,7 +263,11 @@ class ActionRemoveCategory(ActionWrapper):
         return []
 
 class ActionReadTask(ActionWrapper):
-    """If the task is in the todo-list, shows the task and the relative informations to the user"""
+    """
+    If the task is in the todo-list, shows the task and the relative informations to the user
+    
+    Slots needed: tag, category.
+    """
     def name(self) -> Text:
         return "action_read_task"
 
@@ -241,7 +288,11 @@ class ActionReadTask(ActionWrapper):
         return []
 
 class ActionReadTasks(ActionWrapper):
-    """If there are some tasks in the todo-list, display a list of tasks to the user"""
+    """
+    If there are some tasks in the todo-list, display a list of tasks to the user
+    
+    No Slots needed.
+    """
     def name(self) -> Text:
         return "action_read_tasks"
 
@@ -264,7 +315,11 @@ class ActionReadTasks(ActionWrapper):
         return[]
 
 class ActionReadCategories(ActionWrapper):
-    """If there are some tasks in the todo-list, display list of categories to the user"""
+    """
+    If there are some tasks in the todo-list, display list of categories to the user
+    
+    No Slots needed.
+    """
     def name(self) -> Text:
         return "action_read_categories"
 
@@ -286,7 +341,11 @@ class ActionReadCategories(ActionWrapper):
         return []
 
 class ActionReadCategory(ActionWrapper):
-    """Shows to the user the tasks of a specific category"""
+    """
+    Shows to the user the tasks of a specific category
+
+    Slots needed: category.
+    """
     def name(self) -> Text:
         return "action_read_category"
 
@@ -310,7 +369,11 @@ class ActionReadCategory(ActionWrapper):
         return []
 
 class ActionModifyTaskName(ActionWrapper):
-    """Receive old and new tag of a task and replace the old one with the new"""
+    """
+    Receive old and new tag of a task and replace the old one with the new
+    
+    Slots needed: tag, tag_new, category.
+    """
     def name(self) -> Text:
         return "action_modify_task_name"
 
@@ -332,7 +395,11 @@ class ActionModifyTaskName(ActionWrapper):
         return []
 
 class ActionMoveTask(ActionWrapper):
-    """Modify the category of a task"""
+    """
+    Modify the category of a task
+    
+    Slots needed: tag, category, category_new.
+    """
     def name(self) -> Text:
         return "action_move_task"
 
@@ -354,7 +421,11 @@ class ActionMoveTask(ActionWrapper):
         return []
 
 class ActionMoveModifyTask(ActionWrapper):
-    """Modify the category of a task"""
+    """
+    Modify the category of a task
+    
+    Slots needed: tag, category, tag_new, category_new.
+    """
     def name(self) -> Text:
         return "action_move_modify_task"
 
@@ -378,7 +449,11 @@ class ActionMoveModifyTask(ActionWrapper):
         return []
 
 class ActionModifyDeadline(ActionWrapper):
-    """Modify the deadline of a task"""
+    """
+    Modify the deadline of a task
+
+    Slots needed: tag, category.
+    """
     def name(self) -> Text:
         return "action_modify_deadline"
 
@@ -404,7 +479,11 @@ class ActionModifyDeadline(ActionWrapper):
         return []
 
 class ActionAddAlert(ActionWrapper):
-    """Add an alert to a task and notify it to the user"""
+    """
+    Add an alert to a task and notify it to the user
+
+    Slots needed: tag, category.
+    """
     def name(self) -> Text:
         return "action_add_alert"
 
@@ -436,7 +515,11 @@ class ActionAddAlert(ActionWrapper):
         return []
 
 class ActionRemoveAlert(ActionWrapper):
-    """Add an alert to a task and notify it to the user"""
+    """
+    Add an alert to a task and notify it to the user
+
+    Slots needed: tag, category.
+    """
     def name(self) -> Text:
         return "action_remove_alert"
 
@@ -460,7 +543,11 @@ class ActionRemoveAlert(ActionWrapper):
         return []
 
 class ActionModifyAlert(ActionWrapper):
-    """Add an alert to a task and notify it to the user"""
+    """
+    Add an alert to a task and notify it to the user.
+
+    Slots needed: tag, category, alert.
+    """
     def name(self) -> Text:
         return "action_modify_alert"
 

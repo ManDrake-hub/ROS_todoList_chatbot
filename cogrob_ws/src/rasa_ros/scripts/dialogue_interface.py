@@ -11,11 +11,6 @@ import message_filters
 import os
 from typing import Any
 
-"""
-Idea: Andiamo ad inserire il face recog nell'id server:
-    1) Passiamo in aggiunta del soliti valori dell'audio, anche l'immagine della face
-    2) Nell'id server utilizziamo le stesse tecniche per il riconoscimento della voce, ma sulla faccia
-"""
 
 class InteractionManager:
     intent_goodbye = ["arrivederci", "addio", "ci sentiamo", "a risentirci", 

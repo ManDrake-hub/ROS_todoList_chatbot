@@ -85,6 +85,17 @@ def is_datetime_before_now(dt: datetime.datetime) -> bool:
     return dt < datetime.datetime.now()
 
 def convert_deadline_to_datetime(date: str, time: str) -> datetime.datetime:
+    """
+    Convert a date and time provided as string to a datetime.
+
+    Supports both normal formats like 10/01/2025 but also:
+    - day + time: ex. "lunedì alle 10:10:10"
+    - day + month + time: ex. "27 gennaio alle 10:10:10"
+    - offset + time: ex. "oggi alle 10:10:10"
+
+    If time is an empty string, the current time will be used, if date is an empty string the current day will be used
+    or the next day if it would lead to a datetime already passed.
+    """
     date = date.lower()
     weekdays = ["lunedì", "martedì", "mercoledì", "giovedì", "venerdì", "sabato", "domenica"]
     months = ["gennaio", "febbraio", "marzo", "aprile", "maggio", "giugno", "luglio", "agosto", "settembre", "ottobre", "novembre", "dicembre"]

@@ -1,40 +1,19 @@
 {
-    "lavoretti": [
-        "{\"tag\": \"poltrona\", \"deadline\": \"2024-11-23 08:30:00\", \"alarm\": null}"
+    "Esami secondo anno": [
+        "{\"tag\": \"Cognitive Robotics\", \"deadline\": \"2024-11-23 08:30:00\", \"alarm\": null}"
     ],
-    "sedia": [
-        "{\"tag\": \"poltrona\", \"deadline\": \"2023-01-15 17:30:52.286548\", \"alarm\": \"2023-01-15 17:25:52.286548\"}"
+    "Casa": [
+        "{\"tag\": \"Poltrona\", \"deadline\": \"2023-01-15 17:30:52\", \"alarm\": \"2023-01-15 17:25:52\"}",
+	    "{\"tag\": \"Sedia\", \"deadline\": \"2023-01-15 18:30:52\", \"alarm\": \"2023-01-17 18:47:32\"}"
     ],
-    "scrivania": [
-        "{\"tag\": \"computer\", \"deadline\": \"2023-01-15 17:30:00\", \"alarm\": null}"
+    "Ufficio": [
+        "{\"tag\": \"Computer\", \"deadline\": \"2023-01-15 17:30:00\", \"alarm\": null}"
     ],
-    "panino": [
-        "{\"tag\": \"pizza\", \"deadline\": null, \"alarm\": null}"
+    "Scrivania": [
+        "{\"tag\": \"Computer\", \"deadline\": \"2023-01-15 18:47:00\", \"alarm\": null}"
     ],
-    "casa": [
-        "{\"tag\": \"computer\", \"deadline\": null, \"alarm\": null}"
-    ],
-    "lavoro": [
-        "{\"tag\": \"computer\", \"deadline\": \"2023-01-15 18:30:00\", \"alarm\": null}"
-    ],
-    "terrazza": [],
-    "frigo": [
-        "{\"tag\": \"gelato\", \"deadline\": null, \"alarm\": null}"
-    ],
-    "sugo": [
-        "{\"tag\": \"braciola\", \"deadline\": null, \"alarm\": null}"
-    ],
-    "sugo +": [],
-    "null": [
-        "{\"tag\": null, \"deadline\": \"2023-01-15 23:00:38.931299\", \"alarm\": null}"
-    ],
-    "poltrona": [
-        "{\"tag\": \"letto\", \"deadline\": null, \"alarm\": null}"
-    ],
-    "computer": [
-        "{\"tag\": \"tasto\", \"deadline\": \"2023-01-15 15:30:13.648035\", \"alarm\": \"2023-01-15 15:25:13.648035\"}"
-    ],
-    "letto": [
-        "{\"tag\": \"tasto\", \"deadline\": \"2023-01-15 18:30:31.816187\", \"alarm\": \"2023-01-15 18:25:31.816187\"}"
+    "Terrazza": [],
+    "Frigo": [
+        "{\"tag\": \"Gelato\", \"deadline\": null, \"alarm\": null}"
     ]
 }

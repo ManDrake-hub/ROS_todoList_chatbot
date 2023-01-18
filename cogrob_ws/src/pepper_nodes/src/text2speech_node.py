@@ -22,7 +22,7 @@ class Text2SpeechNode:
         self.tts = self.session.get_service("ALTextToSpeech")
         self.tts.setLanguage("Italian")
         self.tts.setVolume(0.5)
-     
+    
     '''
     Rececives a Text2Speech message and call the ALTextToSpeech service.
     The robot will play the text of the message

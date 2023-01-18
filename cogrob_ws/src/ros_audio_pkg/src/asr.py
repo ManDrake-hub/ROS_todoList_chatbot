@@ -48,5 +48,5 @@ if __name__ == '__main__':
     # Initialize a Recognizer
     r = sr.Recognizer()
     # Start transcription
-    t = Transcriber(r,input_topic="mic_data", output_topic="voice_txt_data")
+    t = Transcriber(r, input_topic="mic_data", output_topic="voice_txt_data")
     rospy.spin()

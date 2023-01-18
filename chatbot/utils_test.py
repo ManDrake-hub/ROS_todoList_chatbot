@@ -11,7 +11,11 @@ import requests
 
 
 def ask_rasa(input_text: str) -> str:
-    # Get answer        
+    """
+    Function that takes in input a string and passes it to the Rasa API endpoint and 
+    returns the bot's answer.
+    """
+    # Get answer
     get_answer_url = 'http://localhost:5002/webhooks/rest/webhook'
     message = {
         "sender": 'bot',
@@ -51,9 +55,15 @@ def print_todo_dict(todo: Dict):
             print(f"         - {str(t)}")
 
 def check_equals_task(real_task: Task, expected_task: Task):
+    """
+    Checks that the provided Tasks are equals.
+    """
     return real_task.tag == expected_task.tag and real_task.deadline == expected_task.deadline and real_task.alarm == expected_task.alarm
 
 def check_equals(real: ToDo, expected: Dict[str, List[Task]]):
+    """
+    Checks that the provided ToDos are equals.
+    """
     try:
         if len(real.get_categories()) == 0 and len(expected.keys()) == 0:
             return True
@@ -76,6 +86,9 @@ def check_equals(real: ToDo, expected: Dict[str, List[Task]]):
     return True
 
 class CollectingDispatcherFake:
+    """
+    Fake Dispatcher class that implements the needed functionalities for action testing.
+    """
     debug = True
 
     @staticmethod
@@ -88,6 +101,9 @@ class CollectingDispatcherFake:
             print("Dispatched: ", f"'{text}'")
 
 class TrackerFake:
+    """
+    Fake Tracker class that implements the needed functionalities for action testing.
+    """
     def __init__(self, slots: Dict) -> None:
         self._slots = slots
 
@@ -95,6 +111,11 @@ class TrackerFake:
         return self._slots[slot]
 
 def test_action(todo: ToDo, action_to_test: ActionWrapper, slots: Dict[str, Any], todo_expected: Dict[str, List[Task]], clear_todo_before_running: bool=False, check=True):
+    """
+    This function lets you test a specific action on the provided ToDo instance and, if check is True, it will check that the todo_expected is
+    the same to the one obtained via Action.
+    The parameter clear_todo_before_running can be used to clean the todo before any action.
+    """
     ActionWrapper.todo = todo
     if clear_todo_before_running:
         todo.clear_all()

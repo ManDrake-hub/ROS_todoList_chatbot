@@ -7,10 +7,9 @@ gnome-terminal --tab -e "bash -c 'cd cogrob_ws; source devel/setup.bash; roslaun
 sleep 3
 gnome-terminal --tab -e "bash -c 'cd cogrob_ws; source devel/setup.bash; roslaunch rasa_ros id_server.launch; exec bash'"
 gnome-terminal --tab -e "bash -c 'cd cogrob_ws; source devel/setup.bash; roslaunch ros_audio_pkg speech_recognition.launch; exec bash'"
-#PROVVISORIO AL POSTO DEL PRIMO COMMENTATO
+#PROVVISORIO AL POSTO DEL SECONDO COMMENTATO
 gnome-terminal --tab -e "bash -c 'cd cogrob_ws; source devel/setup.bash; roslaunch pepper_nodes face_cv.launch; exec bash'"
-gnome-terminal --tab -e "bash -c 'cd cogrob_ws; source devel/setup.bash; roslaunch pepper_nodes audio.launch; exec bash'"
-#gnome-terminal --tab -e "bash -c 'cd cogrob_ws; source devel/setup.bash; roslaunch pepper_nodes pepper_nodes_copy.launch; exec bash'"
+#gnome-terminal --tab -e "bash -c 'cd cogrob_ws; source devel/setup.bash; roslaunch pepper_nodes audio.launch; exec bash'"
 
 
 

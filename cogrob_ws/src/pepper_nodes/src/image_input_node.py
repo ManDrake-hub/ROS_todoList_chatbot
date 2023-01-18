@@ -104,6 +104,7 @@ class ImageInputNode:
     def handle_service(self, req):
         rate = rospy.Rate(self.fps)
         frame = self.get_color_frame()
+        print("ho aperto e preso l'immagine")
         if frame is not None:
             msg = self.bridge.cv2_to_imgmsg(frame)
             msg.header.stamp = rospy.Time.now()
@@ -117,14 +118,19 @@ if __name__ == "__main__":
     (options, args) = parser.parse_args()
     try:
         rospy.init_node("image_input_node")
+        #TEST WEBCAM
         image_input = Node()
         s = rospy.Service('image_server',
                         Face_image, image_input.handle_service)
         rospy.logdebug('Face server READY.')
         rospy.spin()
+
         #TO DO: TEST VIDEO PEPPER
-        #image_input = ImageInputNode(options.ip, int(options.port))
-        #image_input.start()
+        image_input = ImageInputNode(options.ip, int(options.port))
+        s = rospy.Service('image_server',
+                        Face_image, image_input.handle_service)
+        rospy.logdebug('Face server READY.')
+        rospy.spin()
     except rospy.ROSInterruptException:
         pass
 

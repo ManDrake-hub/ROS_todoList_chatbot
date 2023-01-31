@@ -4,6 +4,11 @@
   <param name="nao_ip" type="string" value="$(arg nao_ip)"/>
   <param name="nao_port" type="string" value="$(arg nao_port)"/>
   
+<<<<<<< HEAD
   <node pkg="pepper_nodes" type="rest_node.py" name="rest_node" required="true" args="--ip=$(arg nao_ip) --port=$(arg nao_port)" output="screen" />
  
+=======
+  <node pkg="pepper_nodes" type="rest.py" name="test_node" required="true" args="--ip=$(arg nao_ip) --port=$(arg nao_port)" output="screen" />
+  
+>>>>>>> Text2Speech
 </launch>

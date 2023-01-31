@@ -1,9 +1,13 @@
 #!/usr/bin/python3
-
 from utils import Session
 from optparse import OptionParser
 import rospy
+<<<<<<< HEAD
 from pepper_nodes.srv import ExecuteJS, LoadUrl, LoadUrlRequest
+=======
+from pepper_nodes.srv import ExecuteJS
+from pepper_nodes.srv import LoadUrl, LoadUrlRequest
+>>>>>>> Text2Speech
 
 '''
 This class implements a ROS node used to controll the Pepper tablet
@@ -19,6 +23,7 @@ class TabletNode:
         self.session = Session(ip, port)
         self.tablet_proxy = self.session.get_service("ALTabletService")
         self.tablet_proxy.resetTablet()
+        self.tablet_service = rospy.ServiceProxy("load_url", LoadUrl)
     
     '''
     It receives a LoadUrl message and displays the web page associated with the url on the tablet.
@@ -45,27 +50,43 @@ class TabletNode:
             
         return "ACK"
     
+    def alert(self, delay):
+        try:
+            self.tablet_proxy.showAlertView(250,"#ff79c6",delay)
+        except:
+            self.tablet_proxy = self.session.get_service("ALTabletService")
+            self.tablet_proxy.showAlertView(250,"#ff79c6",delay)
+            
+        return "ACK"
+    
     '''
     Starts the node and creates the services
     '''
     def start(self):
-        rospy.init_node("tablet_node")
+        rospy.init_node("tablet_node_es")
 
         rospy.Service('execute_js', ExecuteJS, self.execute_js)
         rospy.Service('load_url', LoadUrl, self.load_url)
 
-        rospy.spin()
-
 if __name__ == "__main__":
     parser = OptionParser()
-    parser.add_option("--ip", dest="ip", default="10.0.1.207")
+    parser.add_option("--ip", dest="ip", default="10.0.1.230")
     parser.add_option("--port", dest="port", default=9559)
     (options, args) = parser.parse_args()
 
     try:
         node = TabletNode(options.ip, int(options.port))
         node.start()
+<<<<<<< HEAD
         url = r"https://www.diem.unisa.it/"
         node.load_url(url)
     except rospy.ROSInterruptException:
+=======
+        url = r"http://172.19.210.63:5000"
+        node.load_url(url)
+        #node.alert(10)
+        rospy.spin()
+    except rospy.ROSInterruptException as e:
+        print(e)
+>>>>>>> Text2Speech
         pass

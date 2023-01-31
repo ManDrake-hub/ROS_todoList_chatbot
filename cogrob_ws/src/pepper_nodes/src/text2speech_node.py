@@ -3,9 +3,13 @@ from utils import Session
 from pepper_nodes.srv import Text2Speech
 from optparse import OptionParser
 import rospy
-from std_msgs.msg import String
+from std_msgs.msg import String, Bool
 import time
 import qi
+<<<<<<< HEAD
+=======
+
+>>>>>>> Text2Speech
 '''
 This class implements a ROS node able to call the Text to speech service of the robot
 '''
@@ -19,13 +23,21 @@ class Text2SpeechNode:
         self.port = port
         self.session = Session(ip, port)
         self.tts = self.session.get_service("ALTextToSpeech")
+<<<<<<< HEAD
         self.tts.setLanguage("Italian")
      
+=======
+        #self.tts = self.session.get_service("ALAnimatedSpeech")
+        self.tts.setLanguage("Italian")
+        self.tts.setVolume(0.5)
+    
+>>>>>>> Text2Speech
     '''
     Rececives a Text2Speech message and call the ALTextToSpeech service.
     The robot will play the text of the message
     '''
     def say(self, msg):
+<<<<<<< HEAD
         print("inizio il say ")
         try:
             self.tts.say(msg.data)
@@ -35,6 +47,23 @@ class Text2SpeechNode:
             self.session.reconnect()
             self.tts = self.session.get_service("ALTextToSpeech")
             self.tts.say(msg.data)
+=======
+        pub.publish(True)
+        try:
+            self.tts.say(msg.data)
+            #configuration = {"bodyLanguageMode":"contextual"}
+            #self.tts.say(msg.data, configuration)
+            pub.publish(False)
+        except Exception as e:
+            print(e)
+            self.session.reconnect()
+            self.tts = self.session.get_service("ALTextToSpeech")
+            #self.tts = self.session.get_service("ALAnimatedSpeech")
+            #configuration = {"bodyLanguageMode":"contextual"}
+            self.tts.say(msg.data)
+            #self.tts.say(msg.data, configuration)
+            pub.publish(False)
+>>>>>>> Text2Speech
         return "ACK"
     '''
     Starts the node and create the tts service
@@ -53,7 +82,11 @@ if __name__ == "__main__":
     parser.add_option("--ip", dest="ip", default="10.0.1.207")
     parser.add_option("--port", dest="port", default=9559)
     (options, args) = parser.parse_args()
+<<<<<<< HEAD
     print("inizio il try")
+=======
+    pub = rospy.Publisher('pepper_say', Bool, queue_size=10)
+>>>>>>> Text2Speech
     try:
         ttsnode = Text2SpeechNode(options.ip, int(options.port))
         print("text2speech created ")

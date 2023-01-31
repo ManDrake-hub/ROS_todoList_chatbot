@@ -10,11 +10,13 @@ rules:
   steps:
   - intent: goodbye
   - action: utter_goodbye
+  - action: action_reset
 
 - rule: Say 'I am a bot' anytime the user challenges
   steps:
   - intent: bot_challenge
   - action: utter_iamabot
+  - action: action_reset
 
 #Identification
 - rule: Change or create ToDo list if user indentifies
@@ -99,6 +101,7 @@ rules:
 - rule: remove_user
   steps:
   - intent: remove_user
+  - action: user_form
   - action: action_remove_user
   - action: action_reset
 

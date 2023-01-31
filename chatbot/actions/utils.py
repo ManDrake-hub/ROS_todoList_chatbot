@@ -1,10 +1,11 @@
 import datetime
-from typing import Any, Sequence, Tuple, Dict, List, Any
+from typing import Any, Sequence, Tuple, Dict, List, Any, Union
 from rasa_sdk import Tracker
 from actions.Task import Task
 from actions.ToDo import ToDo
 from actions.ActionsException import ExceptionNoCategories, ExceptionDateTimeBeforeNow, ExceptionDateTimeFormatInvalid
 from dateutil.parser import parse
+import re
 
 
 def get_user(tracker: Tracker) -> Any:
@@ -59,88 +60,81 @@ def get_info(tracker: Tracker) -> Tuple[Any, Any, Any]:
 def sequence_to_str(seq: Sequence) -> str:
     return ", ".join(seq)
 
-def print_todo(todo: ToDo):
-    try:
-        if not todo.get_categories():
-            return
-    except ExceptionNoCategories:
-        return
+def next_weekday(d, weekday):
+    days_ahead = weekday - d.weekday()
+    if days_ahead <= 0: # Target day already happened this week
+        days_ahead += 7
+    return d + datetime.timedelta(days_ahead)
 
-    print("These are the categories: ", list(todo.get_categories()))
+def has_letters(text: str) -> bool:
+    return re.search('[a-zA-Z]', text) is not None
 
-    for k in todo.get_categories():
-        print("This are the tasks for: ")
-        print(f"    Category: {k}")
-        for t in todo.get_tasks_of_category(k):
-            print(f"         - {str(t)}")
+def has_numbers(text: str) -> bool:
+    return re.search('[0-9]', text) is not None
 
-def print_todo_dict(todo: Dict):
-    try:
-        if not todo.keys():
-            return
-    except ExceptionNoCategories:
-        return
+def list_of_numbers(text: str) -> List:
+    return re.findall(r'\d+', text)
 
-    print("These are the categories: ", list(todo.keys()))
-
-    for k in todo.keys():
-        print("This are the tasks for: ")
-        print(f"    Category: {k}")
-        for t in todo[k]:
-            print(f"         - {str(t)}")
-
-def check_equals_task(real_task: Task, expected_task: Task):
-    return real_task.tag == expected_task.tag and real_task.deadline == expected_task.deadline and real_task.alarm == expected_task.alarm
-
-def check_equals(real: ToDo, expected: Dict[str, List[Task]]):
-    try:
-        if len(real.get_categories()) == 0 and len(expected.keys()) == 0:
-            return True
-    except ExceptionNoCategories:
-        if len(expected.keys()) == 0:
-            return True
-        return False
-
-    for k in real.get_categories():
-        if k not in expected.keys():
-            return False
-    for k in expected.keys():
-        if k not in real.get_categories():
-            return False
-
-    for k in real.get_categories():
-        for real_task in real.get_tasks_of_category(k):
-            if not any([check_equals_task(real_task, expected_task) for expected_task in expected[k]]):
-                return False
-    return True
-
-"""
-Casi testati in cui funziona:
-
-- [20/11/1969](date)
-- [12-10-1999](date)
-- [30-06-65](date)
-- [15/03/87](date)
-- [12-3-29](date)
-- [6-1-99](date)
-- [7/8/99](date)
-- [13-8-2004](date)
-- [4/8/2003](date)
-- [4.8.2003](date)
-- [20.11.1969](date)
-- [04:25](time)
-- [7:30](time)
-- [7:7](time)
-- [23:59](time)
-- [20:7](time)
-"""
-def convert_deadline_to_datetime(date: str, time: str) -> datetime.datetime:
-    if date == "" or date is None:
-        dt = parse(time)
-        if dt < datetime.datetime.now():
-            return parse(time, default=datetime.datetime.now() + datetime.timedelta(days=1))
-        return dt
-    return parse(date + " " + time, dayfirst=True)
+def has_element(text: str, l: List) -> Tuple[bool, int]:
+    _has_element = any([x in text for x in l])
+    if _has_element:
+        return _has_element, [i for i, x in enumerate(l) if x in text][-1]# [x in text for x in l].index(True)
+    return _has_element, 0
 
 def is_datetime_before_now(dt: datetime.datetime) -> bool:
     return dt < datetime.datetime.now()
+
+def convert_deadline_to_datetime(date: str, time: str) -> datetime.datetime:
+    """
+    Convert a date and time provided as string to a datetime.
+
+    Supports both normal formats like 10/01/2025 but also:
+    - day + time: ex. "lunedì alle 10:10:10"
+    - day + month + time: ex. "27 gennaio alle 10:10:10"
+    - offset + time: ex. "oggi alle 10:10:10"
+
+    If time is an empty string, the current time will be used, if date is an empty string the current day will be used
+    or the next day if it would lead to a datetime already passed.
+    """
+    date = date.lower()
+    weekdays = ["lunedì", "martedì", "mercoledì", "giovedì", "venerdì", "sabato", "domenica"]
+    months = ["gennaio", "febbraio", "marzo", "aprile", "maggio", "giugno", "luglio", "agosto", "settembre", "ottobre", "novembre", "dicembre"]
+    offsets = ["oggi", "domani", "dopodomani"]
+
+    # We check for weekdays, months and offsets inside the given date
+    has_weekdays, weekdays_index = has_element(date, weekdays)
+    has_months, months_index = has_element(date, months)
+    has_offsets, offsets_index = has_element(date, offsets)
+
+    # If has letters and not numbers, it can be an offset or a weekday
+    if has_letters(date) and not has_numbers(date):
+        if has_weekdays:
+            date = next_weekday(datetime.datetime.today(), weekday=weekdays_index)
+        elif has_offsets:
+            date = datetime.datetime.today() + datetime.timedelta(days=offsets_index)
+        else:
+            raise Exception("Could not parse date")
+
+    # If it has only one number, it can be a day with or without its month specified in letters
+    elif has_numbers(date) and len(list_of_numbers(date)) == 1:
+        date = datetime.datetime(year=datetime.date.today().year, 
+                                month=months_index+1 if has_months else datetime.datetime.today().month, 
+                                day=int(list_of_numbers(date)[0]))
+    # If it has two numbers, it can be a day with or without its month specified in letters and the year
+    elif has_numbers(date) and len(list_of_numbers(date)) == 2:
+        date = datetime.datetime(year=int(list_of_numbers(date)[-1]),
+                                month=months_index+1 if (has_letters(date)) else datetime.datetime.today().month, 
+                                day=int(list_of_numbers(date)[0]))
+    if type(date) is datetime.datetime:
+        return parse(time, default=date, dayfirst=True)
+
+    if date == "" or date is None:
+        # If the date has not been specified, we parse the time with the current date as default
+        dt = parse(time, dayfirst=True)
+        if is_datetime_before_now(dt):
+            # If with the current date, the datetime has been passed, we reparse it with a day added 
+            return parse(time, default=(datetime.datetime.now() + datetime.timedelta(days=1)), dayfirst=True)
+        return dt
+    # If both the date and the time has been specified (and the date has not been converted using prev converters)
+    # Parse using both date and time specified
+    return parse(date + " " + time, dayfirst=True)

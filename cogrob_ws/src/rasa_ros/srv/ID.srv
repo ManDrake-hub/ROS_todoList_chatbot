@@ -1,0 +1,4 @@
+std_msgs/Int16MultiArray audio
+std_msgs/String input_text
+---
+std_msgs/String answer

@@ -1,0 +1,3 @@
+<launch>
+  <node pkg="pepper_nodes" type="image_input_node.py" name="image_input_node" output="screen" />
+</launch>

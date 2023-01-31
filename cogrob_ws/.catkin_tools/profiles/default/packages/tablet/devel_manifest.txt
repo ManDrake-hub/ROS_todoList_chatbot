@@ -1,5 +1,0 @@
-tablet
-/home/francesca/Scrivania/ROS_todoList_chatbot/cogrob_ws/devel/.private/tablet/cmake.lock /home/francesca/Scrivania/ROS_todoList_chatbot/cogrob_ws/devel/./cmake.lock
-/home/francesca/Scrivania/ROS_todoList_chatbot/cogrob_ws/devel/.private/tablet/share/tablet/cmake/tabletConfig-version.cmake /home/francesca/Scrivania/ROS_todoList_chatbot/cogrob_ws/devel/share/tablet/cmake/tabletConfig-version.cmake
-/home/francesca/Scrivania/ROS_todoList_chatbot/cogrob_ws/devel/.private/tablet/share/tablet/cmake/tabletConfig.cmake /home/francesca/Scrivania/ROS_todoList_chatbot/cogrob_ws/devel/share/tablet/cmake/tabletConfig.cmake
-/home/francesca/Scrivania/ROS_todoList_chatbot/cogrob_ws/devel/.private/tablet/lib/pkgconfig/tablet.pc /home/francesca/Scrivania/ROS_todoList_chatbot/cogrob_ws/devel/lib/pkgconfig/tablet.pc

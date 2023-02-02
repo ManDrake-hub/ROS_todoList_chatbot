@@ -23,9 +23,7 @@ In case of errors:
 
 * Unable to find either executable 'empy' or Python module 'em'...  try installing the package 'python3-empy'
 
-  * ```console
-pip install empy 
-```
+  * ```console pip install empy ```
 
 * ImportError: "from catkin_pkg.package import parse_package" failed: No module named 'catkin_pkg'
 

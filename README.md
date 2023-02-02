@@ -1,5 +1,8 @@
 # ROS_todoList_chatbot
 
+## Application Demo
+[![IMAGE_ALT](https://img.youtube.com/vi/aW27XjsQDg4/0.jpg)](https://www.youtube.com/watch?v=aW27XjsQDg4)
+
 ## Authors
 Course: Cognitive Robotics 2022/2023
  
@@ -8,10 +11,10 @@ Lecturers:
 * Roberto Antonio	 aroberto@unisa.it
  
 Group:
-* Farina Luigi         0622701754    l.farina16@studenti.unisa.it
 * Mandragora Geraldino 0622701875    g.mandragora@studenti.unisa.it
 * Sullutrone Giovanni  0622701751    g.sullutrone2@studenti.unisa.it
 * Tirino Francesca     0622701745    f.tirino@studenti.unisa.it
+* Farina Luigi         0622701754    l.farina16@studenti.unisa.it
 
 ## Install
 Install rasa and ros as done during the lectures 

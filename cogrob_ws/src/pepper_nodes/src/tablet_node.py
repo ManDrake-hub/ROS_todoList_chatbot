@@ -2,12 +2,8 @@
 from utils import Session
 from optparse import OptionParser
 import rospy
-<<<<<<< HEAD
-from pepper_nodes.srv import ExecuteJS, LoadUrl, LoadUrlRequest
-=======
 from pepper_nodes.srv import ExecuteJS
 from pepper_nodes.srv import LoadUrl, LoadUrlRequest
->>>>>>> Text2Speech
 
 '''
 This class implements a ROS node used to controll the Pepper tablet
@@ -77,16 +73,10 @@ if __name__ == "__main__":
     try:
         node = TabletNode(options.ip, int(options.port))
         node.start()
-<<<<<<< HEAD
-        url = r"https://www.diem.unisa.it/"
-        node.load_url(url)
-    except rospy.ROSInterruptException:
-=======
         url = r"http://172.19.210.63:5000"
         node.load_url(url)
         #node.alert(10)
         rospy.spin()
     except rospy.ROSInterruptException as e:
         print(e)
->>>>>>> Text2Speech
         pass

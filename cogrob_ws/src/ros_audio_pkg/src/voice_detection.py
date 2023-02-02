@@ -21,22 +21,12 @@ class Microphone:
         self.stop_listening = r.listen_in_background(m, self.callback_audio_publish)
         rospy.Subscriber(disable_topic, Bool, self.callback_audio_disable)
 
-<<<<<<< HEAD
-#import sounddevice as sd
-#sd.query_devices()
-
-# Audio source
-m = sr.Microphone(device_index=None,
-                    sample_rate=16000,
-                    chunk_size=1024)
-=======
     def callback_audio_publish(self, recognizer, audio):
         """Get the raw data from the audio stream and publishes it on "mic_data" """
         data = np.frombuffer(audio.get_raw_data(), dtype=np.int16)
         data_to_send = Int16MultiArray()
         data_to_send.data = data
         self.pub.publish(data_to_send)
->>>>>>> Text2Speech
 
     def callback_audio_disable(self, value):
         """Get the bool from the topic and if True, stop listening in the background"""

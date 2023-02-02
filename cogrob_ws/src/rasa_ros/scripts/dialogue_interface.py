@@ -86,36 +86,6 @@ class InteractionManager:
         phrase: String = data.text
         audio = data.audio
 
-<<<<<<< HEAD
-    def has_changed(self):
-        return self.changed
-
-    def get_text(self):
-        self.changed = False
-        return self.message
-
-def main():
-    rospy.init_node('writing')
-    rospy.wait_for_service('dialogue_server')
-    dialogue_service = rospy.ServiceProxy('dialogue_server', Dialogue)
-    terminal = TerminalInterface()
-    pub = rospy.Publisher("bot_answer", String, queue_size=10)
-    rospy.Subscriber("voice_txt", String, terminal.callback)
-    gerry = False
-    while not rospy.is_shutdown():
-        if gerry == False:
-            print("IN:")
-            gerry = True
-        if terminal.has_changed():
-            message = terminal.get_text()
-            if message == 'exit': 
-                break
-            try:
-                bot_answer = dialogue_service(message)
-                #terminal.set_text(bot_answer.answer)
-                pub.publish(bot_answer.answer)
-                print("bot answer: %s"%bot_answer.answer)
-=======
         if self.name.data != "":
             # If we have already loaded a name
             try:
@@ -124,7 +94,6 @@ def main():
 
                 # Send to rasa and answer aloud
                 self.write_to_rasa_and_answer_aloud(phrase)
->>>>>>> Text2Speech
             except rospy.ServiceException as e:
                 print("Service call failed: %s"%e)
             finally:
@@ -168,16 +137,9 @@ def main():
 
 
 if __name__ == '__main__':
-<<<<<<< HEAD
-    try: 
-        main()
-    except rospy.ROSInterruptException:
-        pass
-=======
     rospy.init_node('writing')
 
     terminal = InteractionManager(input_topic="voice_txt_data", output_topic="bot_answer")
 
     print("IN:")
     rospy.spin()
->>>>>>> Text2Speech

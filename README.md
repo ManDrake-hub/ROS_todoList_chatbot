@@ -54,19 +54,20 @@ Follow these steps:
 
 the "terminals.sh" command will start 5 scripts in separates tabs of the same gnome-terminal's window
 
-first one: starts the webpage 
-second one: starts the pepper nodes
-third one: starts the dialogue servicies
-fourth one: starts the identification server
-fifth one: starts the speech recognition service
+* first one: starts the webpage 
+* second one: starts the pepper nodes
+* third one: starts the dialogue servicies
+* fourth one: starts the identification server
+* fifth one: starts the speech recognition service
 
 ## Dependencies
 
-to run sh terminals.sh you'll need to install gnome-terminal.
-on Ubuntu gnome terminal is installed by default
-otherwise you'll need to install it with the following command:
+to run sh terminals.sh you'll need to install gnome-terminal.<br />
+on Ubuntu gnome terminal is installed by default, otherwise you'll need to install it with the following command:<br />
 
- sudo apt-get install gnome-terminal
+```console
+sudo apt-get install gnome-terminal
+```
 
 ## License
 [GNU](https://choosealicense.com/licenses/gpl-3.0/)

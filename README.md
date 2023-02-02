@@ -8,10 +8,10 @@ Lecturers:
 * Roberto Antonio	 aroberto@unisa.it
  
 Group:
+* Farina Luigi         0622701754    l.farina16@studenti.unisa.it
 * Mandragora Geraldino 0622701875    g.mandragora@studenti.unisa.it
 * Sullutrone Giovanni  0622701751    g.sullutrone2@studenti.unisa.it
 * Tirino Francesca     0622701745    f.tirino@studenti.unisa.it
-* Farina Luigi         0622701754    l.farina16@studenti.unisa.it
 
 ## Install
 Install rasa and ros as done during the lectures 
@@ -59,7 +59,7 @@ fifth one: starts the speech recognition service
 
 ## Dependencies
 
-to run sh terminals.sh you'll need to install gnome-terminal.
+to run sh terminals.sh you'll need to install gnome-terminal
 on Ubuntu gnome terminal is installed by default
 otherwise you'll need to install it with the following command:
 

@@ -62,7 +62,7 @@ fifth one: starts the speech recognition service
 
 ## Dependencies
 
-to run sh terminals.sh you'll need to install gnome-terminal
+to run sh terminals.sh you'll need to install gnome-terminal.
 on Ubuntu gnome terminal is installed by default
 otherwise you'll need to install it with the following command:
 
